@@ -1,6 +1,6 @@
 # Get Started
 
-If you haven't set up your Raspberry Pi yet, look at the steps here.
+If you haven't set up your Raspberry Pi yet, look at the steps [here](https://github.com/tudelft-iot/wheelchair-design-platform/blob/master/doc/devices/RaspberryPi.md "Raspberry Pi resources").
 
 In this tutorial we implement a basic setting on the Raspberry Pi:
 
