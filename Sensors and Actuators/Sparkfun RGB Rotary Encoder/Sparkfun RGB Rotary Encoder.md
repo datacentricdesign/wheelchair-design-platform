@@ -23,7 +23,8 @@ This encoder is conveniently soldered into a breakout board, for easy use with a
 
 Let's review how an rotary encoder works:
 ![](2.gif)
-The incremental rotary works in a very simple way. There are 3 terminals, , where c is the common, which is connected to ground. the rotary encoder also has metallic contacts connected to VCC. as you can see, the data pins are phased between each other, and when the wheel turns, when the pin touches the contact it will be 1, and 0 for when it touches the ground. The data streams are shifted 90˚(hence quadrature) from each other (since there's a distance between the contacts).
+
+The incremental rotary encoder works in a very simple way. There are 3 terminals, , where c is the common, which is connected to ground. the rotary encoder also has metallic contacts connected to VCC. as you can see, the data pins are phased between each other, and when the wheel turns, when the pin touches the contact it will be 1, and 0 for when it touches the ground. The data streams are shifted 90˚(hence quadrature) from each other (since there's a distance between the contacts).
 Why use two data streams? Well to figure out which direction we're turning it, since you can tell which data stream comes first!
 
 ### Diagram of the circuit
