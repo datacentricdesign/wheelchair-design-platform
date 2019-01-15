@@ -22,3 +22,7 @@ This encoder is conveniently soldered into a breakout board, for easy use with a
 8. "Vcc" connector, to be connected to 3.3V.
 
 Let's review how an rotary encoder works:
+
+the code examples uses interrupts, be sure to explain how they work.
+
+explain pull up and pull down
