@@ -1,12 +1,12 @@
 # Sparkfun RGB rotary encoder
 
-Encoders can measure the rotation of a shaft. there are two main types :
+Encoders can measure the rotation of a shaft. There are two main types of encoders:
 * Absolute - this type of encoders relate information about the absolute position of the shaft;
 * Incremental - this type of encoders relate information on the relative motion of the shaft of the encoder, i.e. changes in the position of its shaft, but not its absolute position.
 
-The Sparkfun RGB rotary encoder is one of the most common types for general electronics, a quadrature rotary encoder (a type of incremental encoder), and is rather similar to a potentiometer, however its rotation is infinite is both directions. It also possesses full RGB illumination of the shaft, with the shaft also doubling as a clickable button.
+The Sparkfun RGB rotary encoder is one of the most common types for general electronics, a quadrature rotary encoder (a type of incremental encoder), and is rather similar to a potentiometer; however its rotation is infinite in both directions. It also possesses full RGB illumination of the shaft, with the shaft also doubling as a clickable button.
 
-#### Functionality
+## Functionality
 
 This encoder is conveniently soldered into a breakout board, for easy use with a breadboard and access of its I/O.  With the help of the following diagram we can see how this encoder works.
 
@@ -27,7 +27,7 @@ Let's review how an rotary encoder works:
 The incremental rotary encoder works in a very simple way. There are 3 terminals, , where C is the common, which is connected to ground. The rotary encoder also has metallic contacts connected to VCC. As you can see, the data pins are phased between each other, and during the turning of the wheel, when the pin touches the contact it will be 1, and 0 for when it touches the ground. The data streams are shifted 90˚(hence quadrature) from each other (since there's a particular distance between the contacts).
 Why use two data streams? Well to figure out which direction we're turning it, since you can tell which data stream comes first!
 
-### Diagram of the circuit
+## Diagram of the circuit
 Here follows a diagram of a test circuit using the Arduino Mega.
 The LEDS  current is 25 mA. They have the following forward voltages(voltage drop), so if you are using a different Vcc than 5V, you must calculate other resistances (check the LED tutorial):
 R : 2V
@@ -35,3 +35,8 @@ G : 3.3V
 B : 3.3V
 
 ![](3.png)
+
+## Result
+Now you should have a working RGB encoder! Below you can find what your serial output should look like:
+
+![](4.gif)

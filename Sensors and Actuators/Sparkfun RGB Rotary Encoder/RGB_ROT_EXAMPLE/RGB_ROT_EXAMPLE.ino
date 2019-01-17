@@ -3,7 +3,7 @@
 
 #define EI_ARDUINO_INTERRUPTED_PIN // this is needed so we can see the interrupted pin's state with the variable arduinoPinState - 0 is low, other than 0 means high
 // careful, this needs to be defined before the include for the library.
-#define EI_NOTPORT
+
 #include <EnableInterrupt.h>
 // Library for our interrupt functions
 
@@ -66,7 +66,7 @@ void setup() {
 
   // Lets assign our interrupts
 
-  // We will use the standard Arduino reference for interrupts for the rotary, and the enableInterrupt library for the button.
+  // We will use the enableInterrupt library for the button (pinChange interrupts), and for the rotary (external interrupts).
   // in the Arduino mega, external interrupts can be used with pins 2, 3, 18-21, so be sure to use one of those
   enableInterrupt(RT_A, rotary_ISR, CHANGE); // ISR Interrupt service routine, the last parameter is the mode, which calls this, whenever the value in the pin changes.
   // on the mega, the Pin Change interrutps can be had on pins  10-15
