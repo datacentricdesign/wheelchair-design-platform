@@ -34,3 +34,23 @@ You can use PWM with the pins that have the tag PWM in Arduino, and can use the 
 
 Below, you can see the pins you can use with PWM!
 ![](9.png)
+
+## Examples
+
+Let's do some examples with the types of LEDs (and buttons) we have.
+
+### Simple LED with button switch.
+
+We'll be making a simple circuit to turn on the LED, with the help of the push button.
+
+We'll be using a simple LED, so lets use a 220Ω resistor (this will work just fine for a most LEDs), together with the 5v output of the Arduino.
+
+#### Schematic:
+![](10.png)
+
+### Simple LED with Pulsing intensity using PWM
+
+####Schematic
+![](11.png)
+#### Result
+![](12.gif)
