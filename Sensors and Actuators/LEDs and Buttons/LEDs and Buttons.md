@@ -49,8 +49,8 @@ We'll be using a simple LED, so lets use a 220Ω resistor (this will work just f
 ![](10.png)
 
 ### Simple LED with Pulsing intensity using PWM
-
-####Schematic
+We'll make a simple circuit to make a pulsing LED, with the help of some code this time!
+####Schematic:
 ![](11.png)
 #### Result
 ![](12.gif)
