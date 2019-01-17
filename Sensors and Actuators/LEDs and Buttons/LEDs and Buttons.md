@@ -1,3 +1,4 @@
+# LEDS and Buttons
 ##LEDs
 An LED is a type of diode that emits light. A diode is, simply, a device that lets current go through it in one direction, but resists it in the other. To pass current through the diode in the direction it does not resist (anode to cathode), you need to supply some voltage to it. An LED normally spends from 1.8 to 3.3 volts, depending on the particular type, this is called its voltage drop or forward voltage. The current that the LED spends nominally is called forward current.  With LEDs you have to be careful  to not supply too much current to an LED, or else you might fry it!.
 That's why you'll see that normally you have a resistor in series with the LED, to assure that not too much current goes through it.
@@ -19,3 +20,17 @@ A pushbutton switch, is a very simple electronic device with 4 pins. When left t
 
 Here's a brief schematic (note, a set of pins means those pins are always connected, you can see the sets in black, and the ):
 ![](7.png)
+
+## PWM
+
+The last thing we should know with LEDs, is that you can not only turn them on and off, but also vary their intensity.
+You can do so by controlling the voltage supplied to the LED, but that is a morose and finicky process. Instead, you can use a technique called PWM,(Pulse Width Modulation); in which, instead of always powering the LED at full blast, we providing a very high frequency square wave of voltage, in which the pulses  are such that, on average, the device is x% on, and 100-x% off.  Such is termed the duty cycle. (a duty cycle of 50% means the signal is 50% on, and 50 % off, in average).
+
+By doing this, we are alternating between having the LED on, and off, but so quickly that our eyes "average" the result!
+So an LED with a duty cycle of 25% looks 25% as bright as the normal LED!
+Notice that all of this is done digitally, so, essentially PWM is a way of getting analog like results with digital means.
+![](8.png)
+You can use PWM with the pins that have the tag PWM in Arduino, and can use the function analogWrite() for establishing the duty cycle on a pin that can use PWM, with a value from 0 (0%) to 255 (100%).
+
+Below, you can see the pins you can use with PWM!
+![](9.png)
