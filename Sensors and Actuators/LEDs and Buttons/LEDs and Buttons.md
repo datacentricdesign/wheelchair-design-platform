@@ -54,3 +54,31 @@ We'll make a simple circuit to make a pulsing LED, with the help of some code th
 ![](11.png)
 #### Result
 ![](12.gif)
+
+### Neopixel 5mm Diffused LED
+This is a special type of LED with 24bit color which gives 256 intensities for R, G and B, allowing a lot of colors.
+This requires the use of the Neopixel library for Arduino.
+
+Lets see the pins and what they're for:
+
+![](/12.png)
+
+1. Data In, where we connect our arduino data pin (and a 470 Ω resistor).
+2. Vcc input pin, (5v).
+3. ground
+4. Data out, where we can chain several Neopixel LEDs together(simply connect the data in port of one to the data out of the other).
+
+##### Important Notes
+* When connecting several Neopixels Through-the-hole individual LEDs in a chain, it is advisable to add a 0.1 µF capacitor between the +(Vcc) and – (Ground) pins of *EACH PIXEL*.
+
+* Adding a ~470 ohm resistor between your microcontroller's data pin and the data input on the first NeoPixel LED can help prevent voltage spikes on the data line that can damage it. Also the arduino shouldn't be able to power more than a few(8 ~ish) neopixels directly from the 5V pin.
+
+* After 1-2 meters distance from the Arduino to the first neopixel, the signal starts to degrade, and becomes unreliable.
+
+* Avoid connecting NeoPixels to a live circuit. If you must, always connect ground first, then +5V, then data. Disconnect in the reverse order.
+
+* If powering the pixels with a separate supply, apply power to the pixels before applying power to the microcontroller.
+
+* NeoPixels powered by 5v require a 5V data signal. If using a 3.3V microcontroller you must use a logic level shifter
+
+* If your microcontroller and NeoPixels are powered from two different sources (e.g. separate batteries for each), there must be a ground connection between the two.
