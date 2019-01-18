@@ -1,9 +1,8 @@
-
-### Color TFT LCD displays
+#Color TFT LCD displays
 
 TCT LCD (Thin-film-transistor liquid-crystal display) is a variant of LCD, that uses TFT tech to improve image quality.
 
-####1.8" Color TFT LCD display with MicroSD Card Breakout
+## 1.8" Color TFT LCD display with MicroSD Card Breakout
 
 Possessing 128 * 160 color pixels true TFT with full 18-bit color, this display can be used with any microcontroller.
 
