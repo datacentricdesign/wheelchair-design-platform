@@ -69,7 +69,7 @@ Lets see the pins and what they're for:
 3. ground
 4. Data out, where we can chain several Neopixel LEDs together(simply connect the data in port of one to the data out of the other).
 
-##### Important Notes
+#### Important Notes
 * When connecting several Neopixels Through-the-hole individual LEDs in a chain, it is advisable to add a 0.1 µF capacitor between the +(Vcc) and – (Ground) pins of *EACH PIXEL*.
 
 * Adding a ~470 ohm resistor between your microcontroller's data pin and the data input on the first NeoPixel LED can help prevent voltage spikes on the data line that can damage it. Also the arduino shouldn't be able to power more than a few(8 ~ish) neopixels directly from the 5V pin.
@@ -83,3 +83,7 @@ Lets see the pins and what they're for:
 * NeoPixels powered by 5v require a 5V data signal. If using a 3.3V microcontroller you must use a logic level shifter
 
 * If your microcontroller and NeoPixels are powered from two different sources (e.g. separate batteries for each), there must be a ground connection between the two.
+#### Schematic
+
+
+####Results
