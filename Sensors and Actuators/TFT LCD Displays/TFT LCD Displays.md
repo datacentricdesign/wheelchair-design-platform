@@ -1,4 +1,4 @@
-#Color TFT LCD displays
+# Color TFT LCD displays
 
 TCT LCD (Thin-film-transistor liquid-crystal display) is a variant of LCD, that uses TFT tech to improve image quality.
 
