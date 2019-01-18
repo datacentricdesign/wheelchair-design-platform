@@ -6,7 +6,7 @@ That's why you'll see that normally you have a resistor in series with the LED, 
 
 ![](6.png)
 
-By knowing the forward current and voltage of an LED, and the available power source's voltage, you can calculate how big the resistor you apply in series should be. the formula is a simple derivation of ohm's law (V = RI)
+By knowing the forward current and voltage of an LED, and the available power source's voltage, you can calculate how big the resistor you apply in series should be. the formula is a simple derivation of Ω's law (V = RI)
 
 Rs = ( Vcc - Vf ) / If
 1. Rs = Resistance in series with LED
@@ -54,27 +54,26 @@ We'll make a simple circuit to make a pulsing LED, with the help of some code th
 ####Schematic:
 ![](11.png)
 #### Result
-![](12.gif)
+![](1.gif)
 
-### Neopixel 5mm Diffused LED
-This is a special type of LED with 24bit color which gives 256 intensities for R, G and B, allowing a lot of colors.
-This requires the use of the Neopixel library for Arduino.
+### NeoPixel 5mm Diffused LED
+This is a special type of LED with 24bit color which gives 256 intensities for R, G and B, allowing for a lot of colors.
+This requires the use of the NeoPixel library for Arduino.
 
 Lets see the pins and what they're for:
+![](12.png)
 
-![](/12.png)
-
-1. Data In, where we connect our arduino data pin (and a 470 Ω resistor).
-2. Vcc input pin, (5v).
-3. ground
-4. Data out, where we can chain several Neopixel LEDs together(simply connect the data in port of one to the data out of the other).
+1. Data In, where we connect our arduino data pin (and a 470 Ω resistor);
+2. Vcc input pin, (5v);
+3. Ground;
+4. Data out, where we can chain several NeoPixel LEDs together(simply connect the data in port of one to the data out of the other).
 
 #### Important Notes
-* When connecting several Neopixels Through-the-hole individual LEDs in a chain, it is advisable to add a 0.1 µF capacitor between the +(Vcc) and – (Ground) pins of *EACH PIXEL*.
+* When connecting several NeoPixels Through-the-hole individual LEDs in a chain, it is advisable to add a 0.1 µF capacitor between the +(Vcc) and – (Ground) pins of *EACH PIXEL*.
 
-* Adding a ~470 ohm resistor between your microcontroller's data pin and the data input on the first NeoPixel LED can help prevent voltage spikes on the data line that can damage it. Also the arduino shouldn't be able to power more than a few(8 ~ish) neopixels directly from the 5V pin.
+* Adding a ~470 Ω resistor between your microcontroller's data pin and the data input on the first NeoPixel LED can help prevent voltage spikes on the data line that can damage it. Also the Arduino shouldn't be able to power more than a few(8 ~ish) NeoPixels directly from the 5V pin.
 
-* After 1-2 meters distance from the Arduino to the first neopixel, the signal starts to degrade, and becomes unreliable.
+* After 1-2 meters distance from the Arduino to the first NeoPixel, the signal starts to degrade, and becomes unreliable.
 
 * Avoid connecting NeoPixels to a live circuit. If you must, always connect ground first, then +5V, then data. Disconnect in the reverse order.
 
@@ -83,7 +82,11 @@ Lets see the pins and what they're for:
 * NeoPixels powered by 5v require a 5V data signal. If using a 3.3V microcontroller you must use a logic level shifter
 
 * If your microcontroller and NeoPixels are powered from two different sources (e.g. separate batteries for each), there must be a ground connection between the two.
-#### Schematic
 
+#### Schematic
+This example was made with two LEDs, you can of course choose how many you want, taking care you're feeding them enough current and voltage.
+![](13.png)
 
 ####Results
+This is how your serial should look like!
+![](2.gif)
