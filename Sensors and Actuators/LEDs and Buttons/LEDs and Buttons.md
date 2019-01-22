@@ -6,13 +6,13 @@ That's why you'll see that normally you have a resistor in series with the LED, 
 
 ![](6.png)
 
-By knowing the forward current and voltage of an LED, and the available power source's voltage, you can calculate how big the resistor you apply in series should be. the formula is a simple derivation of Ω's law (V = RI)
+By knowing the forward current and voltage of an LED, and the available power source's voltage, you can calculate how big the resistor you apply in series should be. the formula is a simple derivation of Ω's law (V = RI).
 
 Rs = ( Vcc - Vf ) / If
-1. Rs = Resistance in series with LED
-2. Vcc = power source's voltage
-3. Vf = forward  voltage of the LED
-4. If = forward current of the LED
+1. Rs = Resistance in series with LED;
+2. Vcc = power source's voltage;
+3. Vf = forward  voltage of the LED;
+4. If = forward current of the LED.
 
 If you have several LEDs in series with similar forward currents, you can simply replace Vf with the sum of all forward voltages of the LEDs.
 
@@ -91,7 +91,7 @@ Lets see the pins and what they're for:
 This example was made with two LEDs, you can of course choose how many you want, taking care you're feeding them enough current and voltage.
 ![](13.png)
 
-#### Results
+#### Result
 This is how your serial should look like!
 
 ![](2.gif)
