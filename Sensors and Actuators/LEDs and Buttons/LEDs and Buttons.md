@@ -31,7 +31,9 @@ You can do so by controlling the voltage supplied to the LED, but that is a moro
 By doing this, we are alternating between having the LED on, and off, but so quickly that our eyes "average" the result!
 So an LED with a duty cycle of 25% looks 25% as bright as the normal LED!
 Notice that all of this is done digitally, so, essentially PWM is a way of getting analog like results with digital means.
+
 ![](8.png)
+
 You can use PWM with the pins that have the tag PWM in Arduino, and can use the function analogWrite() for establishing the duty cycle on a pin that can use PWM, with a value from 0 (0%) to 255 (100%).
 
 Below, you can see the pins you can use with PWM!
@@ -62,6 +64,7 @@ This is a special type of LED with 24bit color which gives 256 intensities for R
 This requires the use of the NeoPixel library for Arduino.
 
 Lets see the pins and what they're for:
+
 ![](12.png)
 
 1. Data In, where we connect our arduino data pin (and a 470 Ω resistor);
@@ -70,7 +73,7 @@ Lets see the pins and what they're for:
 4. Data out, where we can chain several NeoPixel LEDs together(simply connect the data in port of one to the data out of the other).
 
 #### Important Notes
-* When connecting several NeoPixels Through-the-hole individual LEDs in a chain, it is advisable to add a 0.1 µF capacitor between the +(Vcc) and – (Ground) pins of *EACH PIXEL*.
+* When connecting several NeoPixels Through-the-hole individual LEDs in a chain, it is advisable to add a 0.1 µF capacitor between the + (Vcc) and – (Ground) pins of *EACH PIXEL*.
 
 * Adding a ~470 Ω resistor between your microcontroller's data pin and the data input on the first NeoPixel LED can help prevent voltage spikes on the data line that can damage it. Also the Arduino shouldn't be able to power more than a few(8 ~ish) NeoPixels directly from the 5V pin.
 
@@ -88,6 +91,7 @@ Lets see the pins and what they're for:
 This example was made with two LEDs, you can of course choose how many you want, taking care you're feeding them enough current and voltage.
 ![](13.png)
 
-####Results
+#### Results
 This is how your serial should look like!
+
 ![](2.gif)
