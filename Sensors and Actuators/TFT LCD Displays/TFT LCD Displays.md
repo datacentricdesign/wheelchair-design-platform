@@ -46,3 +46,8 @@ Consisting of 4 signals:
   * Slave Select (SS) -  pin on each device that the master can use to enable and disable that specific device.
 
 ### SPI with Arduino
+First of all; MISO, MOSI, and SCK are available in a consistent physical location on the ICSP header:
+![](2.jpg)
+
+You can find the places for the headers in this schematic of the Mega, although you can also use some (specific) digital pins. the white dot means its the pin number 1 of ICSP. You can then refer to these pins as ICSP-1, 2, etc.:
+![](3.png)
