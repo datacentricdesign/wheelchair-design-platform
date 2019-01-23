@@ -47,9 +47,11 @@ Consisting of 4 signals:
 
 ### SPI with Arduino
 First of all; MISO, MOSI, and SCK are available in a consistent physical location on the ICSP header:
+
 ![](2.png)
 
-You can find the places for the headers in this schematic of the Mega, although you can also use some (specific) digital pins. the white dot means its the pin number 1 of ICSP. You can then refer to these pins as ICSP-1, 2, etc.:
+You can find the places for the headers in this schematic of the Mega, although you can also use some (specific) digital pins. the white dot means its the pin number 1 of ICSP. You can then refer to these pins as ICSP-1, 2, etc:
+
 ![](3.png)
 
 ## Examples
