@@ -16,19 +16,17 @@ void setup() {
 void loop() {
 
   // PWM takes values from 0 to 255, in our case, we want to make
-  // a pulse effect, so we detect out of bounds behaviour and just
-  // invert the direction of our counter, thus brightening and dimming.
-  // We'll be using the upper bound of 255 since, the change in brightness
-  // is not as noticeable from 80 to 255 as in the lower numbers (0 to 80)
-  // so we're continuously going from 0 - 80 - 0 ... etc.
+  // a pulse effect, so we detect out of bounds behaviour and go to 127
+ 
+  i+=10;  // incrementing the power of the vibration motor
   
-  if( i == 255)
+  if( i > 255) 
     i = 127;
-  
-    i++;
-    
+
+
     Serial.print("Vibration intensity (127 to 255):  ");
     Serial.println(i);
     analogWrite(VIB_PIN, i);
-    delay(i*10); // in each step of pwm, we vibrate for i * 0.01 seconds  
+    delay(i*10); // in each step of pwm, we vibrate for i * 0.01 seconds 
+  } 
 }
