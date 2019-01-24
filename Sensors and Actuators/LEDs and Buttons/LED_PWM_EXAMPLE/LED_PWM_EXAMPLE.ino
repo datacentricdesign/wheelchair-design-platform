@@ -32,5 +32,5 @@ void loop() {
 
     Serial.print("Led intensity (0 to 255):  ");
     Serial.println(i);
-    analogWrite(2, i);  
+    analogWrite(LED_PIN, i);  
 }
