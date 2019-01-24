@@ -28,5 +28,5 @@ void loop() {
     Serial.println(i);
     analogWrite(VIB_PIN, i);
     delay(i*10); // in each step of pwm, we vibrate for i * 0.01 seconds 
-  } 
+  
 }
