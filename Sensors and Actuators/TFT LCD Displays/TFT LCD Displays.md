@@ -25,9 +25,6 @@ Lets start by knowing what each pin on the breakout does:
 
 This color display uses SPI (Serial Peripheral Interface) to receive image data. That means you need at least 4 pins - clock, data in, TFT_CS and D/C. If you'd like to have SD card usage too, you need another 2 pins.
 
-You will also need to install two libraries: Adafruit GFX (a graphics library), and Adafruit_ST7735 (a library for the display).
-
-
 ## SPI
 
 Serial Peripheral Interface, is a common communication protocol for 2-way comms between 2 devices.
@@ -55,7 +52,35 @@ You can find the places for the headers in this schematic of the Mega, although 
 ![](3.png)
 
 ## Examples
+In this section, we'll go over two basic examples, to learn the basics of using this screen with the Arduino.
+
+First of all, you will need to install the following two libraries:
+* Adafruit GFX (a graphics library);
+* Adafruit_ST7735 (a library for the display).
 
 ### TFT Screen Graphics Test
+In this first example, let's run through all of the available graphics drawing functions of the adafruit GFX library!
 
 #### Schematic
+
+![](4.png)
+
+##### Pins of the Screen Breakout (left to right):
+* Gnd;
+* Backlight (connect to Vcc);
+* TFT Reset pin (connect to a digital pin, 3 in this case);
+* TFT SPI data pin (connect to a digital pin, 4 in this case);
+* Not used!
+* TFT CS, (connect to a digital pin, 2 in this case);
+* MOSI, (connect to SPI MOSI Hardware pin(SCPI-4));
+* Clock, (connect to SPI Clock hardware pin (SCPI-3));
+* Not used!
+* Vcc pin.
+
+#### Results
+Once you've run the example program, you should see this in your serial!
+
+![](1.gif)
+### Display Images on the TFT Screen by using SD card
+
+In this program, we'll be displaying images in the screen (in bitmap image format)!
