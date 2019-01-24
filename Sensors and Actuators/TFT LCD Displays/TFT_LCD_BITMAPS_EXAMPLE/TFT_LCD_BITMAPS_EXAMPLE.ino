@@ -133,7 +133,7 @@ void bmpDraw(char *filename, uint8_t x, uint16_t y) {
     
     if(read16(bmpFile) == 1) { // # planes -- must be '1'
       bmpDepth = read16(bmpFile); // bits per pixel
-      Serial.print(F("Bit Depth: ")); Serial.println(bmpDepth);]
+      Serial.print(F("Bit Depth: ")); Serial.println(bmpDepth);
       
       if((bmpDepth == 24) && (read32(bmpFile) == 0)) { // 0 = uncompressed
 

@@ -70,7 +70,7 @@ In this first example, let's run through all of the available graphics drawing f
 * Backlight (connect to Vcc);
 * TFT Reset pin (connect to a digital pin, 3 in this case);
 * TFT SPI data pin (connect to a digital pin, 4 in this case);
-* Not used!
+* Card CS, (connect to a digital pin, 5 in this case)
 * TFT CS, (connect to a digital pin, 2 in this case);
 * MOSI, (connect to SPI MOSI Hardware pin (SCPI-4));
 * Clock, (connect to SPI Clock hardware pin (SCPI-3));
@@ -81,9 +81,30 @@ In this first example, let's run through all of the available graphics drawing f
 Once you've run the example program, you should see this in your serial!
 
 ![](1.gif)
-### Display Images on the TFT Screen by using SD card
+### Display Images on the TFT Screen by using a microSD card
 
 In this program, we'll be displaying images in the screen (in bitmap image format)!
 We will use the previous libraries, and Arduino's SD library!
 
-Start by converting some images to 160x128 24bit color bitmap format, and placing them in a FAT16/32 formatted microSD card, and placing that in the SD card holder.
+Start by converting some images to 160x128 24bit color bitmap format, and placing them in a FAT16/32 formatted microSD card, and placing that in the SD card holder. You can find some bitmap files in the Example folder, and put those in the SD card
+
+#### Schematic
+
+![](5.png)
+
+##### Pins of the Screen Breakout (left to right):
+* Gnd;
+* Backlight (connect to Vcc);
+* TFT Reset pin (connect to a digital pin, 3 in this case);
+* TFT SPI data pin (connect to a digital pin, 4 in this case);
+* Not used!
+* TFT CS, (connect to a digital pin, 2 in this case);
+* MOSI, (connect to SPI MOSI Hardware pin (SCPI-4));
+* Clock, (connect to SPI Clock hardware pin (SCPI-3));
+* MISO pin (connect to MISO hardware pin (SCPI-1));
+* Vcc pin.
+
+####  Results
+You should see this in your console at the end!
+
+![](2.gif)
