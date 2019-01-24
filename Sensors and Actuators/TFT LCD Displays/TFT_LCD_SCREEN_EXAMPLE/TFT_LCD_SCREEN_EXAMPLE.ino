@@ -1,7 +1,7 @@
 // Based on graphicstest example code of Adafruit ST7735 library
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <Adafruit_ST7735.h> // Hardware-specific library for ST7735
-#include <SPI.h>             // Library for use of the SPi protocol
+#include <Adafruit_ST7735.h> // Hardware-specific library for ST7735 lcd  screen
+#include <SPI.h>             // Library for use of the SPI protocol
 
 // Pins from the breakout board to the arduino
 #define TFT_CS         2 
@@ -9,14 +9,14 @@
 #define TFT_DC         4
 
 
-// By using HARDWARE SPI pins, which are unique to each board and not reassignable. 
-// This is the fastest mode of operation (there are slower, software SPI pins) and 
-// it is required if using the breakout board's microSD card.
+// We are using HARDWARE SPI pins, which are unique to each board and not reassignable. 
+// This is the fastest mode of operation (there are slower, software SPI pins)
+// Hardware pins are required if using the breakout board's microSD card.
 
 // tft screen variable, using our pins for its control.
 Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_DC, TFT_RST);
 
-float p = 3.1415926;
+float pi = 3.1415926;
 
 void setup(void) {
   Serial.begin(9600);
@@ -48,7 +48,7 @@ void graphics_test()
   testDrawText("Lorem ipsum dolor sit amet, consectetur adipiscing elit Curabitur adipiscing ante sed \     
                nibh tincidunt feugiat. Maecenas enim massa, fringilla sed malesuada et, malesuada sit \
                amet turpis. Sed porttitor neque ut ante pretium vitae malesuada nunc bibendum. Nullam \
-               aliquet ultrices massa eu hendrerit. Ut sed nisi lorem. In vestibulum purus a tortor \
+               aliquet ultrices massa eu hendrerit. Ut sed nisi lorem. In vestibulum purus a tortor   \
                imperdiet posuere. ", ST77XX_WHITE);
 
                // As you can see, we broke this large instruction into several ones using the '\' character
@@ -61,8 +61,9 @@ void graphics_test()
 
   // draw a single pixel in the center of the screen
   Serial.println("Pixel test");
+  tft.fillScreen(ST77XX_BLACK);             // Clear Screen
   tft.drawPixel(tft.width()/2, tft.height()/2, ST77XX_GREEN);
-  delay(1500);
+  delay(2000);
 
   // line drawing test
   Serial.println("Line drawing test");
@@ -100,13 +101,10 @@ void graphics_test()
   Serial.println("Drawing media buttons");
   mediaButtons();
   delay(3000);
-
-  Serial.println("done");
-  delay(2000);
 }
 
 void loop() {
-  // After we're done we will just invert colours  4 times until we reset again.
+  // After we're done we will just invert colours  4 times until we reset the graphics again.
   for(int i = 0 ; i < 4 ; i++) {
     tft.invertDisplay(true); // inverting the colours of the  display every half second.
     delay(500);
@@ -121,9 +119,14 @@ void loop() {
 }
 
 void testLines(uint16_t color) {
+
+  // tft is the screen variable, you can use the width() and height() 
+  // functions of the tft variable, so you dont have to know them by memory. 
+  
   tft.fillScreen(ST77XX_BLACK); // Clear screen with black
+ 
   for (int16_t x=0; x < tft.width(); x+=6) {
-    // drawLine from (x, y) point to  (a,b) point with color
+    // drawLine from (x, y) point to  (z,w ) point with color
     tft.drawLine(0, 0, x, tft.height()-1, color);
     delay(0);
   }
@@ -174,23 +177,25 @@ void testDrawText(char *text, uint16_t color) {
 void testFastLines(uint16_t color1, uint16_t color2) {
   tft.fillScreen(ST77XX_BLACK);
   for (int16_t y=0; y < tft.height(); y+=5) {
-    tft.drawFastHLine(0, y, tft.width(), color1);
+    // start point(x, y) and width or height, depending on horizontal or vertical
+    tft.drawFastHLine(0, y, tft.width(), color1); // fast Horizontal line
   }
   for (int16_t x=0; x < tft.width(); x+=5) {
-    tft.drawFastVLine(x, 0, tft.height(), color2);
+    tft.drawFastVLine(x, 0, tft.height(), color2); // fast Vertical Line
   }
 }
 
 
-// Drawing Rectangles 
+// Drawing Rectangles, requires upper left corner (x,y), width, height, and colour
 void testDrawRects(uint16_t color) {
   tft.fillScreen(ST77XX_BLACK);
   for (int16_t x=0; x < tft.width(); x+=6) {
+    
     tft.drawRect(tft.width()/2 -x/2, tft.height()/2 -x/2 , x, x, color);
   }
 }
 
-// Drawing filled rectangles
+// Drawing filled rectangles, requires upper left corner (x,y), width, height, and colour
 void testFillRects(uint16_t color1, uint16_t color2) {
   tft.fillScreen(ST77XX_BLACK);
   for (int16_t x=tft.width()-1; x > 6; x-=6) {
@@ -199,7 +204,7 @@ void testFillRects(uint16_t color1, uint16_t color2) {
   }
 }
 
-//Drawing filled Circles
+//Drawing filled Circles, requires center position, radius and colour 
 void testFillCircles(uint8_t radius, uint16_t color) {
   for (int16_t x=radius; x < tft.width(); x+=radius*2) {
     for (int16_t y=radius; y < tft.height(); y+=radius*2) {
@@ -208,7 +213,7 @@ void testFillCircles(uint8_t radius, uint16_t color) {
   }
 }
 
-// Drawing circles
+// Drawing circles, requires center position (x,y), radius and colour
 void testDrawCircles(uint8_t radius, uint16_t color) {
   for (int16_t x=0; x < tft.width()+radius; x+=radius*2) {
     for (int16_t y=0; y < tft.height()+radius; y+=radius*2) {
@@ -218,7 +223,7 @@ void testDrawCircles(uint8_t radius, uint16_t color) {
 }
 
 
-// Drawing triangles, requires 3 points
+// Drawing triangles, requires 3 points to form vertices
 void testTriangles() {
   tft.fillScreen(ST77XX_BLACK);
   int color = 0xF800;
@@ -260,60 +265,71 @@ void testRoundRects() {
 }
 
 // Printing text in several ways and current timer of the running of the program
+// As you can see, these use similar functions to the Serial print functions, 
+// just with some formatting prepended to alter their aspect
 void tftPrintTest() {
-  tft.setTextWrap(false); // whether text is wrapped.
-  tft.fillScreen(ST77XX_BLACK);
-  tft.setCursor(0, 30);
-  tft.setTextColor(ST77XX_RED);
+  
+  tft.setTextWrap(false); // whether text is wrapped. (bound to the screen size)
+  tft.fillScreen(ST77XX_BLACK); // Clear screen
+  tft.setCursor(0, 30); // Where we start writing
+  tft.setTextColor(ST77XX_RED); // Set color
   tft.setTextSize(1);
   tft.println("Hello World!");
+  
   tft.setTextColor(ST77XX_YELLOW);
   tft.setTextSize(2);
   tft.println("Hello World!");
+  
   tft.setTextColor(ST77XX_GREEN);
   tft.setTextSize(3);
   tft.println("Hello World!");
+  
   tft.setTextColor(ST77XX_BLUE);
   tft.setTextSize(4);
   tft.print(1234.567);
+  
   delay(1500);
+  
   tft.setCursor(0, 0);
   tft.fillScreen(ST77XX_BLACK);
   tft.setTextColor(ST77XX_WHITE);
   tft.setTextSize(0);
   tft.println("Hello World!");
+
   tft.setTextSize(1);
   tft.setTextColor(ST77XX_GREEN);
-  tft.print(p, 6);
-  tft.println(" Want pi?");
-  tft.println(" ");
+  tft.println("Want pi? ");
+  tft.print(pi, 6);
+  tft.println(".");
+
+  tft.println("Print HEX Value!"); //Hex for Hexadecimal
   tft.print(8675309, HEX); // print 8,675,309 out in HEX!
-  tft.println(" Print HEX!");
   tft.println(" ");
+  
   tft.setTextColor(ST77XX_WHITE);
   tft.println("Sketch has been");
   tft.println("running for: ");
   tft.setTextColor(ST77XX_MAGENTA);
   tft.print(millis() / 1000);
+  
   tft.setTextColor(ST77XX_WHITE);
   tft.print(" seconds.");
 }
 
 // Render Buttons on the Screen! 
 void mediaButtons() {
-  // play
+  // play button
   tft.fillScreen(ST77XX_BLACK);
   tft.fillRoundRect(25, 10, 78, 60, 8, ST77XX_WHITE);
   tft.fillTriangle(42, 20, 42, 60, 90, 40, ST77XX_RED);
   delay(500);
-  // pause
+  // pause button 
   tft.fillRoundRect(25, 90, 78, 60, 8, ST77XX_WHITE);
   tft.fillRoundRect(39, 98, 20, 45, 5, ST77XX_GREEN);
   tft.fillRoundRect(69, 98, 20, 45, 5, ST77XX_GREEN);
   delay(500);
   // play color
-  tft.fillTriangle(42, 20, 42, 60, 90, 40, ST77XX_BLUE);
-  delay(50);
+  tft.fillTriangle(42, 20, 42, 60, 90, 40, ST77XX_BLUE); 
   // pause color
   tft.fillRoundRect(39, 98, 20, 45, 5, ST77XX_RED);
   tft.fillRoundRect(69, 98, 20, 45, 5, ST77XX_RED);
