@@ -25,13 +25,17 @@ Please use a 4.7 - 10 kΩ medium strength pullup resistor between pins 1 and 2.
 
 ## Examples
 To use this sensor with the Arduino, please install the following libraries;
-* Adafruit Unified Sensor libraries;
-* Adafruit DHT sensor.
+* Adafruit Unified Sensor;
+* DHT sensor library.
+
 
 ### Simple Humidity and temperature reader
 #### Schematic
+Here's how our example circuit is going to look like:
 
 ![](2.png)
 
 #### Results
-Lets see how the console will look with the full circuit:
+Lets see how the console will look with the finished example:
+
+![](1.gif)
