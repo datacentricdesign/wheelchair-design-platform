@@ -4,7 +4,7 @@ The interlink is part of the single zone FSRs family, with optimized force sensi
 
 ![](2.png)
 
-##Technical Details
+## Technical Details
 
 * Sensitivity range from 0.1N to 100N of force;
 * 0.45mm thick;
