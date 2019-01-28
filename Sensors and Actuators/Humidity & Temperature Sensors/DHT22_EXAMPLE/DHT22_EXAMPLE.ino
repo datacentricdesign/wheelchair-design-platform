@@ -1,6 +1,6 @@
 #include "DHT.h"          // Library for DHT Sensors
 
-#define DHT_PIN 10        // DIgital data pin for the sensor
+#define DHT_PIN 10        // Digital data pin for the sensor
 
 #define DHT_TYPE DHT22    // Defining our sensor
 
