@@ -19,26 +19,31 @@ void setup() {
 // Also this is based on white paper, so lighting properties of the object also change these measurements.
 double convert_to_distance( double voltage) 
 {
-    /*General model Exp2:
+
+    if( voltage > 2.85 ) // We cannot use this model below 15 cm....
+      return(0); 
+/* General model Exp2:
      f(x) = a*exp(b*x) + c*exp(d*x)
-     Coefficients (with 95% confidence bounds):
-       a =       256.1  (198.7, 313.5)
-       b =      -2.128  (-3.302, -0.9536)
-       c =       51.24  (-48.55, 151)
-       d =     -0.3724  (-1.159, 0.414)
+    Coefficients (with 95% confidence bounds):
+       a =       242.8  (190.3, 295.2)
+       b =      -2.318  (-3.569, -1.067)
+       c =          71  (-21.76, 163.8)
+       d =     -0.5228  (-1.04, -0.005801)
 
-      Goodness of fit:
-      SSE: 88.64
-      R-square: 0.9961
-      Adjusted R-square: 0.9949
-      RMSE: 2.977
-  */
+    Goodness of fit:
+    SSE: 95.14
+    R-square: 0.9965
+    Adjusted R-square: 0.9956
+    RMSE: 2.941
+ 
+ */ 
 
-  double a =  256.1; 
-  double b = -2.128; 
-  double c =  51.24;
-  double d = -0.3724;   
-  
+ double a =   242.8;
+ double b =  -2.318;  
+ double c =      71; 
+ double d = -0.5228;
+
+ 
   return(a*exp(b*voltage) + c*exp(d*voltage));
 }
 
