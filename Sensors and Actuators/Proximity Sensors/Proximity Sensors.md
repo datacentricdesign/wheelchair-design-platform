@@ -16,7 +16,8 @@ This IR proximity sensor made by Sharp is good for sensing objects up to 1.5m aw
 * Supply voltage  between [4.5 - 5.5]V;
 * Analog output 2.8V (15 cm), to 0.4V(150cm);
 * Distance Measuring Range [20 - 150]cm;
-* Non linear relation between distance and voltage.
+* Non linear (exponential) relation between distance and voltage;
+* Consumption current : Typ. 33 mA;
 
 Just like we did with the Pressure Sensor, the relation between distance and voltage is also not linear. A curve fitting was done over measured distances to have an estimate of the distance from the voltage measurements.
 
@@ -27,5 +28,8 @@ We will make a simple proximity sensor, with continuous distance measurements:
 
 ###### Schematic
 
+![](2.png)
 ###### Results
-This is how your console should look like! 
+This is how your console should look like!
+
+![](1.gif)

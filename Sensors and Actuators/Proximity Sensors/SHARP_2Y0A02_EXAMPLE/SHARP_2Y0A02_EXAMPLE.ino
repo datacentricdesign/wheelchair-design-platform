@@ -19,29 +19,29 @@ void setup() {
 // Also this is based on white paper, so lighting properties of the object also change these measurements.
 double convert_to_distance( double voltage) 
 {
+    if(voltage_value  < 0.35  || voltage_value > 2.85 ) // We will ignore values outside the range of measurement, this will happen around 20 - 150cm
+    return(0); 
 
-    if( voltage > 2.85 ) // We cannot use this model below 15 cm....
-      return(0); 
 /* General model Exp2:
      f(x) = a*exp(b*x) + c*exp(d*x)
-    Coefficients (with 95% confidence bounds):
-       a =       242.8  (190.3, 295.2)
-       b =      -2.318  (-3.569, -1.067)
-       c =          71  (-21.76, 163.8)
-       d =     -0.5228  (-1.04, -0.005801)
+Coefficients (with 95% confidence bounds):
+       a =        4498  (-1.731e+04, 2.63e+04)
+       b =      -6.351  (-12.72, 0.02085)
+       c =       104.9  (61.24, 148.5)
+       d =     -0.6928  (-0.9048, -0.4808)
 
-    Goodness of fit:
-    SSE: 95.14
-    R-square: 0.9965
-    Adjusted R-square: 0.9956
-    RMSE: 2.941
+Goodness of fit:
+  SSE: 9.915
+  R-square: 0.9974
+  Adjusted R-square: 0.9955
+  RMSE: 1.574
  
  */ 
 
- double a =   242.8;
- double b =  -2.318;  
- double c =      71; 
- double d = -0.5228;
+double a =    4498; 
+double b =  -6.351;
+double c =   104.9;
+double d = -0.6928;
 
  
   return(a*exp(b*voltage) + c*exp(d*voltage));
@@ -59,10 +59,20 @@ void loop() {
     return;
    
   voltage_value = double((value*5)) / 1023; // converting to voltage [ 0, 5] v.
-  distance_value = convert_to_distance(voltage_value); // getting actual distance value(cm) (careful using this, accuracy may not be ideal) 
+  
 
-  if(distance_value  <= 15 || distance_value >= 150 ) // We will ignore values outside the range of measurement
+  
+  distance_value = convert_to_distance(voltage_value); // getting actual distance value(cm) (careful using this, accuracy may not be ideal) 
+                                                       // due to the functioning of the sensor, once you're closer than around 20 cm, it will
+                                                       // start predicting higher distances again. Be careful with this, this is something you can
+                                                       // solve with software, however. (if previous results are close to 20 and its going down)
+                                                       // then do something.... to ignore results, perhaps.
+
+    if(distance_value  < 20  || distance_value > 150 ) // We will ignore values outside the range of measurement, this will happen around 2.7 -0.4 v
     return; 
+                                          
+
+
     
   Serial.print("Distance: ");
   Serial.print(value);
@@ -72,6 +82,6 @@ void loop() {
   Serial.print(distance_value);
   Serial.println(" cm.");
 
-  prev_value = value;
+  prev_value = value;             // Here we have the previous saved variable.
   
 }

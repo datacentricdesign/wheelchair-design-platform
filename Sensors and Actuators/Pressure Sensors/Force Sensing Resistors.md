@@ -8,9 +8,10 @@ The interlink is part of the single zone FSRs family, with optimized force sensi
 
 * Sensitivity range from 0.1N to 100N of force;
 * 0.45mm thick;
-* Handles up to 10M actuations
-* 10MΩ when non actuated
-* Non linear Resistor, so changes of force are not linear to changes in resistance, especially in the end of the sensing range (~4V and up).
+* Handles up to 10M actuations;
+* 10MΩ when non actuated;
+* Non linear Resistor, so changes of force are not linear to changes in resistance, especially in the end of the sensing range (~4V and up);
+
 
 ## Examples
 
