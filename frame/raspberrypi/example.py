@@ -11,11 +11,11 @@ from dcd.entities.thing import Thing
 from dcd.entities.property_type import PropertyType
 
 # The thing ID and the path of file containing the private key
-THING_ID = "MY_THING_ID"
-THING_PRIVATE_KEY_PATH = "path/to/private_key_file"
+THING_ID = "YOUR-THING-ID"
+THING_TOKEN = "REPLACE-WITH-YOUR-TOKEN"
 
 # Instantiate a thing with its credential
-my_thing = Thing(thing_id=THING_ID, private_key_path=THING_PRIVATE_KEY_PATH)
+my_thing = Thing(thing_id=THING_ID, token=THING_TOKEN)
 
 # We can fetch the details of our thing
 my_thing.read()
