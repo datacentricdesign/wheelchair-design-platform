@@ -1,6 +1,6 @@
 # Current & Voltage Sensors
 
-These are Integrated sensors to detect both the current, and the voltage (then, following Ohm's law, the power) of a circuit.
+These are Integrated sensors that detect both the current, and the voltage (then, following Ohm's law, the power) of a circuit.
 
 The most common method for measuring currents in electronic circuits is to place low-value sense resistors in series with the load and measure the voltage drop across them.
 
@@ -14,6 +14,16 @@ High-side and low-side current sensing refers to the placement of the current-se
 
 ![](1.png)
 
+### Pins
+1. Ground;
+2. Vcc, power with 5V;
+3. SDA data pin;
+4. SCL clock pin;
+5. Vin- terminal (if you want to use another current sensor);
+6. Vin+ terminal (if you want to use another current sensor);
+7. Vin- of INA219 DC current sensor;
+8. Vin+ of INA219 DC current sensor;
+
 ### Technical Details
 * 1% precision;
 * High Side measurement, up to +26V DC;
@@ -23,16 +33,8 @@ High-side and low-side current sensing refers to the placement of the current-se
 * Internal 12bit ADC( Analog to Digital converter);
 * Resolution  of 0.8mA at ±3.2A range.
 
-This breakout requires the use of the library Adafruit INA219. 
-#### Pins
-1. Ground;
-2. Vcc, power with 5V;
-3. SDA data pin;
-4. SCL clock pin;
-5. Vin- terminal (if you want to use another current sensor);
-6. Vin+ terminal (if you want to use another current sensor);
-7. Vin- of INA219 DC current sensor;
-8. Vin+ of INA219 DC current sensor;
+This breakout requires the use of the library Adafruit INA219.
+
 
 ### Examples
 
