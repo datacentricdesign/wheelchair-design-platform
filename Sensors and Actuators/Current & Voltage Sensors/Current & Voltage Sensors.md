@@ -35,6 +35,9 @@ High-side and low-side current sensing refers to the placement of the current-se
 
 This breakout requires the use of the library Adafruit INA219.
 
+Now lets see a list of terms for the sensor:
+* Bus voltage - voltage between GND and V-, total voltage seen by circuit under test. (supply voltage - shunt voltage);
+* Shunt voltage - voltage between V- and V+, voltage drop across the shunt resistor;
 
 ### Examples
 
