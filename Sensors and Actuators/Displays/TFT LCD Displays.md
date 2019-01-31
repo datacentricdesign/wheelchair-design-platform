@@ -1,8 +1,10 @@
-# Color TFT LCD displays
+# Displays
+
+## Color TFT LCD displays
 
 TCT LCD (Thin-film-transistor liquid-crystal display) is a variant of LCD, that uses TFT tech to improve image quality.
 
-## 1.8" Color TFT LCD display with MicroSD Card Breakout
+### 1.8" Color TFT LCD display with MicroSD Card Breakout
 
 Possessing 128 * 160 color pixels true TFT with full 18-bit color, this display can be used with any microcontroller.
 
@@ -25,7 +27,7 @@ Lets start by knowing what each pin on the breakout does:
 
 This color display uses SPI (Serial Peripheral Interface) to receive image data. That means you need at least 4 pins - clock, data in, TFT_CS and D/C. If you'd like to have SD card usage too, you need another 2 pins.
 
-## SPI
+### SPI
 
 Serial Peripheral Interface, is a common communication protocol for 2-way comms between 2 devices.
 The master can talk to any slave on the bus, but each slave can only talk to the master.
@@ -33,7 +35,7 @@ Each slave on the bus has its own unique slave select signal. The master will us
 
 SPI sets a clock signal, so the devices don't have to agree on a data rate beforehand (like you do with Serial by setting up Serial.begin() ), the clock only has to be lower than the max frequency for all devices involved.
 
-### Standard SPI bus
+#### Standard SPI bus
 Consisting of 4 signals:
 * Common to all devices:
   * Master Out Slave In (MOSI) - Master line for sending data to the peripheral;
@@ -42,7 +44,7 @@ Consisting of 4 signals:
 * Specific line for each device:
   * Slave Select (SS) -  pin on each device that the master can use to enable and disable that specific device.
 
-### SPI with Arduino
+#### SPI with Arduino
 First of all; MISO, MOSI, and SCK are available in a consistent physical location on the ICSP header:
 
 ![](2.png)
@@ -51,21 +53,21 @@ You can find the places for the headers in this schematic of the Mega, although 
 
 ![](3.png)
 
-## Examples
+### Examples
 In this section, we'll go over two basic examples, to learn the basics of using this screen with the Arduino.
 
 First of all, you will need to install the following two libraries:
 * Adafruit GFX (a graphics library);
 * Adafruit_ST7735 (a library for the display).
 
-### TFT Screen Graphics Test
+#### TFT Screen Graphics Test
 In this first example, let's run through all of the available graphics drawing functions of the Adafruit GFX library!
 
-#### Schematic
+##### Schematic
 
 ![](4.png)
 
-##### Pins of the Screen Breakout (left to right):
+###### Pins of the Screen Breakout (left to right):
 * Gnd;
 * Backlight (connect to Vcc);
 * TFT Reset pin (connect to a digital pin, 3 in this case);
@@ -77,22 +79,22 @@ In this first example, let's run through all of the available graphics drawing f
 * Not used!
 * Vcc pin.
 
-#### Results
+##### Results
 Once you've run the example program, you should see this in your serial!
 
 ![](1.gif)
-### Display Images on the TFT Screen by using a microSD card
+#### Display Images on the TFT Screen by using a microSD card
 
 In this program, we'll be displaying images in the screen (in bitmap image format)!
 We will use the previous libraries, and Arduino's SD library!
 
 Start by converting some images to 160x128 24bit color bitmap format, and placing them in a FAT16/32 formatted microSD card, and placing that in the SD card holder. You can find some bitmap files in the Example folder, and put those in the SD card
 
-#### Schematic
+##### Schematic
 
 ![](5.png)
 
-##### Pins of the Screen Breakout (left to right):
+###### Pins of the Screen Breakout (left to right):
 * Gnd;
 * Backlight (connect to Vcc);
 * TFT Reset pin (connect to a digital pin, 3 in this case);
@@ -104,7 +106,7 @@ Start by converting some images to 160x128 24bit color bitmap format, and placin
 * MISO pin (connect to MISO hardware pin (SCPI-1));
 * Vcc pin.
 
-####  Results
+#####  Results
 You should see this in your console at the end!
 
 ![](2.gif)
