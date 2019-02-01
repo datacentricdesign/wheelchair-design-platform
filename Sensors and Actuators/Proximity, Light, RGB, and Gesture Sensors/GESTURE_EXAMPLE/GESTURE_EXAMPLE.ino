@@ -1,7 +1,7 @@
 // Based on adafruit gesture_sensor example
 
 /*  This sketch puts the sensor in gesture mode and decodes gestures
-  To use this, first put your hand close to the sensor to enable gesture mode
+  To use this, first put your hand close to the sensor to enable gesture mode (5cm)
   Then, with your hand about 15cm from the sensor try the gesture  up -> down, 
   down -> up, left -> right, or right -> left direction.
 */
@@ -29,9 +29,9 @@ void loop() {
   //read a gesture from the device
     gesture = apds.readGesture(); // Read gesture into the variable
 
-    // Processing captured gesture, if any
-    if(gesture == APDS9960_DOWN) Serial.println("v");
-    if(gesture == APDS9960_UP) Serial.println("^");
-    if(gesture == APDS9960_LEFT) Serial.println("<-");
-    if(gesture == APDS9960_RIGHT) Serial.println("->");
+    // Processing captured gesture, if any.
+    if(gesture == APDS9960_DOWN) Serial.println("⬇");
+    if(gesture == APDS9960_UP) Serial.println("⬆");
+    if(gesture == APDS9960_LEFT) Serial.println("⬅");
+    if(gesture == APDS9960_RIGHT) Serial.println("➡");
 }
