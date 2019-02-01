@@ -14,7 +14,7 @@ void setup() {
   if(!apds.begin()){              // Beginning the work period of the sensor
     Serial.println("failed to initialize device! Please check your wiring.");
   }
-  else Serial.println("Device initialized!");
+  else Serial.println("Proximity Sensor initialized!");
 
   apds.enableProximity(true);      // Enabling proximity mode
 
