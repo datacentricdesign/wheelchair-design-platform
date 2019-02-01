@@ -12,7 +12,8 @@ This breakout has a lot of integrated sensors, and allows the addition of basic 
 3.  Gnd;
 4.  SCL, clock pin of I2C;
 5.  SDA, data pin of I2C;
-6.  Interrupt output pin, can be used to detect new reading is ready, gets too high, or gets too low.
+6.  Interrupt output pin, can be used to detect new reading is ready, gets too high, or gets too low;
+7. Proximity detection up to ≈ 15-20cm.
 
 This breakout uses the Library Adafruit APDS9960 library.
 
@@ -25,11 +26,29 @@ This breakout uses the Library Adafruit APDS9960 library.
 
 ### Examples
 
-#### Gestures!
+#### Gestures
 In this example we're going to test the gesture features of the board!
 
 ##### Schematic
-![]()
+![](2.png)
 
 ##### Results
-![]()
+![](3.gif)
+
+#### RGBC Color Sensing
+In this example we're going to test the RGB color sensing features of the board!
+
+##### Schematic
+![](2.png)
+
+##### Results
+![](2.gif)
+
+#### Proximity sensor
+In this example we're going to test the proximity features of the board!
+
+##### Schematic
+![](3.png)
+
+##### Results
+![](1.gif)
