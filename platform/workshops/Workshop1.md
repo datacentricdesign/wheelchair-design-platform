@@ -112,6 +112,14 @@ Close and reopen the terminal to check the installation
 python3 --version
 ```
 
+In python Pip is a tool that manages packages for us. We will use it to install
+and update any Python library our project relies on. You can install it with
+the following command:
+
+```bash
+python get-pip.py
+```
+
 ### Atom
 
 Another tool we need is a code editor, commonly called IDE for integrated
@@ -192,26 +200,150 @@ corner, click on 'push'.
 Other members of the group can now press 'Fetch' in the bottom-right corner to 
 update their local repository with the latest version.
 
-### Arduino IDE
+### Data-Centric Design Hub (Per group)
+
+In the cloud we will use our prototyped cloud platform for designer we call 
+Data-Centric Design Hub.
+
+* Person have a collection of Things;
+* Things are physical or virtual entities with Properties.
+* Properties are one-to-many dimensional data points
+
+In our wheelchair case, we have one Thing (the wheelchair) with properties such
+as acceleration (3 values for x, y and z) or sit pressure (a value for each force
+sensors on the sit).
+
+Go to the hub manager via https://dwd.tudelft.nl/manager and sign up as a group
+with an email address, a name and a password. The sign up process create an
+account, then standard OAuth2 process start with a consent: you need to let the
+manager access your Things, so that it can help you manage them.
+
+Once the consent succeed, you can click on 'My Things' and create a first one.
+For example with the name 'My wheelchair', type 'Wheelchair',
+description 'An Internet-connected wheelchair'
+
+The process take a few seconds as the hub generate an access token for your Thing.
+
+COPY A SAVE THIS TOKEN in a file, it will be shown only once and enable your wheelchair
+to communicate with the hub. You can also save the thing id, but you can always
+go back to the manager to retrieve this id.
 
 
+### Python example
 
-### C++
+Back to Atom and your project, let's create a first Python example.
 
-### Data-Centric Design Hub
+We use Pip to install the dependencies we need, listed in the file requirements.txt.
+This file contains a dependence to the library writen for the Data-Centric Design
+Hub as well as the a dependence for MQTT, a communication protocol we use to
+talk to the hub.
 
-Per group:
+In Atom, open a terminal from the top menu 'View > Terminal > New Terminal Window'
+and execute the following command.
 
-* Register as user
-* Create a thing
-* Keep thing id and token
+```bash
+pip3 install -r requirements.txt --user
+```
 
-### Grafana
+Here we 'install', the option -r indicates we provide a file name that contains 
+the required dependencies, the option --user indicates we install the dependencies
+in a dependency folder specific for the current users.
 
-* Connect
-* Look at the live data of the demo
+On the left panel, right click on the root folder > New Folder and name it 'wheelchair'.
+
+Copy the file platform > examples > raspberrypi > get_started.py 
+in your 'wheelchair' folder.
+
+Opening this file, this Python code import the necessary library, then we can see
+the following lines:
+
+```python
+THING_ID = os.environ['THING_ID']
+THING_TOKEN = os.environ['THING_TOKEN']
+```
+
+In Python, it means we look at the environment variables to read the id and
+access token of our thing. To provide these information as environment variable,
+right click at the root of your project (left panel) and create a file '.env'.
+
+In this file, type in the following and paste your id and access token after
+the equal signs.
+
+```bash
+THING_ID=
+THING_TOKEN=
+```
+
+Going back to the get_started.py Python script, read through the code and comments
+to capture the main steps:
+
+* Create and connect a Thing to the Hub
+* Retrieve and display the Thing details
+* If the Thing is not containing any property, create a dum property
+* In any case, retrieve this dum property
+* Continuously call a method that generate dum data and send them to the hub
+
+Here are a few Python elements to note:
+
+* Use # in Python to comment your code
+* my_thing and my_property are variables
+* To display information in the terminal, we use the method print()
+
+```python
+print("show text")
+```
+
+* Conditional statement: In Python we express the condition with 'if', elif
+(else if) and else (more here https://www.tutorialspoint.com/python/python_if_else.htm).
+
+In our case, we check if the thing details we retrieved from the server has no property
+(a newly created Thing) and then create a dum property.
+
+```python
+if len(my_thing.properties) == 0:
+    # create a dum property
+```
+
+* Indentation is key in Python. Take the previous example of condition, the indentation
+define what is in the condition. Any following line align with the if would be
+considered outside the condition.
+
+
+## Execute the Python code
+
+Let's execute this code. Go to the Atom terminal and type in the following command:
+
+```bash
+python3 wheelchair/getStarted.py
+```
+
+If the example run properly you should see a log generated every two seconds,
+indicating dum data is being sent to the Hub.
+
+### Visualise data on Grafana
+
+To visualise this data, we use Grafana.
+
+Go to the https://dwd.tudelft.nl/grafana, click on Sign in with OAuth. Fill in
+your Data-Centric design Hub email and password. Similarly to the manager,
+consent to let Grafana access your data.
+
+
+Go to 'Dashboard > Manage' and create a new folder for your project.
+Then, create a new Dashboard and select a new panel 'Graph'. At the top of this new panel, click on 'Panel Title > Edit'
+
+At the bottom, in the query element GROUP BY, click on time and 'remove'.
+
+In FROM, click on 'Select Measurement' and select your Property ID. If your 
+Property ID is not appearing in the list, the hub is not receiving data from
+your python code.
+
+In SELECT, click on field and select Value1. Then click on the 
++ sign > Fields > Field to add Value2 and Value3.
 
 ## Raspberry Pi
+
+The next step consists in setting up the RaspberryPi and running your code on it.
 
 * Main Components
 
