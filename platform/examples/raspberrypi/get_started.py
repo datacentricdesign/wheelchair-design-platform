@@ -4,20 +4,23 @@
 # This is a typical case for a Python code running
 # on a device to collect data.
 
+# Import required library
 from random import random
 import time
+import os
 
 from dcd.entities.thing import Thing
 from dcd.entities.property_type import PropertyType
 
-# The thing ID and the path of file containing the private key
-THING_ID = "YOUR-THING-ID"
-THING_TOKEN = "REPLACE-WITH-YOUR-TOKEN"
+# The thing ID and access token
+THING_ID = os.environ['THING_ID']
+THING_TOKEN = os.environ['THING_TOKEN']
 
 # Instantiate a thing with its credential
 my_thing = Thing(thing_id=THING_ID, token=THING_TOKEN)
 
 # We can fetch the details of our thing
+# getDetails()
 my_thing.read()
 
 # If you just registered your Thing on the DCD Hub,
@@ -29,8 +32,9 @@ if len(my_thing.properties) == 0:
     # By specifying a property type, the DCD Hub will
     # automatically generate the property dimensions
     # (in this case, 3 generic dimensions)
-    my_property = my_thing.create_property(name="My Random Property",
-                                           property_type=PropertyType.THREE_DIMENSIONS)
+    my_property = my_thing.create_property(
+        name="My Random Property",
+        property_type=PropertyType.THREE_DIMENSIONS)
 
     # Let's have a look at the property, it should
     # contains the name, a unique id and the dimensions
@@ -42,7 +46,6 @@ if len(my_thing.properties) == 0:
 # create them both, but this function will randomly return the first
 # it finds.
 my_property = my_thing.find_property_by_name("My Random Property")
-
 
 # Let's create a function that generate random values
 def generate_dum_property_values(the_property):
