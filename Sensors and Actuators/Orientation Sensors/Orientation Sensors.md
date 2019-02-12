@@ -56,10 +56,9 @@ In this example, simple orientation data in the form of Euler Angles is given.
 ![](4.png)
 
 Using it, the three Euler angles can be defined as follows:
-
- * $\alpha\ (or\ \varphi )$ - is the angle between the x axis and the N axis (x-convention - it could also be defined between y and N, called y-convention).
- * ${\displaystyle\  \beta }  (or\ {\displaystyle \theta})$ is the angle between the z axis and the Z axis.
- * ${\displaystyle\  \gamma }   (or\ {\displaystyle \psi }  )$ is the angle between the N axis and the X axis (x-convention).
+ ⍺ (or φ) β- is the angle between the x axis and the N axis (x-convention - it could also be defined between y and N, called y-convention).
+ * β (or ϴ) is the angle between the z axis and the Z axis.
+ * ɣ (or Ψ) is the angle between the N axis and the X axis (x-convention).
 
 ##### Schematic
 
