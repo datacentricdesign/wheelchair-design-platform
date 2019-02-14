@@ -80,16 +80,17 @@ the following command:
 ### On Mac
 
 ```bash
-python get-pip.py
+python3 get-pip.py
 ```
 
 ### On Windows
 
 Download the file [get-pip.py](https://bootstrap.pypa.io/get-pip.py) and save
-it in your Download folder. In the Atom terminal, type in the following command:
+it (CMD+S or Ctrl+S) in your Downloads folder. In the Atom terminal, type in the
+following command:
 
 ```bash
-python Download\get-pip.py
+python Downloads\get-pip.py
 ```
 
 ## 1.3 Python in Atom
@@ -101,8 +102,9 @@ specifically for Python. Go to the terminal and type:
 python3 -m pip install 'python-language-server[all]'
 ```
 
-When it is installed, on the top menu of Atom, click on *'Atom' > 
-'Preferences' > 'Packages'*. Search and install 'atom-ide-ui' and 'ide-python'.
+When it is installed, on the top menu of Atom, click on *'Packages' > 
+'Settings View' > 'Install Packages/Themes'*. Search and install 'atom-ide-ui'
+and 'ide-python'.
 
 ## 1.4 Git & GitHub
 
