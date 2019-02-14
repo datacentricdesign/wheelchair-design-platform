@@ -45,9 +45,25 @@ If the command results is 'Not found', you need to install Python 3.
 Otherwise, skip the rest of this section.
 
 Select, download and install the latest version of Python 3 for Windows or Mac
-on this page: https://www.python.org/downloads/release/python-372/
+[here](https://www.python.org/downloads/release/python-372/)
 
-Close and reopen the terminal to check the installation
+### Windows
+
+On Windows, once installed go to Start > System > System > System Settings > Environment Variable
+
+In User Variables, double click on 'Path'. At the end of the line, add a semi-colon followed by
+
+(Replace YOUR_USERNAME by your Windows user name)
+
+C:\Users\YOUR_USERNAME\AppData\Local\Programs\Python\Python37
+
+Close and reopen the Atom to check the installation
+
+```bash
+python --version
+```
+
+### On Mac 
 
 ```bash
 python3 --version
