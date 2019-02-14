@@ -47,15 +47,15 @@ Otherwise, skip the rest of this section.
 Select, download and install the latest version of Python 3 for Windows or Mac
 [here](https://www.python.org/downloads/release/python-372/)
 
-### Windows
+### On Windows
 
-On Windows, once installed go to Start > System > System > System Settings > Environment Variable
+Once installed go to Start > System > Properties > Advanced System Properties > Environment Variable
 
-In User Variables, double click on 'Path'. At the end of the line, add a semi-colon followed by
-
-(Replace YOUR_USERNAME by your Windows user name)
+In User Variables, double click on 'Path'. At the end of the line, add a semi-colon followed by:
 
 C:\Users\YOUR_USERNAME\AppData\Local\Programs\Python\Python37
+
+(Replace YOUR_USERNAME by your Windows user name)
 
 Close and reopen the Atom to check the installation
 
@@ -65,16 +65,31 @@ python --version
 
 ### On Mac 
 
+Close and reopen the Atom to check the installation
+
 ```bash
 python3 --version
 ```
+
+## 1.2.1 Dependencies
 
 In python Pip is a tool that manages packages for us. We will use it to install
 and update any Python library our project relies on. You can install it with
 the following command:
 
+### On Mac
+
 ```bash
 python get-pip.py
+```
+
+### On Windows
+
+Download the file [get-pip.py](https://bootstrap.pypa.io/get-pip.py) and save
+it in your Download folder. In the Atom terminal, type in the following command:
+
+```bash
+python Download\get-pip.py
 ```
 
 ## 1.3 Python in Atom
