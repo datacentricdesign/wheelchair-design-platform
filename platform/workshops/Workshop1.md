@@ -22,8 +22,12 @@ The first of them is the terminal. A terminal is a text-based interface we use
 to enter and execute commands on a computer. While we will maximise the use of
 graphical tools, we will also use the terminal in some occasion.
 
-In Atom, open a terminal from the top menu 'View > Terminal > New Terminal Window'
-and execute the following command.
+On the top menu, go to Packages > Settings View > Install Packages/Themes
+
+Search for 'terminal plus' and install the first one 'platformio-ide-terminal'
+
+Now you can open a terminal by clicking on the + sign in the bottom left corner.
+
 
 ## 1.2 Python
 
