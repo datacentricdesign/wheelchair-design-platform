@@ -1,2 +1,4 @@
-dcd-sdk>=0.0.3
+dcd-sdk>=0.0.4
 paho-mqtt
+python-dotenv
+pyserial

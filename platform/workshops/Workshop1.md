@@ -1,100 +1,37 @@
 # Workshop 1: Building an Internet-connected Wheelchair
 
 
+Activities
 
-## Activities
+1. Tools: Atom, Python and Git
+2. Generating and Visualising Data
+3. Data Collection with Arduino
 
-* Tools
-* Setup Raspberry Pi
-* Setup Arduino
+# 1. Tools
 
-## Tools
+## 1.1 Atom
 
-### Terminal
+The first tool we need is a code editor, commonly called IDE for integrated
+development editor. For this we will use Atom, as it is open source and popular 
+for its modularity. 
 
-A terminal is a text-based interface we use to enter and execute commands on a computer.
-While we will maximise the use of graphical tools, we will also use the terminal
-in some occasion.
+Download and start Atom: https://atom.io/
 
-* On Windows, it is called 'Command Prompt'.
-* On Mac, it is called 'Terminal'.
+Atom has the typical features of an IDE, we will go through them during this workshop.
+The first of them is the terminal. A terminal is a text-based interface we use
+to enter and execute commands on a computer. While we will maximise the use of
+graphical tools, we will also use the terminal in some occasion.
 
-Go back to this text-based interface each time we refer to the 'terminal'.
+In Atom, open a terminal from the top menu 'View > Terminal > New Terminal Window'
+and execute the following command.
 
-### Git & GitHub
+## 1.2 Python
 
-Git is a version control system (VCS). It helps keeping track of all changes
-in your project and share it. While it is heavily used by software developer to
-track and share code, it is also useful to track and share the progress of any
-design or research process. The principle is as follows: you share a remote
-repository, you 'pull' from this repository the latest changes (any files, code,
-doc...) from your peers, you make changes on your machine, and you 'push' your
-changes on the remote repository, making them available for your peers.
-
-Here are four short videos with more details:
-
-* https://git-scm.com/video/what-is-version-control
-* https://git-scm.com/video/what-is-git
-* https://git-scm.com/video/get-going
-* https://git-scm.com/video/quick-wins
-
-* Install Git
-
-Windows / Mac
-
-GitHub is a popular online platform that host remote Git repositories.
-We will use it throughout the course to host your repo
-
-* Sign up on GitHub
-
-If you do not have GitHub account, sign up here: https://github.com/
-
-* Fork repository (only one member of the group)
-
-'A fork is a copy of a repository. Forking a repository allows you to freely
-experiment with changes without affecting the original project.'
-(GitHub help https://help.github.com/articles/fork-a-repo/)
-
-On the top-right corner of this GitHub page, click on Fork. In the dialog,
-select your account. You have now a copy of the wheelchair-design-platform
-repository on your own account.
-
-* Add members to repo (only one member of the group)
-
-Your repository is publicly accessible for reading. However, you need to give other member of the group 
-access to this repository. On the top menu, click 'Settings' > 'Collaborators'.
-Search the username of your group members and add them.
-
-* Create a project
-
-GitHub offers a convenient way of managing your projects with a Kanban style
-board. On the top menu, click on 'Projects' and click on the green button 'New
-Project'. Fill in a project name and click 'Create project'. You can use this
-space to map your tasks and your progress.
-
-* Clone repository (all group members)
-
-'When you create a repository on GitHub, it exists as a remote repository. You
-can clone your repository to create a local copy on your computer and sync
-between the two locations.'
-(GitHub help https://help.github.com/articles/cloning-a-repository/)
-
-On GitHub, at the top of you repository, click on the green button 'Clone or
-download' and copy the provided link.
-
-Go back to the terminal, and type in 'git clone' followed by the link you copied.
-For example:
-
-```bash
-git clone https://github.com/example/wheelchair-design-platform.git
-```
-
-### Python
-
-To run Python code, we need to install the Python interpreter on your machine. 
+Python is the main programming language we will use throughout this course. To
+execute Python code on your machine, you need to install a Python interpreter.
 We will use Python 3.x (as opposed to 2.x).
 
-Back to the terminal, type in the following command
+In Atom, open a terminal and type in the following command
 
 ```bash
 python3 --version
@@ -120,27 +57,87 @@ the following command:
 python get-pip.py
 ```
 
-### Atom
+## 1.3 Python in Atom
 
-Another tool we need is a code editor, commonly called IDE for integrated
-development editor. For this we will use Atom, as it is open source and popular 
-for its modularity. 
-
-Download and start Atom: https://atom.io/
-
-* ide-python
-
-The next step is the python plugin, to get some help from in Atom specifically
-for Python. Go to the terminal and type:
+The next step is the Python plugin for Atom, to get some help from in Atom
+specifically for Python. Go to the terminal and type:
 
 ```bash
 python3 -m pip install 'python-language-server[all]'
 ```
 
-When it is installed, go back to Atom. On the top menu, click on 'Atom' > 
-'Preferences' > 'Packages'. Search and install 'atom-ide-ui' and 'ide-python'.
+When it is installed, on the top menu of Atom, click on *'Atom' > 
+'Preferences' > 'Packages'*. Search and install 'atom-ide-ui' and 'ide-python'.
 
-* Open your project
+## 1.4 Git & GitHub
+
+Git is a version control system (VCS). It helps keeping track of all changes
+in your project and share it. While it is heavily used by software developer to
+track and share code, it is also useful to track and share the progress of any
+design or research process. The principle is as follows: you share a remote
+repository, you 'pull' from this repository the latest changes (any files, code,
+doc...) from your peers, you make changes on your machine, and you 'push' your
+changes on the remote repository, making them available for your peers.
+
+Here are four short videos with more details:
+
+* [What is version control](https://git-scm.com/video/what-is-version-control)
+* [What is git](https://git-scm.com/video/what-is-git)
+* [Get going](https://git-scm.com/video/get-going)
+* [Quick wins](https://git-scm.com/video/quick-wins)
+
+* Install Git
+
+Windows / Mac
+
+GitHub is a popular online platform that host remote Git repositories.
+We will use it throughout the course to host your repo
+
+* Sign up on GitHub
+
+If you do not have GitHub account, sign up [here](https://github.com/)
+
+* Fork repository __**(only one member of the group)**__
+
+*'A fork is a copy of a repository. Forking a repository allows you to freely
+experiment with changes without affecting the original project.'*
+[GitHub help](https://help.github.com/articles/fork-a-repo/)
+
+On the top-right corner of this GitHub page, click on Fork. In the dialog,
+select your account. You have now a copy of the wheelchair-design-platform
+repository on your own account.
+
+* Add members to repo __**(only one member of the group)**__
+
+Your repository is publicly accessible for reading. However, you need to give
+other member of the group access to this repository. On the top menu, click 
+*'Settings' > 'Collaborators'*. Search the username of your group members and add them.
+
+* Create a project
+
+GitHub offers a convenient way of managing your projects with a Kanban style
+board. On the top menu, click on 'Projects' and click on the green button 'New
+Project'. Fill in a project name and click 'Create project'. You can use this
+space to map your tasks and your progress.
+
+* Clone repository (all group members)
+
+*'When you create a repository on GitHub, it exists as a remote repository. You
+can clone your repository to create a local copy on your computer and sync
+between the two locations.'*
+[GitHub help](https://help.github.com/articles/cloning-a-repository/)
+
+On GitHub, at the top of you repository, click on the green button 'Clone or
+download' and copy the provided link.
+
+Go back to the terminal, and type in 'git clone' followed by the link you copied.
+For example:
+
+```bash
+git clone https://github.com/example/wheelchair-design-platform.git
+```
+
+## 1.5 Project in Atom
 
 To open the project you cloned, on the top menu click on 'File' > 'Open...' and
 select the folder you cloned. On the left panel, you can see the files of your
@@ -153,19 +150,26 @@ edit or delete files in this folder;
 with Git. It is especially convenient for local configuration or passwords not 
 to be shared;
 * LICENSE contains the MIT license for this project;
-* README.md contains a short introduction to the platform in markdown, a simple
-text formatting language;
+* README.md contains a short introduction to the platform in Markdown. Markdown 
+is a lightweight markup language, i.e. minimal set tags to format text;
 * requirements.txt contains the list of python library you need to install for
 the project to work;
 
+## 1.6 Git Flow
 
-### Git Flow
+To experience the Git flow of updating and sharing progress, let's update the
+ project documentation.
 
-To experience Git flow of updating and sharing progress, open README.md and add
-a title at the top of the file, for example:
+### Step 1: Edit (a) File(s)
+
+When developing, it is common to document the project using Markdown. In Markdown,
+we use '#' for titles and '*' for bullet points. More formatting can be found
+[here](https://guides.github.com/features/mastering-markdown/)
+
+Open README.md and add a title at the top of the file, for example:
 
 ```markdown
-# Noisy Wheelchair
+# A Noisy Wheelchair
 
 A short description...
 
@@ -174,33 +178,36 @@ A short description...
 
 ```
 
-In markdown, # represents headers and * represents bullet points. More
-formatting can be found here: https://guides.github.com/features/mastering-markdown/
-
-
 Note: A blue dot appear next to your file name README.md at the top of the page,
 letting you know it is not saved. Press Command+S (or Ctrl+S) to save.
+
+### Step 2: Stage, i.e Select File Changes
 
 Your file appears in yellow in the left panel. It means that there are changes
 in this file that are not yet tracked by Git (unstaged). Click on Git in the
 bottom-right corner.
 
-* In the 'Unstaged changes', double-click on the README.md to 'stage' it, i.e. 
+In the 'Unstaged changes', double-click on the README.md to 'stage' it, i.e. 
 prepare this file to track its changes. The middle tab show you what are the
 changes;
 
-* Then we add a 'Commit message' to briefly explain the nature of those changes,
+### Step 3: Commit, i.e Record Changes Locally
+
+Then we add a 'Commit message' to briefly explain the nature of those changes,
 e.g. 'a test of Git and Markdown'. Click on 'Commit to Master' to track the changes.
 You have made one change (commit) to your local repository;
 
-* The final step consists in sharing this change with your peers. In the bottom-right
+### Step 4: Push, i.e  Send Local Changes to GitHub
+
+The final step consists in sharing this change with your peers. In the bottom-right
 corner, click on 'push'.
 
+### Step 5: Fetch (or Pull), i.e Get the Latest Changes from GitHub
 
 Other members of the group can now press 'Fetch' in the bottom-right corner to 
 update their local repository with the latest version.
 
-### Data-Centric Design Hub (Per group)
+## 1.7 Data-Centric Design Hub (Per group)
 
 In the cloud we will use our prototyped cloud platform for designer we call 
 Data-Centric Design Hub.
@@ -213,10 +220,10 @@ In our wheelchair case, we have one Thing (the wheelchair) with properties such
 as acceleration (3 values for x, y and z) or sit pressure (a value for each force
 sensors on the sit).
 
-Go to the hub manager via https://dwd.tudelft.nl/manager and sign up as a group
-with an email address, a name and a password. The sign up process create an
-account, then standard OAuth2 process start with a consent: you need to let the
-manager access your Things, so that it can help you manage them.
+Go to the hub manager via [https://dwd.tudelft.nl/manager](https://dwd.tudelft.nl/manager)
+and sign up as a group with an email address, a name and a password. The sign up
+process create an account, then standard OAuth2 process start with a consent: you
+need to let the manager access your Things, so that it can help you manage them.
 
 Once the consent succeed, you can click on 'My Things' and create a first one.
 For example with the name 'My wheelchair', type 'Wheelchair',
@@ -224,21 +231,23 @@ description 'An Internet-connected wheelchair'
 
 The process take a few seconds as the hub generate an access token for your Thing.
 
-COPY A SAVE THIS TOKEN in a file, it will be shown only once and enable your wheelchair
-to communicate with the hub. You can also save the thing id, but you can always
-go back to the manager to retrieve this id.
+**COPY AND SAVE THIS TOKEN** in a file, it will be shown only once and enable
+your wheelchair to communicate with the hub. You can also save the thing id, but
+you can always go back to the manager to retrieve this id.
 
 
-### Python example
+# 2. Generating and Visualising Data
 
 Back to Atom and your project, let's create a first Python example.
+
+## 2.1 Dependencies
 
 We use Pip to install the dependencies we need, listed in the file requirements.txt.
 This file contains a dependence to the library writen for the Data-Centric Design
 Hub as well as the a dependence for MQTT, a communication protocol we use to
 talk to the hub.
 
-In Atom, open a terminal from the top menu 'View > Terminal > New Terminal Window'
+Open the Atom terminal from the top menu 'View > Terminal > New Terminal Window'
 and execute the following command.
 
 ```bash
@@ -248,6 +257,8 @@ pip3 install -r requirements.txt --user
 Here we 'install', the option -r indicates we provide a file name that contains 
 the required dependencies, the option --user indicates we install the dependencies
 in a dependency folder specific for the current users.
+
+## 2.2 Get Started Code Example
 
 On the left panel, right click on the root folder > New Folder and name it 'wheelchair'.
 
@@ -274,6 +285,8 @@ THING_ID=
 THING_TOKEN=
 ```
 
+## 2.3 Read through the Python Code
+
 Going back to the get_started.py Python script, read through the code and comments
 to capture the main steps:
 
@@ -294,7 +307,7 @@ print("show text")
 ```
 
 * Conditional statement: In Python we express the condition with 'if', elif
-(else if) and else (more here https://www.tutorialspoint.com/python/python_if_else.htm).
+(else if) and else (more details [here](https://www.tutorialspoint.com/python/python_if_else.htm)).
 
 In our case, we check if the thing details we retrieved from the server has no property
 (a newly created Thing) and then create a dum property.
@@ -308,8 +321,7 @@ if len(my_thing.properties) == 0:
 define what is in the condition. Any following line align with the if would be
 considered outside the condition.
 
-
-## Execute the Python code
+## 2.4 Execute the Python code
 
 Let's execute this code. Go to the Atom terminal and type in the following command:
 
@@ -320,17 +332,18 @@ python3 wheelchair/getStarted.py
 If the example run properly you should see a log generated every two seconds,
 indicating dum data is being sent to the Hub.
 
-### Visualise data on Grafana
+## 2.5 Visualise Data on Grafana
 
 To visualise this data, we use Grafana.
 
-Go to the https://dwd.tudelft.nl/grafana, click on Sign in with OAuth. Fill in
-your Data-Centric design Hub email and password. Similarly to the manager,
-consent to let Grafana access your data.
+Go to the [https://dwd.tudelft.nl/grafana](https://dwd.tudelft.nl/grafana),
+click on Sign in with OAuth. Fill in your Data-Centric design Hub email and
+password. Similarly to the manager, consent to let Grafana access your data.
 
 
 Go to 'Dashboard > Manage' and create a new folder for your project.
-Then, create a new Dashboard and select a new panel 'Graph'. At the top of this new panel, click on 'Panel Title > Edit'
+Then, create a new Dashboard and select a new panel 'Graph'. At the top of this
+new panel, click on 'Panel Title > Edit'
 
 At the bottom, in the query element GROUP BY, click on time and 'remove'.
 
@@ -341,78 +354,60 @@ your python code.
 In SELECT, click on field and select Value1. Then click on the 
 + sign > Fields > Field to add Value2 and Value3.
 
-## Raspberry Pi
 
-The next step consists in setting up the RaspberryPi and running your code on it.
+Back in the Atom terminal, stop your Python script with CMD+C (Ctrl+C).
 
-Insert the SD card in your laptop.
+# 3. Data Collection with Arduino
 
-Download and install the software 
+So far, we use our laptop to generate random data and send them to the cloud. As
+it is not large and power intensive, we need a smaller computer to run the same
+code on the wheelchair. To this end, in workshop 2 we will setup a Raspberry Pi
+(i.e. a small computer) to run this code directly on the wheelchair.
 
-Get the lattest Raspbian here: https://www.raspberrypi.org/downloads/raspbian/
+For now, we will use your laptop to do this job and implement an example of actual
+data collection.
 
-Unzip the file, you obtain an image file (extension .img)
+## 3.1 Install Arduino IDE
 
-To install this image on the SD card, download and install Etcher: https://www.balena.io/etcher/
+Similar to Atom, Arduino IDE is an editor with a convenient set of tools to programme
+Arduino-like devices. You can download and install the latest version from
+[here](https://www.arduino.cc/en/Main/Software).
 
-Starting Etcher, you first select your image file, then your SD card, and 'Flash'.
+## 3.2 Push Button Example
 
-To connect to the Raspberry Pi without monitor, mouse and keyboard, we use directly your laptop. To do this, we need to enable the ssh protocol on the Raspberry Pi (secure remote access to a computer).
+In Atom, copy the folder platform > examples > arduino > push_button_led_log
+in your 'wheelchair' folder. Then, open this folder in Arduino IDE.
 
-On your laptop, open text editor (TextEdit on Mac, Editor on Windows) and save an empty file named 'ssh' (without extension). This file will indicate that we want to enable ssh.
+Looking at the code, we recognise the Arduino-like structure in three blocks:
+* Declaration of variables and libraries, available throughout the code;
+* The Setup() method executed once when the Arduino start;
+* The Loop() method executed infinitely after the setup method.
 
-(add process for netword auto config)
+The following flow chart illustrates the algorithm of this example code.
 
-Eject the SD card and insert it in on the Raspberry Pi, then power the Pi
+![Flowchart Push Button](images/push_button_flow_chart.png)
 
-(Scan and find your IP address)
+## 3.3 Wire Push Button and LED
 
-Open a terminal (or 'command prompt' on Windows). Type in
+In this example we need three wires, a resistor, an LED and a push button.
 
-```
-ssh pi@<your ip address>
-```
+## 3.4 Connect Arduino
 
-Update
+* Copy the code from platform > examples > arduino > get_started
 
-```
-sudo apt-get update
-sudo apt-get upgrade
-```
+* Verify
 
-Create a folder
+* Flash the code
 
-```
-mkdir wheelchair
-cd wheelchair
-```
-
-Set up Git
-
-```
-sudo apt-get git
-```
-
-Clone your GitHub repository
-
-git clone
+* Look at the input in the Serial monitor, pressing the push button should turn on
+the LED and produce a log in the Serial Monitor
 
 
-* Main Components
+### Update Python Example
 
-* Architecture
+* Read from Serial
 
-* Setting up the Raspberry Pi
+* transfer to the Hub
 
-* Network
+* Visualise data on Grafana
 
-* Bash commands
-
-## Arduino
-
-
-
-## Visualisation
-
-* Create a dashboard
-* Build query
