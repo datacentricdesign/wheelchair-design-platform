@@ -109,7 +109,7 @@ and 'ide-python'.
 ## 1.4 Git & GitHub
 
 Git is a version control system (VCS). It helps keeping track of all changes
-in your project and share it. While it is heavily used by software developer to
+in your project and share it. While it is heavily used by software developers to
 track and share code, it is also useful to track and share the progress of any
 design or research process. The principle is as follows: you share a remote
 repository, you 'pull' from this repository the latest changes (any files, code,
@@ -123,18 +123,18 @@ Here are four short videos with more details:
 * [Get going](https://git-scm.com/video/get-going)
 * [Quick wins](https://git-scm.com/video/quick-wins)
 
-* Install Git
+### Install Git
 
 Windows / Mac
 
-GitHub is a popular online platform that host remote Git repositories.
+GitHub is a popular online platform that hosts remote Git repositories.
 We will use it throughout the course to host your repo
 
-* Sign up on GitHub
+### Sign up on GitHub
 
 If you do not have GitHub account, sign up [here](https://github.com/)
 
-* Fork repository __**(only one member of the group)**__
+### Fork repository (only one member of the group)
 
 *'A fork is a copy of a repository. Forking a repository allows you to freely
 experiment with changes without affecting the original project.'*
@@ -144,30 +144,30 @@ On the top-right corner of this GitHub page, click on Fork. In the dialog,
 select your account. You have now a copy of the wheelchair-design-platform
 repository on your own account.
 
-* Add members to repo __**(only one member of the group)**__
+### Add members to repo __**(only one member of the group)**__
 
 Your repository is publicly accessible for reading. However, you need to give
 other member of the group access to this repository. On the top menu, click 
 *'Settings' > 'Collaborators'*. Search the username of your group members and add them.
 
-* Create a project
+### Create a project
 
 GitHub offers a convenient way of managing your projects with a Kanban style
 board. On the top menu, click on 'Projects' and click on the green button 'New
-Project'. Fill in a project name and click 'Create project'. You can use this
-space to map your tasks and your progress.
+Project'. Fill in a project name, select the template 'Basic Kanban' and click
+'Create project'. You can use this space to map your tasks and your progress.
 
-* Clone repository (all group members)
+### Clone repository (all group members)
 
 *'When you create a repository on GitHub, it exists as a remote repository. You
 can clone your repository to create a local copy on your computer and sync
 between the two locations.'*
-[GitHub help](https://help.github.com/articles/cloning-a-repository/)
+[GitHub help](https://help.github.com/articles/cloning-a-repository/){:target="_blank"}
 
 On GitHub, at the top of you repository, click on the green button 'Clone or
 download' and copy the provided link.
 
-Go back to the terminal, and type in 'git clone' followed by the link you copied.
+Go back to Atom the terminal, and type in 'git clone' followed by the link you copied.
 For example:
 
 ```bash
