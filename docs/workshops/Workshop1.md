@@ -32,57 +32,67 @@ Python is the main programming language we will use throughout this course. To
 execute Python code on your machine, you need to install a Python interpreter.
 We will use Python 3.x (as opposed to 2.x).
 
-In Atom, open a terminal and type in the following command
+In Atom, open a terminal and type in the following command to check if Python is 
+installed on your laptop with the appropriate version.
+
+On Mac, type in
 
 ```bash
 python3 --version
 ```
 
-If the command results is 'Not found', you need to install Python 3.
-Otherwise, skip the rest of this section.
-
-Select, download and install the latest version of Python 3 for Windows or Mac
-<a href="https://www.python.org/downloads/release/python-372/" target="_blank">here</a>.
-
-### On Windows
-
-Once installed go to Start > System > Properties > Advanced System Properties > Environment Variable
-
-In User Variables, double click on 'Path'. At the end of the line, add a semi-colon followed by:
-
-C:\Users\YOUR_USERNAME\AppData\Local\Programs\Python\Python37
-
-(Replace YOUR_USERNAME by your Windows user name)
-
-Close and reopen the Atom to check the installation
+On Windows, type in:
 
 ```bash
 python --version
 ```
 
-### On Mac 
+If Python 3 is installed, the result should look as follows.
 
-Close and reopen the Atom to check the installation
+![Flowchart Push Button](images/check_python_version.png)
+
+If the command results is 'Command Not found' (or equivalent message), you need
+to install Python 3. Otherwise, skip the rest of this section.
+
+Select, download and install the latest version of Python 3 for Windows or Mac
+<a href="https://www.python.org/downloads/release/python-372/" target="_blank">here</a>.
+
+On Windows, once installed, go to 'Start > System > Properties > Advanced System Properties > 
+Environment Variable' In User Variables, double click on 'Path'. At the end of 
+the line, add a semi-colon followed by: 
+
+C:\Users\YOUR_USERNAME\AppData\Local\Programs\Python\Python37
+
+(Replace YOUR_USERNAME by your Windows user name)
+
+
+For both Mac and Windows, close and reopen the Atom to check the installation.
+
+On Mac, type in
 
 ```bash
 python3 --version
 ```
 
+On Windows, type in:
+
+```bash
+python --version
+```
+
 ## 1.2.1 Dependencies
 
-In python Pip is a tool that manages packages for us. We will use it to install
-and update any Python library our project relies on. You can install it with
-the following command:
+In the Python ecosystem, Pip is a tool that manages packages for us. We will use
+it to install and update any Python library our project relies on. You can
+install it as follows.
 
-### On Mac
+On Mac, type in:
 
 ```bash
 python3 get-pip.py
 ```
 
-### On Windows
-
-Download the file <a href="https://bootstrap.pypa.io/get-pip.py" target="_blank">get-pip.py</a>
+On Windows, download the file <a href="https://bootstrap.pypa.io/get-pip.py" target="_blank">get-pip.py</a>
 and save it (CMD+S or Ctrl+S) in your Downloads folder. In the Atom terminal, type in the
 following command:
 
@@ -92,11 +102,19 @@ python Downloads\get-pip.py
 
 ## 1.3 Python in Atom
 
-The next step is the Python plugin for Atom, to get some help from in Atom
-specifically for Python. Go to the terminal and type:
+The next step is the Python plugin for Atom, to get some help specifically for 
+Python in Atom. Go to the terminal and type:
+
+On Mac, type in:
 
 ```bash
 python3 -m pip install 'python-language-server[all]'
+```
+
+On Windows, type in:
+
+```bash
+python -m pip install 'python-language-server[all]'
 ```
 
 When it is installed, on the top menu of Atom, click on *'Packages' > 
@@ -120,42 +138,55 @@ Here are four short videos with more details:
 * <a href="https://git-scm.com/video/get-going" target="_blank">Get Going</a>
 * <a href="https://git-scm.com/video/quick-wins" target="_blank">Quick wins</a>
 
-### Install Git
+### 1.4.1 Install Git
 
-Windows / Mac
+Download and install Git from <a href="https://git-scm.com/download" target="_blank">here</a>.
 
 GitHub is a popular online platform that hosts remote Git repositories.
 We will use it throughout the course to host your repo
 
-### Sign up on GitHub
+### 1.4.2 Sign up on GitHub
 
 If you do not have GitHub account, sign up 
 <a href="https://github.com/" target="_blank">here</a>.
 
-### Fork repository (only one member of the group)
+### 1.4.3 Fork repository (only one member of the group)
 
 *'A fork is a copy of a repository. Forking a repository allows you to freely
 experiment with changes without affecting the original project.'*
 <a href="https://help.github.com/articles/fork-a-repo/" target="_blank">(GitHub Help)</a>
 
-On the top-right corner of this GitHub page, click on Fork. In the dialog,
-select your account. You have now a copy of the wheelchair-design-platform
-repository on your own account.
+Go to the GitHub repository of the Wheelchair Design Platform:
+<a href="https://github.com/datacentricdesign/wheelchair-design-platform" target="_blank">https://github.com/datacentricdesign/wheelchair-design-platform</a>
 
-### Add members to repo __**(only one member of the group)**__
+On the top-right corner of this GitHub page, click on Fork.
+
+![Flowchart Push Button](images/fork.png)
+
+In the dialog, select your account (where create the copy of the repository).
+
+![Flowchart Push Button](images/select_fork_dest.png)
+
+You have now a copy of the wheelchair-design-platform repository on your own account.
+
+### 1.4.4 Add members to repo (only one member of the group)
 
 Your repository is publicly accessible for reading. However, you need to give
 other member of the group access to this repository. On the top menu, click 
 *'Settings' > 'Collaborators'*. Search the username of your group members and add them.
 
-### Create a project
+![Flowchart Push Button](images/add_collaborator.png)
+
+### 1.4.5 Create a project (only one member of the group)
 
 GitHub offers a convenient way of managing your projects with a Kanban style
 board. On the top menu, click on 'Projects' and click on the green button 'New
 Project'. Fill in a project name, select the template 'Basic Kanban' and click
 'Create project'. You can use this space to map your tasks and your progress.
 
-### Clone repository (all group members)
+![Flowchart Push Button](images/create_project.png)
+
+### 1.4.6 Clone repository (all group members)
 
 *'When you create a repository on GitHub, it exists as a remote repository. You
 can clone your repository to create a local copy on your computer and sync
@@ -165,6 +196,8 @@ between the two locations.'*
 On GitHub, at the top of you repository, click on the green button 'Clone or
 download' and copy the provided link.
 
+![Flowchart Push Button](images/link_clone.png)
+
 Go back to Atom the terminal, and type in 'git clone' followed by the link you copied.
 For example:
 
@@ -172,11 +205,18 @@ For example:
 git clone https://github.com/example/wheelchair-design-platform.git
 ```
 
+![Flowchart Push Button](images/clone.png)
+
 ## 1.5 Project in Atom
 
 To open the project you cloned, on the top menu click on 'File' > 'Open...' and
 select the folder you cloned. On the left panel, you can see the files of your
-project. Let's have a closer look:
+project.
+
+
+![Flowchart Push Button](images/atom_files.png)
+
+Let's have a closer look:
 
 * .git folder contains the all history of your project, managed by git. Do not
 edit or delete files in this folder;
@@ -207,12 +247,10 @@ Open README.md and add a title at the top of the file, for example:
 ```markdown
 # A Noisy Wheelchair
 
-A short description...
-
-# Wheelchair Design Platform
-...
-
+By Jane and Joe
 ```
+
+![Flowchart Push Button](images/git_change.png)
 
 Note: A blue dot appear next to your file name README.md at the top of the page,
 letting you know it is not saved. Press Command+S (or Ctrl+S) to save.
@@ -225,13 +263,17 @@ bottom-right corner.
 
 In the 'Unstaged changes', double-click on the README.md to 'stage' it, i.e. 
 prepare this file to track its changes. The middle tab show you what are the
-changes;
+changes.
+
+![Flowchart Push Button](images/git_stage.png)
 
 ### Step 3: Commit, i.e Record Changes Locally
 
 Then we add a 'Commit message' to briefly explain the nature of those changes,
-e.g. 'a test of Git and Markdown'. Click on 'Commit to Master' to track the changes.
-You have made one change (commit) to your local repository;
+e.g. 'A test of Git and Markdown'. Click on 'Commit to Master' to track the changes.
+You have made one change (commit) to your local repository.
+
+![Flowchart Push Button](images/git_commit.png)
 
 ### Step 4: Push, i.e  Send Local Changes to GitHub
 
@@ -369,12 +411,14 @@ Let's execute this code. Go to the Atom terminal and type in the following comma
 On Mac
 
 ```bash
-python3 wheelchair/getStarted.py
+python3 wheelchair/get_started.py
 ```
 
 On Windows
 
-
+```bash
+python wheelchair\get_started.py
+```
 
 If the example run properly you should see a log generated every two seconds,
 indicating dum data is being sent to the Hub.
@@ -543,11 +587,15 @@ We are now ready to run the Python code
 
 On Mac
 
-```python
+```bash
 python3 wheelchair/serial_example.py
 ```
 
 On Windows
+
+```bash
+python wheelchair\serial_example.py
+```
 
 Go back to Grafana to visualise the inputs
 
