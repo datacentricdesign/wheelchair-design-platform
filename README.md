@@ -12,7 +12,7 @@ The main design includes a Raspberry Pi and an Arduino Mega on the wheelchair fr
 
 The Arduino Mega is a microcontroller. Fixed on the main frame of the wheelchair, it can collect data from sensors (e.g. forces, accelerometers) and trigger actions (e.g. LEDs, vibration motors).
 
-More on the Arduino Mega [here](https://github.com/datacentricdesign/wheelchair-design-platform/blob/master/doc/devices/Arduino.md "Arduino resources").
+More on the Arduino Mega [here](https://github.com/datacentricdesign/wheelchair-design-platform/blob/master/examples/arduino/Arduino.md "Arduino resources").
 
 The Raspberry Pi is a small computer. Also fixed on the main frame of the wheelchair, it can
 * interact with the Arduino Mega via USB to receive data and transmit command
@@ -20,11 +20,11 @@ The Raspberry Pi is a small computer. Also fixed on the main frame of the wheelc
 * store data locally in files;
 * run (machine learning) algorithms.
 
-More on the Raspberry Pi [here](https://github.com/datacentricdesign/wheelchair-design-platform/blob/master/doc/devices/RaspberryPi.md "Raspberry Pi resources").
+More on the Raspberry Pi [here](https://github.com/datacentricdesign/wheelchair-design-platform/blob/master/examples/raspberrypi/RaspberryPi.md "Raspberry Pi resources").
 
 These components fit together as shown on the following diagram. A large powerbank power the Raspberry Pi. The Arduino Mega communicates and receives power from the Raspberry Pi via USB. Two Bluetooth modules enables the Arduinos to communicate, avoiding hard connection between the wheel and the frame.
 
-![Wheelchair main components](./doc/wheechair-components.svg)
+![Wheelchair main components](workshops/images/wheechair-components.svg)
 
 
 
