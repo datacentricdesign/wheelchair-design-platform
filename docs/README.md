@@ -1,10 +1,10 @@
 The Wheelchair Design Platform is a set of hardware and software component which facilitate the deployment of  sensing and actuating capability on a Wheelchair. It aims at supporting designer through the exploration of relevant and novel products and services around wheelchairs.
 
-This platform uses two programming languages, Python on computers and C on micro-controllers. While descriptions and examples of code should help you get started, you can find some additional resources [here](https://github.com/datacentricdesign/wheelchair-design-platform/blob/master/doc/software-resources.md "Python and C resources").
+This platform uses two programming languages, Python on computers and C on micro-controllers. While descriptions and examples of code should help you get started, you can find some additional resources [here](/resources/software.md "Python and C resources").
 
 Note: the design of this platform focus on flexibility and technology exploration rather than optimisation.
 
-## Main Components
+# Main Components
 
 The main design includes a Raspberry Pi and an Arduino Mega on the wheelchair frame.
 
@@ -26,7 +26,7 @@ These components fit together as shown on the following diagram. A large powerba
 
 
 
-### List of components
+## List of components
 
 On the frame:
 
@@ -47,7 +47,7 @@ On the wheel:
 * 1 small breadboard
 * 1 USB cable A/B (power bank to Arduino Uno)
 
-### Setting up the Arduino Mega
+## Setting up the Arduino Mega
 
 * Attach the Arduino Mega and breadboard to the frame
 
@@ -55,7 +55,7 @@ On the wheel:
 
 * Flash the code
 
-### Setting up the Arduino Uno
+## Setting up the Arduino Uno
 
 * Attach the Arduino and breadboard to the wheel
 
@@ -63,7 +63,7 @@ On the wheel:
 
 * Flash the code
 
-### Setting up the Raspberry Pi
+## Setting up the Raspberry Pi
 
 * Attach the Arduino Mega and breadboard to the frame
 

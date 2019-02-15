@@ -1,16 +1,18 @@
 int BUTTON_PIN = 22;   // choose the input pin for the push button
 int LED_PIN = 13;      // Choose the output pin for the LED
 
-long LONG_PRESS_TIME = 500;
+long LONG_PRESS_TIME = 500; // How long is a 'long press' (minimum, in ms)
 
-long buttonActiveSince = 0;
-boolean longPressActive = false;
+long buttonActiveSince = 0; // Since when the button has been pressed (in ms since Arduino started)
+boolean longPressActive = false; // Are we currently in a 'long press' event
 
 void setup() {
   pinMode(BUTTON_PIN, INPUT);    // declare pushbutton as input
-  pinMode(LED_PIN, OUTPUT);    // declare LED as input
+  pinMode(LED_PIN, OUTPUT);      // declare LED as input
 
   Serial.begin(9600); // setting baud speed for Serial (a baud is a pulse)
+
+  // 'print' on the Serial port, i.e send a message through the serial port
   Serial.println("Lets start using the button!");
 }
 

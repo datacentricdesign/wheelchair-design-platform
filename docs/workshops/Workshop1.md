@@ -297,7 +297,7 @@ in a dependency folder specific for the current users.
 
 On the left panel, right click on the root folder > New Folder and name it 'wheelchair'.
 
-Copy the file platform > examples > raspberrypi > get_started.py 
+Copy the file examples > raspberrypi > get_started.py 
 in your 'wheelchair' folder.
 
 Opening this file, this Python code import the necessary library, then we can see
@@ -319,6 +319,10 @@ the equal signs.
 THING_ID=
 THING_TOKEN=
 ```
+
+Note: We do not want to track the file '.env' with Git as it contains secrets. To
+avoid any mistake, the file .gitignore list all files, folders and extensions to
+ignore. You will fine '.env' in the list.
 
 ## 2.3 Read through the Python Code
 
@@ -361,9 +365,15 @@ considered outside the condition.
 
 Let's execute this code. Go to the Atom terminal and type in the following command:
 
+On Mac
+
 ```bash
 python3 wheelchair/getStarted.py
 ```
+
+On Windows
+
+
 
 If the example run properly you should see a log generated every two seconds,
 indicating dum data is being sent to the Hub.
@@ -396,12 +406,14 @@ Back in the Atom terminal, stop your Python script with CMD+C (Ctrl+C).
 # 3. Data Collection with Arduino
 
 So far, we use our laptop to generate random data and send them to the cloud. As
-it is not large and power intensive, we need a smaller computer to run the same
-code on the wheelchair. To this end, in workshop 2 we will setup a Raspberry Pi
-(i.e. a small computer) to run this code directly on the wheelchair.
+it is too big and power intensive to fit on the wheelchair, we need a smaller computer
+to run the same code on the wheelchair. To this end, in workshop 2 we will setup
+a Raspberry Pi (i.e. a small computer) to run this code directly on the wheelchair.
 
 For now, we will use your laptop to do this job and implement an example of actual
-data collection.
+data collection. In this section we will log short and long press events of a push
+button. It highlights that a sensor-based data point can be as simple as a button
+event and tell us about how a user make use of it.
 
 ## 3.1 Install Arduino IDE
 
@@ -411,39 +423,130 @@ Arduino-like devices. You can download and install the latest version from
 
 ## 3.2 Push Button Example
 
-In Atom, copy the folder platform > examples > arduino > push_button_led_log
+In Atom, copy the folder examples > arduino > push_button_led_log
 in your 'wheelchair' folder. Then, open this folder in Arduino IDE.
 
 Looking at the code, we recognise the Arduino-like structure in three blocks:
-* Declaration of variables and libraries, available throughout the code;
-* The Setup() method executed once when the Arduino start;
+
+* Declaration of variables and libraries, available throughout the code.
+Note by convention, the constant are in uppercase (variable that will not change
+during the programme) while other variables are in lowercase.
+
+```cpp
+int BUTTON_PIN = 22; // choose the input pin for the push button
+int LED_PIN = 13;    // Choose the output pin for the LED
+
+long LONG_PRESS_TIME = 500; // How long is a 'long press' (minimum, in ms)
+
+long buttonActiveSince = 0; // Since when the button has been pressed (in ms since Arduino started)
+boolean longPressActive = false; // Are we currently in a 'long press' event
+```
+
+* The setup() method executed once when the Arduino start;
+
+```cpp
+void setup() {
+  pinMode(BUTTON_PIN, INPUT);    // declare pushbutton as input
+  pinMode(LED_PIN, OUTPUT);      // declare LED as input
+
+  Serial.begin(9600); // setting baud speed for Serial (a baud is a pulse)
+  
+  // 'print' on the Serial port, i.e send a message through the serial port
+  Serial.println("Lets start using the button!");
+}
+```
+
 * The Loop() method executed infinitely after the setup method.
+
+```cpp
+void loop() {
+  // Is button active?
+  if (digitalRead(button) == LOW) {
+    // if the button was not yet pressed
+    if (buttonActiveSince == 0) {
+        buttonActiveSince = millis();
+    } else if ((millis() - buttonActiveSince > LONG_PRESS_TIME)
+                && longPressActive == false) {
+          longPressActive = true;
+          digitalWrite(led, HIGH);  // turn LED ON
+        }
+    }
+
+  // Was button active?
+  } else {
+    // Was Long Press event?
+    if (buttonActiveSince > 0) {
+      // End Long Press event
+      if (longPressActive == true) {
+        Serial.println("button-action,2");
+        digitalWrite(led, LOW);  // turn LED OFF
+        longPressActive = false;
+
+      // End Short Press event
+      } else {
+        Serial.println("button-action,1");
+      }
+      buttonActiveSince = 0;
+    }
+  }
+
+}
+```
 
 The following flow chart illustrates the algorithm of this example code.
 
 ![Flowchart Push Button](images/push_button_flow_chart.png)
 
+In Arduino IDE, in the top menu 'Tools > Boards' select 'Arduino/Genuino Mega or Mega 2560'
+
+Then press the Verify button (green circle with tick).
+
 ## 3.3 Wire Push Button and LED
 
 In this example we need three wires, a resistor, an LED and a push button.
 
+![Flowchart Push Button](images/push_button_led_log.svg)
+
 ## 3.4 Connect Arduino
 
-* Copy the code from platform > examples > arduino > get_started
+Use the USB cable to connect the Arduino to your laptop.
 
-* Verify
+In Arduino IDE, in the top menu Tools > Port select your Arduino
 
-* Flash the code
+Then press the Flash button to send the code into the Arduino (green circle with right arrow)
 
-* Look at the input in the Serial monitor, pressing the push button should turn on
-the LED and produce a log in the Serial Monitor
+In the Arduino IDE, in the top menu 'Tools' open the 'Serial Monitor'.
+Look at the input, pressing the push button should turn on the LED and produce a
+log in the Serial Monitor.
 
 
 ### Update Python Example
 
-* Read from Serial
+The last step is to adapt the Python code on your laptop to read the Serial input
+from the Arduino and forward them to the Data-Centric Design Hub.
 
-* transfer to the Hub
+You can copy the code from examples/serial_example.py in your wheelchair folder.
 
-* Visualise data on Grafana
+In this code, we use the environment variable again to provide the thing id and token.
+
+We need an extra environment variable to specify the serial port. You can find
+it on the Arduino IDE, in the top menu Tools > Ports. For example:
+
+```bash
+THING_ID=
+THING_TOKEN=
+SERIAL=/dev/cu.usbmodem14201
+```
+
+We are now ready to run the Python code
+
+On Mac
+
+```python
+python3 wheelchair/serial_example.py
+```
+
+On Windows
+
+Go back to Grafana to visualise the inputs
 
