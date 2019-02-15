@@ -15,7 +15,7 @@ The first tool we need is a code editor, commonly called IDE for integrated
 development editor. For this we will use Atom, as it is open source and popular 
 for its modularity. 
 
-Download and start Atom: https://atom.io/
+Download and start Atom <a href="https://atom.io/" target="_blank">here</a>.
 
 Atom has the typical features of an IDE, we will go through them during this workshop.
 The first of them is the terminal. A terminal is a text-based interface we use
@@ -45,7 +45,7 @@ If the command results is 'Not found', you need to install Python 3.
 Otherwise, skip the rest of this section.
 
 Select, download and install the latest version of Python 3 for Windows or Mac
-[here](https://www.python.org/downloads/release/python-372/)
+<a href="https://www.python.org/downloads/release/python-372/" target="_blank">here</a>.
 
 ### On Windows
 
@@ -85,8 +85,8 @@ python3 get-pip.py
 
 ### On Windows
 
-Download the file [get-pip.py](https://bootstrap.pypa.io/get-pip.py) and save
-it (CMD+S or Ctrl+S) in your Downloads folder. In the Atom terminal, type in the
+Download the file <a href="https://bootstrap.pypa.io/get-pip.py" target="_blank">get-pip.py</a>
+and save it (CMD+S or Ctrl+S) in your Downloads folder. In the Atom terminal, type in the
 following command:
 
 ```bash
@@ -118,10 +118,10 @@ changes on the remote repository, making them available for your peers.
 
 Here are four short videos with more details:
 
-* [What is version control](https://git-scm.com/video/what-is-version-control)
-* [What is git](https://git-scm.com/video/what-is-git)
-* [Get going](https://git-scm.com/video/get-going)
-* [Quick wins](https://git-scm.com/video/quick-wins)
+* <a href="https://git-scm.com/video/what-is-version-control" target="_blank">What is version control</a>
+* <a href="https://git-scm.com/video/what-is-git" target="_blank">What is git</a>
+* <a href="https://git-scm.com/video/get-going" target="_blank">Get Going</a>
+* <a href="https://git-scm.com/video/quick-wins" target="_blank">Quick wins</a>
 
 ### Install Git
 
@@ -132,13 +132,14 @@ We will use it throughout the course to host your repo
 
 ### Sign up on GitHub
 
-If you do not have GitHub account, sign up [here](https://github.com/)
+If you do not have GitHub account, sign up 
+<a href="https://github.com/" target="_blank">here</a>.
 
 ### Fork repository (only one member of the group)
 
 *'A fork is a copy of a repository. Forking a repository allows you to freely
 experiment with changes without affecting the original project.'*
-[GitHub help](https://help.github.com/articles/fork-a-repo/)
+<a href="https://help.github.com/articles/fork-a-repo/" target="_blank">(GitHub Help)</a>
 
 On the top-right corner of this GitHub page, click on Fork. In the dialog,
 select your account. You have now a copy of the wheelchair-design-platform
@@ -162,7 +163,7 @@ Project'. Fill in a project name, select the template 'Basic Kanban' and click
 *'When you create a repository on GitHub, it exists as a remote repository. You
 can clone your repository to create a local copy on your computer and sync
 between the two locations.'*
-[GitHub help](https://help.github.com/articles/cloning-a-repository/){:target="_blank"}
+<a href="https://help.github.com/articles/cloning-a-repository/" target="_blank">(GitHub Help)</a>
 
 On GitHub, at the top of you repository, click on the green button 'Clone or
 download' and copy the provided link.
@@ -257,7 +258,7 @@ In our wheelchair case, we have one Thing (the wheelchair) with properties such
 as acceleration (3 values for x, y and z) or sit pressure (a value for each force
 sensors on the sit).
 
-Go to the hub manager via [https://dwd.tudelft.nl/manager](https://dwd.tudelft.nl/manager)
+Go to the hub manager via <a href="https://dwd.tudelft.nl/manager" target="_blank">dwd.tudelft.nl/manager</a>
 and sign up as a group with an email address, a name and a password. The sign up
 process create an account, then standard OAuth2 process start with a consent: you
 need to let the manager access your Things, so that it can help you manage them.
@@ -344,7 +345,8 @@ print("show text")
 ```
 
 * Conditional statement: In Python we express the condition with 'if', elif
-(else if) and else (more details [here](https://www.tutorialspoint.com/python/python_if_else.htm)).
+(else if) and else (more details 
+<a href="https://www.tutorialspoint.com/python/python_if_else.htm" target="_blank">here</a>.
 
 In our case, we check if the thing details we retrieved from the server has no property
 (a newly created Thing) and then create a dum property.
@@ -373,8 +375,8 @@ indicating dum data is being sent to the Hub.
 
 To visualise this data, we use Grafana.
 
-Go to the [https://dwd.tudelft.nl/grafana](https://dwd.tudelft.nl/grafana),
-click on Sign in with OAuth. Fill in your Data-Centric design Hub email and
+Go to the <a href="https://dwd.tudelft.nl/grafana" target="_blank">dwd.tudelft.nl/grafana</a>,
+click on 'Sign in with OAuth'. Fill in your Data-Centric design Hub email and
 password. Similarly to the manager, consent to let Grafana access your data.
 
 
@@ -408,7 +410,7 @@ data collection.
 
 Similar to Atom, Arduino IDE is an editor with a convenient set of tools to programme
 Arduino-like devices. You can download and install the latest version from
-[here](https://www.arduino.cc/en/Main/Software).
+<a href="https://www.arduino.cc/en/Main/Software" target="_blank">here</a>.
 
 ## 3.2 Push Button Example
 
