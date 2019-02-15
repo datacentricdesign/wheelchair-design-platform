@@ -1,7 +1,7 @@
 # Workshop 1: Building an Internet-connected Wheelchair
 
 1. [Tools: Atom, Python and Git](#1-tools-atom-python-and-git)
-2. [Generating and Visualising Data](#2-enerating-and-visualising-data)
+2. [Generating and Visualising Data](#2-generating-and-visualising-data)
 3. [Data Collection with Arduino](#3-data-collection-with-arduino)
 
 # 1. Tools: Atom, Python and Git
