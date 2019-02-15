@@ -1,5 +1,3 @@
-# Wheelchair Design Platform
-
 The Wheelchair Design Platform is a set of hardware and software component which facilitate the deployment of  sensing and actuating capability on a Wheelchair. It aims at supporting designer through the exploration of relevant and novel products and services around wheelchairs.
 
 This platform uses two programming languages, Python on computers and C on micro-controllers. While descriptions and examples of code should help you get started, you can find some additional resources [here](https://github.com/datacentricdesign/wheelchair-design-platform/blob/master/doc/software-resources.md "Python and C resources").
@@ -12,7 +10,7 @@ The main design includes a Raspberry Pi and an Arduino Mega on the wheelchair fr
 
 The Arduino Mega is a microcontroller. Fixed on the main frame of the wheelchair, it can collect data from sensors (e.g. forces, accelerometers) and trigger actions (e.g. LEDs, vibration motors).
 
-More on the Arduino Mega [here](https://github.com/datacentricdesign/wheelchair-design-platform/blob/master/examples/arduino/Arduino.md "Arduino resources").
+More on the Arduino Mega [here](https://github.com/datacentricdesign/wheelchair-design-platform/tree/examples/arduino "Arduino resources").
 
 The Raspberry Pi is a small computer. Also fixed on the main frame of the wheelchair, it can
 * interact with the Arduino Mega via USB to receive data and transmit command
@@ -20,11 +18,11 @@ The Raspberry Pi is a small computer. Also fixed on the main frame of the wheelc
 * store data locally in files;
 * run (machine learning) algorithms.
 
-More on the Raspberry Pi [here](https://github.com/datacentricdesign/wheelchair-design-platform/blob/master/examples/raspberrypi/RaspberryPi.md "Raspberry Pi resources").
+More on the Raspberry Pi [here](https://github.com/datacentricdesign/wheelchair-design-platform/tree/examples/raspberrypi "Raspberry Pi resources").
 
 These components fit together as shown on the following diagram. A large powerbank power the Raspberry Pi. The Arduino Mega communicates and receives power from the Raspberry Pi via USB. Two Bluetooth modules enables the Arduinos to communicate, avoiding hard connection between the wheel and the frame.
 
-![Wheelchair main components](docs/workshops/images/wheechair-components.svg)
+![Wheelchair main components](workshops/images/wheechair-components.svg)
 
 
 
