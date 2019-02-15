@@ -180,7 +180,8 @@ project. Let's have a closer look:
 
 * .git folder contains the all history of your project, managed by git. Do not
 edit or delete files in this folder;
-* platform contains all documents and code examples to get started;
+* docs folder contains the documentation and workshops;
+* examples contains all code examples to get started;
 * .gitignore contains the list of files/file extensions you do not want to track
 with Git. It is especially convenient for local configuration or passwords not 
 to be shared;
