@@ -24,7 +24,7 @@ More on the Raspberry Pi [here](https://github.com/datacentricdesign/wheelchair-
 
 These components fit together as shown on the following diagram. A large powerbank power the Raspberry Pi. The Arduino Mega communicates and receives power from the Raspberry Pi via USB. Two Bluetooth modules enables the Arduinos to communicate, avoiding hard connection between the wheel and the frame.
 
-![Wheelchair main components](workshops/images/wheechair-components.svg)
+![Wheelchair main components](docs/workshops/images/wheechair-components.svg)
 
 
 
