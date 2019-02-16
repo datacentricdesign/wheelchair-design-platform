@@ -295,7 +295,7 @@ update their local repository with the latest version.
 
 ## 1.7 Data-Centric Design Hub (Per group)
 
-In the cloud we will use our prototyped cloud platform for designer we call 
+In the cloud we will use our prototyped cloud platform for designers that we call 
 Data-Centric Design Hub.
 
 * Person have a collection of Things;
