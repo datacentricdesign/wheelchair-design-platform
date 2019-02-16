@@ -124,11 +124,11 @@ and 'ide-python'.
 ## 1.4 Git & GitHub
 
 Git is a version control system (VCS). It helps keeping track of all changes
-in your project and share it. While it is heavily used by software developers to
+in your project and sharing it. While it is heavily used by software developers to
 track and share code, it is also useful to track and share the progress of any
 design or research process. The principle is as follows: you share a remote
-repository, you 'pull' from this repository the latest changes (any files, code,
-doc...) from your peers, you make changes on your machine, and you 'push' your
+repository, you 'pull' the latest changes (any files, code, doc...) from your 
+peers from this repository, you make changes on your machine, and you 'push' your
 changes on the remote repository, making them available for your peers.
 
 Here are four short videos with more details:
@@ -163,7 +163,7 @@ On the top-right corner of this GitHub page, click on Fork.
 
 ![Flowchart Push Button](images/fork.png)
 
-In the dialog, select your account (where create the copy of the repository).
+In the dialog, select your account (where yozu create the copy of the repository).
 
 ![Flowchart Push Button](images/select_fork_dest.png)
 
