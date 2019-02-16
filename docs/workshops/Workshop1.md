@@ -207,7 +207,7 @@ git clone https://github.com/example/wheelchair-design-platform.git
 
 ![Flowchart Push Button](images/clone.png)
 
-Let's tell Git who we are, type in the following commands:
+Let's tell Git who we are, type in the following commands (enter these commands one after the other):
 
 ```bash
 git config --global user.email "YOUR EMAIL ADDRESS"
