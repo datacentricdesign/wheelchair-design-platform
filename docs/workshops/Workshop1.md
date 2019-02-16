@@ -19,6 +19,10 @@ The first of them is the terminal. A terminal is a text-based interface we use
 to enter and execute commands on a computer. While we will maximise the use of
 graphical tools, we will also use the terminal in some occasion.
 
+__**Note: Shortcuts such as Ctrl+C, Ctrl+V or Ctrl+X do not work in the terminal
+as they have different functions. For instance, Ctrl+C means terminating
+a running programme.**__
+
 On the top menu, go to Packages > Settings View > Install Packages/Themes
 
 Search for 'terminal plus' and install the first one 'platformio-ide-terminal'
