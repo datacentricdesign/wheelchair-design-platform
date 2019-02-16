@@ -19,10 +19,6 @@ The first of them is the terminal. A terminal is a text-based interface we use
 to enter and execute commands on a computer. While we will maximise the use of
 graphical tools, we will also use the terminal in some occasion.
 
-__**Note: Shortcuts such as Ctrl+C, Ctrl+V or Ctrl+X do not work in the terminal
-as they have different functions. For instance, Ctrl+C means terminating
-a running programme.**__
-
 On the top menu, go to Packages > Settings View > Install Packages/Themes
 
 Search for 'terminal plus' and install the first one 'platformio-ide-terminal'
@@ -211,9 +207,17 @@ git clone https://github.com/example/wheelchair-design-platform.git
 
 ![Flowchart Push Button](images/clone.png)
 
+Let's tell Git who we are, type in the following commands:
+
+```bash
+git config --global user.email "YOUR EMAIL ADDRESS"
+git config --global user.name "YOUR NAME"
+```
+
+
 ## 1.5 Project in Atom
 
-To open the project you cloned, on the top menu click on 'File' > 'Open...' and
+To open the project you cloned, click on 'File' > 'Open Folder' on the top menu and
 select the folder you cloned. On the left panel, you can see the files of your
 project.
 
@@ -232,7 +236,7 @@ to be shared;
 * LICENSE contains the MIT license for this project;
 * README.md contains a short introduction to the platform in Markdown. Markdown 
 is a lightweight markup language, i.e. minimal set tags to format text;
-* requirements.txt contains the list of python library you need to install for
+* requirements.txt contains the list of the python library you need to install for
 the project to work;
 
 ## 1.6 Git Flow
@@ -256,7 +260,7 @@ By Jane and Joe
 
 ![Flowchart Push Button](images/git_change.png)
 
-Note: A blue dot appear next to your file name README.md at the top of the page,
+Note: A blue dot appears next to your file name README.md at the top of the page,
 letting you know it is not saved. Press Command+S (or Ctrl+S) to save.
 
 ### Step 2: Stage, i.e Select File Changes
@@ -266,7 +270,7 @@ in this file that are not yet tracked by Git (unstaged). Click on Git in the
 bottom-right corner.
 
 In the 'Unstaged changes', double-click on the README.md to 'stage' it, i.e. 
-prepare this file to track its changes. The middle tab show you what are the
+prepare this file to track its changes. The middle tab shows you the
 changes.
 
 ![Flowchart Push Button](images/git_stage.png)
