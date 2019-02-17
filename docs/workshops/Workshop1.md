@@ -61,10 +61,9 @@ On Windows, once installed, go to 'Start > System > Properties > Advanced System
 Environment Variable' In User Variables, double click on 'Path'. At the end of 
 the line, add a semi-colon followed by: 
 
-C:\Users\YOUR_USERNAME\AppData\Local\Programs\Python\Python37
+C:\Users\YOUR_USERNAME\AppData\Local\Programs\Python\Python37;C:\Users\YOUR_USERNAME\AppData\Local\Programs\Python\Python37\Scripts
 
-(Replace YOUR_USERNAME by your Windows user name)
-
+(Replace twice YOUR_USERNAME by your Windows user name)
 
 For both Mac and Windows, close and reopen the Atom to check the installation.
 
@@ -99,6 +98,7 @@ following command:
 ```bash
 python Downloads\get-pip.py
 ```
+
 
 ## 1.3 Python in Atom
 
@@ -318,7 +318,7 @@ description 'An Internet-connected wheelchair'
 
 The process take a few seconds as the hub generates an access token for your Thing.
 
-**COPY AND SAVE THIS TOKEN** in a file, it will be shown only once and enables
+**COPY AND SAVE THIS TOKEN** in a text file, it will be shown only once and enables
 your wheelchair to communicate with the hub. You can also save the thing id, but
 you can always go back to the manager to retrieve this id.
 
@@ -334,14 +334,13 @@ This file contains a dependence to the library writen for the Data-Centric Desig
 Hub as well as the a dependence for MQTT, a communication protocol we use to
 talk to the hub.
 
-Open the Atom terminal from the top menu 'View > Terminal > New Terminal Window'
-and execute the following command.
+Open the Atom terminal ('plus' sign in the bottom-left corner) and execute the following command.
 
 ```bash
 pip3 install -r requirements.txt --user
 ```
 
-Here we 'install', the option -r indicates we provide a file name that contains 
+Here we 'install' the Python dependencies for our project. The option -r indicates we provide a file name that contains 
 the required dependencies, the option --user indicates we install the dependencies
 in a dependency folder specific for the current users.
 
