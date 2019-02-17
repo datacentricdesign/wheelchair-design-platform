@@ -296,15 +296,15 @@ update their local repository with the latest version.
 ## 1.7 Data-Centric Design Hub (Per group)
 
 In the cloud we will use our prototyped cloud platform for designers that we call 
-Data-Centric Design Hub.
+Data-Centric Design Hub. In this cloud we use the following terms:
 
-* Person have a collection of Things;
+* Persons have a collection of Things.
 * Things are physical or virtual entities with Properties.
-* Properties are one-to-many dimensional data points
+* Properties are one-to-many dimensional data points.
 
 In our wheelchair case, we have one Thing (the wheelchair) with properties such
-as acceleration (3 values for x, y and z) or sit pressure (a value for each force
-sensors on the sit).
+as acceleration (3 values for x, y and z) or seat pressure (a value for each force
+sensors on the seat).
 
 Go to the hub manager via <a href="https://dwd.tudelft.nl/manager" target="_blank">dwd.tudelft.nl/manager</a>
 and sign up as a group with an email address, a name and a password. The sign up
