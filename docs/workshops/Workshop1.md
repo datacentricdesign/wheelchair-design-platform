@@ -308,16 +308,17 @@ sensors on the seat).
 
 Go to the hub manager via <a href="https://dwd.tudelft.nl/manager" target="_blank">dwd.tudelft.nl/manager</a>
 and sign up as a group with an email address, a name and a password. The sign up
-process create an account, then standard OAuth2 process start with a consent: you
-need to let the manager access your Things, so that it can help you manage them.
+process creates an account, then the standard OAuth2 process starts with a consent: you
+need to let the manager access your Things, so that it can help you manage them. To do so tick all the boxes 
+and click "allow access".
 
-Once the consent succeed, you can click on 'My Things' and create a first one.
+Once the consent succeeds, you can click on 'My Things' and create a first one.
 For example with the name 'My wheelchair', type 'Wheelchair',
 description 'An Internet-connected wheelchair'
 
-The process take a few seconds as the hub generate an access token for your Thing.
+The process take a few seconds as the hub generates an access token for your Thing.
 
-**COPY AND SAVE THIS TOKEN** in a file, it will be shown only once and enable
+**COPY AND SAVE THIS TOKEN** in a file, it will be shown only once and enables
 your wheelchair to communicate with the hub. You can also save the thing id, but
 you can always go back to the manager to retrieve this id.
 
