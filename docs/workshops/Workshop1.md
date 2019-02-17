@@ -346,7 +346,7 @@ in a dependency folder specific for the current users.
 
 ## 2.2 Get Started Code Example
 
-On the left panel, right click on the root folder > New Folder and name it 'wheelchair'.
+On the left panel, right-click on the root folder "wheelchair-design-platform" > New Folder and name it 'wheelchair'.
 
 Copy the file examples > raspberrypi > get_started.py 
 in your 'wheelchair' folder.
