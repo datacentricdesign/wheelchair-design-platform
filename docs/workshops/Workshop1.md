@@ -328,7 +328,7 @@ in your 'wheelchair' folder. Then, open this folder in Arduino IDE.
 Looking at the code, we recognise the Arduino-like structure in three blocks:
 
 * Declaration of variables and libraries, available throughout the code.
-Note by convention, the constant are in uppercase (variable that will not change
+Note by convention, the constants are in uppercase (variables that will not change
 during the programme) while other variables are in lowercase.
 
 ```cpp
