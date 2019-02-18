@@ -1,6 +1,6 @@
 # Getting Started
 
-In this Getting Started tutorial, we will setup a development environment
+In this tutorial, you will setup a development environment for Python and Arduino.
 
 ## 1. Atom
 
