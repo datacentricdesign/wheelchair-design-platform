@@ -1,18 +1,44 @@
-The Wheelchair Design Platform is a set of hardware and software component which facilitate the deployment of  sensing and actuating capability on a Wheelchair. It aims at supporting designer through the exploration of relevant and novel products and services around wheelchairs.
+The Wheelchair Design Platform is a repository contains some resources to help
+designers and developers speak the same language and work together towards
+addressing relevant challenges for wheelchair users. It is a collection of 
+workshop material, code examples and compilation of resources to foster a research
+and design community around wheelchair users.
 
-This platform uses two programming languages, Python on computers and C on micro-controllers. While descriptions and examples of code should help you get started, you can find some additional resources [here](/resources/software.md "Python and C resources").
+## Workshops
 
-Note: the design of this platform focus on flexibility and technology exploration rather than optimisation.
+* [Getting started](/docs/workshops/GettingStarted.md)
+* [Workshop 1: Building an Internet-Connected Wheelchair](/docs/workshops/Workshop1.md)
+* [Workshop 2: Integrating and Visualising Sensor-Based Data](/docs/workshops/Workshop2.md)
+* [Workshop 3: Developing an algorithms and Controlling Actuators](/docs/workshops/Workshop3.md)
+* [Workshop 4: Developing and Conducting a Data Collection Campaign](/docs/workshops/Workshop4.md)
+* [Workshop 5: Implementing a Machine Learning Pipeline](/docs/workshops/Workshop5.md)
+* [Workshop 6: Developing a Product analytics Dashboard](/docs/workshops/Workshop6.md)
 
-# Main Components
+## Resources
+
+* This platform uses two programming languages, Python on computers and C on
+micro-controllers. While descriptions and examples of code should help you
+get started, you can find some additional resources
+[here](/docs/resources/software.md "Python and C resources").
+
+* Documentation of your project is key,
+[here are some tips and examples](/docs/resources/documentation.md "Documentation tips and examples").
+
+## Main Components
+
+__**Disclaimer:**__ the design of this platform focuses on flexibility and
+technology exploration rather than optimisation.
 
 The main design includes a Raspberry Pi and an Arduino Mega on the wheelchair frame.
 
-The Arduino Mega is a microcontroller. Fixed on the main frame of the wheelchair, it can collect data from sensors (e.g. forces, accelerometers) and trigger actions (e.g. LEDs, vibration motors).
+The Arduino Mega is a micro-controller. Fixed on the main frame of the wheelchair,
+it can collect data from sensors (e.g. forces, accelerometers) and trigger actions
+(e.g. LEDs, vibration motors).
 
 More on the Arduino Mega [here](https://github.com/datacentricdesign/wheelchair-design-platform/tree/examples/arduino "Arduino resources").
 
-The Raspberry Pi is a small computer. Also fixed on the main frame of the wheelchair, it can
+The Raspberry Pi is a small computer. Also fixed on the main frame of the wheelchair,
+it can
 * interact with the Arduino Mega via USB to receive data and transmit command
 * interact with the Internet to receive data and transmit command
 * store data locally in files;
@@ -20,20 +46,20 @@ The Raspberry Pi is a small computer. Also fixed on the main frame of the wheelc
 
 More on the Raspberry Pi [here](https://github.com/datacentricdesign/wheelchair-design-platform/tree/examples/raspberrypi "Raspberry Pi resources").
 
-These components fit together as shown on the following diagram. A large powerbank power the Raspberry Pi. The Arduino Mega communicates and receives power from the Raspberry Pi via USB. Two Bluetooth modules enables the Arduinos to communicate, avoiding hard connection between the wheel and the frame.
+These components fit together as shown on the following diagram. A large powerbank
+power the Raspberry Pi. The Arduino Mega communicates and receives power from the
+Raspberry Pi via USB. Two Bluetooth modules enables the Arduinos to communicate,
+avoiding hard connection between the wheel and the frame.
 
-![Wheelchair main components](workshops/images/wheechair-components.svg)
+![Wheelchair main components](workshops/images/wheechair-components.png)
 
-
-
-## List of components
+## List of suggested components:
 
 On the frame:
 
-* 1 Raspberry Pi
-* 1 SD card
+* 1 Raspberry Pi 3B
+* 1 SD card (Some come directly with NOOBS installed)
 * 1 Arduino Mega
-* 1 Bluetooth module HC05
 * 1 Large power bank
 * 1 large breadboard
 * 1 USB cable A/micro (Powerbank to Raspberry Pi)
@@ -41,32 +67,13 @@ On the frame:
 
 On the wheel:
 
-* 1 Arduino Uno
-* 1 Bluetooth module HC06
+* 1 Feather (Bluetooth enabled)
 * 1 small power bank
 * 1 small breadboard
 * 1 USB cable A/B (power bank to Arduino Uno)
 
-## Setting up the Arduino Mega
 
-* Attach the Arduino Mega and breadboard to the frame
+## Contact and Existing projects
 
-* Wire the bluetooth module
-
-* Flash the code
-
-## Setting up the Arduino Uno
-
-* Attach the Arduino and breadboard to the wheel
-
-* Wire the bluetooth module
-
-* Flash the code
-
-## Setting up the Raspberry Pi
-
-* Attach the Arduino Mega and breadboard to the frame
-
-* Setup the SD card
-
-* Plug in the Raspberry Pi and connect via ssh
+Fill free to contact us at jacky@datacentricdesign.org. We welcome feedback, pull request
+ or link to your project.
