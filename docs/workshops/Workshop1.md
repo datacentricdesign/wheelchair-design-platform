@@ -1,154 +1,9 @@
 # Workshop 1: Building an Internet-connected Wheelchair
 
-1. [Tools: Atom, Python and Git](#1-tools-atom-python-and-git)
-2. [Generating and Visualising Data](#2-generating-and-visualising-data)
-3. [Data Collection with Arduino](#3-data-collection-with-arduino)
-
-# 1. Tools: Atom, Python and Git
-
-## 1.1 Atom
-
-The first tool we need is a code editor, commonly called IDE for integrated
-development editor. For this we will use Atom, as it is open source and popular 
-for its modularity. 
-
-Download and start Atom <a href="https://atom.io/" target="_blank">here</a>.
-
-Atom has the typical features of an IDE, we will go through them during this workshop.
-The first of them is the terminal. A terminal is a text-based interface we use
-to enter and execute commands on a computer. While we will maximise the use of
-graphical tools, we will also use the terminal in some occasion.
-
-On the top menu, go to Packages > Settings View > Install Packages/Themes
-
-Search for 'terminal plus' and install the first one 'platformio-ide-terminal'
-
-Now you can open a terminal by clicking on the + sign in the bottom left corner.
+1. [Generating and Visualising Data](#2-generating-and-visualising-data)
+2. [Data Collection with Arduino](#3-data-collection-with-arduino)
 
 
-## 1.2 Python
-
-Python is the main programming language we will use throughout this course. To
-execute Python code on your machine, you need to install a Python interpreter.
-We will use Python 3.x (as opposed to 2.x).
-
-In Atom, open a terminal and type in the following command to check if Python is 
-installed on your laptop with the appropriate version.
-
-On Mac, type in
-
-```bash
-python3 --version
-```
-
-On Windows, type in:
-
-```bash
-python --version
-```
-
-If Python 3 is installed, the result should look as follows.
-
-![Flowchart Push Button](images/check_python_version.png)
-
-If the command results is 'Command Not found' (or equivalent message), you need
-to install Python 3. Otherwise, skip the rest of this section.
-
-Select, download and install the latest version of Python 3 for Windows or Mac
-<a href="https://www.python.org/downloads/release/python-372/" target="_blank">here</a>.
-
-On Windows, once installed, go to 'Start > System > Properties > Advanced System Properties > 
-Environment Variable' In User Variables, double click on 'Path'. At the end of 
-the line, add a semi-colon followed by: 
-
-C:\Users\YOUR_USERNAME\AppData\Local\Programs\Python\Python37;C:\Users\YOUR_USERNAME\AppData\Local\Programs\Python\Python37\Scripts
-
-(Replace twice YOUR_USERNAME by your Windows user name)
-
-For both Mac and Windows, close and reopen the Atom to check the installation.
-
-On Mac, type in
-
-```bash
-python3 --version
-```
-
-On Windows, type in:
-
-```bash
-python --version
-```
-
-## 1.2.1 Dependencies
-
-In the Python ecosystem, Pip is a tool that manages packages for us. We will use
-it to install and update any Python library our project relies on. You can
-install it as follows.
-
-On Mac, type in:
-
-```bash
-python3 get-pip.py
-```
-
-On Windows, download the file <a href="https://bootstrap.pypa.io/get-pip.py" target="_blank">get-pip.py</a>
-and save it (CMD+S or Ctrl+S) in your Downloads folder. In the Atom terminal, type in the
-following command:
-
-```bash
-python Downloads\get-pip.py
-```
-
-
-## 1.3 Python in Atom
-
-The next step is the Python plugin for Atom, to get some help specifically for 
-Python in Atom. Go to the terminal and type:
-
-On Mac, type in:
-
-```bash
-python3 -m pip install 'python-language-server[all]'
-```
-
-On Windows, type in:
-
-```bash
-python -m pip install 'python-language-server[all]'
-```
-
-When it is installed, on the top menu of Atom, click on *'Packages' > 
-'Settings View' > 'Install Packages/Themes'*. Search and install 'atom-ide-ui'
-and 'ide-python'.
-
-## 1.4 Git & GitHub
-
-Git is a version control system (VCS). It helps keeping track of all changes
-in your project and sharing it. While it is heavily used by software developers to
-track and share code, it is also useful to track and share the progress of any
-design or research process. The principle is as follows: you share a remote
-repository, you 'pull' the latest changes (any files, code, doc...) from your 
-peers from this repository, you make changes on your machine, and you 'push' your
-changes on the remote repository, making them available for your peers.
-
-Here are four short videos with more details:
-
-* <a href="https://git-scm.com/video/what-is-version-control" target="_blank">What is version control</a>
-* <a href="https://git-scm.com/video/what-is-git" target="_blank">What is git</a>
-* <a href="https://git-scm.com/video/get-going" target="_blank">Get Going</a>
-* <a href="https://git-scm.com/video/quick-wins" target="_blank">Quick wins</a>
-
-### 1.4.1 Install Git
-
-Download and install Git from <a href="https://git-scm.com/download" target="_blank">here</a>.
-
-GitHub is a popular online platform that hosts remote Git repositories.
-We will use it throughout the course to host your repo
-
-### 1.4.2 Sign up on GitHub
-
-If you do not have GitHub account, sign up 
-<a href="https://github.com/" target="_blank">here</a>.
 
 ### 1.4.3 Fork repository (only one member of the group)
 
@@ -468,12 +323,6 @@ data collection. In this section we will log short and long press events of a pu
 button. It highlights that a sensor-based data point can be as simple as a button
 event and tell us about how a user make use of it.
 
-## 3.1 Install Arduino IDE
-
-Similar to Atom, Arduino IDE is an editor with a convenient set of tools to programme
-Arduino-like devices. You can download and install the latest version from
-<a href="https://www.arduino.cc/en/Main/Software" target="_blank">here</a>.
-
 ## 3.2 Push Button Example
 
 In Atom, copy the folder examples > arduino > push_button_led_log
@@ -607,3 +456,80 @@ python wheelchair\serial_example.py
 
 Go back to Grafana to visualise the inputs
 
+
+
+
+## Raspberry Pi
+
+The next step consists in setting up the RaspberryPi and running your code on it.
+
+Insert the SD card in your laptop.
+
+### Set up an empty SD Card
+
+__**(Skip thi section if you have an SD Card with NOOBS pre-installed)**__
+
+Download and install the software 
+
+Get the lattest Raspbian here: https://www.raspberrypi.org/downloads/raspbian/
+
+Unzip the file, you obtain an image file (extension .img)
+
+To install this image on the SD card, download and install Etcher: https://www.balena.io/etcher/
+
+Starting Etcher, you first select your image file, then your SD card, and 'Flash'.
+
+To connect to the Raspberry Pi without monitor, mouse and keyboard, we use directly
+your laptop. To do this, we need to enable the ssh protocol on the Raspberry Pi 
+(secure remote access to a computer).
+
+On your laptop, open text editor (TextEdit on Mac, Editor on Windows) and save an 
+empty file named 'ssh' (without extension). This file will indicate that we want 
+to enable ssh.
+
+(add process for network auto config)
+
+Eject the SD card and insert it in on the Raspberry Pi, then power the Pi
+
+(Scan and find your IP address)
+
+Open a terminal (or 'command prompt' on Windows). Type in
+
+```
+ssh pi@<your ip address>
+```
+
+Update
+
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+Create a folder
+
+```
+mkdir wheelchair
+cd wheelchair
+```
+
+Set up Git
+
+```
+sudo apt-get git
+```
+
+Clone your GitHub repository
+
+git clone
+
+
+* Main Components
+
+* Architecture
+
+* Setting up the Raspberry Pi
+
+* Network
+
+* Bash commands
