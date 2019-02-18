@@ -341,7 +341,7 @@ long buttonActiveSince = 0; // Since when the button has been pressed (in ms sin
 boolean longPressActive = false; // Are we currently in a 'long press' event
 ```
 
-* The setup() method executed once when the Arduino start;
+* The setup() method executed once when the Arduino starts;
 
 ```cpp
 void setup() {
