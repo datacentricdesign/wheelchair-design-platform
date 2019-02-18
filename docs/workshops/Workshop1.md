@@ -298,7 +298,7 @@ click on 'Sign in with OAuth'. Fill in your Data-Centric design Hub email and
 password. Similarly to the manager, consent to let Grafana access your data.
 
 
-Go to 'Dashboard > Manage' and create a new folder for your project.
+Click on the plus on the left panel and create a new folder for your project.
 Then, create a new Dashboard and select a new panel 'Graph'. At the top of this
 new panel, click on 'Panel Title > Edit'
 
@@ -309,7 +309,8 @@ Property ID is not appearing in the list, the hub is not receiving data from
 your python code.
 
 In SELECT, click on field and select Value1. Then click on the 
-+ sign > Fields > Field to add Value2 and Value3.
+plus > Fields > Field to add Value2 and Value3.
+
 
 Back in the Atom terminal, stop your Python script with CMD+C (Ctrl+C).
 
