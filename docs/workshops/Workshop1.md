@@ -1,11 +1,15 @@
 # Workshop 1: Building an Internet-connected Wheelchair
 
-1. [Generating and Visualising Data](#2-generating-and-visualising-data)
-2. [Data Collection with Arduino](#3-data-collection-with-arduino)
+1. [Git Flow](#1-git-flow)
+2. [Data-Centric Data Hub](#2-data-centric-design-hub-per-group)
+3. [Run Python Example](#3-run-python-example)
+4. [Data Collection with Arduino](#4-data-collection-with-arduino)
+5. [Setting up the Raspberry Pi](#5-setting-up-the-raspberry-pi)
 
 
+# 1 Git Flow
 
-### 1.4.3 Fork repository (only one member of the group)
+### 1.1 Fork Wheelchair Design Platform repository (only one member of the group)
 
 *'A fork is a copy of a repository. Forking a repository allows you to freely
 experiment with changes without affecting the original project.'*
@@ -24,7 +28,7 @@ In the dialog, select your account (where yozu create the copy of the repository
 
 You have now a copy of the wheelchair-design-platform repository on your own account.
 
-### 1.4.4 Add members to repo (only one member of the group)
+### 1.2 Add members to repo (only one member of the group)
 
 Your repository is publicly accessible for reading. However, you need to give
 other member of the group access to this repository. On the top menu, click 
@@ -32,7 +36,7 @@ other member of the group access to this repository. On the top menu, click
 
 ![Flowchart Push Button](images/add_collaborator.png)
 
-### 1.4.5 Create a project (only one member of the group)
+### 1.3 Create a project (only one member of the group)
 
 GitHub offers a convenient way of managing your projects with a Kanban style
 board. On the top menu, click on 'Projects' and click on the green button 'New
@@ -41,7 +45,7 @@ Project'. Fill in a project name, select the template 'Basic Kanban' and click
 
 ![Flowchart Push Button](images/create_project.png)
 
-### 1.4.6 Clone repository (all group members)
+### 1.4 Clone repository (all group members)
 
 *'When you create a repository on GitHub, it exists as a remote repository. You
 can clone your repository to create a local copy on your computer and sync
@@ -148,7 +152,7 @@ corner, click on 'push'.
 Other members of the group can now press 'Fetch' in the bottom-right corner to 
 update their local repository with the latest version.
 
-## 1.7 Data-Centric Design Hub (Per group)
+## 2 Data-Centric Design Hub (Per group)
 
 In the cloud we will use our prototyped cloud platform for designers that we call 
 Data-Centric Design Hub. In this cloud we use the following terms:
@@ -177,12 +181,11 @@ The process take a few seconds as the hub generates an access token for your Thi
 your wheelchair to communicate with the hub. You can also save the thing id, but
 you can always go back to the manager to retrieve this id.
 
-
-# 2. Generating and Visualising Data
-
 Back to Atom and your project, let's create a first Python example.
 
-## 2.1 Dependencies
+## 3 Run Python Example
+
+### 3.1 Dependencies
 
 We use Pip to install the dependencies we need, listed in the file requirements.txt.
 This file contains a dependence to the library writen for the Data-Centric Design
@@ -199,7 +202,7 @@ Here we 'install' the Python dependencies for our project. The option -r indicat
 the required dependencies, the option --user indicates we install the dependencies
 in a dependency folder specific for the current users.
 
-## 2.2 Get Started Code Example
+## 3.2 Environment Variables
 
 On the left panel, right-click on the root folder "wheelchair-design-platform" > New Folder and name it 'wheelchair'.
 
@@ -230,7 +233,7 @@ Note: We do not want to track the file '.env' with Git as it contains secrets. T
 avoid any mistake, the file .gitignore list all files, folders and extensions to
 ignore. You will fine '.env' in the list.
 
-## 2.3 Read through the Python Code
+## 3.3 Read through the Python Code
 
 Going back to the get_started.py Python script, read through the code and comments
 to capture the main steps:
@@ -267,7 +270,7 @@ if len(my_thing.properties) == 0:
 define what is in the condition. Any following line align with the if would be
 considered outside the condition.
 
-## 2.4 Execute the Python code
+## 3.4 Execute the Python code
 
 Let's execute this code. Go to the Atom terminal and type in the following command:
 
@@ -286,7 +289,7 @@ python wheelchair\get_started.py
 If the example run properly you should see a log generated every two seconds,
 indicating dum data is being sent to the Hub.
 
-## 2.5 Visualise Data on Grafana
+## 3.5 Visualise Data on Grafana
 
 To visualise this data, we use Grafana.
 
@@ -308,22 +311,15 @@ your python code.
 In SELECT, click on field and select Value1. Then click on the 
 + sign > Fields > Field to add Value2 and Value3.
 
-
 Back in the Atom terminal, stop your Python script with CMD+C (Ctrl+C).
 
-# 3. Data Collection with Arduino
+# 4 Data Collection with Arduino
 
-So far, we use our laptop to generate random data and send them to the cloud. As
-it is too big and power intensive to fit on the wheelchair, we need a smaller computer
-to run the same code on the wheelchair. To this end, in workshop 2 we will setup
-a Raspberry Pi (i.e. a small computer) to run this code directly on the wheelchair.
-
-For now, we will use your laptop to do this job and implement an example of actual
-data collection. In this section we will log short and long press events of a push
+In this section we will log short and long press events of a push
 button. It highlights that a sensor-based data point can be as simple as a button
 event and tell us about how a user make use of it.
 
-## 3.2 Push Button Example
+## 4.1 Push Button Example
 
 In Atom, copy the folder examples > arduino > push_button_led_log
 in your 'wheelchair' folder. Then, open this folder in Arduino IDE.
@@ -403,13 +399,13 @@ In Arduino IDE, in the top menu 'Tools > Boards' select 'Arduino/Genuino Mega or
 
 Then press the Verify button (green circle with tick).
 
-## 3.3 Wire Push Button and LED
+## 4.2 Wire Push Button and LED
 
 In this example we need three wires, a resistor, an LED and a push button.
 
 ![Flowchart Push Button](images/push_button_led_log.svg)
 
-## 3.4 Connect Arduino
+## 4.3 Connect Arduino
 
 Use the USB cable to connect the Arduino to your laptop.
 
@@ -422,7 +418,7 @@ Look at the input, pressing the push button should turn on the LED and produce a
 log in the Serial Monitor.
 
 
-### Update Python Example
+## 4.4 Update Python Example
 
 The last step is to adapt the Python code on your laptop to read the Serial input
 from the Arduino and forward them to the Data-Centric Design Hub.
@@ -459,7 +455,7 @@ Go back to Grafana to visualise the inputs
 
 
 
-## Raspberry Pi
+# 5 Setting up the Raspberry Pi
 
 The next step consists in setting up the RaspberryPi and running your code on it.
 
