@@ -286,7 +286,7 @@ On Windows
 python wheelchair\get_started.py
 ```
 
-If the example run properly you should see a log generated every two seconds,
+If the example runs properly you should see a log generated every two seconds,
 indicating dum data is being sent to the Hub.
 
 ## 3.5 Visualise Data on Grafana
