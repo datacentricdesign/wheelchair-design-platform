@@ -151,7 +151,7 @@ Here are four short videos with more details:
 Download and install Git from <a href="https://git-scm.com/download" target="_blank">here</a>.
 
 GitHub is a popular online platform that hosts remote Git repositories.
-We will use it throughout the course to host your repo
+We will use it throughout the course to host your repo.
 
 ### 3.2 Sign up on GitHub
 
