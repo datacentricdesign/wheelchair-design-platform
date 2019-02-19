@@ -46,7 +46,7 @@ If Python 3 is installed, the result should look as follows:
 
 ![Flowchart Push Button](images/check_python_version.png)
 
-If the command results are 'Command Not found' (or equivalent message or a previous version of python), you need
+If the command results are 'Command Not found' (or an equivalent message), you need
 to install Python 3. Otherwise, skip to section 2.2.
 
 ### 2.1 Install Python
