@@ -124,7 +124,7 @@ When it is installed, on the top menu of Atom, click on *'Packages' >
 'Settings View' > 'Install Packages/Themes'*. Search and install 'atom-ide-ui'
 and 'ide-python'.
 
-If you do not have experience with Python, we recommend to go through the following tutorial
+If you do not have experience with Python, we recommend you to go through the following tutorial
 to get started: <a href="http://www.learnpython.org/" target="_blank">http://www.learnpython.org/</a>
 
 
