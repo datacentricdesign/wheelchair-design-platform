@@ -1,4 +1,5 @@
 # This example shows how to play a WAV file.
+# Documentation: http://people.csail.mit.edu/hubert/pyaudio/
 
 # Import required library
 import pyaudio
