@@ -1,10 +1,16 @@
+# This example shows how to play a WAV file.
+
+# Import required library
 import pyaudio
 import wave
 import time
 
+# file: absolute path to WAV file to play
+# duration: number of seconds to play in seconds
 def play_sound(file, duration):
     CHUNK = 1024
 
+    # Load the WAV file
     wf = wave.open(file, 'rb')
 
     p = pyaudio.PyAudio()
