@@ -22,23 +22,23 @@ On the top-right corner of this GitHub page, click on Fork.
 
 ![Flowchart Push Button](images/fork.png)
 
-In the dialog, select your account (where yozu create the copy of the repository).
+In the dialog, select your account (where you create the copy of the repository).
 
 ![Flowchart Push Button](images/select_fork_dest.png)
 
-You have now a copy of the wheelchair-design-platform repository on your own account.
+You now have a copy of the wheelchair-design-platform repository on your own account.
 
 ### 1.2 Add members to repo (only one member of the group)
 
 Your repository is publicly accessible for reading. However, you need to give
-other member of the group access to this repository. On the top menu, click 
+the other members of the group access to this repository. On the top menu, click
 *'Settings' > 'Collaborators'*. Search the username of your group members and add them.
 
 ![Flowchart Push Button](images/add_collaborator.png)
 
 ### 1.3 Create a project (only one member of the group)
 
-GitHub offers a convenient way of managing your projects with a Kanban style
+GitHub offers a convenient way of managing your projects with a Kanban (scheduling system) style
 board. On the top menu, click on 'Projects' and click on the green button 'New
 Project'. Fill in a project name, select the template 'Basic Kanban' and click
 'Create project'. You can use this space to map your tasks and your progress.
@@ -57,7 +57,7 @@ download' and copy the provided link.
 
 ![Flowchart Push Button](images/link_clone.png)
 
-Go back to Atom the terminal, and type in 'git clone' followed by the link you copied.
+Go back to the Atom terminal, and type 'git clone' followed by the link you copied.
 For example:
 
 ```bash
@@ -66,7 +66,7 @@ git clone https://github.com/example/wheelchair-design-platform.git
 
 ![Flowchart Push Button](images/clone.png)
 
-Let's tell Git who we are, type in the following commands (enter these commands one after the other):
+Let's tell Git who we are, by typing the following commands (enter these commands one after the other):
 
 ```bash
 git config --global user.email "YOUR EMAIL ADDRESS"
@@ -85,22 +85,22 @@ project.
 
 Let's have a closer look:
 
-* .git folder contains the all history of your project, managed by git. Do not
+* The .git folder contains the full history of your project, managed by git. Do not
 edit or delete files in this folder;
-* docs folder contains the documentation and workshops;
+* The docs folder contains documentation and workshops;
 * examples contains all code examples to get started;
 * .gitignore contains the list of files/file extensions you do not want to track
-with Git. It is especially convenient for local configuration or passwords not 
+with Git. It is especially convenient for local configuration or passwords not
 to be shared;
 * LICENSE contains the MIT license for this project;
-* README.md contains a short introduction to the platform in Markdown. Markdown 
+* README.md contains a short introduction to the platform in Markdown. Markdown
 is a lightweight markup language, i.e. minimal set tags to format text;
-* requirements.txt contains the list of the python library you need to install for
+* requirements.txt contains the list of the python libraries you need to install for
 the project to work;
 
 ## 1.6 Git Flow
 
-To experience the Git flow of updating and sharing progress, let's update the
+To experience the flow of Git, of updating and sharing progress, let's update the
  project documentation.
 
 ### Step 1: Edit (a) File(s)
@@ -120,7 +120,7 @@ By Jane and Joe
 ![Flowchart Push Button](images/git_change.png)
 
 Note: A blue dot appears next to your file name README.md at the top of the page,
-letting you know it is not saved. Press Command+S (or Ctrl+S) to save.
+letting you know the changes to it are not saved. Press Command+S (or Ctrl+S) to save.
 
 ### Step 2: Stage, i.e Select File Changes
 
@@ -128,7 +128,7 @@ Your file appears in yellow in the left panel. It means that there are changes
 in this file that are not yet tracked by Git (unstaged). Click on Git in the
 bottom-right corner.
 
-In the 'Unstaged changes', double-click on the README.md to 'stage' it, i.e. 
+In the 'Unstaged changes', double-click on the README.md to 'stage' it, i.e.
 prepare this file to track its changes. The middle tab shows you the
 changes.
 
@@ -145,19 +145,19 @@ You have made one change (commit) to your local repository.
 ### Step 4: Push, i.e  Send Local Changes to GitHub
 
 The final step consists in sharing this change with your peers. In the bottom-right
-corner, click on 'push'.
+corner, click on 'push'. This will push your changes to the remote repository (on GitHub).
 
 ### Step 5: Fetch (or Pull), i.e Get the Latest Changes from GitHub
 
-Other members of the group can now press 'Fetch' in the bottom-right corner to 
-update their local repository with the latest version.
+Other members of the group can now press 'Fetch' in the bottom-right corner to
+update their local repository with the latest remote version.
 
 ## 2 Data-Centric Design Hub (Per group)
 
-In the cloud we will use our prototyped cloud platform for designers that we call 
+In the cloud we will use our prototyped cloud platform for designers that we call
 Data-Centric Design Hub. In this cloud we use the following terms:
 
-* Persons have a collection of Things.
+* People have a collection of Things.
 * Things are physical or virtual entities with Properties.
 * Properties are one-to-many dimensional data points.
 
@@ -168,14 +168,14 @@ sensors on the seat).
 Go to the hub manager via <a href="https://dwd.tudelft.nl/manager" target="_blank">dwd.tudelft.nl/manager</a>
 and sign up as a group with an email address, a name and a password. The sign up
 process creates an account, then the standard OAuth2 process starts with a consent: you
-need to let the manager access your Things, so that it can help you manage them. To do so tick all the boxes 
+need to let the manager access your Things, so that it can help you manage them. To do so tick all the boxes
 and click "allow access".
 
 Once the consent succeeds, you can click on 'My Things' and create a first one.
-For example with the name 'My wheelchair', type 'Wheelchair',
-description 'An Internet-connected wheelchair'
+For example with the name 'My wheelchair', type 'Wheelchair', and a
+description 'An Internet-connected wheelchair'.
 
-The process take a few seconds as the hub generates an access token for your Thing.
+The process may take a few seconds, as the hub generates an access token for your Thing.
 
 **COPY AND SAVE THIS TOKEN** in a text file, it will be shown only once and enables
 your wheelchair to communicate with the hub. You can also save the thing id, but
@@ -198,7 +198,7 @@ Open the Atom terminal ('plus' sign in the bottom-left corner) and execute the f
 pip3 install -r requirements.txt --user
 ```
 
-Here we 'install' the Python dependencies for our project. The option -r indicates we provide a file name that contains 
+Here we 'install' the Python dependencies for our project. The option -r indicates we provide a file name that contains
 the required dependencies, the option --user indicates we install the dependencies
 in a dependency folder specific for the current users.
 
@@ -206,7 +206,7 @@ in a dependency folder specific for the current users.
 
 On the left panel, right-click on the root folder "wheelchair-design-platform" > New Folder and name it 'wheelchair'.
 
-Copy the file examples > raspberrypi > get_started.py 
+Copy the file examples > raspberrypi > get_started.py
 in your 'wheelchair' folder.
 
 Opening this file, this Python code import the necessary library, then we can see
@@ -255,7 +255,7 @@ print("show text")
 ```
 
 * Conditional statement: In Python we express the condition with 'if', elif
-(else if) and else (more details 
+(else if) and else (more details
 <a href="https://www.tutorialspoint.com/python/python_if_else.htm" target="_blank">here</a>.
 
 In our case, we check if the thing details we retrieved from the server has no property
@@ -286,7 +286,7 @@ On Windows
 python wheelchair\get_started.py
 ```
 
-If the example run properly you should see a log generated every two seconds,
+If the example runs properly you should see a log generated every two seconds,
 indicating dum data is being sent to the Hub.
 
 ## 3.5 Visualise Data on Grafana
@@ -298,18 +298,19 @@ click on 'Sign in with OAuth'. Fill in your Data-Centric design Hub email and
 password. Similarly to the manager, consent to let Grafana access your data.
 
 
-Go to 'Dashboard > Manage' and create a new folder for your project.
+Click on the plus on the left panel and create a new folder for your project.
 Then, create a new Dashboard and select a new panel 'Graph'. At the top of this
 new panel, click on 'Panel Title > Edit'
 
 At the bottom, in the query element GROUP BY, click on time and 'remove'.
 
-In FROM, click on 'Select Measurement' and select your Property ID. If your 
+In FROM, click on 'Select Measurement' and select your Property ID. If your
 Property ID is not appearing in the list, the hub is not receiving data from
 your python code.
 
-In SELECT, click on field and select Value1. Then click on the 
-+ sign > Fields > Field to add Value2 and Value3.
+In SELECT, click on field and select Value1. Then click on the
+plus > Fields > Field to add Value2 and Value3.
+
 
 Back in the Atom terminal, stop your Python script with CMD+C (Ctrl+C).
 
@@ -327,7 +328,7 @@ in your 'wheelchair' folder. Then, open this folder in Arduino IDE.
 Looking at the code, we recognise the Arduino-like structure in three blocks:
 
 * Declaration of variables and libraries, available throughout the code.
-Note by convention, the constant are in uppercase (variable that will not change
+Note by convention, the constants are in uppercase (variables that will not change
 during the programme) while other variables are in lowercase.
 
 ```cpp
@@ -340,7 +341,7 @@ long buttonActiveSince = 0; // Since when the button has been pressed (in ms sin
 boolean longPressActive = false; // Are we currently in a 'long press' event
 ```
 
-* The setup() method executed once when the Arduino start;
+* The setup() method executed once when the Arduino starts;
 
 ```cpp
 void setup() {
@@ -348,7 +349,7 @@ void setup() {
   pinMode(LED_PIN, OUTPUT);      // declare LED as input
 
   Serial.begin(9600); // setting baud speed for Serial (a baud is a pulse)
-  
+
   // 'print' on the Serial port, i.e send a message through the serial port
   Serial.println("Lets start using the button!");
 }
@@ -465,7 +466,7 @@ Insert the SD card in your laptop.
 
 __**(Skip thi section if you have an SD Card with NOOBS pre-installed)**__
 
-Download and install the software 
+Download and install the software
 
 Get the lattest Raspbian here: https://www.raspberrypi.org/downloads/raspbian/
 
@@ -476,11 +477,11 @@ To install this image on the SD card, download and install Etcher: https://www.b
 Starting Etcher, you first select your image file, then your SD card, and 'Flash'.
 
 To connect to the Raspberry Pi without monitor, mouse and keyboard, we use directly
-your laptop. To do this, we need to enable the ssh protocol on the Raspberry Pi 
+your laptop. To do this, we need to enable the ssh protocol on the Raspberry Pi
 (secure remote access to a computer).
 
-On your laptop, open text editor (TextEdit on Mac, Editor on Windows) and save an 
-empty file named 'ssh' (without extension). This file will indicate that we want 
+On your laptop, open text editor (TextEdit on Mac, Editor on Windows) and save an
+empty file named 'ssh' (without extension). This file will indicate that we want
 to enable ssh.
 
 (add process for network auto config)
