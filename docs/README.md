@@ -8,7 +8,7 @@ a prospering research and design community around wheelchair users.
 
 ## Workshops
 
-* [Getting started](/docs/workshops/GettingStarted.md)
+* [Getting started](workshops/GettingStarted.md)
 * [Workshop 1: Building an Internet-Connected Wheelchair](workshops/Workshop1.md)
 * [Workshop 2: Integrating and Visualising Sensor-Based Data](workshops/Workshop2.md)
 * [Workshop 3: Developing Algorithms and Controlling Actuators](workshops/Workshop3.md)
