@@ -1,6 +1,6 @@
 #A noisy Wheelchair
 
-a short description
+By Jane and Joe
 
 # Wheelchair Design Platform
 
