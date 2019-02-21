@@ -9,13 +9,12 @@
 	.st3{fill:none;stroke:#000000;stroke-width:1.0331;stroke-miterlimit:10;}
 	.st4{font-family:'PTSans-NarrowBold';}
 	.st5{font-size:12px;}
-	.st6{fill:#4BB164;}
-	.st7{fill:#D86060;}
-	.st8{fill:#DCAE39;}
-	.st9{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:4.7807,4.7807;}
-	.st10{font-family:'PTSans-Narrow';}
-	.st11{font-size:10px;}
-	.st12{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:5;}
+	.st6{fill:#D86060;}
+	.st7{fill:#DCAE39;}
+	.st8{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:4.7807,4.7807;}
+	.st9{font-family:'PTSans-Narrow';}
+	.st10{font-size:10px;}
+	.st11{fill:none;stroke:#000000;stroke-width:1.1259;stroke-miterlimit:10;stroke-dasharray:5.6295;}
 </style>
 <rect x="13.4" y="130.1" class="st0" width="398.4" height="249"/>
 <rect x="24.6" y="152.2" class="st1" width="375.9" height="107.2"/>
@@ -31,27 +30,24 @@
 <text transform="matrix(1 0 0 1 27.5422 166.447)" class="st4 st5">Frame</text>
 <text transform="matrix(1 0 0 1 110.4307 302.697)" class="st4 st5">Feather</text>
 <text transform="matrix(1 0 0 1 44.4174 23.8636)" class="st4 st5">Server</text>
-<rect x="184.4" y="224.4" class="st6" width="58.4" height="24.9"/>
-<text transform="matrix(1 0 0 1 190.876 243.1137)" class="st4 st5">Bluetooth</text>
 <text transform="matrix(1 0 0 1 189.5974 339.7059)" class="st4 st5">Power Bank</text>
-<rect x="185.4" y="313.4" class="st7" width="58.4" height="42.9"/>
+<rect x="185.4" y="313.4" class="st6" width="58.4" height="42.9"/>
 <text transform="matrix(1 0 0 1 189.5973 341.7803)" class="st4 st5">Power Bank</text>
-<rect x="187.7" y="157.3" class="st7" width="99.2" height="48.5"/>
+<rect x="187.7" y="157.3" class="st6" width="99.2" height="48.5"/>
 <text transform="matrix(1 0 0 1 212.5499 186.0615)" class="st4 st5">Power Bank</text>
-<rect x="281.4" y="284.5" class="st8" width="58.4" height="24.9"/>
+<rect x="281.4" y="284.5" class="st7" width="58.4" height="24.9"/>
 <text transform="matrix(1 0 0 1 295.487 299.7806)" class="st4 st5">Sensors</text>
-<rect x="348.6" y="302.7" class="st8" width="58.4" height="24.9"/>
+<rect x="348.6" y="302.7" class="st7" width="58.4" height="24.9"/>
 <text transform="matrix(1 0 0 1 358.1321 318.2385)" class="st4 st5">Actuators</text>
 <line class="st2" x1="364.8" y1="302.7" x2="364.8" y2="247.6"/>
 <line class="st2" x1="326.3" y1="284.5" x2="326.3" y2="247.6"/>
-<line class="st2" x1="160.7" y1="236.8" x2="183.8" y2="236.8"/>
 <line class="st2" x1="174.1" y1="334.9" x2="185.4" y2="334.9"/>
 <line class="st2" x1="298.4" y1="218.4" x2="160.7" y2="218.4"/>
 <line class="st2" x1="187.7" y1="190.5" x2="160.7" y2="190.5"/>
 <g>
 	<g>
 		<line class="st2" x1="86" y1="177.2" x2="86" y2="174.7"/>
-		<line class="st9" x1="86" y1="169.9" x2="86" y2="86.3"/>
+		<line class="st8" x1="86" y1="169.9" x2="86" y2="86.3"/>
 		<line class="st2" x1="86" y1="83.9" x2="86" y2="81.4"/>
 	</g>
 </g>
@@ -59,25 +55,24 @@
 <text transform="matrix(1 0 0 1 91.2378 121.0102)" class="st4 st5">HTTP/MQTT</text>
 <text transform="matrix(1 0 0 1 164.5663 215.6136)" class="st4 st5">USB</text>
 <text transform="matrix(1 0 0 1 179.7497 296.9499)" class="st4 st5">Bluetooth</text>
-<rect x="30.5" y="288.9" class="st8" width="58.4" height="24.9"/>
+<rect x="30.5" y="288.9" class="st7" width="58.4" height="24.9"/>
 <text transform="matrix(1 0 0 1 44.6074 304.1776)" class="st4 st5">Sensors</text>
-<rect x="30.5" y="319.5" class="st8" width="58.4" height="24.9"/>
+<rect x="30.5" y="319.5" class="st7" width="58.4" height="24.9"/>
 <text transform="matrix(1 0 0 1 40.0241 335.0761)" class="st4 st5">Actuators</text>
 <line class="st2" x1="88.9" y1="301.4" x2="97.9" y2="301.4"/>
 <line class="st2" x1="88.9" y1="332" x2="97.9" y2="332"/>
-<text transform="matrix(1 0 0 1 53.0377 208.5222)" class="st10 st11">- receive, store, transmit data</text>
-<text transform="matrix(1 0 0 1 53.0377 220.5222)" class="st10 st11">- receive, transmit commands</text>
-<text transform="matrix(1 0 0 1 53.0377 232.5222)" class="st10 st11">- run (ML) algorithms</text>
-<text transform="matrix(1 0 0 1 301.2037 208.5222)" class="st10 st11">- collect data from sensors</text>
-<text transform="matrix(1 0 0 1 301.2037 220.5222)" class="st10 st11">- control actuators</text>
-<text transform="matrix(1 0 0 1 301.2037 232.5222)" class="st10 st11">- simple logic</text>
-<text transform="matrix(1 0 0 1 47.8976 44.2116)" class="st10 st11">- receive, store, visualise data</text>
-<text transform="matrix(1 0 0 1 47.8976 56.2116)" class="st10 st11">- run (ML) algorithms</text>
-<text transform="matrix(1 0 0 1 47.8976 68.2116)" class="st10 st11">- serve user interface</text>
-<text transform="matrix(1 0 0 1 104.2825 313.8265)" class="st10 st11">- collect data from</text>
-<text transform="matrix(1 0 0 1 104.2825 325.8265)" class="st10 st11">sensors</text>
-<text transform="matrix(1 0 0 1 104.2825 337.8265)" class="st10 st11">- control actuators</text>
-<text transform="matrix(1 0 0 1 104.2825 349.8265)" class="st10 st11">- simple logic</text>
-<polyline class="st12" points="228.4,249.3 228.4,285.9 228.4,301.4 174.2,301.3 "/>
-<text transform="matrix(1 0 0 1 164.5662 232.5218)" class="st4 st5">USB</text>
+<text transform="matrix(1 0 0 1 53.0377 208.5222)" class="st9 st10">- receive, store, transmit data</text>
+<text transform="matrix(1 0 0 1 53.0377 220.5222)" class="st9 st10">- receive, transmit commands</text>
+<text transform="matrix(1 0 0 1 53.0377 232.5222)" class="st9 st10">- run (ML) algorithms</text>
+<text transform="matrix(1 0 0 1 301.2037 208.5222)" class="st9 st10">- collect data from sensors</text>
+<text transform="matrix(1 0 0 1 301.2037 220.5222)" class="st9 st10">- control actuators</text>
+<text transform="matrix(1 0 0 1 301.2037 232.5222)" class="st9 st10">- simple logic</text>
+<text transform="matrix(1 0 0 1 47.8976 44.2116)" class="st9 st10">- receive, store, visualise data</text>
+<text transform="matrix(1 0 0 1 47.8976 56.2116)" class="st9 st10">- run (ML) algorithms</text>
+<text transform="matrix(1 0 0 1 47.8976 68.2116)" class="st9 st10">- serve user interface</text>
+<text transform="matrix(1 0 0 1 104.2825 313.8265)" class="st9 st10">- collect data from</text>
+<text transform="matrix(1 0 0 1 104.2825 325.8265)" class="st9 st10">sensors</text>
+<text transform="matrix(1 0 0 1 104.2825 337.8265)" class="st9 st10">- control actuators</text>
+<text transform="matrix(1 0 0 1 104.2825 349.8265)" class="st9 st10">- simple logic</text>
+<polyline class="st11" points="160.7,235.4 228.4,235.4 228.4,281.8 228.4,301.4 174.2,301.3 "/>
 </svg>
