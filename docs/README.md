@@ -26,6 +26,8 @@ get started, you can find some additional resources
 * Documentation of your project is key,
 [here are some tips and examples](resources/documentation.md "Documentation tips and examples").
 
+* [Git manipulation such as Pull Request](resources/git.md "Git manipulation").
+
 ## Main Components
 
 __**Disclaimer:**__ the design of this platform focuses on flexibility and
