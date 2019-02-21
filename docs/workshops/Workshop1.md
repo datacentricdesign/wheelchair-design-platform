@@ -462,7 +462,7 @@ The next step consists in setting up the RaspberryPi and running your code on it
 
 Insert the SD card in your laptop.
 
-### Set up an empty SD Card
+## 5.1 Set up an empty SD Card
 
 __**(Skip thi section if you have an SD Card with NOOBS pre-installed)**__
 
@@ -476,17 +476,87 @@ To install this image on the SD card, download and install Etcher: https://www.b
 
 Starting Etcher, you first select your image file, then your SD card, and 'Flash'.
 
-To connect to the Raspberry Pi without monitor, mouse and keyboard, we use directly
-your laptop. To do this, we need to enable the ssh protocol on the Raspberry Pi
-(secure remote access to a computer).
+# 5.2 Getting Started without Monitor
 
-On your laptop, open text editor (TextEdit on Mac, Editor on Windows) and save an
-empty file named 'ssh' (without extension). This file will indicate that we want
-to enable ssh.
+### 5.2.1 SSH
+
+To connect to the Raspberry Pi without monitor, mouse and keyboard, we use directly
+your laptop. To do this, we need to enable the 'ssh' protocol (for Secure Shell)
+on the  Raspberry Pi. This protocol gives us the possibility to remotely access
+a computer through the network. On your laptop, open text editor (TextEdit on Mac,
+Editor on Windows) and save an empty file named 'ssh' (without extension) at the
+root of the 'boot' disk (SD card). This file will indicate that we want to enable ssh.
+
+### 5.2.2 Network Access
 
 (add process for network auto config)
+To connect your Raspberry Pi to the network, create a second text file
+'wpa_supplicant.conf' with the following content:
 
-Eject the SD card and insert it in on the Raspberry Pi, then power the Pi
+```bash
+country=
+update_config=1
+ctrl_interface=/var/run/wpa_supplicant
+
+network={
+  scan_ssid=1
+  ssid="YOUR_NETWORK_SSID"
+  psk="YOUR_NETORK_PASSWORD"
+}
+
+```
+
+To connect to Eduroam:
+
+```bash
+network={
+  scan_ssid=0
+  ssid="eduroam"
+  key_mgmt=WPA-EAP
+  eap=PEAP
+  phase2="MSCHAPV2"
+  identity="YOUR_EDUROAM_NETID"
+  password="YOUR_EDUROAM_PASSWORD"
+}
+```
+
+__**Disclaimer**__: this process requires to insert the Eduroam password. Thus, it is
+important to protect the access to your Raspberry Pi. Make sure you apply ALL the
+following steps marked as __**SECURITY**__
+
+__**SECURITY**__ Disable auto-login: by default, anyone with an HDMI cable can look at
+your Raspberry Pi and its files. Disable this feature
+
+### 5.3 Booting and Connecting
+
+Eject the SD card and insert it in on the Raspberry Pi, then power the Pi.
+
+If the settings are correct, it takes about 30 seconds to get the Raspberry Pi on
+the network. Make sure your laptop is connected to the same network, then connect
+via ssh with the following command
+
+```bash
+ssh pi@raspberrypi.local
+```
+
+In this command, 'pi' is the username and raspberrypi.local is your hostname (the 
+name of the Pi on the local network).
+
+You will be prompt for the default password. Type in 'raspberry'. Note: when you type
+in the password, no letter appears in the terminal. This is the normal behaviour
+to protect your password.
+
+Change your hostname:
+
+__**SECURITY**__ Change username and password: changing the default username 'pi'
+and password 'raspberry' gives you more guaranty you are the only one accessing
+your Raspberry Pi.
+
+
+__**SECURITY**__ Remote wpa_supplicant.conf: Once you successfully connected to
+your network
+
+
 
 (Scan and find your IP address)
 
