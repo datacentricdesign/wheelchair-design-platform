@@ -21,12 +21,12 @@ a prospering research and design community around wheelchair users.
 * This platform uses two programming languages, Python on computers and C on
 micro-controllers. While descriptions and examples of code should help you
 get started, you can find some additional resources
-[here](resources/software.md "Python and C resources").
+[here](resources/software.md).
 
 * Documentation of your project is key,
-[here are some tips and examples](resources/documentation.md "Documentation tips and examples").
+[here are some tips and examples](resources/documentation.md).
 
-* [Git manipulation such as Pull Request](resources/git.md "Git manipulation").
+* [Git manipulation such as Pull Request](resources/git.md).
 
 ## Main Components
 
