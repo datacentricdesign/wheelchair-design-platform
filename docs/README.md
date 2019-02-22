@@ -61,7 +61,7 @@ the Raspberry Pi via Bluetooth to sense and actuate from the wheel.
 
 On the frame:
 
-* 1 Raspberry Pi 3B;
+* 1 Raspberry Pi 3B+;
 * 1 SD card (Some come directly with NOOBS installed);
 * 1 Arduino Mega;
 * 1 Large power bank;

@@ -529,11 +529,15 @@ your Raspberry Pi and its files. Disable this feature
 
 ### 5.3 Booting and Connecting
 
+__**DISCLAIMER:**__ If you do this workshop as part of a class, keep in mind that
+all Raspberry Pi will have the same name on the network. You will have to power
+your Raspberry Pi one after the other to be able to identify them.
+
 Eject the SD card and insert it in on the Raspberry Pi, then power the Pi.
 
 If the settings are correct, it takes about 30 seconds to get the Raspberry Pi on
 the network. Make sure your laptop is connected to the same network, then connect
-via ssh with the following command
+via ssh with the following command.
 
 ```bash
 ssh pi@raspberrypi.local
@@ -542,29 +546,61 @@ ssh pi@raspberrypi.local
 In this command, 'pi' is the username and raspberrypi.local is your hostname (the 
 name of the Pi on the local network).
 
-You will be prompt for the default password. Type in 'raspberry'. Note: when you type
+First you will need to type in 'yes' followed by Enter.
+
+Then, you will be prompt for the default password. Type in 'raspberry'. Note: when you type
 in the password, no letter appears in the terminal. This is the normal behaviour
 to protect your password.
 
-Change your hostname:
+![SSH Pi](images/ssh_pi.png)
 
-__**SECURITY**__ Change username and password: changing the default username 'pi'
+Once connected, we want to change the hostname, i.e. the name of your Raspberry Pi
+on the network. By default, it is 'raspberrypi' which is not practical while you
+have several of them (like in a classroom setting). To do this, we need to edit 
+two files /etc/hostname and /etc/hosts. We use the editor nano for this.
+
+Type in:
+
+```bash
+sudo nano /etc/hostname
+```
+
+This command opens the file /etc/hostname in nano. Replace 'raspberrypi' with the 
+name of your choice (without space). In the following example, we use the
+hostname 'noisy-wheelchair'.
+
+![SSH Pi](images/hostname.png)
+
+To save and exist, press Ctrl+X, press Y ()to answer 'Yes' to the question) followed
+by Enter. Similarly, edit the file /etc/hosts and change 'raspberrypi' for the
+same name, e.g. 'noisy-wheelchair'.
+
+```bash
+sudo nano /etc/hosts
+```
+
+![SSH Pi](images/hosts.png)
+
+Again, save and exit with Ctrl+X, then Y followed by Enter.
+
+Reboot your Rasberry Pi with:
+
+```bash
+sudo reboot
+```
+
+After about 30 second, you should be able to connect to you Raspberry Pi with 
+your new hostname. For example:
+
+```bash
+ssh pi@noisy-wheelchair.local
+```
+
+__**SECURITY**__ Next, we want to change the username and password: changing the default username 'pi'
 and password 'raspberry' gives you more guaranty you are the only one accessing
 your Raspberry Pi.
 
 
-__**SECURITY**__ Remote wpa_supplicant.conf: Once you successfully connected to
-your network
-
-
-
-(Scan and find your IP address)
-
-Open a terminal (or 'command prompt' on Windows). Type in
-
-```
-ssh pi@<your ip address>
-```
 
 Update
 
