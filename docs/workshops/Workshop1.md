@@ -392,7 +392,10 @@ void loop() {
 }
 ```
 
-The following flow chart illustrates the algorithm of this example code.
+In this example, we want to detect when a push button is pressed. We will trigger
+two type of events when the button is released: 'short' or 'long' press. 
+
+The following flow chart illustrates the algorithm of this example code. 
 
 ![Flowchart Push Button](images/push_button_flow_chart.png)
 
@@ -452,8 +455,6 @@ python wheelchair\serial_example.py
 ```
 
 Go back to Grafana to visualise the inputs
-
-
 
 
 # 5 Setting up the Raspberry Pi
@@ -569,7 +570,7 @@ This command opens the file /etc/hostname in nano. Replace 'raspberrypi' with th
 name of your choice (without space). In the following example, we use the
 hostname 'noisy-wheelchair'.
 
-![SSH Pi](images/hostname.png)
+![Hostname](images/hostname.png)
 
 To save and exist, press Ctrl+X, press Y ()to answer 'Yes' to the question) followed
 by Enter. Similarly, edit the file /etc/hosts and change 'raspberrypi' for the
@@ -579,7 +580,7 @@ same name, e.g. 'noisy-wheelchair'.
 sudo nano /etc/hosts
 ```
 
-![SSH Pi](images/hosts.png)
+![Hosts](images/hosts.png)
 
 Again, save and exit with Ctrl+X, then Y followed by Enter.
 
@@ -596,43 +597,58 @@ your new hostname. For example:
 ssh pi@noisy-wheelchair.local
 ```
 
-__**SECURITY**__ Next, we want to change the username and password: changing the default username 'pi'
-and password 'raspberry' gives you more guaranty you are the only one accessing
-your Raspberry Pi.
-
-
-
-Update
+__**SECURITY**__ Next, we want to change the user password: changing the
+default password 'raspberry' gives you more guaranty you are the only one
+accessing your Raspberry Pi.
 
 ```
+sudo passwd
+```
+
+![Change password](images/pass.png)
+
+### 5.4 Installing Requirements
+
+First, we need to update the Raspberry Pi with the latest version of its software.
+
+```bash
 sudo apt-get update
 sudo apt-get upgrade
 ```
 
-Create a folder
-
-```
-mkdir wheelchair
-cd wheelchair
-```
-
 Set up Git
 
-```
+```bash
 sudo apt-get git
 ```
 
-Clone your GitHub repository
+Clone your GitHub repository. Similarly to step 1.4, we now clone your repository.
+This time, we clone it on the Raspberry Pi. For example:
 
-git clone
+```bash
+git clone https://github.com/example/wheelchair-design-platform.git
+```
 
+In the terminal, to navigate through folder we use 'cd'. Enter the folder you have just
+cloned with:
 
-* Main Components
+```bash
+cd wheelchair-design-platform
+```
 
-* Architecture
+Then, we need to create an .env file with the THING_ID, the THING_TOKEN and the
+SERIAL port.
 
-* Setting up the Raspberry Pi
+```bash
+nano .env
+```
 
-* Network
+Copy your thing id and token, and use /dev/ttyUSB0 as serial port.
 
-* Bash commands
+![Change password](images/env_file.png)
+
+```bash
+python3 wheelchair/serial_example.py
+```
+
+The result should be the same as running it on your laptop.
