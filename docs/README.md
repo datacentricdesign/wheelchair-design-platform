@@ -8,23 +8,25 @@ a prospering research and design community around wheelchair users.
 
 ## Workshops
 
-* [Getting started](/docs/workshops/GettingStarted.md)
-* [Workshop 1: Building an Internet-Connected Wheelchair](/docs/workshops/Workshop1.md)
-* [Workshop 2: Integrating and Visualising Sensor-Based Data](/docs/workshops/Workshop2.md)
-* [Workshop 3: Developing Algorithms and Controlling Actuators](/docs/workshops/Workshop3.md)
-* [Workshop 4: Developing and Conducting a Data Collection Campaign](/docs/workshops/Workshop4.md)
-* [Workshop 5: Implementing a Machine Learning Pipeline](/docs/workshops/Workshop5.md)
-* [Workshop 6: Developing a Product Analytics Dashboard](/docs/workshops/Workshop6.md)
+* [Getting started](workshops/GettingStarted.md)
+* [Workshop 1: Building an Internet-Connected Wheelchair](workshops/Workshop1.md)
+* [Workshop 2: Integrating and Visualising Sensor-Based Data](workshops/Workshop2.md)
+* [Workshop 3: Developing Algorithms and Controlling Actuators](workshops/Workshop3.md)
+* [Workshop 4: Developing and Conducting a Data Collection Campaign](workshops/Workshop4.md)
+* [Workshop 5: Implementing a Machine Learning Pipeline](workshops/Workshop5.md)
+* [Workshop 6: Developing a Product Analytics Dashboard](workshops/Workshop6.md)
 
 ## Resources
 
 * This platform uses two programming languages, Python on computers and C on
 micro-controllers. While descriptions and examples of code should help you
 get started, you can find some additional resources
-[here](/docs/resources/software.md "Python and C resources").
+[here](resources/software.md).
 
 * Documentation of your project is key,
-[here are some tips and examples](/docs/resources/documentation.md "Documentation tips and examples").
+[here are some tips and examples](resources/documentation.md).
+
+* [Git manipulation such as Pull Request](resources/git.md).
 
 ## Main Components
 
@@ -53,13 +55,13 @@ powers the Raspberry Pi. The Arduino Mega communicates and receives power from t
 Raspberry Pi via USB. A Feather (Arduino-like development board) on the wheel connects to
 the Raspberry Pi via Bluetooth to sense and actuate from the wheel.
 
-![Main Wheelchair components](/docs/workshops/images/wheechair-components.png)
+![Main Wheelchair components](workshops/images/wheechair-components.png)
 
 ## List of suggested components:
 
 On the frame:
 
-* 1 Raspberry Pi 3B;
+* 1 Raspberry Pi 3B+;
 * 1 SD card (Some come directly with NOOBS installed);
 * 1 Arduino Mega;
 * 1 Large power bank;

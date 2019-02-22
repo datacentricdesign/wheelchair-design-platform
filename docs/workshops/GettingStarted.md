@@ -86,8 +86,21 @@ if the correct version of python is shown, the install was successful.
 ### 2.2 Python Dependencies
 
 In the Python ecosystem, Pip is a tool that manages packages for us. We will use
-it to install and update any Python library our project relies on. You can
-install it as follows.
+it to install and update any Python library our project relies on. You can check whether
+Pip is already install with the following command.
+
+On Mac, type in:
+
+```bash
+python3 -m pip --version
+```
+On Windows, type in:
+
+```bash
+python -m pip --version
+```
+
+If it is not found, you can install it as follows.
 
 On Mac, type in:
 

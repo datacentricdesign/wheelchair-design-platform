@@ -1,8 +1,10 @@
+
 Wheelchair Design Platform is a repository that contains some resources to help
 designers and developers speak the same language, and work together towards
 addressing relevant challenges for wheelchair users. It is a collection of 
 workshop materials, code examples and also a compilation of resources to foster
 a prospering research and design community around wheelchair users.
+
 
 ![IoT1 Exhibition](/docs/workshops/images/iot1_exhibition.jpg)
 
@@ -25,6 +27,8 @@ get started, you can find some additional resources
 
 * Documentation of your project is key,
 [here are some tips and examples](/docs/resources/documentation.md "Documentation tips and examples").
+
+* [Git manipulation such as Pull Request](/docs/resources/git.md "Git manipulation").
 
 ## Main Components
 
@@ -72,10 +76,11 @@ On the wheel:
 * 1 Feather (Bluetooth enabled);
 * 1 small power bank;
 * 1 small breadboard;
-* 1 USB cable A/B (power bank to Arduino Uno);
+* 1 USB cable A/B (power bank to Arduino Uno).
 
 
 ## Contact and Existing projects
 
 Feel free to contact us at jacky@datacentricdesign.org. We welcome feedback, pull requests
 or links to your project.
+

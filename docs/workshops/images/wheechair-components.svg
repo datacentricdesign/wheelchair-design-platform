@@ -9,15 +9,12 @@
 	.st3{fill:none;stroke:#000000;stroke-width:1.0331;stroke-miterlimit:10;}
 	.st4{font-family:'PTSans-NarrowBold';}
 	.st5{font-size:12px;}
-	.st6{fill:#4BB164;}
-	.st7{fill:#D86060;}
-	.st8{fill:#DCAE39;}
-	.st9{fill:#DCAE39;stroke:#000000;stroke-miterlimit:10;}
-	.st10{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:4.7807,4.7807;}
-	.st11{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:5;}
-	.st12{stroke:#000000;stroke-miterlimit:10;}
-	.st13{font-family:'PTSans-Narrow';}
-	.st14{font-size:10px;}
+	.st6{fill:#D86060;}
+	.st7{fill:#DCAE39;}
+	.st8{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:4.7807,4.7807;}
+	.st9{font-family:'PTSans-Narrow';}
+	.st10{font-size:10px;}
+	.st11{fill:none;stroke:#000000;stroke-width:1.1259;stroke-miterlimit:10;stroke-dasharray:5.6295;}
 </style>
 <rect x="13.4" y="130.1" class="st0" width="398.4" height="249"/>
 <rect x="24.6" y="152.2" class="st1" width="375.9" height="107.2"/>
@@ -26,52 +23,56 @@
 <rect x="47.9" y="177.2" class="st3" width="112.8" height="70.4"/>
 <rect x="298.4" y="177.2" class="st2" width="97.8" height="70.4"/>
 <text transform="matrix(1 0 0 1 75.9971 193.8638)" class="st4 st5">Raspberry Pi</text>
-<text transform="matrix(1 0 0 1 308.5422 190.5306)" class="st4 st5">Arduino Mega</text>
+<text transform="matrix(1 0 0 1 308.5422 190.5305)" class="st4 st5">Arduino Mega</text>
 <rect x="97.9" y="285.9" class="st2" width="76.2" height="70.4"/>
 <text transform="matrix(1 0 0 1 104.2824 278.2928)" class="st4 st5">Wheel</text>
 <text transform="matrix(1 0 0 1 21.4589 145.947)" class="st4 st5">Wheelchair</text>
 <text transform="matrix(1 0 0 1 27.5422 166.447)" class="st4 st5">Frame</text>
-<text transform="matrix(1 0 0 1 110.4307 302.697)" class="st4 st5">Arduino Uno</text>
+<text transform="matrix(1 0 0 1 110.4307 302.697)" class="st4 st5">Feather</text>
 <text transform="matrix(1 0 0 1 44.4174 23.8636)" class="st4 st5">Server</text>
-<polygon class="st6" points="243.8,308 185.4,308 185.4,285.9 243.8,285.9 243.8,297 "/>
-<text transform="matrix(1 0 0 1 192.889 299.7805)" class="st4 st5">Bluetooth</text>
-<rect x="216.9" y="224.4" class="st6" width="58.4" height="24.9"/>
-<text transform="matrix(1 0 0 1 224.376 243.1137)" class="st4 st5">Bluetooth</text>
 <text transform="matrix(1 0 0 1 189.5974 339.7059)" class="st4 st5">Power Bank</text>
-<rect x="185.4" y="313.4" class="st7" width="58.4" height="42.9"/>
+<rect x="185.4" y="313.4" class="st6" width="58.4" height="42.9"/>
 <text transform="matrix(1 0 0 1 189.5973 341.7803)" class="st4 st5">Power Bank</text>
-<rect x="187.7" y="157.3" class="st7" width="99.2" height="48.5"/>
-<text transform="matrix(1 0 0 1 212.5585 174.2803)" class="st4 st5">Power Bank</text>
-<rect x="281.4" y="284.5" class="st8" width="58.4" height="24.9"/>
+<rect x="187.7" y="157.3" class="st6" width="99.2" height="48.5"/>
+<text transform="matrix(1 0 0 1 212.5499 186.0615)" class="st4 st5">Power Bank</text>
+<rect x="281.4" y="284.5" class="st7" width="58.4" height="24.9"/>
 <text transform="matrix(1 0 0 1 295.487 299.7806)" class="st4 st5">Sensors</text>
-<rect x="348.6" y="302.7" class="st8" width="58.4" height="24.9"/>
+<rect x="348.6" y="302.7" class="st7" width="58.4" height="24.9"/>
 <text transform="matrix(1 0 0 1 358.1321 318.2385)" class="st4 st5">Actuators</text>
-<line class="st9" x1="364.8" y1="302.7" x2="364.8" y2="247.6"/>
-<line class="st9" x1="326.3" y1="284.5" x2="326.3" y2="247.6"/>
-<line class="st9" x1="275.3" y1="236.8" x2="298.4" y2="236.8"/>
-<line class="st9" x1="174.1" y1="297" x2="185.4" y2="297"/>
-<line class="st9" x1="174.1" y1="334.9" x2="185.4" y2="334.9"/>
-<line class="st9" x1="298.4" y1="218.4" x2="160.7" y2="218.4"/>
-<line class="st9" x1="187.7" y1="190.5" x2="160.7" y2="190.5"/>
+<line class="st2" x1="364.8" y1="302.7" x2="364.8" y2="247.6"/>
+<line class="st2" x1="326.3" y1="284.5" x2="326.3" y2="247.6"/>
+<line class="st2" x1="174.1" y1="334.9" x2="185.4" y2="334.9"/>
+<line class="st2" x1="298.4" y1="218.4" x2="160.7" y2="218.4"/>
+<line class="st2" x1="187.7" y1="190.5" x2="160.7" y2="190.5"/>
 <g>
 	<g>
 		<line class="st2" x1="86" y1="177.2" x2="86" y2="174.7"/>
-		<line class="st10" x1="86" y1="169.9" x2="86" y2="86.3"/>
+		<line class="st8" x1="86" y1="169.9" x2="86" y2="86.3"/>
 		<line class="st2" x1="86" y1="83.9" x2="86" y2="81.4"/>
 	</g>
 </g>
-<text transform="matrix(1 0 0 1 91.2378 106.6102)"><tspan x="0" y="0" class="st4 st5">Wi-Fi</tspan><tspan x="0" y="14.4" class="st4 st5">HTTP/MQTT</tspan></text>
+<text transform="matrix(1 0 0 1 91.2378 106.6102)" class="st4 st5">Wi-Fi</text>
+<text transform="matrix(1 0 0 1 91.2378 121.0102)" class="st4 st5">HTTP/MQTT</text>
 <text transform="matrix(1 0 0 1 164.5663 215.6136)" class="st4 st5">USB</text>
-<text transform="matrix(1 0 0 1 231.4382 275.1559)" class="st4 st5">Bluetooth</text>
-<line class="st11" x1="228.4" y1="249.3" x2="228.4" y2="285.9"/>
-<rect x="30.5" y="288.9" class="st8" width="58.4" height="24.9"/>
+<text transform="matrix(1 0 0 1 179.7497 296.9499)" class="st4 st5">Bluetooth</text>
+<rect x="30.5" y="288.9" class="st7" width="58.4" height="24.9"/>
 <text transform="matrix(1 0 0 1 44.6074 304.1776)" class="st4 st5">Sensors</text>
-<rect x="30.5" y="319.5" class="st8" width="58.4" height="24.9"/>
+<rect x="30.5" y="319.5" class="st7" width="58.4" height="24.9"/>
 <text transform="matrix(1 0 0 1 40.0241 335.0761)" class="st4 st5">Actuators</text>
-<line class="st12" x1="88.9" y1="301.4" x2="97.9" y2="301.4"/>
-<line class="st12" x1="88.9" y1="332" x2="97.9" y2="332"/>
-<text transform="matrix(1 0 0 1 53.0377 208.5222)"><tspan x="0" y="0" class="st13 st14">- receive, store, transmit data</tspan><tspan x="0" y="12" class="st13 st14">- receive, transmit commands</tspan><tspan x="0" y="24" class="st13 st14">- run (ML) algorithms</tspan></text>
-<text transform="matrix(1 0 0 1 301.2037 208.5223)"><tspan x="0" y="0" class="st13 st14">- collect data from sensors</tspan><tspan x="0" y="12" class="st13 st14">- control actuators</tspan><tspan x="0" y="24" class="st13 st14">- simple logic</tspan></text>
-<text transform="matrix(1 0 0 1 47.8976 44.2117)"><tspan x="0" y="0" class="st13 st14">- receive, store, visualise data</tspan><tspan x="0" y="12" class="st13 st14">- run (ML) algorithms</tspan><tspan x="0" y="24" class="st13 st14">- serve user interface</tspan></text>
-<text transform="matrix(1 0 0 1 104.2825 313.8265)"><tspan x="0" y="0" class="st13 st14">- collect data from</tspan><tspan x="0" y="12" class="st13 st14">sensors</tspan><tspan x="0" y="24" class="st13 st14">- control actuators</tspan><tspan x="0" y="36" class="st13 st14">- simple logic</tspan></text>
+<line class="st2" x1="88.9" y1="301.4" x2="97.9" y2="301.4"/>
+<line class="st2" x1="88.9" y1="332" x2="97.9" y2="332"/>
+<text transform="matrix(1 0 0 1 53.0377 208.5222)" class="st9 st10">- receive, store, transmit data</text>
+<text transform="matrix(1 0 0 1 53.0377 220.5222)" class="st9 st10">- receive, transmit commands</text>
+<text transform="matrix(1 0 0 1 53.0377 232.5222)" class="st9 st10">- run (ML) algorithms</text>
+<text transform="matrix(1 0 0 1 301.2037 208.5222)" class="st9 st10">- collect data from sensors</text>
+<text transform="matrix(1 0 0 1 301.2037 220.5222)" class="st9 st10">- control actuators</text>
+<text transform="matrix(1 0 0 1 301.2037 232.5222)" class="st9 st10">- simple logic</text>
+<text transform="matrix(1 0 0 1 47.8976 44.2116)" class="st9 st10">- receive, store, visualise data</text>
+<text transform="matrix(1 0 0 1 47.8976 56.2116)" class="st9 st10">- run (ML) algorithms</text>
+<text transform="matrix(1 0 0 1 47.8976 68.2116)" class="st9 st10">- serve user interface</text>
+<text transform="matrix(1 0 0 1 104.2825 313.8265)" class="st9 st10">- collect data from</text>
+<text transform="matrix(1 0 0 1 104.2825 325.8265)" class="st9 st10">sensors</text>
+<text transform="matrix(1 0 0 1 104.2825 337.8265)" class="st9 st10">- control actuators</text>
+<text transform="matrix(1 0 0 1 104.2825 349.8265)" class="st9 st10">- simple logic</text>
+<polyline class="st11" points="160.7,235.4 228.4,235.4 228.4,281.8 228.4,301.4 174.2,301.3 "/>
 </svg>

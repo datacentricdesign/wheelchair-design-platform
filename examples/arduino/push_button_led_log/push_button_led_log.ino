@@ -18,15 +18,14 @@ void setup() {
 
 void loop() {
   // Is button active?
-  if (digitalRead(button) == LOW) {
+  if (digitalRead(BUTTON_PIN) == LOW) {
     // if the button was not yet pressed
     if (buttonActiveSince == 0) {
         buttonActiveSince = millis();
     } else if ((millis() - buttonActiveSince > LONG_PRESS_TIME)
                 && longPressActive == false) {
-          longPressActive = true;
-          digitalWrite(led, HIGH);  // turn LED ON
-        }
+      longPressActive = true;
+      digitalWrite(LED_PIN, HIGH);  // turn LED ON
     }
 
   // Was button active?
@@ -36,7 +35,7 @@ void loop() {
       // End Long Press event
       if (longPressActive == true) {
         Serial.println("button-action,2");
-        digitalWrite(led, LOW);  // turn LED OFF
+        digitalWrite(LED_PIN, LOW);  // turn LED OFF
         longPressActive = false;
 
       // End Short Press event
