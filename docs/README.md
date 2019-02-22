@@ -4,7 +4,7 @@ addressing relevant challenges for wheelchair users. It is a collection of
 workshop materials, code examples and also a compilation of resources to foster
 a prospering research and design community around wheelchair users.
 
-![IoT1 Exhibition](/docs/workshops/images/iot1_exhibition.jpg)
+![IoT1 Exhibition](workshops/images/iot1_exhibition.jpg)
 
 ## Workshops
 
