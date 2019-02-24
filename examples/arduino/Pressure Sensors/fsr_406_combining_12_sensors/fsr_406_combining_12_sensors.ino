@@ -2,16 +2,16 @@
 static const uint8_t FSR[] = {A0,A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11};
 
 // 1 sample / 100 millisecond (10Hz)
-static const int SAMPLING_RATE = 100;
+static const int SAMPLING_RATE = 0;
 
 // Setting the minimum deviation between the measurements (0 by default)
 // up to 512 (although that is pretty useless). Since there's a bit of a drift
 // in the values if you put the same pressure over a certain period, we ignore
 // a divergence of around 1 percent around the previous value.
-static const int DEVIATION = 10;
+static const int DEVIATION = 0;
 
 // Property id
-static const string = "fsr-1ebb"
+static const String PROPERTY_ID = "fsr-1ebb";
 
 // Current value from sensor (read from analog port)
 int value;
@@ -21,7 +21,7 @@ int prev_values[sizeof(FSR)];
 // Converted into Voltage
 double voltage_value;
 // Array of current values (converted into Newton)
-double newton_value[sizeof(FSR)];
+double newton_values[sizeof(FSR)];
 // Does one of the current 12 values deviate from its respective previous value?
 bool is_deviating = false;
 
@@ -41,8 +41,8 @@ double convert_to_newtons( double voltage) {
 }
 
 // Send data over serial
-void push_data(values) {
-    Serial.print();
+void push_data(double values[]) {
+    Serial.print(PROPERTY_ID);
     for (int i = 0; i<sizeof(FSR); i++) {
       Serial.print(",");
       Serial.print(values[i]);
@@ -90,7 +90,7 @@ void loop() {
 
   // If at least 1 fsr is deviating, push the data
   if (is_deviating) {
-    push_data(newton_values)
+    push_data(newton_values);
     is_deviating = false;
   }
 }

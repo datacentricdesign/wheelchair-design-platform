@@ -68,11 +68,11 @@ def serial_to_property_values(class_index, sample_index, ser):
         # Convert the bytes into string
         line = line_bytes.decode('utf-8')
         # Split the string using commas as separator, we get a list of strings
-        values = line.split(',')
+        str_values = line.split(',')
         # Remove the first id
-        values.pop(0)
+        str_values.pop(0)
         # Transform the array of string values into float values (numbers)
-        values = [float(x) for x in values]
+        values = [float(x) for x in str_values]
 
         # get the current time in milliseconds
         current_ts_ms = int(round(time.time() * 1000))
