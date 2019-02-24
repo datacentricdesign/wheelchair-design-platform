@@ -3,6 +3,3 @@ paho-mqtt
 python-dotenv
 pyserial
 requests
-sklearn
-numpy
-pyaudio
