@@ -1,5 +1,7 @@
-dcd-sdk>=0.0.5
+dcd-sdk>=0.0.6
 paho-mqtt
 python-dotenv
 pyserial
 requests
+sklearn
+numpy
