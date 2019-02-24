@@ -13,12 +13,16 @@ static const int DEVIATION = 10;
 // Property id
 static const string = "fsr-1ebb"
 
+// Current value from sensor (read from analog port)
 int value;
-int prev_values[sizeof(FSR)];  // int values (read from analog port, both the current and the previous)
+// Array of previous values (raw)
+int prev_values[sizeof(FSR)];
 
-double voltage_value;           // Converted to Voltage
+// Converted into Voltage
+double voltage_value;
+// Array of current values (converted into Newton)
 double newton_value[sizeof(FSR)];
-
+// Does one of the current 12 values deviate from its respective previous value?
 bool is_deviating = false;
 
 // This is based on a 3.3kΩ resistor being used, with weights on the center
@@ -30,7 +34,7 @@ double convert_to_newtons( double voltage) {
    double c = -0.01461;
    double d = -2.231;
 
-   // the result of the fit is in KgF to convert to newton we simply
+   // The result of the fit is in KgF to convert into newton we simply
    // multiply by 9.81, if you want data in KgF, remove the final multiplication!
    return( (a*exp(b*voltage) + c*exp(d* voltage)) * 9.81 );
 
@@ -61,12 +65,12 @@ void loop() {
   delay(SAMPLING_RATE);
 
   for (int i = 0; i<sizeof(FSR); i++) {
-    digitalRead(FSR[i]);
     // Reading our analog voltage, careful we only have 10 bit resolution so each
     // measurement step is only 5V ÷ 1024, so our result will be 0 - 1023
     value = analogRead(FSR[i]);
 
-    if( value < (prev_values[i] - deviation) || value > (prev_values[i] + deviation) ) {
+    if( value < (prev_values[i] - DEVIATION)
+        || value > (prev_values[i] + DEVIATION) ) {
       // if value is outside the range of [ previous - σ , previous + σ],
       // flag that at least 1 fsr is deviating (if value is relatively the same)
       // this will help with having data ocuppy your buffer that is not a significant deviation.
@@ -79,14 +83,14 @@ void loop() {
     // getting actual force value (careful using this, accuracy may not be ideal)
     // sensitivity after 1Kgf and before 0.06kgf is limited, you can lower the
     // deviation for some improvements
-    newton_value[i] = convert_to_newtons(voltage_value);
+    newton_values[i] = convert_to_newtons(voltage_value);
 
     prev_values[i] = value;
   }
 
   // If at least 1 fsr is deviating, push the data
   if (is_deviating) {
-    push_data(newton_value)
+    push_data(newton_values)
     is_deviating = false;
   }
 }
