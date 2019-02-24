@@ -40,3 +40,5 @@ def serial_to_property_values():
             values = [values]
             np.array(values).reshape(1, -1)
             predict(values)
+
+serial_to_property_values()
