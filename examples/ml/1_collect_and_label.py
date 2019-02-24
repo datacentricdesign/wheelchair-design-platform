@@ -23,7 +23,7 @@ LABEL_PROP_NAME = "Sitting"
 DATA_PROP_NAME = "fsr"
 
 # How many samples do we want for each class
-MAX_SAMPLES = 100
+MAX_SAMPLES = 1000
 # How much time (in seconds) to leave between the collection of each class
 DELAY_BETWEEN_POSTURE = 5
 
