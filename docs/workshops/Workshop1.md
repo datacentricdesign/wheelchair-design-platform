@@ -568,6 +568,8 @@ If the settings are correct, it takes about 30 seconds to get the Raspberry Pi o
 the network. Make sure your laptop is connected to the same network, then connect
 via ssh with the following command.
 
+On Windows, you need to search for Windows Powershell and type the below command in there 
+
 On Windows you need to <a href="https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md" target="_blank">
 install Putty</a> to communicate via ssh.
 
@@ -577,8 +579,8 @@ On Mac
 ssh pi@raspberrypi.local
 ```
 
-In this command, 'pi' is the username and raspberrypi.local is your hostname (the 
-name of the Pi on the local network).
+In this command, 'pi' is the default username and raspberry.local is your default hostname (the 
+name of the Pi on the local network). You should type in your own username and hostname if you have changed it.
 
 First you will need to type in 'yes' followed by Enter.
 
