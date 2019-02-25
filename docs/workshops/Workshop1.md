@@ -165,17 +165,28 @@ In our wheelchair case, we have one Thing (the wheelchair) with properties such
 as acceleration (3 values for x, y and z) or seat pressure (a value for each force
 sensors on the seat).
 
-Go to the hub manager via <a href="https://dwd.tudelft.nl/manager" target="_blank">dwd.tudelft.nl/manager</a>
-and sign up as a group with an email address, a name and a password. The sign up
-process creates an account, then the standard OAuth2 process starts with a consent: you
-need to let the manager access your Things, so that it can help you manage them. To do so tick all the boxes
-and click "allow access".
+Go to the hub manager via <a href="https://dwd.tudelft.nl/manager" target="_blank">
+dwd.tudelft.nl/manager</a> and click 'Not yet an account'.
 
-Once the consent succeeds, you can click on 'My Things' and create a first one.
+![Flowchart Push Button](images/dcdhub.png)
+
+Sign up as a group with an email address, a name and a password.
+
+![Flowchart Push Button](images/signup.png)
+
+The sign up process creates an account, then the standard OAuth2 process starts
+with a consent: you need to let the manager access your Things, so that it can 
+help you manage them. To do so click "Allow access".
+
+![Flowchart Push Button](images/consent.png)
+
+Once the consent succeeded, you can click on 'My Things' and create a first one.
 For example with the name 'My wheelchair', type 'Wheelchair', and a
 description 'An Internet-connected wheelchair'.
 
 The process may take a few seconds, as the hub generates an access token for your Thing.
+
+![Flowchart Push Button](images/create_thing.png)
 
 **COPY AND SAVE THIS TOKEN** in a text file, it will be shown only once and enables
 your wheelchair to communicate with the hub. You can also save the thing id, but
@@ -294,15 +305,30 @@ indicating dum data is being sent to the Hub.
 To visualise this data, we use Grafana.
 
 Go to the <a href="https://dwd.tudelft.nl/grafana" target="_blank">dwd.tudelft.nl/grafana</a>,
-click on 'Sign in with OAuth'. Fill in your Data-Centric design Hub email and
-password. Similarly to the manager, consent to let Grafana access your data.
+sign in with the provided login and password.
 
+![Flowchart Push Button](images/grafana_signin.png)
 
-Click on the plus on the left panel and create a new folder for your project.
-Then, create a new Dashboard and select a new panel 'Graph'. At the top of this
-new panel, click on 'Panel Title > Edit'
+Click on the plus on the left panel.
+
+![Flowchart Push Button](images/grafana_folder.png)
+
+Create a new folder for your project.
+
+![Flowchart Push Button](images/grafana_new_folder.png)
+
+Then, click on the green button 'New Dashboard' to create a new Dashboard, and 
+select a new panel 'Graph'.
+
+![Flowchart Push Button](images/grafana_graph.png)
+
+At the top of this new panel, click on 'Panel Title > Edit'
+
+![Flowchart Push Button](images/grafana_edit.png)
 
 At the bottom, in the query element GROUP BY, click on time and 'remove'.
+
+![Flowchart Push Button](images/grafana_remove_time.png)
 
 In FROM, click on 'Select Measurement' and select your Property ID. If your
 Property ID is not appearing in the list, the hub is not receiving data from
@@ -311,6 +337,8 @@ your python code.
 In SELECT, click on field and select Value1. Then click on the
 plus > Fields > Field to add Value2 and Value3.
 
+
+![Flowchart Push Button](images/grafana_select_measurement.png)
 
 Back in the Atom terminal, stop your Python script with CMD+C (Ctrl+C).
 
@@ -540,6 +568,11 @@ If the settings are correct, it takes about 30 seconds to get the Raspberry Pi o
 the network. Make sure your laptop is connected to the same network, then connect
 via ssh with the following command.
 
+On Windows you need to <a href="https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md" target="_blank">
+install Putty</a> to communicate via ssh.
+
+On Mac
+
 ```bash
 ssh pi@raspberrypi.local
 ```
@@ -549,9 +582,9 @@ name of the Pi on the local network).
 
 First you will need to type in 'yes' followed by Enter.
 
-Then, you will be prompt for the default password. Type in 'raspberry'. Note: when you type
-in the password, no letter appears in the terminal. This is the normal behaviour
-to protect your password.
+Then, you will be prompt for the default password. Type in 'raspberry'. Note: 
+when you type in the password, no letter appears in the terminal. This is the 
+normal behaviour to protect your password.
 
 ![SSH Pi](images/ssh_pi.png)
 
@@ -646,6 +679,13 @@ nano .env
 Copy your thing id and token, and use /dev/ttyUSB0 as serial port.
 
 ![Change password](images/env_file.png)
+
+Install the requirements with Pip
+
+```bash
+python3 -m pip install -r requirements.txt --user
+```
+
 
 ```bash
 python3 wheelchair/serial_example.py
