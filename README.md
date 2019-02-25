@@ -87,10 +87,10 @@ On the wheel:
 Feel free to contact us at jacky@datacentricdesign.org. We welcome feedback, pull requests
 or links to your project.
 
-<<<<<<< HEAD
 #Natasa was here
 
 *hello
+
 
 #learning github
 by Tjapko Vermeulen
