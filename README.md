@@ -1,3 +1,6 @@
+# A Noisy wheelchair
+
+By Matthijs
 
 Wheelchair Design Platform is a repository that contains some resources to help
 designers and developers speak the same language, and work together towards
@@ -83,6 +86,7 @@ On the wheel:
 
 Feel free to contact us at jacky@datacentricdesign.org. We welcome feedback, pull requests
 or links to your project.
+
 
 #learning github
 by Tjapko Vermeulen
