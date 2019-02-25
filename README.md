@@ -1,12 +1,18 @@
+<<<<<<< HEAD
 # Wheelchair racing
  *by William*
 
+=======
+# Wheelchair Group 01
+>>>>>>> c67981c98f63f60859d47a162b8895fc4ccd7605
 Wheelchair Design Platform is a repository that contains some resources to help
 designers and developers speak the same language, and work together towards
 addressing relevant challenges for wheelchair users. It is a collection of
 workshop materials, code examples and also a compilation of resources to foster
 a prospering research and design community around wheelchair users.
 
+*hello
+*hi
 
 ![IoT1 Exhibition](/docs/workshops/images/iot1_exhibition.jpg)
 
