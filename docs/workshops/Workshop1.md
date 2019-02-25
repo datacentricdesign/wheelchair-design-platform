@@ -52,7 +52,7 @@ can clone your repository to create a local copy on your computer and sync
 between the two locations.'*
 <a href="https://help.github.com/articles/cloning-a-repository/" target="_blank">(GitHub Help)</a>
 
-On GitHub, at the top of you repository, click on the green button 'Clone or
+On GitHub, at the top of your forked repository, click on the green button 'Clone or
 download' and copy the provided link.
 
 ![Flowchart Push Button](images/link_clone.png)
