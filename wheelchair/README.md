@@ -1,6 +1,11 @@
-## Assignment 1
+## Assignment 1 - Wheelchair Design
 
-Wheelchair design
+This assignment
 By Jooyoung, Lotte and Ferkan
 
 ## Context of our Internet-Connected wheelchair
+
+## Sensor exploration
+Sensor 1:
+
+##
