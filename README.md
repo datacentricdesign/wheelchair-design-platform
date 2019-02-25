@@ -91,8 +91,6 @@ or links to your project.
 #Natasa was here
 
 *hello
-=======
 
 #learning github
 by Tjapko Vermeulen
->>>>>>> 259a902d7c1f8588bbf3c4ea118e3ac21152d103
