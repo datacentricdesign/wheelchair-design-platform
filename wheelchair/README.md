@@ -14,6 +14,7 @@ Wheelchair users shouldn’t be limited by their wheelchair, instead they should
 
 ## Sensor exploration
 Sensors | Data | Info on the context
+--- | --- | ---
 *IMU Sensor* | Acceleration, X-Coordinate, Y-Coordinate | Detects velocity and dance movement of the wheelchair and check if they are dancing as guided
 --- | --- | ---
 *Grove Touch Sensor* | Output if touched: HIGH | Detects if sensor is touched. Could be implemented on the anywhere on the wheelchair (in reach) and on the dance floor.
