@@ -157,7 +157,7 @@ update their local repository with the latest remote version.
 In the cloud we will use our prototyped cloud platform for designers that we call
 Data-Centric Design Hub. In this cloud we use the following terms:
 
-* People have a collection of Things.
+* Persons have a collection of Things.
 * Things are physical or virtual entities with Properties.
 * Properties are one-to-many dimensional data points.
 
