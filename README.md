@@ -1,7 +1,8 @@
 <<<<<<< HEAD
 # Wheelchair racing
  *by William*
-
+# WAJO
+*Mayo*
 =======
 # Wheelchair Group 01
 >>>>>>> c67981c98f63f60859d47a162b8895fc4ccd7605
