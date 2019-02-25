@@ -570,9 +570,6 @@ via ssh with the following command.
 
 On Windows, you need to search for Windows Powershell and type the below command in there 
 
-On Windows you need to <a href="https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md" target="_blank">
-install Putty</a> to communicate via ssh.
-
 On Mac
 
 ```bash
