@@ -1,7 +1,7 @@
-
+#Pipirinicewheelchair
 Wheelchair Design Platform is a repository that contains some resources to help
 designers and developers speak the same language, and work together towards
-addressing relevant challenges for wheelchair users. It is a collection of 
+addressing relevant challenges for wheelchair users. It is a collection of
 workshop materials, code examples and also a compilation of resources to foster
 a prospering research and design community around wheelchair users.
 
@@ -83,4 +83,3 @@ On the wheel:
 
 Feel free to contact us at jacky@datacentricdesign.org. We welcome feedback, pull requests
 or links to your project.
-
