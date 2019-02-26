@@ -1,6 +1,6 @@
 Wheelchair Design Platform is a repository that contains some resources to help
 designers and developers speak the same language, and work together towards
-addressing relevant challenges for wheelchair users. It is a collection of 
+addressing relevant challenges for wheelchair users. It is a collection of
 workshop materials, code examples and also a compilation of resources to foster
 a prospering research and design community around wheelchair users.
 
@@ -26,12 +26,12 @@ get started, you can find some additional resources
 * Documentation of your project is key,
 [here are some tips and examples](resources/documentation.md).
 
-* [Git manipulation such as Pull Request](resources/git.md).
+* [Git manipulation such as Pull Requests](resources/git.md).
 
 ## Main Components
 
 __**Disclaimer:**__ the design of this platform focuses on flexibility and
-technology exploration rather than optimisation.
+technology exploration rather than optimization.
 
 The main design includes a Raspberry Pi 3 and an Arduino Mega 2560 on the wheelchair frame.
 

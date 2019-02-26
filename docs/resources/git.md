@@ -98,7 +98,7 @@ Since we can make a general issue part of a milestone, we will create a general 
 In the following wizard, you can add a title and description to the issue, assign it to collaborators, give it one or more labels, and make it part of a Milestone (you can do this with the gear icons).
 
 ![](images/8.png)
-You can then submit it with the button circled in red. Afterwards, your new issue should appear in your _Issues_ tab as an open issue. contributers and people who have access to the repo can open these Issues, and then comment on them:
+You can then submit it with the button circled in red. Afterwards, your new issue should appear in your _Issues_ tab as an open issue. contributors and people who have access to the repo can open these Issues, and then comment on them:
 
 ![](images/10.png)
 
