@@ -324,9 +324,9 @@ to capture the main steps:
 
 * Create and connect a Thing to the Hub
 * Retrieve and display the Thing details
-* If the Thing is not containing any property, create a dum property
-* In any case, retrieve this dum property
-* Continuously call a method that generate dum data and send them to the hub
+* If the Thing is not containing any property, create a dumb property
+* In any case, retrieve this dumb property
+* Continuously call a method that generate dumb data and send them to the hub
 
 Here are a few Python elements to note:
 
@@ -343,15 +343,15 @@ print("show text")
 <a href="https://www.tutorialspoint.com/python/python_if_else.htm" target="_blank">here</a>.
 
 In our case, we check if the thing details we retrieved from the server has no property
-(a newly created Thing) and then create a dum property.
+(a newly created Thing) and then create a dumb property.
 
 ```python
 if len(my_thing.properties) == 0:
-    # create a dum property
+    # create a dumb property
 ```
 
 * Indentation is key in Python. Take the previous example of condition, the indentation
-define what is in the condition. Any following line align with the if would be
+defines what is in the condition. Any following line aligned with the if would be
 considered outside the condition.
 
 ## 3.4 Execute the Python code
@@ -371,7 +371,7 @@ python wheelchair\get_started.py
 ```
 
 If the example runs properly you should see a log generated every two seconds,
-indicating dum data is being sent to the Hub.
+indicating dumb data is being sent to the Hub.
 
 ## 3.5 Visualise Data on Grafana
 
@@ -451,12 +451,11 @@ void setup() {
 
   Serial.begin(9600); // setting baud speed for Serial (a baud is a pulse)
 
-  // 'print' on the Serial port, i.e send a message through the serial port
-  Serial.println("Lets start using the button!");
 }
 ```
 
 * The Loop() method executed infinitely after the setup method.
+**WARNING** -  make sure to replace MY_PROPERTY_ID in this example with the ID of a property you created in Data-Centric Design hub.
 
 ```cpp
 void loop() {
@@ -478,13 +477,13 @@ void loop() {
     if (buttonActiveSince > 0) {
       // End Long Press event
       if (longPressActive == true) {
-        Serial.println("button-action,2");
+        Serial.println("MY_PROPERTY_ID,2");
         digitalWrite(led, LOW);  // turn LED OFF
         longPressActive = false;
 
       // End Short Press event
       } else {
-        Serial.println("button-action,1");
+        Serial.println("MY_PROPERTY_ID,1");
       }
       buttonActiveSince = 0;
     }
@@ -500,7 +499,7 @@ The following flow chart illustrates the algorithm of this example code.
 
 ![Flowchart Push Button](images/push_button_flow_chart.png)
 
-In Arduino IDE, in the top menu 'Tools > Boards' select 'Arduino/Genuino Mega or Mega 2560'
+In the Arduino IDE, go in the top menu 'Tools > Boards', and  select 'Arduino/Genuino Mega or Mega 2560'
 
 Then press the Verify button (green circle with tick).
 
@@ -532,13 +531,13 @@ You can copy the code from examples/serial_example.py in your wheelchair folder.
 
 In this code, we use the environment variable again to provide the thing id and token.
 
-We need an extra environment variable to specify the serial port. You can find
-it on the Arduino IDE, in the top menu Tools > Ports. For example:
+We need an extra environment variable(SERIAL) to specify the serial port. You can find
+the port name for it on the Arduino IDE, in the top menu Tools > Ports. For example:
 
 ```bash
 THING_ID=
 THING_TOKEN=
-SERIAL=/dev/cu.usbmodem14201
+SERIAL=MY_PORT_NAME
 ```
 
 We are now ready to run the Python code
@@ -566,11 +565,11 @@ Insert the SD card in your laptop.
 
 ## 5.1 Set up an empty SD Card
 
-__**(Skip thi section if you have an SD Card with NOOBS pre-installed)**__
+__**(Skip this section if you have an SD Card with NOOBS pre-installed)**__
 
 Download and install the software
 
-Get the lattest Raspbian here: https://www.raspberrypi.org/downloads/raspbian/
+Get the latest Raspbian here: https://www.raspberrypi.org/downloads/raspbian/
 
 Unzip the file, you obtain an image file (extension .img)
 
@@ -748,7 +747,7 @@ SERIAL port.
 nano .env
 ```
 
-Copy your thing id and token, and use /dev/ttyUSB0 as serial port.
+Copy your thing id and token, and use /dev/ttyUSB0 as a serial port (there are other serial ports on your raspberry pi you can try, such as ttyS0, ttyAM0).
 
 ![Change password](images/env_file.png)
 
