@@ -218,7 +218,7 @@ You can then submit it with the button circled in red. Afterwards, your new issu
 
 ![](images/10.png)
 
-After a contributor to the project has implemented/fixed an issue of the repo, they can close it. In Github, you can do this by opening an open issue, and choosing the button in red. You can also comment, perhaps to explain  why/how you closed it or what you did:
+After a contributor to the project has implemented/fixed an issue of the repo, they can close it. In Github, you can do this by opening an open issue, and choosing the button circled in red. You can also comment, perhaps to explain  why/how you closed it or what you did:
 
 ![](images/11.png)
 
