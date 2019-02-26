@@ -31,7 +31,7 @@ get started, you can find some additional resources
 ## Main Components
 
 __**Disclaimer:**__ the design of this platform focuses on flexibility and
-technology exploration rather than optimization.
+technology exploration rather than optimization\.
 
 The main design includes a Raspberry Pi 3 and an Arduino Mega 2560 on the wheelchair frame.
 
