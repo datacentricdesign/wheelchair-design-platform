@@ -152,6 +152,26 @@ corner, click on 'push'. This will push your changes to the remote repository (o
 Other members of the group can now press 'Fetch' in the bottom-right corner to
 update their local repository with the latest remote version.
 
+## 1.7 Issue Tracking and Flagging
+Whenever there is a problem with the code in the repository, it is customary to raise an issue in Github. This will not only allow other contributors to verify this error, but also for them to possibly fix them, and then, tag them as fixed. We will also use this workflow when there is a problem with the code and you want to get some non-presential help from the course instructors.
+
+### Issue basics
+Once again, this workflow is available on the Github website.
+Let's begin by going to the _Issues_ tab of your repository:
+
+![](images/1.png)
+
+Once we're in this tab, we can see the different options available to us:
+
+![](images/2.png)
+
+* In red, is the search box, where we can search for issues, with or without filters (by default, we'll search only open issues);
+* In blue, we can find the label and Milestones subtab (we'll go into more detail on this later);
+* In yellow, we find the button for creating new issues in the repo.
+
+
+
+
 ## 2 Data-Centric Design Hub (Per group)
 
 In the cloud we will use our prototyped cloud platform for designers that we call
@@ -175,7 +195,7 @@ Sign up as a group with an email address, a name and a password.
 ![Flowchart Push Button](images/signup.png)
 
 The sign up process creates an account, then the standard OAuth2 process starts
-with a consent: you need to let the manager access your Things, so that it can 
+with a consent: you need to let the manager access your Things, so that it can
 help you manage them. To do so click "Allow access".
 
 ![Flowchart Push Button](images/consent.png)
@@ -317,7 +337,7 @@ Create a new folder for your project.
 
 ![Flowchart Push Button](images/grafana_new_folder.png)
 
-Then, click on the green button 'New Dashboard' to create a new Dashboard, and 
+Then, click on the green button 'New Dashboard' to create a new Dashboard, and
 select a new panel 'Graph'.
 
 ![Flowchart Push Button](images/grafana_graph.png)
@@ -421,9 +441,9 @@ void loop() {
 ```
 
 In this example, we want to detect when a push button is pressed. We will trigger
-two type of events when the button is released: 'short' or 'long' press. 
+two type of events when the button is released: 'short' or 'long' press.
 
-The following flow chart illustrates the algorithm of this example code. 
+The following flow chart illustrates the algorithm of this example code.
 
 ![Flowchart Push Button](images/push_button_flow_chart.png)
 
@@ -568,7 +588,7 @@ If the settings are correct, it takes about 30 seconds to get the Raspberry Pi o
 the network. Make sure your laptop is connected to the same network, then connect
 via ssh with the following command.
 
-On Windows, you need to search for Windows Powershell and type the below command in there 
+On Windows, you need to search for Windows Powershell and type the below command in there
 
 On Mac
 
@@ -576,20 +596,20 @@ On Mac
 ssh pi@raspberrypi.local
 ```
 
-In this command, 'pi' is the default username and raspberry.local is your default hostname (the 
+In this command, 'pi' is the default username and raspberry.local is your default hostname (the
 name of the Pi on the local network). You should type in your own username and hostname if you have changed it.
 
 First you will need to type in 'yes' followed by Enter.
 
-Then, you will be prompt for the default password. Type in 'raspberry'. Note: 
-when you type in the password, no letter appears in the terminal. This is the 
+Then, you will be prompt for the default password. Type in 'raspberry'. Note:
+when you type in the password, no letter appears in the terminal. This is the
 normal behaviour to protect your password.
 
 ![SSH Pi](images/ssh_pi.png)
 
 Once connected, we want to change the hostname, i.e. the name of your Raspberry Pi
 on the network. By default, it is 'raspberrypi' which is not practical while you
-have several of them (like in a classroom setting). To do this, we need to edit 
+have several of them (like in a classroom setting). To do this, we need to edit
 two files /etc/hostname and /etc/hosts. We use the editor nano for this.
 
 Type in:
@@ -598,7 +618,7 @@ Type in:
 sudo nano /etc/hostname
 ```
 
-This command opens the file /etc/hostname in nano. Replace 'raspberrypi' with the 
+This command opens the file /etc/hostname in nano. Replace 'raspberrypi' with the
 name of your choice (without space). In the following example, we use the
 hostname 'noisy-wheelchair'.
 
@@ -622,7 +642,7 @@ Reboot your Rasberry Pi with:
 sudo reboot
 ```
 
-After about 30 second, you should be able to connect to you Raspberry Pi with 
+After about 30 second, you should be able to connect to you Raspberry Pi with
 your new hostname. For example:
 
 ```bash
