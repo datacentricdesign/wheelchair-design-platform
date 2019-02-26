@@ -21,7 +21,7 @@ Lets make a pressure sensor using a voltage divider circuit and the arduino!
 #### Schematic
 The common way to use this transducer is with the use of a voltage divider circuit. $R_1$'s value will change the way the voltage curve(for $V_1$ ) is for different pressures (the lower the resistance,  the more low pressure values are spread out, and the curve becomes more 'stretched'), lets see a common voltage divider, and our particular case:
 
-![](2.png)
+![](3.png)
 
 Here's the whole sensor system diagram:
 
