@@ -668,7 +668,7 @@ cloned with:
 cd wheelchair-design-platform
 ```
 
-Then, we need to create an .env file with the THING_ID, the THING_TOKEN and the
+Then, we need to create an .env file, in the project folder, with  THING_ID, the THING_TOKEN and the
 SERIAL port.
 
 ```bash
