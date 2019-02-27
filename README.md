@@ -1,6 +1,12 @@
 ## Assigment 1
 
+## Project description
+
 The context will be elderly people on recovery at home, from an injury that prevents them from walking. This person might be tempted to keep using the wheelchair, leading to a permanent disability. To avoid this situation, the goal will be to motivate them to keep up the recovery process.
+
+## Possible sensors
+
+_____________________________________________________________________________________________________
 
 Wheelchair Design Platform is a repository that contains some resources to help
 designers and developers speak the same language, and work together towards
