@@ -1,3 +1,7 @@
+#Disco wheelchair
+To improve interaction between childern in their breaks at school we designed the Discochair. This chair uses different sensors to change the music and ligths on the wheelchair. Some are controlled by the wheelchair users and some are controlled by the people surrounding the wheelchair user.
+
+
 # A Noisy wheelchair
 
 By Matthijs
