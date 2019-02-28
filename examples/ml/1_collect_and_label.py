@@ -23,30 +23,36 @@ LABEL_PROP_NAME = "Sitting"
 DATA_PROP_NAME = "fsr"
 
 # How many samples do we want for each class
-MAX_SAMPLES = 1000
+MAX_SAMPLES = 2000
 # How much time (in seconds) to leave between the collection of each class
-DELAY_BETWEEN_POSTURE = 5
-
+DELAY_BETWEEN_POSTURE = 15
 
 # Collect data for a given posture
 # posture_index: index of the class in the array CLASSES
-def collect(posture_index):
+def collect(class_index):
     # if we covered all classes, stop the program
-    if posture_index >= len(CLASSES):
+    if class_index >= len(CLASSES):
         print("Data collection done.")
         exit()
 
     # Prompt the user to get ready and wait
-    print("Get ready to collect the posture: " + CLASSES[posture_index]
+    print("Get ready to collect the posture: " + CLASSES[class_index]
           + " in " + str(DELAY_BETWEEN_POSTURE) + " seconds!")
     time.sleep(DELAY_BETWEEN_POSTURE)
 
     # Open the serial connection
-    print("Collecting data for posture " + CLASSES[posture_index])
+    print("Collecting data for posture " + CLASSES[class_index])
     ser = open_serial()
 
     # Start reading serial port with the posture index, start at sample 0.
-    serial_to_property_values(posture_index, 0, ser)
+    sample = 0
+    while sample < MAX_SAMPLES:
+        if serial_to_property_values(class_index, ser):
+            sample += 1
+            print()
+    ser.close()
+    collect(class_index + 1)
+
 
 
 # Open a serial connection
@@ -57,10 +63,9 @@ def open_serial():
         baudrate=9600,
         timeout=2)
 
-
 # Read the next line from the serial port
 # and update the property values
-def serial_to_property_values(class_index, sample_index, ser):
+def serial_to_property_values(class_index, ser):
     # Read one line
     line_bytes = ser.readline()
     # If the line is not empty
@@ -81,13 +86,8 @@ def serial_to_property_values(class_index, sample_index, ser):
         prop_label.update_values([class_index], current_ts_ms)
         prop_data.update_values(values, current_ts_ms)
 
-    # Check if we still need samples
-    if sample_index < MAX_SAMPLES:
-        serial_to_property_values(class_index, sample_index + 1, ser)
-    else:
-        # Otherwise close the serial connection and switch to the next class
-        ser.close()
-        collect(class_index + 1)
+        return True
+    return False
 
 
 # Instantiate a thing with its credential

@@ -2,13 +2,13 @@
 static const uint8_t FSR[] = {A0,A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11};
 
 // 1 sample / 100 millisecond (10Hz)
-static const int SAMPLING_RATE = 0;
+static const int SAMPLING_RATE = 100;
 
 // Setting the minimum deviation between the measurements (0 by default)
 // up to 512 (although that is pretty useless). Since there's a bit of a drift
 // in the values if you put the same pressure over a certain period, we ignore
 // a divergence of around 1 percent around the previous value.
-static const int DEVIATION = 0;
+static const int DEVIATION = 10;
 
 // Property id
 static const String PROPERTY_ID = "fsr-1ebb";
