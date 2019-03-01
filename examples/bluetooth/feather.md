@@ -63,6 +63,35 @@ This board can be connected to 3.7V Li-Po batteries or the through the USB port.
 * Power/enable pin;
 * Reset button;
 
-Whenever we want to have sensors wirelessly sending data, we will use this board as its controller. For that, we can start with setting up how to add this board to the Arduino IDE.
+Whenever we want to have sensors wirelessly sending data, we will use this board as its µcontroller. For that, we can start with setting up how to add this board to the Arduino IDE.
 
-#### Set Up with Arduino IDE
+#### Setup with Arduino IDE
+
+Inside of the Arduino IDE, we can go to Arduino -> Preferences (circled in red):
+
+![](2.png)
+
+Once inside the Preferences menu we will have to add an additional Board Manager URL. We will do that by pressing the button (circled in Red):
+
+![](3.png)
+
+Note that each link should be in a separate row (in case you have other board URLs installed).
+The link you should add (without quotes) is: "https://adafruit.github.io/arduino-board-index/package_adafruit_index.json".
+
+![](4.png)
+
+After pressing ok, we can now head into the Boards Manager ( Tools -> Board:... -> Boards Manager...):
+
+![](5.png)
+
+Once inside we will search "Adafruit", and the Adafruit AVR Boards package should appear. We will then install the latest version. This package contains a bunch of AVR boards from Adafruit, including our own Feather:
+
+![](6.png)
+
+After this, we should have our Adafruit Feather 32u4 Board available in the boards submenu option (Tools -> Board:... -> Adafruit Feather 32u4):
+
+![](7.png)
+
+After selecting it, we should be ready to compile code for, and flash it through the Arduino IDE! This board is fully compatible with Arduino, so the code in the Arduino examples can be used (with only some minor port and power wiring adaptations, as this is a 3.3V board, and also has less ports than the mega) :
+
+![](8.png)
