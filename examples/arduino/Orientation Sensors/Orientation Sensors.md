@@ -41,6 +41,10 @@ Now, lets see what each pin of this board is for:
 
 ### Examples
 
+##### Schematic (for all examples)
+
+![](3.png)
+
 #### Basic Three Axis orientation data (in Euler angles)
 In this example, simple orientation data in the form of Euler Angles is given.
 
@@ -60,11 +64,27 @@ Using it, the three Euler angles can be defined as follows:
  * β (or ϴ) is the angle between the z axis and the Z axis.
  * ɣ (or Ψ) is the angle between the N axis and the X axis (x-convention).
 
-##### Schematic
 
-![](3.png)
 
 ##### Results
 Here's how your console should look in the end:
 
 ![](1.gif)
+
+#### Basic Three Axis raw data
+In this example, all types of possible raw data from the IMU are given.
+
+
+##### Results
+Here's how your console should look in the end:
+
+![](3.gif)
+
+#### Basic Rotation calculations
+In this example, the total number of rotations, both forward and reverse since the beginning of the activation of the IMU are computed.
+
+
+##### Results
+Here's how your console should look in the end:
+
+![](2.gif)
