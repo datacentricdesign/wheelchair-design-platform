@@ -42,6 +42,11 @@ __**Electrocardiogram (ECG):**__
 __**Time:**__
 
 * RTC module: Real time clock
+
+__**Location:**__
+
+* GPS module
+* Connect to the GPS of the phone via Bluetooth
 ____
 _________________________________________________________________________________________________
 
