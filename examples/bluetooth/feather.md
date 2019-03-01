@@ -95,3 +95,9 @@ After this, we should have our Adafruit Feather 32u4 Board available in the boar
 After selecting it, we should be ready to compile code for, and flash it through the Arduino IDE! This board is fully compatible with Arduino, so the code in the Arduino examples can be used (with only some minor port and power wiring adaptations, as this is a 3.3V board, and also has less ports than the mega) :
 
 ![](8.png)
+
+#### Example Schematic
+
+We can see a simple wiring example using this board, together with an IMU (in our case the BNO055):
+
+![](9.png)
