@@ -28,7 +28,22 @@ __**Acceleration:**__
                  Ramp detection (Strong upwards inclination over a medium distance)
                  Road condition detection (Frequency and intensity of the bumps)
                  Assisted drive detection?
-_____________________________________________________________________________________________________
+
+__**Heart Rate (HR):**__
+
+* Fitness tracking devices like fitBit or Apple Watch: They are only accurate for wheelchair users in low intensity tasks (below 100 bpm) [(reference)](https://www.resna.org/sites/default/files/conference/2016/outcomes/tsang.html). Diferent sensors allow to do this kind of tracking, like EKG sensors (Apple Watch) or PPG sensors.
+
+As HR is difficult to track for Wheelchair users, even with a wristband, it is also very difficult to track the Energy Expenditure (EE), which calculation highly depends on the HR tracking.
+
+__**Electrocardiogram (ECG):**__
+
+* ECG sensor: Is able to detect Arrhythmias (AFib episodes) and therefore reduce the risk of strokes in people with decreased mobility. There are some fitness trackers with this capabilities implemented, like Withings Move ECG or Apple Watch.
+
+__**Time:**__
+
+* RTC module: Real time clock
+____
+_________________________________________________________________________________________________
 
 Wheelchair Design Platform is a repository that contains some resources to help
 designers and developers speak the same language, and work together towards
