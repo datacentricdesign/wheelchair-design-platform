@@ -8,7 +8,7 @@ The context will be elderly people on recovery at home, from an injury that prev
 
 __**Direction, speed and acceleration:**__
 
-#Direction, speed and acceleration:
+* Direction, speed and acceleration:
 _____________________________________________________________________________________________________
 
 Wheelchair Design Platform is a repository that contains some resources to help
