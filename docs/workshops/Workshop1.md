@@ -518,22 +518,24 @@ root of the 'boot' disk (SD card). This file will indicate that we want to enabl
 
 ### 5.2.2 Network Access
 
-(add process for network auto config)
-To connect your Raspberry Pi to the network, create a second text file
+To connect your Raspberry Pi to the network, create a second file
 'wpa_supplicant.conf' with the following content:
 
 ```bash
-country=
+country=NL
 update_config=1
 ctrl_interface=/var/run/wpa_supplicant
 
 network={
-  scan_ssid=1
   ssid="YOUR_NETWORK_SSID"
   psk="YOUR_NETORK_PASSWORD"
 }
 
 ```
+
+Save this file on the 'boot' partition. Make sure that its extension is .conf rather
+than .conf.txt (most texts editor will automatically add .txt or .rtf and hide it,
+double-check that your file is not recognised as a text document).
 
 To connect to Eduroam:
 
