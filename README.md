@@ -6,6 +6,9 @@ The context will be elderly people on recovery at home, from an injury that prev
 
 ## Possible sensors
 
+__**Direction, speed and acceleration:**__
+
+#Direction, speed and acceleration:
 _____________________________________________________________________________________________________
 
 Wheelchair Design Platform is a repository that contains some resources to help
