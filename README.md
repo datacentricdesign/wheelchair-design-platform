@@ -6,9 +6,28 @@ The context will be elderly people on recovery at home, from an injury that prev
 
 ## Possible sensors
 
-__**Direction, speed and acceleration:**__
+__**Direction and speed:**__
 
-* Direction, speed and acceleration:
+* Rotatory Encoder: Pretty simple, but we need to connected in the same rotation axis than the wheel; with one part fixed to the wood while the other rotates with the wheel.
+
+* Optical encoding (IR reflective sensor): The assembly of the hardware and the programming might be a bit more complex, but does the same thing as the rotatory encoder.
+
+__**Pressure, weight and applied force detection:**__
+
+* Force Sensing Resistor (FSR): Can be used to detect different postures of the user. The recommended setup is 5 FSR in the back rest and 6 FSR distributed in the bottom cushion.
+
+* Load Cell (Strain Gauge): A bit more complex I think, its generally used to detect changes in weight, for example in a bathroom scale. It could be used to detect the weight progress of the wheelchair user
+
+__**Wheelchair's orientation:**__
+
+* Gyroscope: Can track wheel chairs rotation in three axis. This can detect where the user is pointing (maybe also looking by combining with the position detection system), detect changes on the slope, or detect if the chair overturns.
+
+__**Acceleration:**__
+
+* Accelerometer: Bump detection (Strong upwards inclination followed by downwards inclination)
+                 Ramp detection (Strong upwards inclination over a medium distance)
+                 Road condition detection (Frequency and intensity of the bumps)
+                 Assisted drive detection?
 _____________________________________________________________________________________________________
 
 Wheelchair Design Platform is a repository that contains some resources to help
