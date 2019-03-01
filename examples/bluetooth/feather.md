@@ -62,3 +62,7 @@ This board can be connected to 3.7V Li-Po batteries or the through the USB port.
 * Pin #13 connected to red LED for general purpose blinking;
 * Power/enable pin;
 * Reset button;
+
+Whenever we want to have sensors wirelessly sending data, we will use this board as its controller. For that, we can start with setting up how to add this board to the Arduino IDE.
+
+#### Set Up with Arduino IDE
