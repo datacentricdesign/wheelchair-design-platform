@@ -41,7 +41,7 @@ The Arduino Mega is the micro-controller of the platform. Fixed on the main fram
 it can collect data from sensors (e.g. force sensors, accelerometers), and trigger actions from actuators
 (e.g. LEDs, vibration motors).
 
-More on the Arduino Mega can be found [here](https://github.com/datacentricdesign/wheelchair-design-platform/tree/examples/arduino "Arduino resources").
+More on the Arduino Mega can be found [here](/docs/resources/arduino.md "Arduino resources").
 
 Raspberry Pi is a small computer. It is also fixed to the main frame of the wheelchair,
 where it can:
@@ -50,7 +50,7 @@ where it can:
 * store data locally in files;
 * run (machine learning) algorithms.
 
-More on the Raspberry Pi can be found [here](https://github.com/datacentricdesign/wheelchair-design-platform/tree/examples/raspberrypi "Raspberry Pi resources").
+More on the Raspberry Pi can be found [here](/docs/resources/raspberrypi.md "Raspberry Pi resources").
 
 These components fit together as shown on the following diagram. A large powerbank
 powers the Raspberry Pi. The Arduino Mega communicates and receives power from the

@@ -1,4 +1,28 @@
-# Some Operations with Git & Github
+# Git & Github
+
+Git is a version control system (VCS). It helps to keep track of all the  changes
+in your project and sharing these. While it is heavily used by software developers to
+track and share code, it is also useful to track and share the progress of any
+design or research process. The principle is as follows: you share a remote
+repository, you 'pull' the latest changes (any files, code, doc...) from your
+peers from this repository, you make changes on your machine, and you 'push' your
+changes on the remote repository, making them available to your peers.
+
+Here are four short videos with more details:
+
+* <a href="https://git-scm.com/video/what-is-version-control" target="_blank">What is version control</a>
+* <a href="https://git-scm.com/video/what-is-git" target="_blank">What is git</a>
+* <a href="https://git-scm.com/video/get-going" target="_blank">Get Going</a>
+* <a href="https://git-scm.com/video/quick-wins" target="_blank">Quick wins</a>
+
+GitHub is a popular online platform that hosts remote Git repositories.
+We will use it throughout the course to host your repo.
+
+In this page:
+
+* [Git Flow](#git-flow)
+* [Pull Requests](#pull-requests)
+* [Issue Tracking and Flagging](#issue-tracking-and-flagging)
 
 ## Git Flow
 
@@ -53,23 +77,6 @@ corner, click on 'push'. This will push your changes to the remote repository (o
 
 Other members of the group can now press 'Fetch' in the bottom-right corner to
 update their local repository with the latest remote version.
-
-
-## 2 Data-Centric Design Hub (Per group)
-
-In the cloud we will use our prototyped cloud platform for designers that we call
-Data-Centric Design Hub. In this cloud we use the following terms:
-
-* Persons have a collection of Things.
-* Things are physical or virtual entities with Properties.
-* Properties are one-to-many dimensional data points.
-
-In our wheelchair case, we have one Thing (the wheelchair) with properties such
-as acceleration (3 values for x, y and z) or seat pressure (a value for each force
-sensors on the seat).
-
-Go to the hub manager via <a href="https://dwd.tudelft.nl/manager" target="_blank">
-dwd.tudelft.nl/manager</a> and click 'Not yet an account'.
 
 ## Pull Requests
 
