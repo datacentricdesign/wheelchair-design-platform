@@ -1,14 +1,10 @@
-#!/usr/bin/env python
-from __future__ import print_function
-
-import binascii
-import pygatt
-import time
+#!/usr/bin/env python3
 
 # Import required library
+import pygatt
+import signal
 from dotenv import load_dotenv
 import os
-import serial
 
 from dcd.entities.thing import Thing
 from dcd.entities.property_type import PropertyType
@@ -19,10 +15,10 @@ THING_ID = os.environ['THING_ID']
 THING_TOKEN = os.environ['THING_TOKEN']
 BLUETOOTH_DEVICE_MAC = os.environ['BLUETOOTH_DEVICE_MAC']
 
+# UUID of the GATT characteristic to subscribe
 GATT_CHARACTERISTIC = "02118833-4455-6677-8899-AABBCCDDEEFF"
 
-# Many devices, e.g. Fitbit, use random addressing
-# this is required to connect.
+# Many devices, e.g. Fitbit, use random addressing, this is required to connect.
 ADDRESS_TYPE = pygatt.BLEAddressType.random
 
 def handle_data(handle, value_bytes):
@@ -34,6 +30,16 @@ def handle_data(handle, value_bytes):
     values = [float(x) for x in value_bytes.decode('utf-8').split(",")]
     my_property.update_values(values)
 
+# List characteristics of a device
+def discover_characteristic(device):
+    for uuid in device.discover_characteristics().keys():
+        try:
+            print("Read UUID" + str(uuid) + "   " + str(device.char_read(uuid)))
+        except:
+            print("Something wrong with " + str(uuid))
+
+def read_characteristic(characteristic_id):
+    return my_device.char_read(characteristic_id)
 
 # Instantiate a thing with its credential
 my_thing = Thing(thing_id=THING_ID, token=THING_TOKEN)
@@ -59,26 +65,27 @@ if my_thing.find_property_by_name("My left wheel orientation") is None:
     # contains the name, a unique id and the dimensions
     print(my_property.to_json())
 
-
+# Retrieve the property
 my_property = my_thing.find_property_by_name("My left wheel orientation")
 
+# Show the property
 print(my_property.to_json())
 
+# Start a BLE adapter
+bleAdapter = pygatt.GATTToolBackend()
+bleAdapter.start()
 
-adapter = pygatt.GATTToolBackend()
-adapter.start()
-device = adapter.connect(BLUETOOTH_DEVICE_MAC, address_type=ADDRESS_TYPE)
-device.subscribe(GATT_CHARACTERISTIC, callback=handle_data)
+# User the BLE adapter to connect to our device
+my_device = bleAdapter.connect(BLUETOOTH_DEVICE_MAC, address_type=ADDRESS_TYPE)
 
-count = 0
-while count < 10:
-    time.sleep(1)
-    count = count + 1
+# Subscribe to the GATT service
+my_device.subscribe(GATT_CHARACTERISTIC, callback=handle_data)
 
-device.unsubscribe("02118833-4455-6677-8899-AABBCCDDEEFF")
-#  print(str(device.char_read("6e400003-b5a3-f393-e0a9-e50e24dcca9e")))
-#  for uuid in device.discover_characteristics().keys():
-#    try:
-#      print("Read UUID" + str(uuid) + "   "  + str(device.char_read(uuid)))
-#    except:
-#      print("Something wrong with " + str(uuid))
+# Make sure we close our program properly
+def keyboard_interrupt_handler(signal_num, frame):
+    print("Exiting...".format(signal_num))
+    my_device.unsubscribe(GATT_CHARACTERISTIC)
+    exit(0)
+
+# Register our Keyboard handler to exit
+signal.signal(signal.SIGINT, keyboard_interrupt_handler)
