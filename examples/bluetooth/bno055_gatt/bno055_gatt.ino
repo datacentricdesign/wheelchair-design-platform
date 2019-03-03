@@ -32,8 +32,6 @@
   #include <SoftwareSerial.h>
 #endif
 
-#include "BluefruitConfig.h"
-
 // LED error flag
 #define LED_PIN 2
 
