@@ -235,15 +235,70 @@ sudo pip3 install "pygatt[GATTTOOL]"
 ```
 
 We can use the command 'blescan' to scan the Bluetooth devices around. This way,
-you can retrieve and copy the MAC address of your Feather 32u4.
+you can retrieve your Feather 32u4 with its name and identify its MAC address.
 
 ```bash
 sudo blescan
 ```
 
+Copy the MAC address and paste in your .env file as a new environment variable
+'BLUETOOTH_DEVICE_MAC', for example:
+
+![blescan](images/ws2_blescan.png)
+
+```bash
+BLUETOOTH_DEVICE_MAC=fb:48:5b:84:36:4a
+```
+
+Then, copy the example
+
+```bash
+cp examples/communication/bluetooth/subscribe_gatt_orentation.py wheelchair/
+```
+
+Let's have a look to this Python code. Has usual, we start by importing libraries
+and loading environment variable (note the extra one for the Bluetooth MAC address).
+
+Then we need to define which GATT service we want to connect to. Thus we create a
+constant with the UUID of our orientation service.
+
+```python
+GATT_CHARACTERISTIC_ORIENTATION = "02118833-4455-6677-8899-AABBCCDDEEFF"
+```
+
+We define a 'handler', a method which will be called every time new data is coming
+in for our orientation characteristic. In this method, we read the data, transform
+the string into an array of three values, then update the property.
+
+```python
+def handle_orientation_data(handle, value_bytes):
+    """
+    handle -- integer, characteristic read handle the data was received on
+    value_bytes -- bytearray, the data returned in the notification
+    """
+    print("Received data: %s (handle %d)" % (str(value_bytes), handle))
+    values = [float(x) for x in value_bytes.decode('utf-8').split(",")]
+    find_or_create("Left Wheel Orientation",
+                   PropertyType.THREE_DIMENSIONS).update_values(values)
+```
+
+Finally, we use the pygatt library to connect to the device and subscribe to the
+orientation characteristic.
+
+```python
+# Start a BLE adapter
+bleAdapter = pygatt.GATTToolBackend()
+bleAdapter.start()
+
+# Use the BLE adapter to connect to our device
+left_wheel = bleAdapter.connect(BLUETOOTH_DEVICE_MAC, address_type=ADDRESS_TYPE)
+
+# Subscribe to the GATT service
+left_wheel.subscribe(GATT_CHARACTERISTIC_ORIENTATION,
+                     callback=handle_orientation_data)
+```
 
 ## 5 Local Pre-Processing
 
-Algorithm for counting rotation
-
-Adding service counting rotation
+To go further, you can have a look at the second example orientation_rotation which
+show an example of a service with two characteristics.
