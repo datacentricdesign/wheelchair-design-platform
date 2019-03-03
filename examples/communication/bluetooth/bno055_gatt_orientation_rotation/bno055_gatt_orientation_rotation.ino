@@ -199,9 +199,6 @@ void rotation() {
   float axis_value = event.orientation.x;   // replace this with whatever axis you're tracking
   not_first_loop = (not_first_loop)?compute_rotations(axis_value, &global_rotations) : true;
 
-  Serial.println(global_rotations.forward_rotations);
-  Serial.println(-global_rotations.reverse_rotations);
-
   // Command is sent when \n (\r) or println is called
   // AT+GATTCHAR=CharacteristicID,value
   ble.print( F("AT+GATTCHAR=") );
@@ -209,7 +206,7 @@ void rotation() {
   ble.print( F(",") );
   ble.print(String(global_rotations.forward_rotations));
   ble.print( F(",") );
-  ble.print(String(-global_rotations.reverse_rotations));
+  ble.println(String(-global_rotations.reverse_rotations));
 }
 
 void loop(void) {
