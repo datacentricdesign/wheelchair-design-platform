@@ -32,19 +32,33 @@
   #include <SoftwareSerial.h>
 #endif
 
+#include "BluefruitConfig.h"
+
 // LED error flag
 #define LED_PIN 2
 
 // Create the Bluefruit object for Feather 32u4
 Adafruit_BluefruitLE_SPI ble(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
 
-// Define the frequency we use to send data
+// BNO settings
 #define BNO055_SAMPLERATE_DELAY_MS (200)
-// Initialise the connection with the BNO055 module
+// Creating our sensor object to handle the sensor, with initialization 12345
 Adafruit_BNO055 bno = Adafruit_BNO055(55);
+
+// structure to store total rotations since IMU  initialized, forward and reverse
+// initialized with a global variable global_rotations, this variable stores rotations
+// on a particular axis, in both directions, since startup
+struct Rotations {
+  float forward_rotations = 0;
+  float reverse_rotations = 0;
+} global_rotations;
+
+bool not_first_loop = false; // Boolean variable to stop logging of first loop
+float previous_axis_value = 666;  // Initial value so we don't account for it
 
 // GATT service information
 int32_t imuServiceId;
+int32_t rotationCharId;
 int32_t orientationCharId;
 
 // A small helper
@@ -98,8 +112,8 @@ void setup(void) {
   ble.info();
   ble.verbose(true);
 
-  // Change the device name to make it easier to find
-  if (! ble.sendCommandCheckOK(F("AT+GAPDEVNAME=Left Wheel")) ) {
+  // Change the device name to fit its purpose
+  if (! ble.sendCommandCheckOK(F("AT+GAPDEVNAME=Noisy Left Wheel")) ) {
     error(F("Could not set device name."));
   }
 
@@ -107,6 +121,12 @@ void setup(void) {
   success = ble.sendCommandWithIntReply( F("AT+GATTADDSERVICE=UUID128=00-11-00-11-44-55-66-77-88-99-AA-BB-CC-DD-EE-FF"), &imuServiceId);
   if (! success) {
     error(F("Could not add Orientation service."));
+  }
+
+  // Add the Rotation characteristic
+  success = ble.sendCommandWithIntReply( F("AT+GATTADDCHAR=UUID128=02-11-87-33-44-55-66-77-88-99-AA-BB-CC-DD-EE-FF,PROPERTIES=0x10,MIN_LEN=1,MAX_LEN=12,VALUE=\"\""), &rotationCharId);
+  if (! success) {
+    error(F("Could not add Rotation characteristic."));
   }
 
   // Add the Orientation characteristic
@@ -142,9 +162,60 @@ void orientation() {
   ble.println(String(quatZ));
 }
 
+bool compute_rotations(float axis, Rotations * rotations) {
+  static float initial_axis_value = axis;
+  // variable to store initial axis value in compute rotations - declared static so that it stores
+  // this value in between function calls, but no other functions can change its value
+  //Variables declared as static will only be created and initialized the first time a function is called
+
+  float offset_rot = (axis-previous_axis_value) / 360; // offset since previous measurement, in rotations
+
+  // so we do not account for anything in the setup phase
+  if (previous_axis_value == 666) {
+    offset_rot = 0;
+  }
+
+  if(offset_rot >= 0) {
+    (rotations->forward_rotations) += offset_rot;
+  } else {
+    (rotations->reverse_rotations) += offset_rot;
+  }
+
+  // place previous axis value
+  previous_axis_value = axis;
+
+  return(true); // returns true by default, do not remove, as it helps with the initial setup.
+}
+
+void rotation() {
+  /* Get a new sensor event */
+  sensors_event_t event;
+  bno.getEvent(&event);
+
+  // if this is the first loop iteration, ignore position data (always zero)  
+  //if its second loop iteration set the starting position for your axis 
+  // if its another iteration, just continue computing the rotation data 
+
+  float axis_value = event.orientation.x;   // replace this with whatever axis you're tracking
+  not_first_loop = (not_first_loop)?compute_rotations(axis_value, &global_rotations) : true;
+
+  Serial.println(global_rotations.forward_rotations);
+  Serial.println(-global_rotations.reverse_rotations);
+
+  // Command is sent when \n (\r) or println is called
+  // AT+GATTCHAR=CharacteristicID,value
+  ble.print( F("AT+GATTCHAR=") );
+  ble.print( rotationCharId );
+  ble.print( F(",") );
+  ble.print(String(global_rotations.forward_rotations));
+  ble.print( F(",") );
+  ble.print(String(-global_rotations.reverse_rotations));
+}
+
 void loop(void) {
 
   orientation();
+  rotation();
 
   // Check if command executed OK
   if ( !ble.waitForOK() ) {

@@ -143,9 +143,36 @@ void orientation() {
   ble.println(String(quatZ));
 }
 
+bool compute_rotations(float axis, Rotations * rotations) {
+  static float initial_axis_value = axis;
+  // variable to store initial axis value in compute rotations - declared static so that it stores
+  // this value in between function calls, but no other functions can change its value
+  //Variables declared as static will only be created and initialized the first time a function is called
+
+  float offset_rot = (axis-previous_axis_value) / 360; // offset since previous measurement, in rotations
+
+  if(previous_axis_value == 666)  // so we do not account for anything in the setup phase
+    offset_rot = 0;
+
+  if(offset_rot >= 0)
+    (rotations->forward_rotations) += offset_rot;
+  else
+    (rotations->reverse_rotations) += offset_rot;
+
+  // place previous axis value
+  previous_axis_value = axis;
+
+  return(true); // returns true by default, do not remove, as it helps with the initial setup.
+}
+
+void rotation() {
+
+}
+
 void loop(void) {
 
   orientation();
+  rotation();
 
   // Check if command executed OK
   if ( !ble.waitForOK() ) {

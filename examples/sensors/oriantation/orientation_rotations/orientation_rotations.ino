@@ -22,8 +22,7 @@
 // structure to store total rotations since IMU  initialized, forward and reverse
 // initialized with a global variable global_rotations, this variable stores rotations
 // on a particular axis, in both directions, since startup
-struct Rotations
-{
+struct Rotations {
   float forward_rotations = 0;
   float reverse_rotations = 0;
 } global_rotations;
@@ -38,23 +37,24 @@ Adafruit_BNO055 bno = Adafruit_BNO055(12345);
 // takes the axis that you want to use and variable it can change 
 // CAREFUL YOU MUST PASS ROTATIONS AS A POINTER
 // (float axis, Rotations * rotations)
-bool compute_rotations(float axis, Rotations * rotations)
-{
+bool compute_rotations(float axis, Rotations * rotations) {
   static float initial_axis_value = axis;
   // variable to store initial axis value in compute rotations - declared static so that it stores
   // this value in between function calls, but no other functions can change its value
   //Variables declared as static will only be created and initialized the first time a function is called
-
   
   float offset_rot = (axis-previous_axis_value) / 360; // offset since previous measurement, in rotations
 
-  if(previous_axis_value == 666)  // so we do not account for anything in the setup phase
+  // so we do not account for anything in the setup phase
+  if (previous_axis_value == 666) {
     offset_rot = 0;
+  }
 
-  if(offset_rot >= 0)
+  if(offset_rot >= 0) {
     (rotations->forward_rotations) += offset_rot;
-  else
+  } else {
     (rotations->reverse_rotations) += offset_rot;
+  }
   
   // place previous axis value
   previous_axis_value = axis;
@@ -63,15 +63,13 @@ bool compute_rotations(float axis, Rotations * rotations)
 }
 
 // Arduino setup function (automatically called at startup)
-void setup(void)
-{
+void setup(void) {
   Serial.begin(9600);
   Serial.println("Lets begin our Orientation Sensor Test"); Serial.println("");
 
-  /* Initialise the sensor */
-  if(!bno.begin())
-  {
-    /* Problem detecting the BNO055 ... wiring error */
+  // Initialise the sensor
+  if(!bno.begin()) {
+    // Problem detecting the BNO055 ... wiring error
     Serial.print("No BNO055 is detected ... Check your wiring or I2C ADDR!");
     while(1);
   }
@@ -91,8 +89,7 @@ void setup(void)
 
 
 // Arduino loop function, called once 'setup' is complete 
-void loop(void)
-{
+void loop(void) {
   /* Get a new sensor event */
   sensors_event_t event;
   bno.getEvent(&event);
@@ -136,8 +133,7 @@ void loop(void)
 
 //  Displays some basic information on this sensor from the unified
 //  sensor API sensor_t type (see Adafruit_Sensor for more information)
-void displaySensorDetails(void)
-{
+void displaySensorDetails(void) {
   sensor_t sensor;
   bno.getSensor(&sensor);
   Serial.println("------------------------------------");
@@ -154,8 +150,7 @@ void displaySensorDetails(void)
 
 
 // Display some basic info about the sensor status
-void displaySensorStatus(void)
-{
+void displaySensorStatus(void) {
   /* Get the system status values (mostly for debugging purposes) */
   uint8_t system_status, self_test_results, system_error;
   system_status = self_test_results = system_error = 0;
@@ -175,8 +170,7 @@ void displaySensorStatus(void)
 
 
 // Display sensor calibration status
-void displayCalStatus(void)
-{
+void displayCalStatus(void) {
   /* Get the four calibration values (0..3) */
   /* Any sensor data reporting 0 should be ignored, */
   /* 3 means 'fully calibrated" */
@@ -187,8 +181,7 @@ void displayCalStatus(void)
 
   /* The data should be ignored until the system calibration is > 0 */
   Serial.print("\t");
-  if (!system)
-  {
+  if (!system) {
     Serial.print("! ");
   }
 
