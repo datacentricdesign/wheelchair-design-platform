@@ -1,5 +1,4 @@
-#Wheel Chair Madness2222
-## TEST 
+#Wheel Chair Madness
 
 Wheelchair Design Platform is a repository that contains some resources to help
 designers and developers speak the same language, and work together towards
