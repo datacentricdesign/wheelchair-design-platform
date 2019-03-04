@@ -35,7 +35,7 @@
 #include "BluefruitConfig.h"
 
 // LED error flag
-#define LED_PIN 2
+#define LED_PIN 13
 
 // Create the Bluefruit object for Feather 32u4
 Adafruit_BluefruitLE_SPI ble(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
