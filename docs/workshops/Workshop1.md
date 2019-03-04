@@ -52,7 +52,7 @@ can clone your repository to create a local copy on your computer and sync
 between the two locations.'*
 <a href="https://help.github.com/articles/cloning-a-repository/" target="_blank">(GitHub Help)</a>
 
-On GitHub, at the top of you repository, click on the green button 'Clone or
+On GitHub, at the top of your forked repository, click on the green button 'Clone or
 download' and copy the provided link.
 
 ![Flowchart Push Button](images/link_clone.png)
@@ -98,76 +98,6 @@ is a lightweight markup language, i.e. minimal set tags to format text;
 * requirements.txt contains the list of the python libraries you need to install for
 the project to work;
 
-## 1.6 Git Flow
-
-To experience the flow of Git, of updating and sharing progress, let's update the
- project documentation.
-
-### Step 1: Edit (a) File(s)
-
-When developing, it is common to document the project using Markdown. In Markdown,
-we use '#' for titles and '*' for bullet points. More formatting can be found
-[here](https://guides.github.com/features/mastering-markdown/)
-
-Open README.md and add a title at the top of the file, for example:
-
-```markdown
-# A Noisy Wheelchair
-
-By Jane and Joe
-```
-
-![Flowchart Push Button](images/git_change.png)
-
-Note: A blue dot appears next to your file name README.md at the top of the page,
-letting you know the changes to it are not saved. Press Command+S (or Ctrl+S) to save.
-
-### Step 2: Stage, i.e Select File Changes
-
-Your file appears in yellow in the left panel. It means that there are changes
-in this file that are not yet tracked by Git (unstaged). Click on Git in the
-bottom-right corner.
-
-In the 'Unstaged changes', double-click on the README.md to 'stage' it, i.e.
-prepare this file to track its changes. The middle tab shows you the
-changes.
-
-![Flowchart Push Button](images/git_stage.png)
-
-### Step 3: Commit, i.e Record Changes Locally
-
-Then we add a 'Commit message' to briefly explain the nature of those changes,
-e.g. 'A test of Git and Markdown'. Click on 'Commit to Master' to track the changes.
-You have made one change (commit) to your local repository.
-
-![Flowchart Push Button](images/git_commit.png)
-
-### Step 4: Push, i.e  Send Local Changes to GitHub
-
-The final step consists in sharing this change with your peers. In the bottom-right
-corner, click on 'push'. This will push your changes to the remote repository (on GitHub).
-
-### Step 5: Fetch (or Pull), i.e Get the Latest Changes from GitHub
-
-Other members of the group can now press 'Fetch' in the bottom-right corner to
-update their local repository with the latest remote version.
-
-## 2 Data-Centric Design Hub (Per group)
-
-In the cloud we will use our prototyped cloud platform for designers that we call
-Data-Centric Design Hub. In this cloud we use the following terms:
-
-* People have a collection of Things.
-* Things are physical or virtual entities with Properties.
-* Properties are one-to-many dimensional data points.
-
-In our wheelchair case, we have one Thing (the wheelchair) with properties such
-as acceleration (3 values for x, y and z) or seat pressure (a value for each force
-sensors on the seat).
-
-Go to the hub manager via <a href="https://dwd.tudelft.nl/manager" target="_blank">
-dwd.tudelft.nl/manager</a> and click 'Not yet an account'.
-
 ![Flowchart Push Button](images/dcdhub.png)
 
 Sign up as a group with an email address, a name and a password.
@@ -175,7 +105,7 @@ Sign up as a group with an email address, a name and a password.
 ![Flowchart Push Button](images/signup.png)
 
 The sign up process creates an account, then the standard OAuth2 process starts
-with a consent: you need to let the manager access your Things, so that it can 
+with a consent: you need to let the manager access your Things, so that it can
 help you manage them. To do so click "Allow access".
 
 ![Flowchart Push Button](images/consent.png)
@@ -205,8 +135,15 @@ talk to the hub.
 
 Open the Atom terminal ('plus' sign in the bottom-left corner) and execute the following command.
 
+On Mac:
+
 ```bash
 pip3 install -r requirements.txt --user
+```
+On Windows:
+
+```bash
+python -m pip install -r requirements.txt --user
 ```
 
 Here we 'install' the Python dependencies for our project. The option -r indicates we provide a file name that contains
@@ -251,9 +188,9 @@ to capture the main steps:
 
 * Create and connect a Thing to the Hub
 * Retrieve and display the Thing details
-* If the Thing is not containing any property, create a dum property
-* In any case, retrieve this dum property
-* Continuously call a method that generate dum data and send them to the hub
+* If the Thing is not containing any property, create a dumb property
+* In any case, retrieve this dumb property
+* Continuously call a method that generate dumb data and send them to the hub
 
 Here are a few Python elements to note:
 
@@ -270,35 +207,35 @@ print("show text")
 <a href="https://www.tutorialspoint.com/python/python_if_else.htm" target="_blank">here</a>.
 
 In our case, we check if the thing details we retrieved from the server has no property
-(a newly created Thing) and then create a dum property.
+(a newly created Thing) and then create a dumb property.
 
 ```python
 if len(my_thing.properties) == 0:
-    # create a dum property
+    # create a dumb property
 ```
 
 * Indentation is key in Python. Take the previous example of condition, the indentation
-define what is in the condition. Any following line align with the if would be
+defines what is in the condition. Any following line aligned with the if would be
 considered outside the condition.
 
 ## 3.4 Execute the Python code
 
 Let's execute this code. Go to the Atom terminal and type in the following command:
 
-On Mac
+On Mac:
 
 ```bash
 python3 wheelchair/get_started.py
 ```
 
-On Windows
+On Windows:
 
 ```bash
 python wheelchair\get_started.py
 ```
 
 If the example runs properly you should see a log generated every two seconds,
-indicating dum data is being sent to the Hub.
+indicating dumb data is being sent to the Hub.
 
 ## 3.5 Visualise Data on Grafana
 
@@ -317,7 +254,7 @@ Create a new folder for your project.
 
 ![Flowchart Push Button](images/grafana_new_folder.png)
 
-Then, click on the green button 'New Dashboard' to create a new Dashboard, and 
+Then, click on the green button 'New Dashboard' to create a new Dashboard, and
 select a new panel 'Graph'.
 
 ![Flowchart Push Button](images/grafana_graph.png)
@@ -378,12 +315,11 @@ void setup() {
 
   Serial.begin(9600); // setting baud speed for Serial (a baud is a pulse)
 
-  // 'print' on the Serial port, i.e send a message through the serial port
-  Serial.println("Lets start using the button!");
 }
 ```
 
 * The Loop() method executed infinitely after the setup method.
+**WARNING** -  make sure to replace MY_PROPERTY_ID in this example with the ID of a property you created in Data-Centric Design hub.
 
 ```cpp
 void loop() {
@@ -405,13 +341,13 @@ void loop() {
     if (buttonActiveSince > 0) {
       // End Long Press event
       if (longPressActive == true) {
-        Serial.println("button-action,2");
+        Serial.println("MY_PROPERTY_ID,2");
         digitalWrite(led, LOW);  // turn LED OFF
         longPressActive = false;
 
       // End Short Press event
       } else {
-        Serial.println("button-action,1");
+        Serial.println("MY_PROPERTY_ID,1");
       }
       buttonActiveSince = 0;
     }
@@ -421,13 +357,13 @@ void loop() {
 ```
 
 In this example, we want to detect when a push button is pressed. We will trigger
-two type of events when the button is released: 'short' or 'long' press. 
+two type of events when the button is released: 'short' or 'long' press.
 
-The following flow chart illustrates the algorithm of this example code. 
+The following flow chart illustrates the algorithm of this example code.
 
 ![Flowchart Push Button](images/push_button_flow_chart.png)
 
-In Arduino IDE, in the top menu 'Tools > Boards' select 'Arduino/Genuino Mega or Mega 2560'
+In the Arduino IDE, go in the top menu 'Tools > Boards', and  select 'Arduino/Genuino Mega or Mega 2560'
 
 Then press the Verify button (green circle with tick).
 
@@ -459,13 +395,13 @@ You can copy the code from examples/serial_example.py in your wheelchair folder.
 
 In this code, we use the environment variable again to provide the thing id and token.
 
-We need an extra environment variable to specify the serial port. You can find
-it on the Arduino IDE, in the top menu Tools > Ports. For example:
+We need an extra environment variable(SERIAL) to specify the serial port. You can find
+the port name for it on the Arduino IDE, in the top menu Tools > Ports. For example:
 
 ```bash
 THING_ID=
 THING_TOKEN=
-SERIAL=/dev/cu.usbmodem14201
+SERIAL=MY_PORT_NAME
 ```
 
 We are now ready to run the Python code
@@ -493,11 +429,11 @@ Insert the SD card in your laptop.
 
 ## 5.1 Set up an empty SD Card
 
-__**(Skip thi section if you have an SD Card with NOOBS pre-installed)**__
+__**(Skip this section if you have an SD Card with NOOBS pre-installed)**__
 
 Download and install the software
 
-Get the lattest Raspbian here: https://www.raspberrypi.org/downloads/raspbian/
+Get the latest Raspbian here: https://www.raspberrypi.org/downloads/raspbian/
 
 Unzip the file, you obtain an image file (extension .img)
 
@@ -518,22 +454,24 @@ root of the 'boot' disk (SD card). This file will indicate that we want to enabl
 
 ### 5.2.2 Network Access
 
-(add process for network auto config)
-To connect your Raspberry Pi to the network, create a second text file
+To connect your Raspberry Pi to the network, create a second file
 'wpa_supplicant.conf' with the following content:
 
 ```bash
-country=
+country=NL
 update_config=1
 ctrl_interface=/var/run/wpa_supplicant
 
 network={
-  scan_ssid=1
   ssid="YOUR_NETWORK_SSID"
   psk="YOUR_NETORK_PASSWORD"
 }
 
 ```
+
+Save this file on the 'boot' partition. Make sure that its extension is .conf rather
+than .conf.txt (most texts editor will automatically add .txt or .rtf and hide it,
+double-check that your file is not recognised as a text document).
 
 To connect to Eduroam:
 
@@ -568,8 +506,7 @@ If the settings are correct, it takes about 30 seconds to get the Raspberry Pi o
 the network. Make sure your laptop is connected to the same network, then connect
 via ssh with the following command.
 
-On Windows you need to <a href="https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md" target="_blank">
-install Putty</a> to communicate via ssh.
+On Windows, you need to search for Windows Powershell and type the below command in there
 
 On Mac
 
@@ -577,20 +514,20 @@ On Mac
 ssh pi@raspberrypi.local
 ```
 
-In this command, 'pi' is the username and raspberrypi.local is your hostname (the 
-name of the Pi on the local network).
+In this command, 'pi' is the default username and raspberry.local is your default hostname (the
+name of the Pi on the local network). You should type in your own username and hostname if you have changed it.
 
 First you will need to type in 'yes' followed by Enter.
 
-Then, you will be prompt for the default password. Type in 'raspberry'. Note: 
-when you type in the password, no letter appears in the terminal. This is the 
+Then, you will be prompt for the default password. Type in 'raspberry'. Note:
+when you type in the password, no letter appears in the terminal. This is the
 normal behaviour to protect your password.
 
 ![SSH Pi](images/ssh_pi.png)
 
 Once connected, we want to change the hostname, i.e. the name of your Raspberry Pi
 on the network. By default, it is 'raspberrypi' which is not practical while you
-have several of them (like in a classroom setting). To do this, we need to edit 
+have several of them (like in a classroom setting). To do this, we need to edit
 two files /etc/hostname and /etc/hosts. We use the editor nano for this.
 
 Type in:
@@ -599,7 +536,7 @@ Type in:
 sudo nano /etc/hostname
 ```
 
-This command opens the file /etc/hostname in nano. Replace 'raspberrypi' with the 
+This command opens the file /etc/hostname in nano. Replace 'raspberrypi' with the
 name of your choice (without space). In the following example, we use the
 hostname 'noisy-wheelchair'.
 
@@ -623,7 +560,7 @@ Reboot your Rasberry Pi with:
 sudo reboot
 ```
 
-After about 30 second, you should be able to connect to you Raspberry Pi with 
+After about 30 second, you should be able to connect to you Raspberry Pi with
 your new hostname. For example:
 
 ```bash
@@ -652,7 +589,7 @@ sudo apt-get upgrade
 Set up Git
 
 ```bash
-sudo apt-get git
+sudo apt-get install git
 ```
 
 Clone your GitHub repository. Similarly to step 1.4, we now clone your repository.
@@ -669,14 +606,14 @@ cloned with:
 cd wheelchair-design-platform
 ```
 
-Then, we need to create an .env file with the THING_ID, the THING_TOKEN and the
+Then, we need to create an .env file, in the project folder, with  THING_ID, the THING_TOKEN and the
 SERIAL port.
 
 ```bash
 nano .env
 ```
 
-Copy your thing id and token, and use /dev/ttyUSB0 as serial port.
+Copy your thing id and token, and use /dev/ttyUSB0 as a serial port (there are other serial ports on your raspberry pi you can try, such as ttyS0, ttyAM0).
 
 ![Change password](images/env_file.png)
 
