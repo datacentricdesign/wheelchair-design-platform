@@ -589,7 +589,7 @@ sudo apt-get upgrade
 Set up Git
 
 ```bash
-sudo apt-get git
+sudo apt-get install git
 ```
 
 Clone your GitHub repository. Similarly to step 1.4, we now clone your repository.
