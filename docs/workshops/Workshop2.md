@@ -10,7 +10,7 @@
 
 To get started with this second workshop, we propose to experience the principles
  and the capabilities of an orientation sensors. Go through the explanation and
- the examples we compiled for the BNO055: [Orientation Sensor](../resources/sensors/orientation)
+ the examples we compiled for the BNO055: [Orientation Sensor](../resources/sensors/orientation.md)
 
 ## 2 Feather Bluefruit
 
@@ -31,7 +31,7 @@ to the cloud, offering more flexibility.
 
 On the wheel, we propose to implement the Feather 32u4, an Arduino-like, Bluetooth
 enabled board by AdaFruit. Have a look at the documentation we compiled to get
-an overview of its capabilities and set up your Arduino IDE: [Feather 32u4](../resources/feather)
+an overview of its capabilities and set up your Arduino IDE: [Feather 32u4](../resources/feather.md)
 
 ## 3 Bluetooth Low Energy (BLE) GATT Service
 
