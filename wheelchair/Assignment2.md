@@ -1,16 +1,10 @@
-# Assignment 1 - Wheelchair Design
+# Assignment 2 - Wheelchair Design
 
-The first assignment focuses on the context, explores the sensors that will be used and shows a sample on the DCD Hub.
-
-Jooyoung, Lotte and Ferkan
+The second assignment focuses on selecting and implementing the sensors on the wheelchair. Afterwards a collection of samples will be obtained with Grafana. Finally, actuators will be explored and 3 actuators will be described with their behaviour and the motivation to use in our project.
 
 
-## Context of our Internet-Connected wheelchair
-Dance is moving rhythmically to music, following a sequence of steps. It has many healthy benefits, besides it being fun. And while dancing is pretty accessible for most people, it is not for wheelchair users. This is also the case with arcades that are filled with entertainment machines such as the well-known dance arcade machine.
+## Grafana dashboard with samples of data
 
-The context of our internet-connected wheelchair focuses on bringing the same fun experience of dancing at an arcade, but for users that are in a wheelchair.
-
-Wheelchair users shouldn’t be limited by their wheelchair, instead they should embrace it and we as designers should provide them with fun solutions.
 
 
 ## Sensor exploration
