@@ -135,8 +135,15 @@ talk to the hub.
 
 Open the Atom terminal ('plus' sign in the bottom-left corner) and execute the following command.
 
+On Mac:
+
 ```bash
 pip3 install -r requirements.txt --user
+```
+On Windows:
+
+```bash
+python -m pip install -r requirements.txt --user
 ```
 
 Here we 'install' the Python dependencies for our project. The option -r indicates we provide a file name that contains
@@ -215,13 +222,13 @@ considered outside the condition.
 
 Let's execute this code. Go to the Atom terminal and type in the following command:
 
-On Mac
+On Mac:
 
 ```bash
 python3 wheelchair/get_started.py
 ```
 
-On Windows
+On Windows:
 
 ```bash
 python wheelchair\get_started.py
