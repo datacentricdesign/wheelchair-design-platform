@@ -270,7 +270,7 @@ Then we need to define which GATT service we want to connect to. Thus we create 
 constant with the UUID of our orientation service.
 
 ```python
-GATT_CHARACTERISTIC_ORIENTATION = "02118833-4455-6677-8899-AABBCCDDEEFF"
+GATT_CHARACTERISTIC_ORIENTATION = "MY_GATT_ORIENTATION_SERVICE_UUID"
 ```
 
 We define a 'handler', a method which will be called every time new data is coming
