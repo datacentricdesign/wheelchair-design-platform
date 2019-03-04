@@ -237,6 +237,8 @@ sudo apt-get install bluez libbluetooth-dev
 sudo pip3 install git+https://github.com/peplin/pygatt
 
 sudo pip3 install "pygatt[GATTTOOL]"
+
+sudo pip3 install bluepy
 ```
 
 We can use the command 'blescan' to scan the Bluetooth devices around. This way,
