@@ -124,10 +124,8 @@ void initSensor(void) {
 At the beginning of setup(), we need to call this initSensor() so that our BNO055
 is ready. Note that, the very first line of setup, stops the connection from happening if the Serial console is not open (you can comment this out to stop this behaviour):
 ``` c++
-while(!Serial); 
-```
-
-```cpp
+  while(!Serial); 
+  
    // Setup the BNO055 sensor
   initSensor();
 ```
