@@ -207,7 +207,7 @@ void loop(void) {
 ```
 
 The complete source code is available in
-<a href="https://github.com/datacentricdesign/wheelchair-design-platform/tree/master/examples/communication/bluetooth/bno055_gatt" target="_blank">examples /
+<a href="https://github.com/datacentricdesign/wheelchair-design-platform/tree/master/examples/communication/bluetooth/bno055_gatt_orientation" target="_blank">examples /
 communication / bluetooth / bno055_gatt</a>
 
 ### 3.3 Wire and set up on the Wheel
