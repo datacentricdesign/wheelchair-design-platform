@@ -33,6 +33,10 @@ On the wheel, we propose to implement the Feather 32u4, an Arduino-like, Bluetoo
 enabled board by AdaFruit. Have a look at the documentation we compiled to get
 an overview of its capabilities and set up your Arduino IDE: [Feather 32u4](../resources/feather.md)
 
+For this you will also have to install the following library (Bluefruit nRF51):
+
+![](images/library.png)
+
 ## 3 Bluetooth Low Energy (BLE) GATT Service
 
 As described in its resource page, the Feather 32u4 has a Bluetooth Low Energy (BLE)
