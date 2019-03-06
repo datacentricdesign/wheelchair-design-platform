@@ -44,8 +44,9 @@ def serial_to_property_values():
         values = line.split(',')
         # Use the first element of the list as property id
         property_id = values.pop(0)
+        #print('the property id is-' + property_id)
         # Get the property from the thing
-        prop = my_thing.properties[property_id]
+        prop = my_thing.properties['button-action-0041']
         # If we find the property, we update the values (rest of the list)
         if prop is not None:
             prop.update_values([float(x) for x in values])
