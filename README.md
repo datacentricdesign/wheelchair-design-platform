@@ -2,7 +2,9 @@
 
 ## Project description
 
-The context will be elderly people on recovery at home, from an injury that prevents them from walking. This person might be tempted to keep using the wheelchair, leading to a permanent disability. To avoid this situation, the goal will be to motivate them to keep up the recovery process.
+The context will be wheelchair users who need to stretch once a day to improve circulation, flexibility, and joint range motion. There are a series of 13 recommended exercises 
+
+This person might be tempted to keep using the wheelchair, leading to a permanent disability. To avoid this situation, the goal will be to motivate them to keep up the recovery process.
 
 ## Possible sensors
 
