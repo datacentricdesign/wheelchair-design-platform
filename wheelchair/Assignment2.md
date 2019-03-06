@@ -12,8 +12,7 @@ The  actuators we will be using are: LED strips, A vibration motor and speakers.
 
 Actuators | Behavior | Info on the context
 --- | --- | ---
-*LED strips* | Changes the light attributes of the environment | Improves the dance environment by making the it feel like a dancehall
-Gives feedback to wheelchair user if he or she did the right move
+*LED strips* | Changes the light attributes of the environment | Improves the dance environment by making the it feel like a dancehall. And they give feedback to wheelchair user if he or she did the right move
 *Vibration Motor* | Vibrate based on the change of the user’s movement | Feedback for the user notifying the status of their dance movement
 *Speaker* | Auditory output | Plays the music
 Tells the user how to move
