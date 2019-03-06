@@ -8,7 +8,8 @@ The second assignment focuses on selecting and implementing the sensors on the w
 
 
 ## Actuator exploration
-https://i.etsystatic.com/9856245/r/il/39bb99/637929600/il_570xN.637929600_jcc9.jpg
+![led_wheelchair](led_wheelchair.jpg)
+
 The  actuators we will be using are: LED strips, A vibration motor and speakers. Using these actuators, we can tell the users how to move and give them feedback on if the moved correctly.
 
 Actuators | Behavior | Info on the context
