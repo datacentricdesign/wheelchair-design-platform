@@ -21,5 +21,5 @@ Actuators | Behavior | Info on the context
 --- | --- | ---
 *LED strips* | Changes the light attributes of the environment | Improves the dance environment by making the it feel like a dancehall. And they give feedback to wheelchair user if he or she did the right move
 *Vibration Motor* | Vibrate based on the change of the user’s movement | Feedback for the user notifying the status of their dance movement
-*Speaker* | Auditory output | Plays the music and tells the user how to move. To be able to let the arduino play different sounds, we need to implement a miniMP3 player for example a WTV020SD. ![miniMP3](miniMP3.jpg)
+*Speaker + WTV020SD* | Auditory output | Plays the music and tells the user how to move. To be able to let the arduino play different sounds, we need to implement a miniMP3 player for example a WTV020SD. ![miniMP3](miniMP3.jpg)
 
