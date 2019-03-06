@@ -149,7 +149,7 @@ void orientation() {
   float quatX = quat.x();
   float quatY = quat.y();
   float quatZ = quat.z();
-  
+
   // Command is sent when \n (\r) or println is called
   // AT+GATTCHAR=CharacteristicID,value
   ble.print( F("AT+GATTCHAR=") );
@@ -192,9 +192,9 @@ void rotation() {
   sensors_event_t event;
   bno.getEvent(&event);
 
-  // if this is the first loop iteration, ignore position data (always zero)  
-  //if its second loop iteration set the starting position for your axis 
-  // if its another iteration, just continue computing the rotation data 
+  // if this is the first loop iteration, ignore position data (always zero)
+  //if its second loop iteration set the starting position for your axis
+  // if its another iteration, just continue computing the rotation data
 
   float axis_value = event.orientation.x;   // replace this with whatever axis you're tracking
   not_first_loop = (not_first_loop)?compute_rotations(axis_value, &global_rotations) : true;
