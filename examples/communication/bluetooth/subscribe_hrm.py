@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Import required library
-from dotenv import load_doatenv
+from dotenv import load_dotenv
 import pexpect
 import time
 import sys
@@ -10,13 +10,19 @@ import os
 from dcd.entities.thing import Thing
 from dcd.entities.property_type import PropertyType
 
+#This function converts hex values received from hrm to integer.
 def hexStrToInt(hexstr):
-    val = int(hexstr[0:2], 16) + (int(hexstr[3:5], 16) << 8)
+    val = int(hexstr[3:5], 16) #
     if ((val & 0x8000) == 0x8000): # treat signed 16bits
         val = -((val ^ 0xffff) + 1)
     return val
 
+#put your hrm mac address here
 hrmMacAddress = "e9:aa:88:b4:b6:bc"
+
+load_dotenv()
+THING_ID = os.environ['THING_ID']
+THING_TOKEN = os.environ['THING_TOKEN']
 
 # Instantiate a thing with its credential
 my_thing = Thing(thing_id=THING_ID, token=THING_TOKEN)
@@ -85,7 +91,7 @@ while True:
         child.expect("\r\n", timeout=5)
         print(child.before)
         intvalue = hexStrToInt(child.before)
-        print(intavalue)
+        print(intvalue)
     except KeyboardInterrupt:
         print("Exiting...")
         # Unsubscribe from characteristic before exiting program
