@@ -9,9 +9,12 @@ motors, LEDs and speakers) from data, through Bluetooth and from the cloud.
 
 ## 1 Rotation to Vibration
 
-At the end of workshop two, we were able to register to a BLE GATT service on the
+At the end of workshop 2, we were able to register to a BLE GATT service on the
 Feather 32u4 placed on the left wheel of the wheelchair to receive orientation
-and rotation data. In this step, 
+and rotation data. In this step, we explore how we can use this information to
+reason on the Raspberry Pi, and trigger action on the Arduino Mega.
+
+![](images/ws3-1.png)
 
 ### 1.1 Vibration pattern
 
@@ -136,11 +139,25 @@ You can find a complete example in
 
 ## 2 LED GATT Service on the wheel
 
+In this second section, we want to control an RGB diffused LEDs placed on the wheel.
+This time we will explore how to subscribe to an MQTT topic and receive messages
+from the cloud. Updating an LED property in the DCD Hub manager, the Raspberry Pi
+will thus receive this update. We will create a BLE GATT service to WRITE (i.e send)
+command to the Feather 32u4 on the wheel, to turn on the LED.
 
+![](images/ws3-2.png)
 
 ### 2.1 Diffused LEDs
 
+
+
 ### 2.2 GATT Service for Control
+
+
+
+### 2.3 MQTT Subscription to LED
+
+
 
 ## 3 MQTT Subscription to Speaker
 
