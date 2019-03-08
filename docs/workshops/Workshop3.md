@@ -19,9 +19,9 @@ reason on the Raspberry Pi, and trigger action on the Arduino Mega.
 ### 1.1 Vibration pattern
 
 Let's start with a look at the vibration motor describe here:
-[Vibration Moto](../resources/actuators/vibration_motor.md)
+[Vibration Motor](../resources/actuators/vibration_motor.md)
 
-Building on the couple of example we provide, write your own vibration pattern.
+Building on the couple of examples we provide, write your own vibration pattern.
 
 ### 1.2 Vibration Function
 
