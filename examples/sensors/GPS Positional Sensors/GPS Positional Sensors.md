@@ -20,3 +20,38 @@ This breakout is built around the MTK3339 chipset, a high-quality GPS module tha
 7. **Gnd** - common power and signal ground;
 8. **Vin** - Power input, to be connected to 3-5VDC. GPS's are very sensitive, so is important to have a nice and quiet power supply. Don't connect to a switching supply if you can avoid it, also, an LDO (Low-dropout regulator) will be less noisy;
 9. **PPS** - Output pin. It is a "pulse per second" type of output. Most of the time it is at logic low (ground) and then it pulses high (3.3V) once a second, for 50-100ms, so it should be easy for a microcontroller to sync up to it.
+
+
+### Technical Details
+The data logging of this GPS module functions like this:
+The time, date, longitude, latitude, and height is logged every 15 seconds and only when there is a fix. The internal FLASH can store about 16 hours of data, and it will automatically append data so you don't have to worry about accidentally losing data if power is lost. It is not possible to change what is logged and how often, as its hardcoded into the module, but this arrangement covers many of the most common GPS data logging requirements.
+
+
+* 1-10 Hz update rate;
+* Tracking of up to 22 satellites on 66 channels;
+* Position Accuracy of 1.8 meters;
+* Velocity Accuracy of 0.1 meters/s;
+* Warm/cold start up time of 34 seconds;
+* Acquisition sensitivity of -145 dBm;
+* Tracking sensitivity of -165 dBm;
+* Maximum Velocity of 515m/s;
+* Operating current of 25mA when tracking, 20 mA current draw during navigation;
+* Outputs NMEA 0183, 9600 baud (default);
+* DGPS (differential global positioning system)/WAAS (Wide Area Augmentation System)/EGNOS (European Geostationary Navigation Overlay Service) support;
+* Up to 210 PRN (pseudorandom noise number) channels (used to identify satellites);
+* Jammer detection and reduction;
+* Multi-path detection and compensation;
+* RTC battery-compatible;
+* Built-in data logging, only requires microcontroller to send the "Start Logging" command, after that, it can go to sleep and does not need to wake up to talk to the GPS anymore;
+* PPS output on fix;
+* Internal patch antenna + u.FL connector for external active antenna (module will automatically detect the active antenna and switch over);
+* Fix status LED;
+
+#### Battery Backup
+This breakout has a built in real time clock (RTC), which can keep track of time even when it power is lost and it doesn't have a fix yet. It can also help reduce fix times, if you expect to have an unreliable power connection(like solar, for example). To use the RTC, we need to attach a battery. There is a spot on the back for a CR1220 sized battery holder. You can use any 12mm coin cell - these are a popular and common form factor:
+
+![](2.png)
+
+Once the GPS loses power, it will revert to the factory default for baud rates, configuration, etc. A backup battery will prevent that!
+
+The backup real-time-clock circuitry draws 7 uA (0.007 mA) so a CR1220 will last 40mAh / 0.007mA = 5,714 hours = 240 days continuously. The backup battery is only used when there's no main 3V power to the GPS, so as long as it's only used as backup once in a while, it can last years.
