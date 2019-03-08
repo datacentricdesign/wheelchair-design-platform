@@ -104,7 +104,22 @@ The geolocation data is in degrees and minutes in the following format: Latitude
 
 * The one after that is 160412 which is the current date (DDMMYY);
 
-* At the end, there is the *XX data which is used as a data transfer checksum (for transfer error debugging).
+* At the end, there is the \*XX data which is used as a data transfer checksum (for transfer error debugging).
 
 </p>
 </details>
+
+#### Parsing GPS Data with the Arduino
+
+This time we will parse the data using the Arduino. For this the installation of the Adafruit GPS library is required.
+
+
+##### Schematic
+
+![](4.png)
+
+
+##### Results
+Let's see our console output:
+
+![](4.gif)
