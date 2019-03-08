@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 import os
 import serial
 
+
 from dcd.entities.thing import Thing
 from dcd.entities.property_type import PropertyType
 
