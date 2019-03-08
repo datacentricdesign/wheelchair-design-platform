@@ -31,6 +31,14 @@ ser = serial.Serial(
     baudrate = 9600,
     timeout = 2)
 
+def find_or_create(property_name, property_type):
+    """Search a property by name, create it if not found, then return it."""
+    if my_thing.find_property_by_name(property_name) is None:
+        my_thing.create_property(name=property_name,
+                                 property_type=property_type)
+    return my_thing.find_property_by_name(property_name)
+
+
 # Read the next line from the serial port
 # and update the property values
 def serial_to_property_values():
@@ -40,18 +48,25 @@ def serial_to_property_values():
     if len(line_bytes) > 0:
         # Convert the bytes into string
         line = line_bytes.decode('utf-8')
-        # Split the string using commas as separator, we get a list of strings
-        values = line.split(',')
-        # Use the first element of the list as property id
-        property_id = values.pop(0)
-        # Get the property from the thing
-        prop = my_thing.properties[property_id]
-        # If we find the property, we update the values (rest of the list)
-        if prop is not None:
-            prop.update_values([float(x) for x in values])
-        # Otherwise, we show a warning
-        else:
-            print('Warning: unknown property ' + property_id)
+
+        try:
+            # Split the string using commas as separator, we get a list of strings
+            values = line.split(',')
+            #print(values)
+
+            #Establishes the array property with
+            for x in range(0, len(values)-1):
+                propertyLine = values.pop(x)
+                property = propertyLine.split('=')
+                prop_name = property.pop(0)
+                prop_value = [float(x) for x in property]
+                #print(prop_name + ' = ' + prop_value + '\n')
+                print(prop_name) #solo lee FSR0 y FSR2
+                find_or_create(prop_name,
+                               PropertyType.ONE_DIMENSION).update_values(
+                               prop_value)
+        except:
+            print("cant parse ")
     # Finally, we call this method again
     serial_to_property_values()
 
