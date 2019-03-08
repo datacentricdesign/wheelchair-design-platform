@@ -1,5 +1,23 @@
+## Context
 
+The chosen context is the zoo, a public facility that maintains a collection of animals displayed to the public. It is a leisure space that often requires visitors to travel long distances walking to explore the establishment. The zoo will then offer a wheelchair service for visitors with walking difficulties. The wheelchairs will incorporate IoT to provide an enhanced, personalized experience that focuses on wellbeing. At the same time, they will offer the zoo and wheelchair providers with relevant data to improve the zoo’s design and the wheelchair service itself.
 
+## Sensors
+
+|Sensor|Variable|Usage|
+|---|---|---|
+|Beacon|Location, Time to reach location|It can determine a recommended route, based on the location of the user and his preferences/tiredness|
+|Orientation sensor|Acceleration, Aclination|Can measure the tiredness through motion of the wheelchair, and accessability of the road|
+|Heart rate sensor|Heart rate|Also gives a good indication of the tiredness of the user|
+
+## Actuators
+
+|Different outputs|Corresponding actuators|Explanation|
+|---|---|---|
+|Recommended route|screen|On a screen the user can see the recommended route on a map|
+|Tiredness|speaker|The wheelchair will let the user know through sound that he should rest|
+|Road accessability|LEDs|using different colors will show if a road will be easy or difficult to ride for the user|
+|Redesign of the park|-|it will provide a report on general user behaviour and paths, in order to make a good park redesign|
 
 ![IoT1 Exhibition](/docs/workshops/images/iot1_exhibition.jpg)
 
