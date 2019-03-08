@@ -1,7 +1,6 @@
 
 
 
-
 ![IoT1 Exhibition](/docs/workshops/images/iot1_exhibition.jpg)
 
 ## Workshops
