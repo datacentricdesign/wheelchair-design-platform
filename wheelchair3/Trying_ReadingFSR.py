@@ -66,7 +66,7 @@ def serial_to_property_values():
                                PropertyType.ONE_DIMENSION).update_values(
                                prop_value)
         except:
-            print("cant parse ")
+            print("cant parse " + line)
     # Finally, we call this method again
     serial_to_property_values()
 
