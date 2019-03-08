@@ -3,6 +3,7 @@ GPS (Global Positioning System) is a global satellite-based radio navigation sys
 
 GPS does not require the user to transmit any data, and it operates independently of any telephonic or internet reception, though these technologies can enhance the usefulness of the GPS positioning information.
 
+![](1.gif)
 
 ## Adafruit Ultimate GPS Breakout v3
 
@@ -55,3 +56,50 @@ This breakout has a built in real time clock (RTC), which can keep track of time
 Once the GPS loses power, it will revert to the factory default for baud rates, configuration, etc. A backup battery will prevent that!
 
 The backup real-time-clock circuitry draws 7 uA (0.007 mA) so a CR1220 will last 40mAh / 0.007mA = 5,714 hours = 240 days continuously. The backup battery is only used when there's no main 3V power to the GPS, so as long as it's only used as backup once in a while, it can last years.
+
+### Examples
+
+
+#### Output Raw GPS Serial data, bypassing Arduino.
+
+GPS modules will start 'spitting' data, and trying to get a 'fix' (location verification) the moment you turn them on. Like most other GPS modules, the Adafruit Ultimate GPS uses TTL serial output to send data.
+
+Knowing this, a good way to test it is to wire it directly to the computer via the TTL serial to USB converter on an Arduino(RX and TX pins). You can also use an FTDI Friend or another TTL adapter.
+
+
+##### Schematic
+
+![](3.png)
+
+
+For this example, we'll just flash the Arduino with an empty sketch, turn on the Serial monitor (please select to 9600 baud on the serial monitor window), and watch the GPS "NMEA sentence" output from the module data come in.
+
+##### Results
+Let's see our console output:
+
+![](3.gif)
+
+**Note:**
+The data you receive is separated by commas. If you get empty values between the commas, that means that the module doesn't have a fix, and the red LED should be blinking. To get a fix, you should have the module pointed towards the sky uninterrupted for some time, out of a window or preferably outside.
+
+The most common sentences people use are the GPRMC (Global Positioning Recommended Minimum Coordinates) and the GPGGA sentences.
+
+These provide the time, date, latitude, longitude, altitude, estimated land speed, and fix type. Fix type indicates whether the GPS has locked onto the satellite data and received enough data to determine the location (2D fix) or location+altitude (3D fix). Check how to decode these sentences in your sources.
+
+i.e. GPRMC, this line is called the RMC (Recommended Minimum) sentence and has the most useful data. Each chunk of data is separated by a comma.
+
+* The first part is the current time in GMT (Greenwich Mean Time). The first two numbers indicate the hour, the next two are the minutes, then the next two are the seconds. Finally, we have the milliseconds;
+
+* The second part is the 'status code', if it is a V that means the data is Void (invalid). If it is an A that means its Active (the GPS could get a lock/fix);
+
+* The next 4 pieces of data are the geolocation data.
+  To look at this location in Google maps,  it requires you to use +/- instead of N-S W-E notation. N and E are positive, S and W are negative.
+  The geolocation data is in degrees and minutes in the following format: Latitude: DDMM.MMMM (The first two characters are the degrees) Longitude: DDDMM.MMMM (The first three characters are the degrees);
+
+* The next data field is the ground speed in knots;
+
+* The next data point is the tracking angle, this is meant to approximate what 'compass' direction we're heading at based on our past travel;
+
+* The one after that is 160412 which is the current date (DDMMYY);
+
+* At the end, there is the *XX data which is used as a data transfer checksum (for transfer error debugging).
