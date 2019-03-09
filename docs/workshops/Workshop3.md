@@ -28,8 +28,8 @@ Building on the couple of examples we provide, write your own vibration pattern.
 The next step is to transform this continuous pattern into a function that we
 can turn on and off on demand. Thus, we create a function vibration_pattern() and
 we move our code from loop() to vibration_pattern(). In loop, we call vibration_pattern()
-and leave the delay between each loop. This transformation gives us the possibility
-to implement multiple vibration pattern (one per function).
+and leave a delay between each loop. This transformation gives us the possibility
+to implement multiple vibration patterns (one per function).
 
 ```cpp
 void vibration_pattern() {
@@ -63,7 +63,7 @@ to 'i' and 'increase') and set it to false.
 boolean vibration_enabled = false;
 ```
 
-Then, in loop() we want to listen to command sent via Serial connection (in this case
+Then, in loop(), we want to listen to commands sent via the Serial connection (in this case
 through the USB cable). We use Serial.read(), which gives us the last character received
 via Serial. Let's define that sending:
 
@@ -95,7 +95,7 @@ void loop() {
 ### 1.3 Control from Python
 
 The next step is to control this vibration from Python. The following example
-show how to establish a serial connection and write (i.e. send) message. In this
+shows how to establish a serial connection and write (i.e. send) messages. In this
 case, we send '1' (turning on the vibration) then wait for 5 seconds before sending
 '0' (turning off the vibration). We wait another 2 seconds and start again.
 
@@ -126,12 +126,12 @@ while True:
 ### 1.4 Data-Driven Vibration
 
 The final step is to control the vibration based on data. In this example, we will
-nudge the wheelchair users when they reach their recommended number of wheel rotation.
+nudge the wheelchair users when they reach their recommended number of wheel rotations.
 
-To do this, we can start from the last example of workshop 2, which subscribe to
-orientation and rotation GATT services from the wheel and send the data to the DCD Hub.
-We remove the subscription to orientation, not necessary in this case. We modify
-the handler of rotation data so that we check whether we need to nudge or not.
+To do this, we can start from the last example of workshop 2, which subscribes to
+orientation and rotation GATT services from the wheel and sends the data to the DCD Hub.
+We remove the subscription to orientation, which is not necessary in this case. We modify
+the handler of rotation data so that we check whether we need to nudge the wheelchair user or not.
 
 You can find a complete example in 
 <a href="https://github.com/datacentricdesign/wheelchair-design-platform/blob/master/examples/actuators/examples/actuators/vibrate_rotation_excess.py" target="_blank">examples/actuators/vibrate_rotation_excess.py</a>
@@ -139,11 +139,11 @@ You can find a complete example in
 
 ## 2 LED GATT Service on the wheel
 
-In this second section, we want to control an RGB diffused LEDs placed on the wheel.
+In this second section, we want to control RGB diffused LEDs placed on the wheel.
 This time we will explore how to subscribe to an MQTT topic and receive messages
 from the cloud. Updating an LED property in the DCD Hub manager, the Raspberry Pi
 will thus receive this update. We will create a BLE GATT service to WRITE (i.e send)
-command to the Feather 32u4 on the wheel, to turn on the LED.
+commands to the Feather 32u4 on the wheel, to turn on the LED.
 
 ![](images/ws3-2.png)
 
