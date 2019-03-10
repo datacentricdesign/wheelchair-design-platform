@@ -1,12 +1,18 @@
-## Assigment 1
+## The yoga wheelchair
 
 ## Project description
 
-The context will be wheelchair users who need to stretch once a day to improve circulation, flexibility, and joint range motion. There are a series of 13 recommended exercises 
+Sitting in a wheelchair during long periods of time might increase problems of posture, blood circulation and stiffness in the users’ body. There are so many reasons why yoga can be considered as a therapy for this kind of users, not to mention that it brings together mind and body, increasing well being in general. Posture is improved through different exercises which can also be considered as healing to joints and muscles avoiding stiffness and increasing blood circulation. Furthermore, it must be noted that this practice links exercises with respiration, which will not just increase flexibility but also lung capacity.
 
-This person might be tempted to keep using the wheelchair, leading to a permanent disability. To avoid this situation, the goal will be to motivate them to keep up the recovery process.
+## Sensors
 
-## Possible sensors
+The following sensors will be used to verify if each posture made by the user.
+
+* _**Force Sensing Resistor (FSR):**_ This sensor will be used to detect the different yoga postures of the user. The recommended setup is 5 FSR in the back rest and 6 FSR distributed in the bottom cushion.
+
+* _**Force Sensing Resistor (FSR):**_ This sensor will be used to detect the different yoga postures of the user. The recommended setup is 5 FSR in the back rest and 6 FSR distributed in the bottom cushion.
+
+## Research of possible sensors
 
 __**Direction and speed:**__
 
