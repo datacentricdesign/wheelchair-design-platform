@@ -4,6 +4,10 @@
 
 Sitting in a wheelchair during long periods of time might increase problems of posture, blood circulation and stiffness in the users’ body. There are so many reasons why yoga can be considered as a therapy for this kind of users, not to mention that it brings together mind and body, increasing well being in general. Posture is improved through different exercises which can also be considered as healing to joints and muscles avoiding stiffness and increasing blood circulation. Furthermore, it must be noted that this practice links exercises with respiration, which will not just increase flexibility but also lung capacity.
 
+Some examples of yoga postures for wheelchair users:
+
+![Cat pose](/docs/workshops/images/yoga images/wheelchair-yoga-cat-pose.jpg)
+
 ## Sensors
 
 The following sensors will be used to verify if each posture made by the user.
