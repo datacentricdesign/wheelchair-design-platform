@@ -8,6 +8,20 @@ Some examples of yoga postures for wheelchair users:
 
 ![Cat pose](/docs/workshops/images/yoga/wheelchair-yoga-cat-pose.jpg)
 
+![Cow pose](/docs/workshops/images/yoga/wheelchair-yoga-cow-pose.jpg)
+
+![Eagle pose](/docs/workshops/images/yoga/wheelchair-yoga-eagle-pose.jpg)
+
+![bend pose](/docs/workshops/images/yoga/wheelchair-yoga-forward-bend-pose.jpg)
+
+![stretch pose](/docs/workshops/images/yoga/wheelchair-yoga-hip-stretch-pose)
+
+![leg pose](/docs/workshops/images/yoga/wheelchair-yoga-leg-stretch-pose.jpg)
+
+![side pose](/docs/workshops/images/yoga/wheelchair-yoga-side-stretch-pose.jpg)
+
+![twist pose](/docs/workshops/images/yoga/wheelchair-yoga-twist-pose.jpg)
+
 ## Sensors
 
 The following sensors will be used to verify if each posture made by the user.
