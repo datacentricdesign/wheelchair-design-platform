@@ -6,7 +6,7 @@ Sitting in a wheelchair during long periods of time might increase problems of p
 
 Some examples of yoga postures for wheelchair users:
 
-![Cat pose](/docs/workshops/images/yoga images/wheelchair-yoga-cat-pose.jpg)
+![Cat pose](/docs/workshops/images/yogaimages/wheelchair-yoga-cat-pose.jpg)
 
 ## Sensors
 
