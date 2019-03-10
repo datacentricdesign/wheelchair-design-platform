@@ -87,6 +87,7 @@ __**Location:**__
 * Connect to the GPS of the phone via Bluetooth
 ____
 _________________________________________________________________________________________________
+## Wheelchair Design Platform
 
 Wheelchair Design Platform is a repository that contains some resources to help
 designers and developers speak the same language, and work together towards
