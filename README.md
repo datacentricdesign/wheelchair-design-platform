@@ -14,7 +14,7 @@ Some examples of yoga postures for wheelchair users:
 
 ![bend pose](/docs/workshops/images/yoga/wheelchair-yoga-forward-bend-pose.jpg)
 
-![stretch pose](/docs/workshops/images/yoga/wheelchair-yoga-hip-stretch-pose)
+![stretch pose](/docs/workshops/images/yoga/wheelchair-yoga-hip-stretch-pose.jpg)
 
 ![leg pose](/docs/workshops/images/yoga/wheelchair-yoga-leg-stretch-pose.jpg)
 
