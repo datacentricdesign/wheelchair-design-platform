@@ -22,6 +22,8 @@ void setup(void) {
     pinMode(i, INPUT);
   }
 
+  delay(500);
+
 }
 
 void loop(void) {

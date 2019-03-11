@@ -41,7 +41,7 @@ def find_or_create(property_name, property_value):
 def serial_to_property_values():
     # Read one line
     line_bytes = ser.readline()
-    # print(line_bytes)
+    print(line_bytes)
     # If the line is not empty
     if len(line_bytes) > 0:
         # Convert the bytes into string
