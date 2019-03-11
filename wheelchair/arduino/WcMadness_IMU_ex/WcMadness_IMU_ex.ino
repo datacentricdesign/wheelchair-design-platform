@@ -83,19 +83,16 @@ void initSensor(void) {
 void setup(void)
 {
   initSensor();
-  while (!Serial); // required for Flora & Micro
+  // while (!Serial); // required for Flora & Micro
   delay(500);
 
   boolean success;
 
   Serial.begin(115200);
-  Serial.println(F("Adafruit Bluefruit Heart Rate Monitor (HRM) Example"));
-  Serial.println(F("---------------------------------------------------"));
 
   randomSeed(micros());
 
   /* Initialise the module */
-  Serial.print(F("Initialising the Bluefruit LE module: "));
 
   if ( !ble.begin(VERBOSE_MODE) )
   {
