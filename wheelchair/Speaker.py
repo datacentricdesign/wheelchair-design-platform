@@ -36,4 +36,4 @@ def play_sound(file, duration):
 
     p.terminate()
 
-play_sound('/Users/jbourgeois/Desktop/Bass-loops_www.orangefreesounds.com/01-Bass-Loop-110-bpm.wav', 1)
+play_sound('Macintosh HD⁩/⁨Users⁩/⁨rosanfoppen/⁨Desktop⁩/⁨IoT/Remco_uit_Rotterdam-QtDo4fhkidQ.wav⁩', 1)
