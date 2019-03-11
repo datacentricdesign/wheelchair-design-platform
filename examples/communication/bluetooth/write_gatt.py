@@ -47,7 +47,7 @@ THING_TOKEN = os.environ['THING_TOKEN']
 BLUETOOTH_DEVICE_MAC = os.environ['BLUETOOTH_DEVICE_MAC']
 
 # UUID of the GATT characteristic to subscribe
-GATT_CHARACTERISTIC = "2345"
+GATT_CHARACTERISTIC_LED = "00002345-0000-1000-8000-00805f9b34fb"
 
 # Many devices, e.g. Fitbit, use random addressing, this is required to connect.
 ADDRESS_TYPE = pygatt.BLEAddressType.random
@@ -59,15 +59,13 @@ bleAdapter.start()
 # User the BLE adapter to connect to our device
 my_device = bleAdapter.connect(BLUETOOTH_DEVICE_MAC, address_type=ADDRESS_TYPE)
 
-#discover_characteristic(my_device)
-
 while True:
     hub_status = dcd_hub_status()
     print(hub_status)
     if hub_status is 0:
         print("Internet available")
-        my_device.char_write('00002345-0000-1000-8000-00805f9b34fb', bytearray([0xFF, 0x00, 0x00]))
+        my_device.char_write(GATT_CHARACTERISTIC_LED, bytearray([0xFF, 0x00, 0x00]))
     else:
         print("Internet not available")
-        my_device.char_write('00002345-0000-1000-8000-00805f9b34fb', bytearray([0x00, 0x00, 0x00]))
+        my_device.char_write(GATT_CHARACTERISTIC_LED, bytearray([0x00, 0x00, 0x00]))
     time.sleep(2)

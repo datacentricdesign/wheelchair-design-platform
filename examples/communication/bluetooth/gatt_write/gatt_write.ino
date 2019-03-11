@@ -33,67 +33,20 @@
  * - Furthermore, update() must be called inside loop() for callback to
  * be executed.
  * 
- * The sketch will add an custom service with 2 writable characteristics,
+ * The sketch will add an custom service with a writable characteristic,
  * and install callback to execute when there is an update from central device
- * - one hold string
- * - one hold a 4-byte integer
-  */
-
-/*=========================================================================
-    APPLICATION SETTINGS
-
-    FACTORYRESET_ENABLE     Perform a factory reset when running this sketch
-   
-                            Enabling this will put your Bluefruit LE module
-                            in a 'known good' state and clear any config
-                            data set in previous sketches or projects, so
-                            running this at least once is a good idea.
-   
-                            When deploying your project, however, you will
-                            want to disable factory reset by setting this
-                            value to 0.  If you are making changes to your
-                            Bluefruit LE device via AT commands, and those
-                            changes aren't persisting across resets, this
-                            is the reason why.  Factory reset will erase
-                            the non-volatile memory where config data is
-                            stored, setting it back to factory default
-                            values.
-       
-                            Some sketches that require you to bond to a
-                            central device (HID mouse, keyboard, etc.)
-                            won't work at all with this feature enabled
-                            since the factory reset will clear all of the
-                            bonding data stored on the chip, meaning the
-                            central device won't be able to reconnect.
+ */
                             
-    MINIMUM_FIRMWARE_VERSION  Minimum firmware version to have some new features    
-    -----------------------------------------------------------------------*/
-    #define FACTORYRESET_ENABLE        1
-    #define MINIMUM_FIRMWARE_VERSION   "0.7.0"
-/*=========================================================================*/
 
+#define FACTORYRESET_ENABLE        1
+// Minimum firmware version to have some new features
+#define MINIMUM_FIRMWARE_VERSION   "0.7.0"
 
-
-// Create the bluefruit object, either software serial...uncomment these lines
-/*
-SoftwareSerial bluefruitSS = SoftwareSerial(BLUEFRUIT_SWUART_TXD_PIN, BLUEFRUIT_SWUART_RXD_PIN);
-
-Adafruit_BluefruitLE_UART ble(bluefruitSS, BLUEFRUIT_UART_MODE_PIN,
-                      BLUEFRUIT_UART_CTS_PIN, BLUEFRUIT_UART_RTS_PIN);
-*/
-
-/* ...or hardware serial, which does not need the RTS/CTS pins. Uncomment this line */
-// Adafruit_BluefruitLE_UART ble(BLUEFRUIT_HWSERIAL_NAME, BLUEFRUIT_UART_MODE_PIN);
-
-/* ...hardware SPI, using SCK/MOSI/MISO hardware SPI pins and then user selected CS/IRQ/RST */
+// Create the bluefruit object, either software serial
 Adafruit_BluefruitLE_SPI ble(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
 
-/* ...software SPI, using SCK/MOSI/MISO user-defined SPI pins and then user selected CS/IRQ/RST */
-//Adafruit_BluefruitLE_SPI ble(BLUEFRUIT_SPI_SCK, BLUEFRUIT_SPI_MISO,
-//                             BLUEFRUIT_SPI_MOSI, BLUEFRUIT_SPI_CS,
-//                             BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
-
-int32_t charid_string;
+// Writable GATT Service
+int32_t charid_led;
 
 // Neo Pixel
 #define LED_PIN 6
@@ -107,27 +60,25 @@ void error(const __FlashStringHelper*err) {
   while (1);
 }
 
+// What to do when a Bluetooth client connect to the Feather
 void connected(void) {
   Serial.println( F("Connected") );
 }
 
+// What to do when a Bluetooth client disconnect from the Feather
 void disconnected(void) {
   Serial.println( F("Disconnected") );
 }
 
-void BleUartRX(char data[], uint16_t len) {
-  Serial.print( F("[BLE UART RX]" ) );
-  Serial.write(data, len);
-  Serial.println();
-}
-
+// What to do when a Bluetooth device writes on a GATT characteristic
 void BleGattRX(int32_t chars_id, uint8_t data[], uint16_t len) {
   Serial.print( F("[BLE GATT RX] (" ) );
   Serial.print(chars_id);
   Serial.print(") ");
-  
-  if (chars_id == charid_string) {
-    Serial.println("string");
+
+
+  if (chars_id == charid_led) {
+    Serial.println("Received on led characteristic: ");
     Serial.write(data, len);
     Serial.println(len);
     Serial.println(data[0], DEC);
@@ -135,20 +86,9 @@ void BleGattRX(int32_t chars_id, uint8_t data[], uint16_t len) {
     Serial.println(data[2], DEC);
     LED_controller.setPixelColor( 0, LED_controller.Color( data[0], data[1], data[2] ) );
     LED_controller.show();
-  } else if (chars_id == charid_number) {
-    int32_t val;
-    memcpy(&val, data, len);
-    Serial.println("num");
-    Serial.println(val);
   }
 }
 
-/**************************************************************************/
-/*!
-    @brief  Sets up the HW an the BLE module (this function is called
-            automatically on startup)
-*/
-/**************************************************************************/
 void setup(void) {
   
   LED_controller.begin(); // We're starting up the library
@@ -163,11 +103,9 @@ void setup(void) {
   if ( !ble.begin(VERBOSE_MODE) ) {
     error(F("Couldn't find Bluefruit, make sure it's in CoMmanD mode & check wiring?"));
   }
-  Serial.println( F("OK!") );
 
   if ( FACTORYRESET_ENABLE ) {
     // Perform a factory reset to make sure everything is in a known state
-    Serial.println(F("Performing a factory reset: "));
     if ( ! ble.factoryReset() ) {
       error(F("Couldn't factory reset"));
     }
@@ -177,27 +115,25 @@ void setup(void) {
     error( F("Callback requires at least 0.7.0") );
   }
 
-  Serial.println( F("Adding Service 0x1234 with 2 chars 0x2345 & 0x6789") );
+  // Adding Service 0x1234 with characteristic 0x2345
   ble.sendCommandCheckOK( F("AT+GATTADDSERVICE=uuid=0x1234") );
-  ble.sendCommandWithIntReply( F("AT+GATTADDCHAR=UUID=0x2345,PROPERTIES=0x08,MIN_LEN=1,MAX_LEN=6,DATATYPE=string,DESCRIPTION=string,VALUE=abc"), &charid_string);
+  ble.sendCommandWithIntReply( F("AT+GATTADDCHAR=UUID=0x2345,PROPERTIES=0x08,MIN_LEN=1,MAX_LEN=6,DATATYPE=string,DESCRIPTION=string,VALUE=abc"), &charid_led);
 
   ble.reset();
 
-  /* Disable command echo from Bluefruit */
+  // Disable command echo from Bluefruit
   ble.echo(false);
 
-  Serial.println("Requesting Bluefruit info:");
-  /* Print Bluefruit information */
+  // Print Bluefruit information
   ble.info();
   
   /* Set callbacks */
   ble.setConnectCallback(connected);
   ble.setDisconnectCallback(disconnected);
-  ble.setBleUartRxCallback(BleUartRX);
   
-  /* Only one BLE GATT function should be set, it is possible to set it 
-  multiple times for multiple Chars ID  */
-  ble.setBleGattRxCallback(charid_string, BleGattRX);
+  // Only one BLE GATT function should be set, it is possible to set it
+  // multiple times for multiple Chars ID
+  ble.setBleGattRxCallback(charid_led, BleGattRX);
 }
 
 void loop(void) {

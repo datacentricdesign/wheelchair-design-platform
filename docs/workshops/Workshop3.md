@@ -221,3 +221,14 @@ Android or iOS app:
 <a href="https://learn.adafruit.com/adafruit-feather-32u4-bluefruit-le/dfu-bluefruit-updates" target="_blank">
 https://learn.adafruit.com/adafruit-feather-32u4-bluefruit-le/dfu-bluefruit-updates</a>
 
+Then, open examples/communication/bluetooth/gatt_write in the Arduino IDE. This 
+code is an example of GATT service enabling to WRITE (i.e. the Feather receive
+data) in contrast with the previous section in which we were READ (i.e. the
+Feather was sending data). Read through the code to understand what it does, then
+flash it on the Feather.
+
+On the Raspberry Pi, you can run examples/communication/bluetooth/write_gatt.py
+This code connect to your Feather via Bluetooth and use the code discussed previously
+to check the connection. If the connection with the DCD Hub can be established, it
+writes on the LED GATT service to turn on the LED, otherwise it writes to turn off
+the LED. 
