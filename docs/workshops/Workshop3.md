@@ -134,7 +134,7 @@ the handler of rotation data so that we check whether we need to nudge the wheel
 
 You can find a complete example in 
 <a href="https://github.com/datacentricdesign/wheelchair-design-platform/blob/master/examples/actuators/vibration_motors/vibrate_rotation_excess.py" target="_blank">
-examples/actuators/vibrate_rotation_excess.py</a>
+examples/actuators/vibration_motors/vibrate_rotation_excess.py</a>
 
 
 ## 2 Internet Status on the Wheel
@@ -153,7 +153,7 @@ depending on the internet status.
 
 The first step is to explore how to wire and control a NeoPixel 5mm Diffused LED.
 This is described in the LED page in section 3:
-[resources/actuators/leds](/resources/actuators/leds#3-neopixel-5mm-diffused-led)
+[/resources/actuators/leds](../resources/actuators/leds.md#3-neopixel-5mm-diffused-led)
 
 ### 2.2 Internet Connection status
 
