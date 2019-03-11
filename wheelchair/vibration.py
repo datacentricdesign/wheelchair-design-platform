@@ -14,7 +14,7 @@ ser = serial.Serial(
     timeout = 2)
 
 while True:
-    ser.write('1')
+    ser.write(1)
     time.sleep(5)
-    ser.write('0')
+    ser.write(0)
     time.sleep(2)
