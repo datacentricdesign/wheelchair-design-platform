@@ -34,6 +34,7 @@ ser = serial.Serial(
 def find_or_create(property_name, property_type):
     """Search a property by name, create it if not found, then return it."""
     if my_thing.find_property_by_name(property_name) is None:
+        print ("o no")
         my_thing.create_property(name=property_name,
                                  property_type=property_type)
     return my_thing.find_property_by_name(property_name)
@@ -52,21 +53,21 @@ def serial_to_property_values():
         try:
             # Split the string using commas as separator, we get a list of strings
             values = line.split(',')
-            #print(values)
+            # print(values)
+            lenght = len(values)/2
 
-            #Establishes the array property with
-            for x in range(0, len(values)-1):
+            # Establishes the array property with
+            for x in range(0, int(lenght)):
                 propertyLine = values.pop(x)
                 property = propertyLine.split('=')
                 prop_name = property.pop(0)
-                prop_value = [float(x) for x in property]
-                #print(prop_name + ' = ' + prop_value + '\n')
-                print(prop_name) #solo lee FSR0 y FSR2
-                find_or_create(prop_name,
-                               PropertyType.ONE_DIMENSION).update_values(
-                               prop_value)
+                prop_value = [int(x) for x in property]
+
+                if prop_value is not None:
+                    print(prop_name, ' = ', prop_value)
+                    find_or_create(prop_name, prop_value)
         except:
-            print("cant parse " + line)
+            print("cant parse")
     # Finally, we call this method again
     serial_to_property_values()
 
