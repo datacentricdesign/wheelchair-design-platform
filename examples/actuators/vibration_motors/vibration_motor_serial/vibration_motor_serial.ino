@@ -35,10 +35,10 @@ void vibration_pattern() {
 void loop() {
   char command = Serial.read();
   if (command == '1') {
-    Serial.println("Turning on Vibration...");
+    //Serial.println("Turning on Vibration...");
     vibration_enabled = true;
   } else if (command == '0') {
-    Serial.println("Turning off Vibration...");
+    //Serial.println("Turning off Vibration...");
     vibration_enabled = false;
     analogWrite(VIB_PIN, 0);
   }
