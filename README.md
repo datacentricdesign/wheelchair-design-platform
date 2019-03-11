@@ -1,12 +1,48 @@
-## Assigment 1
+## The yoga wheelchair
 
 ## Project description
 
-The context will be wheelchair users who need to stretch once a day to improve circulation, flexibility, and joint range motion. There are a series of 13 recommended exercises 
+Sitting in a wheelchair during long periods of time might increase problems of posture, blood circulation and stiffness in the users’ body. There are so many reasons why yoga can be considered as a therapy for this kind of users, not to mention that it brings together mind and body, increasing well being in general. Posture is improved through different exercises which can also be considered as healing to joints and muscles avoiding stiffness and increasing blood circulation. Furthermore, it must be noted that this practice links exercises with respiration, which will not just increase flexibility but also lung capacity.
 
-This person might be tempted to keep using the wheelchair, leading to a permanent disability. To avoid this situation, the goal will be to motivate them to keep up the recovery process.
+Some examples of yoga postures for wheelchair users:
 
-## Possible sensors
+![Cat pose](/docs/workshops/images/yoga/wheelchair-yoga-cat-pose.jpg)
+
+![Cow pose](/docs/workshops/images/yoga/wheelchair-yoga-cow-pose.jpg)
+
+![Eagle pose](/docs/workshops/images/yoga/wheelchair-yoga-eagle-pose.jpg)
+
+![bend pose](/docs/workshops/images/yoga/wheelchair-yoga-forward-bend-pose.jpg)
+
+![stretch pose](/docs/workshops/images/yoga/wheelchair-yoga-hip-stretch-pose.jpg)
+
+![leg pose](/docs/workshops/images/yoga/wheelchair-yoga-leg-stretch-pose.jpg)
+
+![side pose](/docs/workshops/images/yoga/wheelchair-yoga-side-stretch-pose.jpg)
+
+![twist pose](/docs/workshops/images/yoga/wheelchair-yoga-twist-pose.jpg)
+
+## Sensors
+
+The following sensors will be used to verify if each posture made by the user.
+
+* _**Force Sensing Resistor (FSR):**_ This sensor will be used to detect the different yoga postures of the user. The recommended setup is 5 FSR in the back rest and 6 FSR distributed in the bottom cushion.
+
+* _**Time of flight distance sensor:**_ The sensor will determine the distance between the foot holders and the fit, detecting which foot is the user lifting. It can also be placed in the backseat to determine whether the user is bending the back forward or not.
+
+* _**LDR Light sensor:**_ The LDR will be placed in the backseat to detect the users’ hand when performing postures such as the “twist” or “side stretch”.
+
+## Actuators
+
+To inform the user if they are performing the postures correctly, the following actuators will guide them through each exercise.
+
+* _**LCD display 16x2:**_ A screen will be placed at the armrest to let the user know the name of the posture that needs to be performed. It will also help to keep track of the process by indicating the progress.
+
+* _**LED:**_ The LEDs will be placed at the back part of the seat, next to the LDR light sensor acting as visual signals for the user to know where to look and place his or her hand.
+
+* _**DC vibration motor:**_ A vibration motor placed on the seat and backseat will provide sensorial feedback to indicate where the pressure should be made with each posture.
+
+## Research of possible sensors
 
 __**Direction and speed:**__
 
@@ -51,6 +87,7 @@ __**Location:**__
 * Connect to the GPS of the phone via Bluetooth
 ____
 _________________________________________________________________________________________________
+## Wheelchair Design Platform
 
 Wheelchair Design Platform is a repository that contains some resources to help
 designers and developers speak the same language, and work together towards
