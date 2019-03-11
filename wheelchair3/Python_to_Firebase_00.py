@@ -41,33 +41,34 @@ def find_or_create(property_name, property_value):
 def serial_to_property_values():
     # Read one line
     line_bytes = ser.readline()
-    print(line_bytes)
+    # print(line_bytes)
     # If the line is not empty
     if len(line_bytes) > 0:
         # Convert the bytes into string
         line = line_bytes.decode('utf-8')
-        #print(line)
+        # print(line)
 
         try:
             # Split the string using commas as separator, we get a list of strings
             values = line.split(',')
-            print (values)
-            #print(values)
+            # print(values)
+            lenght = len(values)/2
 
-            #Establishes the array property with
-            for x in range(0, len(values)-1):
+            # Establishes the array property with
+            for x in range(0, int(lenght)):
                 propertyLine = values.pop(x)
                 property = propertyLine.split('=')
                 prop_name = property.pop(0)
-                prop_value = [float(x) for x in property]
-                #print(prop_name + ' = ' + prop_value + '\n')
-                print(prop_name) #solo lee FSR0 y FSR2
-                find_or_create(prop_name, prop_value)
-                # line = 0;
-                # print(line)
+                prop_value = [int(x) for x in property]
+
+                if prop_value is not None:
+                    print(prop_name, ' = ', prop_value)
+                    find_or_create(prop_name, prop_value)
+
         except:
             print("cant parse")
     # Finally, we call this method again
     serial_to_property_values()
+
 
 serial_to_property_values()
