@@ -14,7 +14,7 @@ ser = serial.Serial(
     timeout = 2)
 
 while True:
-    ser.write('1')
+    ser.write('1'.encode())
     time.sleep(5)
-    ser.write('0')
+    ser.write('0'.encode())
     time.sleep(2)
