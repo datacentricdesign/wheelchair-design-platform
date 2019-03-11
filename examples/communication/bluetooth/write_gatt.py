@@ -5,9 +5,33 @@ import pygatt
 import signal
 from dotenv import load_dotenv
 import os
+import time
 
 from dcd.entities.thing import Thing
 from dcd.entities.property_type import PropertyType
+
+import requests
+
+def dcd_hub_status():
+    """
+    Return the DCD Hub status:
+    - 0: Connection successful
+    - 1: Could not reach the hub (Connection or Hub issue)
+    """
+
+    uri = "https://dwd.tudelft.nl/api/health"
+    try:
+        json_result = requests.get(uri, timeout=1).json()
+        if json_result["status"] is 0:
+            # We received a response with status = 0, everything is fine
+            return 0
+        # In any other case, there is a issue
+        return 1
+    except Exception as e:
+        # Show some information about the error
+        print(str(e))
+        # Return 1, the connection wasn't successful
+        return 1
 
 def discover_characteristic(device):
     for uuid in device.discover_characteristics().keys():
@@ -35,7 +59,15 @@ bleAdapter.start()
 # User the BLE adapter to connect to our device
 my_device = bleAdapter.connect(BLUETOOTH_DEVICE_MAC, address_type=ADDRESS_TYPE)
 
-discover_characteristic(my_device)
+#discover_characteristic(my_device)
 
-# my_device.char_write('a1e8f5b1-696b-4e4c-87c6-69dfe0b0093b',
-#                         bytearray([0x00, 0xFF]))
+while True:
+    hub_status = dcd_hub_status()
+    print(hub_status)
+    if hub_status is 0:
+        print("Internet available")
+        my_device.char_write('00002345-0000-1000-8000-00805f9b34fb', bytearray([0xFF, 0x00, 0x00]))
+    else:
+        print("Internet not available")
+        my_device.char_write('00002345-0000-1000-8000-00805f9b34fb', bytearray([0x00, 0x00, 0x00]))
+    time.sleep(2)
