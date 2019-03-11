@@ -1,5 +1,3 @@
-
-33 lines (23 sloc) 1.06 KB
 // Lets make our vibration example, using PWM! 
 #define VIB_PIN 10 // Careful, here we have to use a pin that can be used for pwm.
 
