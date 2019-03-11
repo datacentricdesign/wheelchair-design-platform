@@ -13,6 +13,7 @@ void setup() {
   Serial.println("Lets start our pulsing vibration example!");
 }
 
+
 void loop() {
 
   // PWM takes values from 0 to 255, in our case, we want to make
