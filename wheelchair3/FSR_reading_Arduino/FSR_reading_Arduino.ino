@@ -6,7 +6,7 @@ Connect LED from pin 11 through a resistor to ground
 
 For more information see www.ladyada.net/learn/sensors/fsr.html */
 
-#define NUMBER_FSR 4
+#define NUMBER_FSR 9
 int fsrPins[NUMBER_FSR];
 int fsrReading[NUMBER_FSR];
 
@@ -32,10 +32,10 @@ void loop(void) {
     Serial.print(i);
     Serial.print("=");
     Serial.print(fsrReading[i]);
-    if (i<NUMBER_FSR-1){
+    if (i<=NUMBER_FSR-1){
     Serial.print(",");
     Serial.print(" ,");
-    };
+    }
   }
   Serial.println("");
 
