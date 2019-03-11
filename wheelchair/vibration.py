@@ -11,10 +11,15 @@ load_dotenv()
 ser = serial.Serial(
     port = os.environ['SERIAL'],
     baudrate = 9600,
-    timeout = 2)
+    write_timeout = 0)
 
 while True:
-    ser.write(1)
+    print ("im starting")
+    temp = '1'
+    ser.write(temp.encode())
+    print("write1")
     time.sleep(5)
-    ser.write(0)
+    temp = '0'
+    print("write 0")
+    ser.write(temp.encode())
     time.sleep(2)
