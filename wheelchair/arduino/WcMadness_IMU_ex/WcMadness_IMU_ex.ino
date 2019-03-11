@@ -194,25 +194,6 @@ void loop(void)
 
   // Delay before next measurement update
   delay(BNO055_SAMPLERATE_DELAY_MS);
-  
-  int heart_rate = random(50, 100);
-
-  Serial.print(F("Updating HRM value to "));
-  Serial.print(heart_rate);
-  Serial.println(F(" BPM"));
-
-  /* Command is sent when \n (\r) or println is called */
-  /* AT+GATTCHAR=CharacteristicID,value */
-  ble.print( F("AT+GATTCHAR=") );
-
-  ble.print( F(",00-") );
-  ble.println(heart_rate, HEX);
-
-  /* Check if command executed OK */
-  if ( !ble.waitForOK() )
-  {
-    Serial.println(F("Failed to get response!"));
-  }
 
   /* Delay before next measurement update */
   delay(1000);
