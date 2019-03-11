@@ -3,3 +3,4 @@ paho-mqtt
 python-dotenv
 pyserial
 requests
+firebase_admin
