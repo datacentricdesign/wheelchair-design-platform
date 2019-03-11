@@ -133,7 +133,7 @@ We remove the subscription to orientation, which is not necessary in this case. 
 the handler of rotation data so that we check whether we need to nudge the wheelchair user or not.
 
 You can find a complete example in 
-<a href="https://github.com/datacentricdesign/wheelchair-design-platform/blob/master/examples/actuators/vibrate_rotation_excess.py" target="_blank">
+<a href="https://github.com/datacentricdesign/wheelchair-design-platform/blob/master/examples/actuators/vibration_motors/vibrate_rotation_excess.py" target="_blank">
 examples/actuators/vibrate_rotation_excess.py</a>
 
 
