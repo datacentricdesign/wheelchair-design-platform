@@ -4,8 +4,7 @@
 import pygatt  # To access BLE GATT support
 import signal  # To catch the Ctrl+C and end the program properly
 import os  # To access environment variables
-from dotenv import \
-    load_dotenv  # To load the environment variables from the .env file
+from dotenv import load_dotenv  # To load the environment variables from the .env file
 
 # DCD Hub
 from dcd.entities.thing import Thing
