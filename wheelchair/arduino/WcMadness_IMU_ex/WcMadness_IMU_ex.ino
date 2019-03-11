@@ -83,19 +83,16 @@ void initSensor(void) {
 void setup(void)
 {
   initSensor();
-  while (!Serial); // required for Flora & Micro
+  // while (!Serial); // required for Flora & Micro
   delay(500);
 
   boolean success;
 
   Serial.begin(115200);
-  Serial.println(F("Adafruit Bluefruit Heart Rate Monitor (HRM) Example"));
-  Serial.println(F("---------------------------------------------------"));
 
   randomSeed(micros());
 
   /* Initialise the module */
-  Serial.print(F("Initialising the Bluefruit LE module: "));
 
   if ( !ble.begin(VERBOSE_MODE) )
   {
@@ -137,7 +134,6 @@ void setup(void)
 
   /* Add the Heart Rate Measurement characteristic */
   /* Chars ID for Measurement should be 1 */
-  Serial.println(F("Adding the Heart Rate Measurement characteristic (UUID = 0x2A37): "));
   success = ble.sendCommandWithIntReply( F("AT+GATTADDSERVICE=UUID128=00-11-00-11-44-55-66-77-88-99-AA-BB-CC-DD-EE-FF"), &imuServiceId);
     if (! success) {
     error(F("Could not add HRM characteristic"));
@@ -145,7 +141,6 @@ void setup(void)
 
   /* Add the Body Sensor Location characteristic */
   /* Chars ID for Body should be 2 */
-  Serial.println(F("Adding the Body Sensor Location characteristic (UUID = 0x2A38): "));
    success = ble.sendCommandWithIntReply( F("AT+GATTADDCHAR=UUID128=02-11-88-33-44-55-66-77-88-99-AA-BB-CC-DD-EE-FF,PROPERTIES=0x10,MIN_LEN=1,MAX_LEN=17,VALUE=\"\""), &orientationCharId);
     if (! success) {
     error(F("Could not add BSL characteristic"));
@@ -196,5 +191,5 @@ void loop(void)
   delay(BNO055_SAMPLERATE_DELAY_MS);
 
   /* Delay before next measurement update */
-  delay(1000);
+  delay(200);
 }
