@@ -41,14 +41,13 @@ def find_or_create(property_name, property_value):
 def serial_to_property_values():
     # Read one line
     line_bytes = ser.readline()
-    print(line_bytes)
+    #print(line_bytes)
     # If the line is not empty
     if len(line_bytes) > 0:
-        # Convert the bytes into string
-        line = line_bytes.decode('utf-8')
-        # print(line)
 
         try:
+            # Convert the bytes into string
+            line = line_bytes.decode('utf-8')
             # Split the string using commas as separator, we get a list of strings
             values = line.split(',')
             # print(values)
