@@ -1,5 +1,0 @@
-dcd-sdk>=0.0.8
-paho-mqtt
-python-dotenv
-pyserial
-requests
