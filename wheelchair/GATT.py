@@ -39,7 +39,7 @@ def handle_orientation_data(handle, value_bytes):
     """
     print("Received data: %s (handle %d)" % (str(value_bytes), handle))
     values = [float(x) for x in value_bytes.decode('utf-8').split(",")]
-    find_or_create("Left Wheel Orientation",
+    find_or_create("Coolenaam",
                     PropertyType.THREE_DIMENSIONS).update_values(values)
 
 
