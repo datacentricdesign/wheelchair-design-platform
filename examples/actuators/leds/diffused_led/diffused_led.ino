@@ -1,7 +1,7 @@
 #include <Adafruit_NeoPixel.h> // Necessary Library include
 
 
-#define LED_PIN 6 // Defining the pin of the arduino that sends the data stream.
+#define LED_PIN 2 // Defining the pin of the arduino that sends the data stream.
 
 Adafruit_NeoPixel LED_controller = Adafruit_NeoPixel( 1, LED_PIN, NEO_RGB + NEO_KHZ800); 
 // This is a class that will control your NeoPixel LEDs
