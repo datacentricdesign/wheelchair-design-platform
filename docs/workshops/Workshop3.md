@@ -97,6 +97,7 @@ The next step is to control this vibration from Python. The following example
 shows how to establish a serial connection and write (i.e. send) messages. In this
 case, we send '1' (turning on the vibration) then wait for 5 seconds before sending
 '0' (turning off the vibration). We wait another 2 seconds and start again.
+Notice the added "encode()" function. This is because the write() function on serial can only write binary data. By writing '1', we're sending a string. The encode() is there to convert from the string type to binary. 
 
 ```python
 # Import required library
@@ -112,12 +113,12 @@ load_dotenv()
 ser = serial.Serial(
     port = os.environ['SERIAL'],
     baudrate = 9600,
-    timeout = 2)
+    write_timeout = 0)
 
 while True:
-    ser.write('1')
+    ser.write('1'.encode())
     time.sleep(5)
-    ser.write('0')
+    ser.write('0'.encode())
     time.sleep(2)
 ```
 
@@ -132,7 +133,7 @@ orientation and rotation GATT services from the wheel and sends the data to the 
 We remove the subscription to orientation, which is not necessary in this case. We modify
 the handler of rotation data so that we check whether we need to nudge the wheelchair user or not.
 
-You can find a complete example in 
+You can find a complete example in
 <a href="https://github.com/datacentricdesign/wheelchair-design-platform/blob/master/examples/actuators/vibration_motors/vibrate_rotation_excess.py" target="_blank">
 examples/actuators/vibration_motors/vibrate_rotation_excess.py</a>
 
@@ -144,7 +145,7 @@ the wheelchair connected to the cloud?
 
 We will use an RGB diffuse LED as indicator on the wheel. The Raspberry Pi will
 check for the Internet availability. We will create a BLE GATT service to WRITE
-(i.e send) commands to the Feather 32u4 on the wheel, to turn on/off the LED 
+(i.e send) commands to the Feather 32u4 on the wheel, to turn on/off the LED
 depending on the internet status.
 
 ![](images/ws3-2.png)
@@ -158,7 +159,7 @@ This is described in the LED page in section 3:
 ### 2.2 Internet Connection status
 
 In many case, checking the Internet connection is not enough, we want to know
-whether the cloud we rely on is currently available. Most cloud services have 
+whether the cloud we rely on is currently available. Most cloud services have
 a 'health' API in order to check if the service is available and running fine.
 For the DCD Hub, it is /health, you can try in your web browser:
 
@@ -199,7 +200,7 @@ def dcd_hub_status():
 ```
 
 This code import the 'requests' library, convenient to make a HTTP request. We
-declare a function dcd-hub_status() which try to call the health API and return 
+declare a function dcd-hub_status() which try to call the health API and return
 0 if it succeed. If it failed because of the Internet connection or the availability
 of the Hub, then it return 1.
 
@@ -221,7 +222,7 @@ Android or iOS app:
 <a href="https://learn.adafruit.com/adafruit-feather-32u4-bluefruit-le/dfu-bluefruit-updates" target="_blank">
 https://learn.adafruit.com/adafruit-feather-32u4-bluefruit-le/dfu-bluefruit-updates</a>
 
-Then, open examples/communication/bluetooth/gatt_write in the Arduino IDE. This 
+Then, open examples/communication/bluetooth/gatt_write in the Arduino IDE. This
 code is an example of GATT service enabling to WRITE (i.e. the Feather receive
 data) in contrast with the previous section in which we were READ (i.e. the
 Feather was sending data). Read through the code to understand what it does, then
@@ -231,4 +232,4 @@ On the Raspberry Pi, you can run examples/communication/bluetooth/write_gatt.py
 This code connect to your Feather via Bluetooth and use the code discussed previously
 to check the connection. If the connection with the DCD Hub can be established, it
 writes on the LED GATT service to turn on the LED, otherwise it writes to turn off
-the LED. 
+the LED.
