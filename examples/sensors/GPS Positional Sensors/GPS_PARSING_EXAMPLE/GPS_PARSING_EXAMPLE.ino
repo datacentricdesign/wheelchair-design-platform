@@ -11,7 +11,7 @@ Adafruit_GPS GPS(&Serial1); // We'll be using the Mega's serial port 1
 
 // Set GPSECHO to 'false' to turn off echoing the GPS data to the Serial console
 // Set to 'true' if you want to debug and listen to the raw GPS sentences
-#define GPSECHO  true
+#define GPSECHO  false
 
 // Keeps track of whether we're using the interrupt
 // off by default!
@@ -22,7 +22,7 @@ void setup()
     
   // Begin serial with  115200 baud rate so we can read the GPS fast enough. 
   Serial.begin(115200);
-  Serial.println("Adafruit GPS library basic test!");
+  Serial.println("Adafruit GPS library basic Parsing test!");
   // 9600 NMEA is the default baud rate for Adafruit MTK GPS's- some use 4800
   GPS.begin(9600);
   
