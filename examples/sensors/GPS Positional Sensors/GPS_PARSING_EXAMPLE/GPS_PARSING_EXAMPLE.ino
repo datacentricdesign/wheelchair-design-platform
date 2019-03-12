@@ -5,15 +5,9 @@
 //
 #include <Adafruit_GPS.h>   // Adafruit GPS Library
 
-//   Using software serial (e.g. Arduino Mega):
-//   Connect the GPS TX (transmit) pin to Arduino RX1, RX2 or RX3
-//   Connect the GPS RX (receive) pin to matching TX1, TX2 or TX3
 
-// (you can change the Serial number to match your wiring Serial 1, 2 or 3
-// depending on the RX-TX 1, 2, 3) :
-HardwareSerial mySerial = Serial2;
-
-Adafruit_GPS GPS(&mySerial);
+Adafruit_GPS GPS(&Serial1); // We'll be using the Mega's serial port 1
+                            // (R&TX1), but you can also use 2 and 3
 
 // Set GPSECHO to 'false' to turn off echoing the GPS data to the Serial console
 // Set to 'true' if you want to debug and listen to the raw GPS sentences
@@ -57,7 +51,7 @@ void setup()
 
   delay(1000);
   // Ask for firmware version
-  mySerial.println(PMTK_Q_RELEASE);
+  Serial1.println(PMTK_Q_RELEASE);
 }
 
 
