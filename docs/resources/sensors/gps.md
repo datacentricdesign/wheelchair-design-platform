@@ -116,13 +116,13 @@ Be very careful in respect to the schematic, as in this case, you'll be connecti
 
 ##### Schematic
 
-![](4.png)
+![](images/gps_4.png)
 
 
 ##### Results
 Let's see our console output:
 
-![](4.gif)
+![](images/gps_4.gif)
 
 
 #### Parsing GPS Data with the Arduino
@@ -132,10 +132,10 @@ Be very careful in respect to the schematic, as in this case, you'll be connecti
 
 ##### Schematic
 
-![](4.png)
+![](images/gps_4.png)
 
 
 ##### Results
 Let's see our console output:
 
-![](5.gif)
+![](images/gps_5.gif)
