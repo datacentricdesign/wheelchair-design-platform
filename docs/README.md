@@ -86,6 +86,7 @@ On the wheel:
 * [Wheelchair Madness 2222](https://github.com/pherkan/wheelchair-design-platform/tree/master/wheelchair)
 * [Who is sitting?](https://github.com/Rosanfoppen/wheelchair-design-platform/tree/master/wheelchair)
 * [Magic Wheelchair](https://github.com/Yuciena/wheelchair-design-platform)
+* [Yoga Wheelchair](https://github.com/artgomad/wheelchair-design-platform)
 
 Feel free to contact us at jacky@datacentricdesign.org. We welcome feedback, pull requests
 or links to your project.
