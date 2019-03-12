@@ -112,7 +112,7 @@ The geolocation data is in degrees and minutes in the following format: Latitude
 #### Echoing Raw GPS Data with the Arduino
 
 In this example, we will echo the raw GPS data using the Arduino. For this the installation of the Adafruit GPS library is required.
-Be very careful in respect to the schematic, as in this case, you'll be connecting **TX** from the GPS breakout to the corresponding **RXx** port of the Arduino. In this particular example,  RX(GPS) -> TX1(Mega)) & TX(GPS) -> RX1(mega).
+Be very careful in respect to the schematic, as in this case, you'll be connecting **TX** from the GPS breakout to the corresponding **RXx** port of the Arduino. In this particular example,  RX(GPS) -> TX1(Mega)) & TX(GPS) -> RX1(mega). Be sure to set the Serial console's window baud rate to 115200.
 
 ##### Schematic
 
@@ -128,7 +128,7 @@ Let's see our console output:
 #### Parsing GPS Data with the Arduino
 
 This time we will parse the data using the Arduino. For this the installation of the Adafruit GPS library is required.
-Be very careful in respect to the schematic, as in this case, you'll be connecting **TX** from the GPS breakout to the corresponding **RXx** port of the Arduino. In this particular example,  RX(GPS) -> TX1(Mega)) & TX(GPS) -> RX1(mega).
+Be very careful in respect to the schematic, as in this case, you'll be connecting **TX** from the GPS breakout to the corresponding **RXx** port of the Arduino. In this particular example,  RX(GPS) -> TX1(Mega)) & TX(GPS) -> RX1(mega). Be sure to set the Serial console's window baud rate to 115200.
 
 ##### Schematic
 
