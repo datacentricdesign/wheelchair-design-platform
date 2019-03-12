@@ -35,20 +35,14 @@
 #include "BluefruitConfig.h"
 
 // LED error flag
-#define LED_PIN 2
+#define LED_PIN 13
 
 // Create the Bluefruit object for Feather 32u4
 Adafruit_BluefruitLE_SPI ble(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
 
-// BNO settings to delete
+// BNO settings
 #define BNO055_SAMPLERATE_DELAY_MS (200)
-// Creating our sensor object to handle the sensor, with initialization 12345
 Adafruit_BNO055 bno = Adafruit_BNO055(55);
-
-
-
-bool not_first_loop = false; // Boolean variable to stop logging of first loop
-float previous_axis_value = 666;  // Initial value so we don't account for it
 
 // GATT service information
 int32_t imuServiceId;
@@ -64,11 +58,18 @@ void error(const __FlashStringHelper*err) {
   while (1);
 }
 
+// Initializes BNO055 sensor
+void initSensor(void) {
+  if(!bno.begin()) {
+    error(F("No BNO055 detected. Check your wiring or I2C ADDR!"));
+  }
+  delay(1000);
+  bno.setExtCrystalUse(true);
+}
 
 // Sets up the HW an the BLE module (this function is called
 // automatically on startup)
 void setup(void) {
-
   delay(500);
   boolean success;
 
@@ -78,10 +79,13 @@ void setup(void) {
   analogWrite(LED_PIN, LOW);
   Serial.begin(115200);
 
-  // Initialise the module (the Bluefruit feather)
+  // Initialise the module
   if ( !ble.begin(VERBOSE_MODE) ) {
     error(F("Couldn't find Bluefruit, make sure it's in CoMmanD mode & check wiring."));
   }
+
+   // Setup the BNO055 sensor
+  initSensor();
 
   // Perform a factory reset to make sure everything is in a known state
   if (! ble.factoryReset() ){
@@ -106,7 +110,7 @@ void setup(void) {
     error(F("Could not add Orientation service."));
   }
 
-  // Add the Orientation characteristic (GATT_CHARACTERISTIC_ORIENTATION ="02118833-4455-6677-8899-AABBCCDDEEFF")
+  // Add the Orientation characteristic
   success = ble.sendCommandWithIntReply( F("AT+GATTADDCHAR=UUID128=02-11-88-33-44-55-66-77-88-99-AA-BB-CC-DD-EE-FF,PROPERTIES=0x10,MIN_LEN=1,MAX_LEN=17,VALUE=\"\""), &orientationCharId);
   if (! success) {
     error(F("Could not add Orientation characteristic."));
@@ -126,7 +130,7 @@ void orientation() {
   float quatX = quat.x();
   float quatY = quat.y();
   float quatZ = quat.z();
-
+  
   // Command is sent when \n (\r) or println is called
   // AT+GATTCHAR=CharacteristicID,value
   ble.print( F("AT+GATTCHAR=") );
