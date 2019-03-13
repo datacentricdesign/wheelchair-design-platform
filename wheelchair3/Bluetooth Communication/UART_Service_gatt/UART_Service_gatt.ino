@@ -51,8 +51,9 @@ bool not_first_loop = false; // Boolean variable to stop logging of first loop
 float previous_axis_value = 666;  // Initial value so we don't account for it
 
 // GATT service information
-int32_t imuServiceId;
-int32_t orientationCharId;
+int32_t UARTServiceId;
+int32_t TxCharId;
+int32_t RxCharId;
 
 // A small helper
 void error(const __FlashStringHelper*err) {
@@ -105,18 +106,28 @@ void setup(void) {
   //****************************************************
   //ID of this service has 128-bit (UUID128=00-11-00-11-44-55-66-77-88-99-AA-BB-CC-DD-EE-FF) as all custom services. The value of this UUID, is random, as it has been created by me.
   //Officially adopted BLE Services have 16-bit IDs. For example, Heart Rate Service has addopted a 16-bit UUID of 0x180, (UUID=0x180D)
-  success = ble.sendCommandWithIntReply( F("AT+GATTADDSERVICE=UUID128=00-11-00-11-44-55-66-77-88-99-AA-BB-CC-DD-EE-FF"), &imuServiceId);
+  success = ble.sendCommandWithIntReply( F("AT+GATTADDSERVICE=UUID=6E400001-B5A3-F393­E0A9­E50E24DCCA9E"), &UARTServiceId);
   if (! success) {
     error(F("Could not add Orientation service."));
   }
 
 
-  // Add the Orientation characteristic ("AT+GATTADDCHAR")
+  // Add the TX characteristic
+  //Used to send data back to the periferial node
   //****************************************************
-  //En python la voy a referenciar con la variable GATT_CHARACTERISTIC_ORIENTATION ="02118833-4455-6677-8899-AABBCCDDEEFF"
-  success = ble.sendCommandWithIntReply( F("AT+GATTADDCHAR=UUID128=02-11-88-33-44-55-66-77-88-99-AA-BB-CC-DD-EE-FF,PROPERTIES=0x10,MIN_LEN=1,MAX_LEN=17,VALUE=\"\""), &orientationCharId);
+  //En python la voy a referenciar con la variable GATT_CHARACTERISTIC_TX ="0x0002"
+  success = ble.sendCommandWithIntReply( F("AT+GATTADDCHAR=UUID=0x0002,PROPERTIES=0x10,MIN_LEN=1,MAX_LEN=17,VALUE=\"\""), &TxCharId);
   if (! success) {
-    error(F("Could not add Orientation characteristic."));
+    error(F("Could not add TX characteristic."));
+  }
+
+  // Add the RX characteristic
+  //Used to send data out to the connected Central device
+  //****************************************************
+  //En python la voy a referenciar con la variable GATT_CHARACTERISTIC_TX ="0x0003"
+  success = ble.sendCommandWithIntReply( F("AT+GATTADDCHAR=UUID=0x0003,PROPERTIES=0x10,MIN_LEN=1,MAX_LEN=17,VALUE=\"\""), &RxCharId);
+  if (! success) {
+    error(F("Could not add RX characteristic."));
   }
 
   // Add the Orientation Service to the advertising data
@@ -137,7 +148,7 @@ void orientation() {
   // Command is sent when \n (\r) or println is called
   // AT+GATTCHAR=CharacteristicID,value
   ble.print( F("AT+GATTCHAR=") );
-  ble.print( orientationCharId );
+  ble.print( RxCharId );
   ble.print( F(",") );
   ble.print(String(quatX));
   ble.print( F(",") );
