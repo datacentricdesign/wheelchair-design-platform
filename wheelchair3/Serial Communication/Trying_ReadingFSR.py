@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 import os
 import serial
 
+
 from dcd.entities.thing import Thing
 from dcd.entities.property_type import PropertyType
 
@@ -31,6 +32,7 @@ ser = serial.Serial(
     baudrate = 9600,
     timeout = 2)
 
+
 def find_or_create(property_name, property_type):
     """Search a property by name, create it if not found, then return it."""
     if my_thing.find_property_by_name(property_name) is None:
@@ -44,30 +46,34 @@ def find_or_create(property_name, property_type):
 def serial_to_property_values():
     # Read one line
     line_bytes = ser.readline()
+    print(line_bytes)
     # If the line is not empty
     if len(line_bytes) > 0:
-        # Convert the bytes into string
-        line = line_bytes.decode('utf-8')
 
         try:
+            # Convert the bytes into string
+            line = line_bytes.decode('utf-8')
+
             # Split the string using commas as separator, we get a list of strings
             values = line.split(',')
-            #print(values)
+            # print(values)
+            lenght = len(values)/2
 
-            #Establishes the array property with
-            for x in range(0, len(values)-1):
+            # Establishes the array property with
+            for x in range(0, int(lenght)):
                 propertyLine = values.pop(x)
                 property = propertyLine.split('=')
                 prop_name = property.pop(0)
                 prop_value = [float(x) for x in property]
-                #print(prop_name + ' = ' + prop_value + '\n')
-                print(prop_name) #solo lee FSR0 y FSR2
+
+                print(prop_name, ' = ', prop_value)
                 find_or_create(prop_name,
                                PropertyType.ONE_DIMENSION).update_values(
                                prop_value)
         except:
-            print("cant parse " + line)
+            print("cant parse ")
     # Finally, we call this method again
     serial_to_property_values()
+
 
 serial_to_property_values()

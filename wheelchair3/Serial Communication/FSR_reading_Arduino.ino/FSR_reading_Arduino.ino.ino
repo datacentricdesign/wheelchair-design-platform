@@ -14,7 +14,11 @@ int LEDpin = 12;      // connect Red LED to pin 11 (PWM pin)
 int LEDbrightness;
 
 void setup(void) {
+  
+  
+  
   Serial.begin(9600);   // We'll send debugging information via the Serial monitor
+
   pinMode(LEDpin, OUTPUT);
 
   for (int i=0; i < NUMBER_FSR; i++){//Assign the amount of FSR sensors to its array and stablishes its pins as INPUT
