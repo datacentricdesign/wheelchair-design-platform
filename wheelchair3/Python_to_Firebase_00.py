@@ -5,7 +5,6 @@ from firebase_admin import db
 from dotenv import load_dotenv
 import os
 import serial
-import json
 
 load_dotenv()
 #Tell python where to find the credentials of my FireBase; which is
@@ -42,14 +41,17 @@ def find_or_create(property_name, property_value):
 def serial_to_property_values():
     # Read one line
     line_bytes = ser.readline()
+    print(line_bytes)
     # If the line is not empty
     if len(line_bytes) > 0:
         # Convert the bytes into string
         line = line_bytes.decode('utf-8')
+        #print(line)
 
         try:
             # Split the string using commas as separator, we get a list of strings
             values = line.split(',')
+            print (values)
             #print(values)
 
             #Establishes the array property with
@@ -61,8 +63,10 @@ def serial_to_property_values():
                 #print(prop_name + ' = ' + prop_value + '\n')
                 print(prop_name) #solo lee FSR0 y FSR2
                 find_or_create(prop_name, prop_value)
+                # line = 0;
+                # print(line)
         except:
-            print("cant parse " + line)
+            print("cant parse")
     # Finally, we call this method again
     serial_to_property_values()
 
