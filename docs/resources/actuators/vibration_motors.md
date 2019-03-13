@@ -21,7 +21,7 @@ The wires are thin, so make sure they are well connected to the breadboard!
 ![](images/vibration_2.png)
 
 Examples of code be found here: 
-<a href="https://github.com/datacentricdesign/wheelchair-design-platform/tree/master/examples/actuators/vibration_motor" target="_blank">/examples/actuators/vibration_motor</a>
+<a href="https://github.com/datacentricdesign/wheelchair-design-platform/tree/master/examples/actuators/vibration_motors" target="_blank">/examples/actuators/vibration_motors</a>
 
 ##### Results
 
