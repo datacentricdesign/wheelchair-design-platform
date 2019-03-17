@@ -23,7 +23,7 @@ Some examples of yoga postures for wheelchair users:
 ![twist pose](/docs/workshops/images/yoga/wheelchair-yoga-twist-pose.jpg)
 
 Images:
-Smart Chair.(2015).Yoga for Wheelchair Users. retrieved from https://kdsmartchair.com/blogs/news/58783043-yoga-for-wheelchair-users-8-poses
+Smart Chair. (2015). Yoga for Wheelchair Users. Retrieved from https://kdsmartchair.com/blogs/news/58783043-yoga-for-wheelchair-users-8-poses
 
 ## Sensors
 
