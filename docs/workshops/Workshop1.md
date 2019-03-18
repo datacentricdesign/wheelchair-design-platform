@@ -1,5 +1,9 @@
 # Workshop 1: Building an Internet-connected Wheelchair
 
+In this workshop we lead you step-by-step toward setting up the main components
+of the Internet-Connected Wheelchair by getting the code, registering on the cloud
+platform, running a Python code and running an Arduino code.
+
 1. [Git Flow](#1-git-flow)
 2. [Data-Centric Data Hub](#2-data-centric-design-hub-per-group)
 3. [Run Python Example](#3-run-python-example)

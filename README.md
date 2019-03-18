@@ -22,6 +22,9 @@ Some examples of yoga postures for wheelchair users:
 
 ![twist pose](/docs/workshops/images/yoga/wheelchair-yoga-twist-pose.jpg)
 
+Images:
+Smart Chair. (2015). Yoga for Wheelchair Users. Retrieved from https://kdsmartchair.com/blogs/news/58783043-yoga-for-wheelchair-users-8-poses
+
 ## Sensors
 
 The following sensors will be used to verify if each posture made by the user.
@@ -178,6 +181,7 @@ On the wheel:
 * [Wheelchair Madness 2222](https://github.com/pherkan/wheelchair-design-platform/tree/master/wheelchair)
 * [Who is sitting?](https://github.com/Rosanfoppen/wheelchair-design-platform/tree/master/wheelchair)
 * [Magic Wheelchair](https://github.com/Yuciena/wheelchair-design-platform)
+* [Yoga Wheelchair](https://github.com/artgomad/wheelchair-design-platform)
 
 
 Feel free to contact us at jacky@datacentricdesign.org. We welcome feedback, pull requests
