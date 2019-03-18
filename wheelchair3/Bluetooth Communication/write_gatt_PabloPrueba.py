@@ -128,6 +128,7 @@ def serial_to_property_values():
                                PropertyType.ONE_DIMENSION).update_values(
                                prop_value)
                 counter = counter + 1
+                print("counter value is ", counter)
 
             if counter > 8:
                 counter = 0
