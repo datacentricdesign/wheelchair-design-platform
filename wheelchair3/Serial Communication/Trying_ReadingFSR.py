@@ -72,8 +72,6 @@ def serial_to_property_values():
                                prop_value)
         except:
             print("cant parse ")
-    # Finally, we call this method again
+
+while True:
     serial_to_property_values()
-
-
-serial_to_property_values()
