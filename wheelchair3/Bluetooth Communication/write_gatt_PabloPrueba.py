@@ -134,7 +134,7 @@ def serial_to_property_values():
                 my_device.char_write(GATT_CHARACTERISTIC_LED, bytearray([0x00, 0x00, 0x00]))
             else:
                 my_device.char_write(GATT_CHARACTERISTIC_LED, bytearray([0xFF, 0x00, 0x00]))
-                time.sleep(2)
+            time.sleep(2)
         except:
             ("cant parse ")
 
