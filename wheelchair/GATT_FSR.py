@@ -1,3 +1,4 @@
+
 # This example shows how to establish a connection
 # with the DCD HUB using the credentials of a thing,
 # and start reading the serial port to transfer the data.
