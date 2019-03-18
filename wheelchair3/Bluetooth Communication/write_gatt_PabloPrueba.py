@@ -66,7 +66,7 @@ def dcd_hub_status():
         return 1
     except Exception as e:
         # Show some information about the error
-        print(str(e))
+        (str(e))
         # Return 1, the connection wasn't successful
         return 1
 
@@ -118,14 +118,14 @@ def serial_to_property_values():
             for x in range(0, int(lenght)):
                 propertyLine = values.pop(x)
                 property = propertyLine.split('=')
-                prop_name = property.pop(0)
-                prop_value = [float(x) for x in property]
+                prop_name = property[0]
+                prop_value = float(property[1])
 
                 print(prop_name, ' = ', prop_value)
-                #find_or_create(prop_name,
-                #               PropertyType.ONE_DIMENSION).update_values(
-                #               prop_value)
-                print ("This is what i want to send" + prop_value)
+                find_or_create(prop_name,
+                               PropertyType.ONE_DIMENSION).update_values(
+                               prop_value)
+                print("This is what i want to send", prop_value)
 
 
                 if prop_value > 0:
@@ -134,7 +134,7 @@ def serial_to_property_values():
                     my_device.char_write(GATT_CHARACTERISTIC_LED, bytearray([0xFF, 0x00, 0x00]))
                 time.sleep(2)
         except:
-            print("cant parse ")
+            ("cant parse ")
 
 
 
