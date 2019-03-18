@@ -122,12 +122,13 @@ def serial_to_property_values():
                 prop_value = [float(x) for x in property]
 
                 print(prop_name, ' = ', prop_value)
-                find_or_create(prop_name,
-                               PropertyType.ONE_DIMENSION).update_values(
-                               prop_value)
-                print (prop_value)
-                
-                if prop_value is 0:
+                #find_or_create(prop_name,
+                #               PropertyType.ONE_DIMENSION).update_values(
+                #               prop_value)
+                print ("This is what i want to send" + prop_value)
+
+
+                if prop_value > 0:
                     my_device.char_write(GATT_CHARACTERISTIC_LED, bytearray([0x00, 0x00, 0x00]))
                 else:
                     my_device.char_write(GATT_CHARACTERISTIC_LED, bytearray([0xFF, 0x00, 0x00]))
