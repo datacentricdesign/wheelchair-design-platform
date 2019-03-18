@@ -14,10 +14,10 @@ int LEDpin = 12;      // connect Red LED to pin 11 (PWM pin)
 int LEDbrightness;
 
 void setup(void) {
-  
-  
-  
-  Serial.begin(9600);   // We'll send debugging information via the Serial monitor
+
+
+
+  Serial.begin(115200);   // We'll send debugging information via the Serial monitor
 
   pinMode(LEDpin, OUTPUT);
 
