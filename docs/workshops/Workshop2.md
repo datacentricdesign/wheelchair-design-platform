@@ -1,5 +1,8 @@
 # Workshop 2: Integrating and Visualising Sensor-Based Data
 
+In this workshop we lead you setp-by-step to experience the capabilities of an 
+orientation sensor and set it up on a wheel as a Bluetooth service.
+
 1. [Orientation Sensor](#1-orientation-sensors)
 2. [Feather Bluefruit](#2-feather-bluefruit)
 3. [Bluetooth Low Energy (BLE) GATT Service](#3-bluetooth-low-energy-ble-gatt-service)
@@ -239,6 +242,8 @@ sudo pip3 install git+https://github.com/peplin/pygatt
 sudo pip3 install "pygatt[GATTTOOL]"
 
 sudo pip3 install bluepy
+
+sudo pip3 install pexpect
 ```
 
 We can use the command 'blescan' to scan the Bluetooth devices around. This way,
