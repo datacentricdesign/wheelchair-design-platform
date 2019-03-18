@@ -114,6 +114,8 @@ def serial_to_property_values():
             # print(values)
             lenght = len(values)/2
 
+            counter = 0
+
             # Establishes the array property with
             for x in range(0, int(lenght)):
                 propertyLine = values.pop(x)
@@ -125,14 +127,13 @@ def serial_to_property_values():
                 find_or_create(prop_name,
                                PropertyType.ONE_DIMENSION).update_values(
                                prop_value)
+                counter = counter + 1
 
-                ("This is what i want to send", prop_value[0])
-
-
-                if prop_value[0] > 0:
-                    my_device.char_write(GATT_CHARACTERISTIC_LED, bytearray([0x00, 0x00, 0x00]))
-                else:
-                    my_device.char_write(GATT_CHARACTERISTIC_LED, bytearray([0xFF, 0x00, 0x00]))
+            if counter > 8:
+                counter = 0
+                my_device.char_write(GATT_CHARACTERISTIC_LED, bytearray([0x00, 0x00, 0x00]))
+            else:
+                my_device.char_write(GATT_CHARACTERISTIC_LED, bytearray([0xFF, 0x00, 0x00]))
                 time.sleep(2)
         except:
             ("cant parse ")
