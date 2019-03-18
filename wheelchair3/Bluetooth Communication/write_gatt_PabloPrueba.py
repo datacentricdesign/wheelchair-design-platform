@@ -10,7 +10,6 @@ from dotenv import load_dotenv
 import os
 import serial
 import pygatt
-import signal
 import time
 
 from dcd.entities.thing import Thing
@@ -126,7 +125,8 @@ def serial_to_property_values():
                 find_or_create(prop_name,
                                PropertyType.ONE_DIMENSION).update_values(
                                prop_value)
-
+                print (prop_value)
+                
                 if prop_value is 0:
                     my_device.char_write(GATT_CHARACTERISTIC_LED, bytearray([0x00, 0x00, 0x00]))
                 else:
