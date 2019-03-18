@@ -55,7 +55,6 @@ def serial_to_property_values():
                 print('Warning: unknown property ' + property_id)
         except:
             print('Could not parse: ' + line)
-    # Finally, we call this method again
-    serial_to_property_values()
 
-serial_to_property_values()
+while True:
+    serial_to_property_values()
