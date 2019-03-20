@@ -122,7 +122,7 @@ def serial_to_property_values():
                 propertyLine = values.pop(x)
                 property = propertyLine.split('=')
                 prop_name = property.pop(0)
-                prop_value = [float(x) for x in property]
+                prop_value = [int(x) for x in property]
 
                 print(prop_name, ' = ', prop_value)
                 find_or_create(prop_name,
@@ -131,10 +131,10 @@ def serial_to_property_values():
 
                 if prop_name == "Button":
                     print(prop_value[0]);
-                    if prop_value[0] == 1.0:
+                    if prop_value[0] == 1:
                         my_device.char_write(GATT_CHARACTERISTIC_LED, bytearray([0x1, 0x00, 0x00]))
                         print("sending 1")
-                    if prop_value[0] == 0.0:
+                    if prop_value[0] == 0:
                         print("sending 0")
                         my_device.char_write(GATT_CHARACTERISTIC_LED, bytearray([0x00, 0x00, 0x00]))
 
