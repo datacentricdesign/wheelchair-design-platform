@@ -130,10 +130,11 @@ def serial_to_property_values():
                                prop_value)
 
                 if prop_name == "Button":
-                    if int(prop_value) == 1:
+                    print(prop_value[0]);
+                    if int(prop_value[0]) == 1:
                         my_device.char_write(GATT_CHARACTERISTIC_LED, bytearray([0x1, 0x00, 0x00]))
                         print("sending 1")
-                    if int(prop_value) == 0:
+                    if int(prop_value[0]) == 0:
                         print("sending 0")
                         my_device.char_write(GATT_CHARACTERISTIC_LED, bytearray([0x00, 0x00, 0x00]))
 
