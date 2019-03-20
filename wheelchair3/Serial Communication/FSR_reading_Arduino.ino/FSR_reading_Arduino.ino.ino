@@ -10,25 +10,43 @@ For more information see www.ladyada.net/learn/sensors/fsr.html */
 int fsrPins[NUMBER_FSR];
 int fsrReading[NUMBER_FSR];
 
-int LEDpin = 12;      // connect Red LED to pin 11 (PWM pin)
-int LEDbrightness;
+int inPinB = 2;         // the number of the input pin
+int outPinL = 13;       // the number of the output pin
+int state = LOW;      // the current state of the output pin
+int reading;           // the current reading from the input pin
+int previous = HIGH;    // the previous reading from the input pin
+
 
 void setup(void) {
 
 
-
   Serial.begin(115200);   // We'll send debugging information via the Serial monitor
-
-  pinMode(LEDpin, OUTPUT);
 
   for (int i=0; i < NUMBER_FSR; i++){//Assign the amount of FSR sensors to its array and stablishes its pins as INPUT
     fsrPins[i] = i; //fsrPins = i
     pinMode(i, INPUT);
   }
 
+  pinMode(inPinB, INPUT);
+  pinMode(outPinL, OUTPUT);
+
 }
 
 void loop(void) {
+  
+  reading = digitalRead(inPinB);
+
+  if (reading == HIGH)
+
+
+  if (reading == HIGH && previous == LOW) {
+    if (state == HIGH)
+      state = LOW;
+    else
+      state = HIGH;
+   
+  }
+  
   for (int i=0; i<NUMBER_FSR; i++){
     fsrReading[i]=analogRead(fsrPins[i]);
 
@@ -41,14 +59,14 @@ void loop(void) {
     Serial.print(" ,");
     }
   }
-  Serial.println("");
 
+  Serial.print("Button");
+  Serial.print("=");
+  Serial.println(state);
 
-  // we'll need to change the range from the analog reading (0-1023) down to the range
-  // used by analogWrite (0-255) with map!
-  LEDbrightness = map(fsrReading[0], 0, 1023, 0, 255);
-  // LED gets brighter the harder you press
-  analogWrite(LEDpin, LEDbrightness);
+  digitalWrite(outPinL, state);
+
+  previous = reading;
 
   delay(100);
 }
