@@ -112,7 +112,7 @@ def serial_to_property_values():
             # Split the string using commas as separator, we get a list of strings
             values = line.split(',')
             print(values)
-            lenght = (len(values)/2)
+            lenght = ((len(values)+1)/2)
             print(lenght)
 
             counter = 0
