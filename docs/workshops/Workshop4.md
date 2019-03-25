@@ -5,3 +5,6 @@
 Data for training machine learning algorithm
 
 * Labelling strategy
+
+
+sudo apt-get install libav-tools
