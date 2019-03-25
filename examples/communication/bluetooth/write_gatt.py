@@ -8,7 +8,7 @@ import os
 import time
 
 from dcd.entities.thing import Thing
-from dcd.entities.property_type import PropertyType
+from dcd.entities.property import PropertyType
 
 import requests
 
