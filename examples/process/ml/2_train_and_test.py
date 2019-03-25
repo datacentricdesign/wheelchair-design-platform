@@ -28,9 +28,6 @@ load_dotenv()
 THING_ID = os.environ['THING_ID']
 THING_TOKEN = os.environ['THING_TOKEN']
 
-# Sitting classes
-CLASSES = ["Not Sitting", "Proper Sitting", "Leaning Forward",
-           "Leaning Backward", "Leaning Left", "Leaning Right"]
 
 # Where to save the model to
 MODEL_FILE_NAME = "model.pickle"
@@ -148,10 +145,14 @@ def generate_confusion_matrix(labels):
 # it has only an id, a name and a type.
 # print(my_thing.to_json())
 
-fsr = my_thing.properties[PROPERTY_DATA]
-sitting = my_thing.properties[PROPERTY_LABEL]
+fsr = my_thing.find_property_by_name[PROPERTY_DATA]
 fsr.read(START_TS, END_TS)
+
 sitting.read(START_TS, END_TS)
+sitting = my_thing.properties[PROPERTY_LABEL]
+classes = []
+for clazz in sitting.classes:
+    classes.append(clazz['name'])
 
 data = fsr.values
 label = sitting.values
@@ -245,7 +246,7 @@ if result > 0.8:
    
     # Report evaluation Confusion matrix
     generate_confusion_matrix(testLabel)
-    print(classification_report(testLabel, predicted, target_names=CLASSES))
+    print(classification_report(testLabel, predicted, target_names=classes))
 else:
     print("Validation failed. Displaying Validation performance")
     
