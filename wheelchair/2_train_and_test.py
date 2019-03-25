@@ -32,12 +32,12 @@ THING_TOKEN = os.environ['THING_TOKEN']
 MODEL_FILE_NAME = "model.pickle"
 
 # Data collection time frame (in milliseconds)
-START_TS = 1553276760000
-END_TS = 1553276760000+300000
+START_TS = 1553529960*1000
+END_TS = START_TS+300000
 
 # Property ID
-PROPERTY_DATA = "fsr-7b9c"
-PROPERTY_LABEL = "dhaval-bbca"
+PROPERTY_DATA = "fsr-b151"
+PROPERTY_LABEL = "persona-7574"
 
 # Instantiate a thing with its credential
 my_thing = Thing(thing_id=THING_ID, token=THING_TOKEN)
@@ -52,7 +52,7 @@ def unix_time_millis(dt):
 
 def list_to_df(dataSet):
     dfObj = pd.DataFrame(dataSet)
-    return dfObj 
+    return dfObj
 
 def find_correlation(df, thresh=0.9):
     """
@@ -63,7 +63,7 @@ def find_correlation(df, thresh=0.9):
     - thresh : correlation threshold, will remove one of pairs of features with
                a correlation greater than this value
     """
-    
+
     corrMatrix = df.corr()
     corrMatrix.loc[:,:] =  np.tril(corrMatrix, k=-1)
 
@@ -106,13 +106,13 @@ def variance(train, validate, test):
 def pca(train, validate, test):
     # Scaling for optimization of algorithm.
     scaler = StandardScaler()
-    
+
     # Fit on training set only.
     scaler.fit(train)
-    
+
     # Apply transform to both the training set and validation set.
     train = scaler.transform(train)
-    validate = scaler.transform(validate) 
+    validate = scaler.transform(validate)
 
     # Choose minimum number of Principal Components such that 95% variance is retained and create PCA model
     modelpca = PCA(.95)
@@ -130,14 +130,14 @@ def pca(train, validate, test):
 
 def generate_confusion_matrix(labels):
     # Generate parameters to test our model
-    
+
     matrix = confusion_matrix(labels, predicted)
     print(matrix)
     print(precision_score(labels, predicted, average="macro"))
     print(recall_score(labels, predicted, average="macro"))
     print(f1_score(labels, predicted, average="weighted"))
     print(f1_score(labels, predicted, average=None))
-   
+
 
 
 # If you just registered your Thing on the DCD Hub,
@@ -214,7 +214,7 @@ for index in range(len(leftover_data)):
 # print("TESTING DATA")
 # print(test_data)
 
-# Apply dimensionality reduction. Choose only one of the below lines at one time. 
+# Apply dimensionality reduction. Choose only one of the below lines at one time.
 # train_data, cv_data, test_data = pca(train_data, cv_data, test_data)
 # train_data= variance(train_data, cv_data, test_data)
 
@@ -243,13 +243,13 @@ if result > 0.8:
     testLabel = numpy.array(test_label)
     result = accuracy_score(testLabel, predicted)
     print("test accuracy: {}".format(result))
-   
+
     # Report evaluation Confusion matrix
     generate_confusion_matrix(testLabel)
     print(classification_report(testLabel, predicted, target_names=classes))
 else:
     print("Validation failed. Displaying Validation performance")
-    
+
     # Report evaluation Confusion matrix
     generate_confusion_matrix(cvLabel)
 
