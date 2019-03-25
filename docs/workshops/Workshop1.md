@@ -183,7 +183,7 @@ THING_TOKEN=
 
 Note: We do not want to track the file '.env' with Git as it contains secrets. To
 avoid any mistake, the file .gitignore list all files, folders and extensions to
-ignore. You will fine '.env' in the list.
+ignore. You will find '.env' in the list.
 
 ## 3.3 Read through the Python Code
 
