@@ -28,7 +28,6 @@ load_dotenv()
 THING_ID = os.environ['THING_ID']
 THING_TOKEN = os.environ['THING_TOKEN']
 
-
 # Where to save the model to
 MODEL_FILE_NAME = "model.pickle"
 
@@ -145,11 +144,12 @@ def generate_confusion_matrix(labels):
 # it has only an id, a name and a type.
 # print(my_thing.to_json())
 
-fsr = my_thing.find_property_by_name[PROPERTY_DATA]
+fsr = my_thing.find_property_by_name(PROPERTY_DATA)
 fsr.read(START_TS, END_TS)
 
+sitting = my_thing.find_property_by_name(PROPERTY_LABEL)
 sitting.read(START_TS, END_TS)
-sitting = my_thing.properties[PROPERTY_LABEL]
+
 classes = []
 for clazz in sitting.classes:
     classes.append(clazz['name'])

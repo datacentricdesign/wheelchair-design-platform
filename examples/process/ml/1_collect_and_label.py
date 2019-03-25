@@ -9,6 +9,7 @@ import serial
 import time
 
 from dcd.entities.thing import Thing
+from dcd.entities.property import PropertyType
 
 # The thing ID and access token
 load_dotenv()
@@ -99,11 +100,13 @@ my_thing = Thing(thing_id=THING_ID, token=THING_TOKEN)
 # Read the details of our Thing from the DCD Hub to get property details
 my_thing.read()
 
-print(my_thing.to_json)
+# Find label and data property by name, create classes if none
+prop_label = my_thing.find_or_create_property(LABEL_PROP_NAME, PropertyType.CLASS)
+if prop_label.classes is None or len(prop_label.classes) == 0:
+    prop_label.create_classes(CLASSES)
 
-# Find label and data property by name
-prop_label = my_thing.find_property_by_name(LABEL_PROP_NAME)
-prop_data = my_thing.find_property_by_name(DATA_PROP_NAME)
+prop_data = my_thing.find_or_create_property(DATA_PROP_NAME, PropertyType.TWELVE_DIMENSIONS)
+
 
 # Start collecting data for the first class
 collect(0)
