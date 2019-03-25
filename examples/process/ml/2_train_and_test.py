@@ -21,10 +21,6 @@ load_dotenv()
 THING_ID = os.environ['THING_ID']
 THING_TOKEN = os.environ['THING_TOKEN']
 
-# Sitting classes
-CLASSES = ["Not Sitting", "Proper Sitting", "Leaning Forward",
-           "Leaning Backward", "Leaning Left", "Leaning Right"]
-
 # Where to save the model to
 MODEL_FILE_NAME = "model.pickle"
 
@@ -33,8 +29,8 @@ START_TS = 1550946000000
 END_TS = 1550946000000+300000
 
 # Property ID
-PROPERTY_DATA = "fsr-1ebb"
-PROPERTY_LABEL = "sitting-8b25"
+PROPERTY_DATA = "FSR"
+PROPERTY_LABEL = "Sitting Posture"
 
 # Instantiate a thing with its credential
 my_thing = Thing(thing_id=THING_ID, token=THING_TOKEN)
@@ -50,10 +46,14 @@ def unix_time_millis(dt):
 # it has only an id, a name and a type.
 # print(my_thing.to_json())
 
-fsr = my_thing.properties[PROPERTY_DATA]
-sitting = my_thing.properties[PROPERTY_LABEL]
+fsr = my_thing.find_property_by_name(PROPERTY_DATA)
 fsr.read(START_TS, END_TS)
+
+sitting = my_thing.find_property_by_name(PROPERTY_LABEL)
 sitting.read(START_TS, END_TS)
+classes = []
+for clazz in sitting.classes:
+    classes.append(clazz['name'])
 
 data = fsr.values
 label = sitting.values
@@ -104,7 +104,7 @@ print(recall_score(testLabel, predicted, average="macro"))
 print(f1_score(testLabel, predicted, average="weighted"))
 print(f1_score(testLabel, predicted, average=None))
 
-print(classification_report(test_label, predicted, target_names=CLASSES))
+print(classification_report(test_label, predicted, target_names=classes))
 
 # Save the model in a file
 with io.open(MODEL_FILE_NAME, "wb") as file:
