@@ -102,6 +102,11 @@ is a lightweight markup language, i.e. minimal set tags to format text;
 * requirements.txt contains the list of the python libraries you need to install for
 the project to work;
 
+## 1.6 Sign up on the Data-Centric Design Hub
+
+We now want to register an account for a cloud service. We will use the prototype
+from TU Delft IDE's Faculty of the Data-Centric Design Hub. Go to <a href="https://dwd.tudelft.nl/manager" target="_blank">https://dwd.tudelft.nl/manager</a>
+
 ![Flowchart Push Button](images/dcdhub.png)
 
 Sign up as a group with an email address, a name and a password.
