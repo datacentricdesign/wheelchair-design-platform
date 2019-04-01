@@ -17,7 +17,6 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.feature_selection import VarianceThreshold
 import pandas as pd
 import numpy
-from numpy import array
 
 # Import library to generate model
 import pickle
@@ -157,18 +156,9 @@ for clazz in sitting.classes:
     classes.append(clazz['name'])
     print(str(clazz['name']))
 
-classes = array(classes)
-print(classes)
-# classes = list_to_df(classes)
-# print(classes)
-# classes = classes.shift(periods = 1)
-# print(classes)
-
-
 data = fsr.values
 label = sitting.values
 # print(label)
-print(array(data).shape)
 
 # Split the data into training data (60%), cross validation data(20%) and test data (20%)
 train_data = []
@@ -244,17 +234,17 @@ print(len(label))
 
 # Train a k-Nearest Neighbour (kNN) algorithm
 neigh = KNeighborsClassifier(n_neighbors=1)
-neigh.fit(array(train_data), array(train_label).ravel())
+neigh.fit(train_data, train_label)
 
 # Use the test data to evaluate the algorithm
-predicted = neigh.predict(array(cv_data))
+predicted = neigh.predict(cv_data)
 cvLabel = numpy.array(cv_label)
 result = accuracy_score(cvLabel, predicted)
 print("cv accuracy: {}".format(result))
 
 if result > 0.8:
     print("Validation passed. Displaying testing performance")
-    predicted = neigh.predict(array(test_data))
+    predicted = neigh.predict(test_data)
     testLabel = numpy.array(test_label)
     result = accuracy_score(testLabel, predicted)
     print("test accuracy: {}".format(result))
