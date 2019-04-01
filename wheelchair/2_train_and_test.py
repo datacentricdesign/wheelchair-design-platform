@@ -244,17 +244,17 @@ print(len(label))
 
 # Train a k-Nearest Neighbour (kNN) algorithm
 neigh = KNeighborsClassifier(n_neighbors=1)
-neigh.fit(train_data, train_label.ravel())
+neigh.fit(array(train_data), array(train_label).ravel())
 
 # Use the test data to evaluate the algorithm
-predicted = neigh.predict(cv_data)
+predicted = neigh.predict(array(cv_data))
 cvLabel = numpy.array(cv_label)
 result = accuracy_score(cvLabel, predicted)
 print("cv accuracy: {}".format(result))
 
 if result > 0.8:
     print("Validation passed. Displaying testing performance")
-    predicted = neigh.predict(test_data)
+    predicted = neigh.predict(array(test_data))
     testLabel = numpy.array(test_label)
     result = accuracy_score(testLabel, predicted)
     print("test accuracy: {}".format(result))
