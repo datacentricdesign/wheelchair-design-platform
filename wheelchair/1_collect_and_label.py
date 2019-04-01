@@ -76,12 +76,16 @@ def serial_to_property_values(class_index, ser):
             line = line_bytes.decode('utf-8')
         except UnicodeDecodeError:
             return False
-        # Split the string using commas as separator, we get a list of strings
-        str_values = line.split(',')
-        # Remove the first id
-        str_values.pop(0)
-        # Transform the array of string values into float values (numbers)
-        values = [float(x) for x in str_values]
+
+        try:
+            # Split the string using commas as separator, we get a list of strings
+            str_values = line.split(',')
+            # Remove the first id
+            str_values.pop(0)
+            # Transform the array of string values into float values (numbers)
+            values = [float(x) for x in str_values]
+        except ValueError:
+            return False
 
         # get the current time in milliseconds
         current_ts_ms = int(round(time.time() * 1000))
