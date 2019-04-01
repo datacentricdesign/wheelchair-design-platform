@@ -168,7 +168,7 @@ print(classes)
 data = fsr.values
 label = sitting.values
 # print(label)
-print(data.shape)
+print(array(data).shape)
 
 # Split the data into training data (60%), cross validation data(20%) and test data (20%)
 train_data = []
