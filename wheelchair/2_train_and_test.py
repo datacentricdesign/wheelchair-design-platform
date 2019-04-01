@@ -22,6 +22,7 @@ import numpy
 import pickle
 
 from dcd.entities.thing import Thing
+from dcd.entities.property import PropertyType
 
 # The thing ID and access token
 load_dotenv()
@@ -37,7 +38,7 @@ END_TS = 1553529960000+300000
 
 # Property ID
 PROPERTY_DATA = "fsr"
-PROPERTY_LABEL = "persona-7574"
+PROPERTY_LABEL = "Persona"
 
 # Instantiate a thing with its credential
 my_thing = Thing(thing_id=THING_ID, token=THING_TOKEN)
@@ -144,10 +145,10 @@ def generate_confusion_matrix(labels):
 # it has only an id, a name and a type.
 # print(my_thing.to_json())
 
-fsr = my_thing.find_or_create_property(PROPERTY_DATA)
+fsr = my_thing.find_or_create_property(PROPERTY_DATA, PropertyType.SIX_DIMENSIONS)
 fsr.read(START_TS, END_TS)
 
-sitting = my_thing.find_or_create_property(PROPERTY_LABEL)
+sitting = my_thing.find_or_create_property(PROPERTY_LABEL, PropertyType.ONE_DIMENSION)
 sitting.read(START_TS, END_TS)
 
 classes = []
