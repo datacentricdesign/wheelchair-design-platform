@@ -16,6 +16,7 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 from sklearn.feature_selection import VarianceThreshold
 import pandas as pd
+import numpy
 from numpy import array
 
 # Import library to generate model
