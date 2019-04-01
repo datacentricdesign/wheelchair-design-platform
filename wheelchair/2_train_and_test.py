@@ -158,7 +158,7 @@ for clazz in sitting.classes:
 
 classes = list_to_df(classes)
 print(classes)
-classes.shift(periods = 1)
+classes = classes.shift(periods = 1)
 print(classes)
 
 data = fsr.values
