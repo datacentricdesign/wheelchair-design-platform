@@ -154,6 +154,7 @@ sitting.read(START_TS, END_TS)
 classes = []
 for clazz in sitting.classes:
     classes.append(clazz['name'])
+    print(str(clazz['name']))
 
 data = fsr.values
 label = sitting.values
