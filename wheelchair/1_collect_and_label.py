@@ -17,8 +17,7 @@ THING_ID = os.environ['THING_ID']
 THING_TOKEN = os.environ['THING_TOKEN']
 
 # Sitting classes
-CLASSES = ["Not Sitting", "Jelle", "Rosan",
-           "William"]
+CLASSES = ["Not Sitting", "Jelle", "Rosan", "William"]
 
 LABEL_PROP_NAME = "Persona"
 DATA_PROP_NAME = "fsr"
@@ -105,7 +104,7 @@ prop_label = my_thing.find_or_create_property(LABEL_PROP_NAME, PropertyType.CLAS
 if prop_label.classes is None or len(prop_label.classes) == 0:
     prop_label.create_classes(CLASSES)
 
-prop_data = my_thing.find_or_create_property(DATA_PROP_NAME, PropertyType.TWELVE_DIMENSIONS)
+prop_data = my_thing.find_or_create_property(DATA_PROP_NAME, PropertyType.SIX_DIMENSIONS)
 
 
 # Start collecting data for the first class
