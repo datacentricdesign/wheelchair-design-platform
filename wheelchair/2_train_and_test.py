@@ -32,8 +32,8 @@ THING_TOKEN = os.environ['THING_TOKEN']
 MODEL_FILE_NAME = "model.pickle"
 
 # Data collection time frame (in milliseconds)
-START_TS = 1553529960*1000
-END_TS = START_TS+300000
+START_TS = 1553529960000
+END_TS = 1553529960000+300000
 
 # Property ID
 PROPERTY_DATA = "fsr-b151"
