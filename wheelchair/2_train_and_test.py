@@ -207,13 +207,16 @@ for index in range(len(leftover_data)):
 # Check if data is being pulled from the hub
 
 print("TRAINING DATA")
-print(train_data)
+print(train_data[0])
+print(len(train_data))
 
 print("VALIDATION DATA")
-print(cv_data)
+print(cv_data[0])
+print(len(cv_data))
 
 print("TESTING DATA")
-print(test_data)
+print(test_data[0])
+print(len(test_data))
 
 # Apply dimensionality reduction. Choose only one of the below lines at one time.
 # train_data, cv_data, test_data = pca(train_data, cv_data, test_data)
