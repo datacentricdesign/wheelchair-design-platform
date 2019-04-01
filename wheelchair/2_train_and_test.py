@@ -244,7 +244,7 @@ print(len(label))
 
 # Train a k-Nearest Neighbour (kNN) algorithm
 neigh = KNeighborsClassifier(n_neighbors=1)
-neigh.fit(train_data, train_label)
+neigh.fit(train_data, train_label.ravel())
 
 # Use the test data to evaluate the algorithm
 predicted = neigh.predict(cv_data)
