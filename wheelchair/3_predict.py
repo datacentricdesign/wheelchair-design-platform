@@ -13,8 +13,8 @@ MODEL_FILE_NAME = "model.pickle"
 with open("model.pickle", 'rb') as file:
     neigh = pickle.load(file)
 
-classes = ["Not Sitting", "Proper Sitting", "Leaning Forward",
-           "Leaning Backward", "Leaning Left", "Leaning Right"]
+classes = ["No User", "User 1", "User 2",
+           "User 3"]
 
 # Read data from serial port
 ser = serial.Serial(
