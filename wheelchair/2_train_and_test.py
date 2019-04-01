@@ -156,6 +156,8 @@ for clazz in sitting.classes:
     classes.append(clazz['name'])
     print(str(clazz['name']))
 
+classes.pop(0)
+
 data = fsr.values
 label = sitting.values
 # print(label)
