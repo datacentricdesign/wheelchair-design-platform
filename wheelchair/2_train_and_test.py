@@ -36,7 +36,7 @@ START_TS = 1553529960000
 END_TS = 1553529960000+300000
 
 # Property ID
-PROPERTY_DATA = "fsr-b151"
+PROPERTY_DATA = "fsr"
 PROPERTY_LABEL = "persona-7574"
 
 # Instantiate a thing with its credential
@@ -144,10 +144,10 @@ def generate_confusion_matrix(labels):
 # it has only an id, a name and a type.
 # print(my_thing.to_json())
 
-fsr = my_thing.find_property_by_name(PROPERTY_DATA)
+fsr = my_thing.find_or_create_property(PROPERTY_DATA)
 fsr.read(START_TS, END_TS)
 
-sitting = my_thing.find_property_by_name(PROPERTY_LABEL)
+sitting = my_thing.find_or_create_property(PROPERTY_LABEL)
 sitting.read(START_TS, END_TS)
 
 classes = []
