@@ -68,6 +68,7 @@ def open_serial():
 def serial_to_property_values(class_index, ser):
     # Read one line
     line_bytes = ser.readline()
+    print(str(line_bytes))
     # If the line is not empty
     if len(line_bytes) > 0:
         # Convert the bytes into string
