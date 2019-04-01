@@ -156,10 +156,13 @@ for clazz in sitting.classes:
     classes.append(clazz['name'])
     print(str(clazz['name']))
 
-classes = list_to_df(classes)
+classes = array(classes)
 print(classes)
-classes = classes.shift(periods = 1)
-print(classes)
+# classes = list_to_df(classes)
+# print(classes)
+# classes = classes.shift(periods = 1)
+# print(classes)
+
 
 data = fsr.values
 label = sitting.values
