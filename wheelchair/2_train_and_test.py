@@ -151,6 +151,8 @@ fsr.read(START_TS, END_TS)
 sitting = my_thing.find_or_create_property(PROPERTY_LABEL, PropertyType.ONE_DIMENSION)
 sitting.read(START_TS, END_TS)
 
+sitting.align_values_to(fsr)
+
 classes = []
 for clazz in sitting.classes:
     classes.append(clazz['name'])
@@ -158,6 +160,7 @@ for clazz in sitting.classes:
 
 data = fsr.values
 label = sitting.values
+
 # print(label)
 
 # Split the data into training data (60%), cross validation data(20%) and test data (20%)
