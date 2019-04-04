@@ -33,12 +33,12 @@ THING_TOKEN = os.environ['THING_TOKEN']
 MODEL_FILE_NAME = "model.pickle"
 
 # Data collection time frame (in milliseconds)
-START_TS = 1554382500000
+START_TS = 1554388200000
 END_TS = START_TS+300000
 
 # Property ID
 PROPERTY_DATA = "fsr"
-PROPERTY_LABEL = "Data.set"
+PROPERTY_LABEL = "sittingdata"
 
 # Instantiate a thing with its credential
 my_thing = Thing(thing_id=THING_ID, token=THING_TOKEN)
