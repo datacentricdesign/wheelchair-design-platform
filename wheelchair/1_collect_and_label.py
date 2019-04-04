@@ -17,7 +17,7 @@ THING_ID = os.environ['THING_ID']
 THING_TOKEN = os.environ['THING_TOKEN']
 
 # Sitting classes
-CLASSES = ["Unknown", "Jelle", "Rosan", "William"]
+CLASSES = ["No One", "Jelle", "Rosan", "William"]
 
 LABEL_PROP_NAME = "sittingdata"
 DATA_PROP_NAME = "fsr"
