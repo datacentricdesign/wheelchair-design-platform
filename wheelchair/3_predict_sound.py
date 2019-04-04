@@ -27,11 +27,11 @@ def predict(values):
     result = neigh.predict(values)
     print(classes[result[0]])
 
-    while result["William"]:
+    while result["No One"]:
         pygame.mixer.init()
         pygame.mixer.music.load("Remco_uit_Rotterdam-QtDo4fhkidQ.wav")
         pygame.mixer.music.play()
-        
+
 # Real time prediction
 def serial_to_property_values():
     line_bytes = ser.readline()
