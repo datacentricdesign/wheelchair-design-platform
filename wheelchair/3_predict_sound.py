@@ -65,7 +65,7 @@ def predict(values):
     print(classes[result[0]])
 
     while result["No One"]:
-        play_sound('eg1.wav', 500)
+        play_sound('todd.wav', 500)
 
 # Real time prediction
 def serial_to_property_values():
