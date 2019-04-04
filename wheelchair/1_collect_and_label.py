@@ -19,11 +19,11 @@ THING_TOKEN = os.environ['THING_TOKEN']
 # Sitting classes
 CLASSES = ["Unknown", "Jelle", "Rosan", "William"]
 
-LABEL_PROP_NAME = "Data.set"
+LABEL_PROP_NAME = "sittingdata"
 DATA_PROP_NAME = "fsr"
 
 # How many samples do we want for each class
-MAX_SAMPLES = 2000
+MAX_SAMPLES = 1000
 # How much time (in seconds) to leave between the collection of each class
 DELAY_BETWEEN_POSTURE = 7
 
