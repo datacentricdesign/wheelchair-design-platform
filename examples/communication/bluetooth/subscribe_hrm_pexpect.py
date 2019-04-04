@@ -8,7 +8,7 @@ import sys
 import os
 
 from dcd.entities.thing import Thing
-from dcd.entities.property_type import PropertyType
+from dcd.entities.property import PropertyType
 
 #This function converts hex values received from hrm to integer.
 def hexStrToInt(hexstr):

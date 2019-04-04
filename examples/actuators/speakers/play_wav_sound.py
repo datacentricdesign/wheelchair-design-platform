@@ -1,5 +1,11 @@
-# This example shows how to play a WAV file.
-# Documentation: http://people.csail.mit.edu/hubert/pyaudio/
+"""----------------------------------------------------------------------------
+    This example shows how to play a WAV file.
+    Documentation: http://people.csail.mit.edu/hubert/pyaudio/
+    Installation: 
+    sudo apt-get install portaudio 
+    python3 -m pip install pyaudio
+
+----------------------------------------------------------------------------"""
 
 # Import required library
 import pyaudio
@@ -8,7 +14,7 @@ import time
 
 # file: absolute path to WAV file to play
 # duration: number of seconds to play in seconds
-def play_sound(file, duration):
+def play_sound(file, duration): 
     CHUNK = 1024
 
     # Load the WAV file
@@ -28,7 +34,8 @@ def play_sound(file, duration):
     while data != '' and play:
         stream.write(data)
         data = wf.readframes(CHUNK)
-        if time.time()-start_time>duration:
+        
+        if time.time()-start_time>duration:   
             play = False
 
     stream.stop_stream()
@@ -36,4 +43,14 @@ def play_sound(file, duration):
 
     p.terminate()
 
+<<<<<<< HEAD
 play_sound('Macintosh HD⁩/⁨Users⁩/⁨rosanfoppen/⁨Desktop⁩/⁨IoT/Remco_uit_Rotterdam-QtDo4fhkidQ.wav⁩', 1)
+=======
+
+"""----------------------------------------------------------------------------
+    Playing file in current directory, if needed, give a complete path. the 
+    second parameter deals with max duration in seconds. If this is over the
+    duration of file, it will just play it to the end.
+----------------------------------------------------------------------------"""
+play_sound('eg1.wav', 500)
+>>>>>>> 97a736033a11f0502b49e75098e9ff3e2b0f017c
