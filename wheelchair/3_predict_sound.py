@@ -4,6 +4,9 @@ import pickle
 import serial
 import numpy as np
 import pygame
+import pyaudio
+import wave
+import time
 
 load_dotenv()
 
@@ -23,14 +26,46 @@ ser = serial.Serial(
     baudrate=9600,
     timeout=2)
 
+
+# file: absolute path to WAV file to play
+# duration: number of seconds to play in seconds
+def play_sound(file, duration):
+    CHUNK = 1024
+
+    # Load the WAV file
+    wf = wave.open(file, 'rb')
+
+    p = pyaudio.PyAudio()
+
+    stream = p.open(format=p.get_format_from_width(wf.getsampwidth()),
+                    channels=wf.getnchannels(),
+                    rate=wf.getframerate(),
+                    output=True)
+
+    data = wf.readframes(CHUNK)
+
+    start_time = time.time()
+    play = True
+    while data != '' and play:
+        stream.write(data)
+        data = wf.readframes(CHUNK)
+
+        if time.time()-start_time>duration:
+            play = False
+
+    stream.stop_stream()
+    stream.close()
+
+    p.terminate()
+
+
+
 def predict(values):
     result = neigh.predict(values)
     print(classes[result[0]])
 
     while result["No One"]:
-        pygame.mixer.init()
-        pygame.mixer.music.load("Remco_uit_Rotterdam-QtDo4fhkidQ.wav")
-        pygame.mixer.music.play()
+        play_sound('eg1.wav', 500)
 
 # Real time prediction
 def serial_to_property_values():
