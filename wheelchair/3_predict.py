@@ -17,7 +17,7 @@ classes = ["No User", "User 1", "User 2",
            "User 3"]
 
 # Read data from serial port
-ser = serial.Serial(
+ser = serial.Serial
     port=os.environ['SERIAL'],
     baudrate=9600,
     timeout=2)
