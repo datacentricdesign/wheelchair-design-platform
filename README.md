@@ -43,7 +43,7 @@ When the correct user uses the wheelchair, the built-in speaker system will welc
 - Light
 There is also a LED-strip that is connected to the wheels. It will shine bright red or green depending on the user.
 
-==============================================================================================
+=======================================================================================
 
 Wheelchair Design Platform is a repository that contains some resources to help
 designers and developers speak the same language, and work together towards
