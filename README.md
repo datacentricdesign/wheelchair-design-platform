@@ -2,20 +2,35 @@
 # Wheel.ID - *the chair that knows you*
  *by William Hagen, Jelle Dott & Rosan Foppen*
 
+<<<<<<< HEAD
 # Project Description
  We want to build a safety system that is designed for the wheelchair owner, by making a profile of him/her in order for the system to understand who is sitting/ using the wheelchair. This system works based on the weight, way of sitting and the way someone handles the wheelchair. If the wheelchair is used by the wrong person (not saved in the recognised profiles) an alarm will go off, together with some LEDs.
 
 # Features
+=======
+## Project Description
+ We want to build a safety system that is designed for the wheelchair owner, by making a profile of him/her in order for the system to understand who is sitting/ using the wheelchair. This system works based on the weight, way of sitting and the way someone handles the wheelchair. If the wheelchair is used by the wrong person (not saved in the recognised profiles) an alarm will go off, together with some LEDs.
+
+### Features
+>>>>>>> c43ec832210b132e44b90f0ee5c21c2a89daf4b4
 
 * Provides feedback on who is sitting in the chair by audio
 * Shows (un)authorized usage by LED strips on the wheels
 * Makes a user profile based on posture, weight and frequency of rotation of the wheels
 
+<<<<<<< HEAD
 # Components
 
 ...
 
 # Installation
+=======
+## Components
+
+...
+
+## Installation
+>>>>>>> c43ec832210b132e44b90f0ee5c21c2a89daf4b4
 
 The collection of data and the display of (un)authorized usage is achieved by the use of multiple components
 
@@ -25,7 +40,11 @@ The collection of data and the display of (un)authorized usage is achieved by th
 - ...
 
 
+<<<<<<< HEAD
 # Selection and motivation of the Sensors
+=======
+## Selection and motivation of the Sensors
+>>>>>>> c43ec832210b132e44b90f0ee5c21c2a89daf4b4
 
 - 6 Force sensing resistors
 The force sensors will be placed in the seating of the wheelchair and, based on data, these will shape a profile of the main user. This profile can then be differentiated from other users, because the differences in weight and posture etc. vary.
@@ -33,7 +52,11 @@ The force sensors will be placed in the seating of the wheelchair and, based on 
 - Accelerometer + gyro
 The accelerometer is the second part of the two-step security system, it will measure the acceleration patterns of the main user. People might have very similar weight and postures, therefore this accelerometer will measure usage of the product, and act as a second security feature.
 
+<<<<<<< HEAD
 # Selection and motivation of the Actuators
+=======
+## Selection and motivation of the Actuators
+>>>>>>> c43ec832210b132e44b90f0ee5c21c2a89daf4b4
 
 Whenever a person with the incorrect profile uses the wheelchair, the security system will let the surrounding area/people + the main user know that something is wrong. The faulty usage will be made clear on the phone of the user (it’s connected) but also through different actuators on the wheelchair itself, namely:
 
@@ -43,8 +66,12 @@ When the correct user uses the wheelchair, the built-in speaker system will welc
 - Light
 There is also a LED-strip that is connected to the wheels. It will shine bright red or green depending on the user.
 
+<<<<<<< HEAD
 =======
 # Wheelchair Group 01
+=======
+=======================================================================================
+>>>>>>> c43ec832210b132e44b90f0ee5c21c2a89daf4b4
 
 Wheelchair Design Platform is a repository that contains some resources to help
 designers and developers speak the same language, and work together towards
