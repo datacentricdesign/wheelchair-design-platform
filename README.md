@@ -10,7 +10,7 @@ The best way to explore this repository is through the GitHub Page website: [rig
 
 Thank you to all the contributors of this project!
 
-[](https://github.com/Ryudas.png?size=50)](https://github.com/Ryudas)
+[![](https://github.com/Ryudas.png?size=50)](https://github.com/Ryudas)
 
 
 # Existing projects
