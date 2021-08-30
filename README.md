@@ -11,6 +11,13 @@ The best way to explore this repository is through the GitHub Page website: [rig
 Thank you to all the contributors of this project!
 
 [![](https://github.com/Ryudas.png?size=50)](https://github.com/Ryudas)
+[![](https://github.com/dhavalshah02?size=50)](https://github.com/dhavalshah02)
+[![](https://github.com/Kattthii?size=50)](https://github.com/Kattthii)
+[![](https://github.com/jackybourgeois?size=50)](https://github.com/jackybourgeois)
+[![](https://github.com/emiliaingemarsdotter?size=50)](https://github.com/emiliaingemarsdotter)
+[![](https://github.com/cprecioso?size=50)](https://github.com/cprecioso)
+[![](https://github.com/livein21st?size=50)](https://github.com/livein21st)
+[![](https://github.com/gomezago?size=50)](https://github.com/gomezago)
 
 
 # Existing projects
