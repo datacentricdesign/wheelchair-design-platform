@@ -11,7 +11,7 @@ The best way to explore this repository is through the GitHub Page website: [rig
 Thank you to all the contributors of this project!
 
 [![](https://github.com/Ryudas.png?size=50)](https://github.com/Ryudas)
-[![](https://github.com/dhavalshah02.png?size=50|width=50px)](https://github.com/dhavalshah02)
+[![](https://github.com/dhavalshah02.png?size=50)](https://github.com/dhavalshah02)
 [![](https://github.com/Kattthii.png?size=50)](https://github.com/Kattthii)
 [![](https://github.com/jackybourgeois.png?size=50)](https://github.com/jackybourgeois)
 [![](https://github.com/emiliaingemarsdotter.png?size=50)](https://github.com/emiliaingemarsdotter)
