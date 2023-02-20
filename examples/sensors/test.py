@@ -43,7 +43,7 @@ def read_pulse():
     while True:
         ads.gain = GAIN
         Signal = chan.value
-        print("{:5} {:5.3f}".format(chan.value, chan.voltage), end="")
+        # print("{:5} {:5.3f}".format(chan.value, chan.voltage), end="")
 
         # Signal = adc.read_adc(0, gain=GAIN)   
         curTime = int(time.time()*1000)
