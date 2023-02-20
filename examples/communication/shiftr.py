@@ -30,6 +30,7 @@ amp = 100
 GAIN = 2/3  
 curState = 0
 stateChanged = 0
+last_BPM = 0
 
 
 from dotenv import dotenv_values
@@ -111,7 +112,10 @@ def read_pulse():
               runningTotal /= 10;             
               BPM = 60000/runningTotal       
               print("BPM:" + str(BPM))
-              on_pulse_data(BPM)
+              BPM = round(BPM * 2) / 2
+              if BPM != last_BPM:
+                on_pulse_data(BPM)
+                last_BPM = BPM
 
         if Signal < th and Pulse == 1 :                    
             amp = P - T                   
