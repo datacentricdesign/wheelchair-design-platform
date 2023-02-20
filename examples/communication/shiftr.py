@@ -115,6 +115,7 @@ def read_pulse():
               BPM = round(BPM * 2) / 2
               if BPM != last_BPM:
                 on_pulse_data(BPM)
+                global last_BPM
                 last_BPM = BPM
 
         if Signal < th and Pulse == 1 :                    
