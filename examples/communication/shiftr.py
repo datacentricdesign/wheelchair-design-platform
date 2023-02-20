@@ -55,7 +55,7 @@ def on_message(client, userdata, msg):
     print("Message on topic" + msg.topic+": "+str(msg.payload))
 
 def on_pulse_data(data):
-    client.publish(topic, payload=data, qos=0, retain=False)
+    client.publish(TOPIC, payload=data, qos=0, retain=False)
 
 def read_pulse():
     firstBeat = True
