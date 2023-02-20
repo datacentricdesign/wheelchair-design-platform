@@ -32,6 +32,8 @@ curState = 0
 stateChanged = 0
 last_BPM = 0
 
+TOPIC = "/dpd/wheelchair/pulse"
+
 
 from dotenv import dotenv_values
 config = dotenv_values(".env")
@@ -53,7 +55,7 @@ def on_message(client, userdata, msg):
     print("Message on topic" + msg.topic+": "+str(msg.payload))
 
 def on_pulse_data(data):
-    client.publish("hr", payload=data, qos=0, retain=False)
+    client.publish(topic, payload=data, qos=0, retain=False)
 
 def read_pulse():
     firstBeat = True
