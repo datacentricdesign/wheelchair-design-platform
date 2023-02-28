@@ -1,0 +1,11 @@
+[Unit]
+Description=Hear rate service
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python /home/jacky/wheelchair-design-platform/examples/sensors/hr.py
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
